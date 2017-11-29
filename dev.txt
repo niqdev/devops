@@ -19,3 +19,10 @@ git commit -m "first commit"
 # temporary image for tests
 docker run --rm --name phusion phusion/baseimage:latest
 docker exec -it phusion bash
+
+########## zookeeper ##########
+
+cd zookeeper/
+docker build -t provision/zookeeper .
+docker run --rm --name zookeeper provision/zookeeper
+docker exec -it zookeeper bash
