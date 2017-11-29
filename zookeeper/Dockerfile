@@ -6,6 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN add-apt-repository ppa:openjdk-r/ppa -y
 
 RUN apt-get update && apt-get install -y \
+  telnet \
   python2.7 \
   python-pip \
   openjdk-8-jdk && \

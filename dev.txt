@@ -30,3 +30,6 @@ docker exec -it zookeeper bash
 # check service status
 supervisorctl status
 supervisorctl restart zookeeper
+# check zookeeper status
+telnet localhost 2181
+> ruok
