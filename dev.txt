@@ -1,0 +1,21 @@
+DEV info
+
+########## TODO git_init.sh ##########
+
+# create directories and move into
+mkdir -p ~/Projects/provision-tools && cd $_
+cd ~/Projects/provision-tools
+
+# git
+git config user.name "niqdev"
+git config user.email niqdev@gmail.com
+echo "# provision-tools" > README.md
+git init
+git add .
+git commit -m "first commit"
+
+########## docker ##########
+
+# temporary image for tests
+docker run --rm --name phusion phusion/baseimage:latest
+docker exec -it phusion bash
