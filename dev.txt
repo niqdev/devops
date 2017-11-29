@@ -24,5 +24,9 @@ docker exec -it phusion bash
 
 cd zookeeper/
 docker build -t provision/zookeeper .
-docker run --rm --name zookeeper provision/zookeeper
+docker run --rm --name zookeeper -p 2181:2181 provision/zookeeper
 docker exec -it zookeeper bash
+
+# check service status
+supervisorctl status
+supervisorctl restart zookeeper
