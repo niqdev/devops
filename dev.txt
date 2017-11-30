@@ -21,6 +21,11 @@ git commit -m "first commit"
 docker run --rm --name phusion phusion/baseimage:latest
 docker exec -it phusion bash
 
+########## base ##########
+
+cd base/
+docker build -t provision/base .
+
 ########## cassandra ##########
 
 docker-compose up
@@ -38,9 +43,11 @@ docker rm -fv cassandra
 
 ########## zookeeper ##########
 
+# build base image first
 cd zookeeper/
 docker build -t provision/zookeeper .
-docker run --rm --name zookeeper -p 12181:2181 provision/zookeeper
+# host:container
+docker run --rm --name zookeeper -p 2181:2181 provision/zookeeper
 docker exec -it zookeeper bash
 
 # paths
