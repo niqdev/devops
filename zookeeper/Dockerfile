@@ -12,20 +12,19 @@ RUN apt-get update && apt-get install -y \
   openjdk-8-jdk && \
   apt-get clean
 
-#ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN pip install --upgrade pip wheel setuptools supervisor
 
+ADD supervisor.sed /tmp/supervisor.sed
+
 RUN echo_supervisord_conf > /etc/supervisord.conf && \
-  mkdir -p /etc/supervisor/conf.d && \
-  sed -i -r ' \
-    s/\;\[include\]/\[include\]/; \
-    s/\;files = relative\/directory\/\*.ini/files = \/etc\/supervisor\/conf.d\/\*/; \
-    ' /etc/supervisord.conf
+  sed -i -r -f /tmp/supervisor.sed /etc/supervisord.conf && \
+  mkdir -p /etc/supervisor/conf.d
 
 RUN curl http://www-eu.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz | tar -xzf - -C /srv && \
   ln -s /srv/zookeeper-${ZOOKEEPER_VERSION} /srv/zookeeper && \
-  mkdir -p /srv/zookeeper/log /srv/zookeeper/data
+  mkdir -p /var/log/zookeeper /srv/zookeeper/data
 
 ADD supervisor.ini /etc/supervisor/conf.d/zookeeper.conf
 ADD zoo.cfg /srv/zookeeper/conf/zoo.cfg
