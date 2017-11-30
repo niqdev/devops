@@ -21,6 +21,21 @@ git commit -m "first commit"
 docker run --rm --name phusion phusion/baseimage:latest
 docker exec -it phusion bash
 
+########## cassandra ##########
+
+docker-compose up
+docker exec -it cassandra bash
+docker exec -it cassandra bash -c cqlsh
+
+# paths
+/etc/cassandra/
+/var/lib/cassandra/data/
+
+# execute cql from host
+(docker exec -i cassandra bash -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
+
+docker rm -fv cassandra
+
 ########## zookeeper ##########
 
 cd zookeeper/
