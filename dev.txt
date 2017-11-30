@@ -37,6 +37,7 @@ supervisorctl restart zookeeper
 
 cd zookeeper/
 docker build -t provision/zookeeper .
+docker build -t provision/zookeeper -–build-arg VERSION=3.4.10 .
 # host:container
 docker run --rm --name zookeeper -p 2181:2181 provision/zookeeper
 docker exec -it zookeeper bash
