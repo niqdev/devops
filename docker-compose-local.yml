@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  zookeeper:
+    container_name: zookeeper-local
+    build:
+      context: ./zookeeper
+      args:
+        - VERSION=3.4.10
+    ports:
+      - 12181:2181
+    networks:
+      - network-local
+  kafka:
+    container_name: kafka-local
+    build: ./kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - 19092:9092
+    networks:
+      - network-local
+    environment:
+      - ZOOKEEPER_HOSTS="zookeeper:2181"
+
+networks:
+  network-local:

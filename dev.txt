@@ -62,8 +62,17 @@ docker exec -it kafka bash
 # paths
 /opt/kafka
 /opt/kafka/logs
+/var/log/kafka
 
-TODO hello world
+# test
+cd /opt/kafka/bin
+./kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
+./kafka-topics.sh --list --zookeeper zookeeper:2181
+./kafka-console-producer.sh --broker-list kafka:9092 --topic test
+./kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic test --from-beginning
+
+# tutorial
+https://kafka.apache.org/quickstart
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 
 ########## zookeeper + kafka ##########
