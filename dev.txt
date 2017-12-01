@@ -56,15 +56,37 @@ telnet localhost 2181
 cd kafka/
 docker build -t provision/kafka .
 # host:container
-docker run --rm --name kafka -p 19092:9092 -e ZOOKEEPER_HOSTS="localhost:12181" provision/kafka
+docker run --rm --name kafka -p 19092:9092 -e ZOOKEEPER_HOSTS="localhost:2181" provision/kafka
 docker exec -it kafka bash
 
 # paths
 /opt/kafka
-/var/log/kafka/
+/opt/kafka/logs
 
 TODO hello world
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
+
+########## zookeeper + kafka ##########
+
+docker network create --driver bridge my_network
+docker network ls
+docker network inspect my_network
+
+docker run --rm \
+  --name kafka \
+  -p 19092:9092 \
+  --network=my_network \
+  -e ZOOKEEPER_HOSTS="zookeeper:2181" \
+  provision/kafka
+
+docker run --rm \
+  --name zookeeper \
+  -p 12181:2181 \
+  --network=my_network \
+  provision/zookeeper
+
+apt-get install iputils-ping telnet -y
+ping IP_V4_ADDRESS
 
 ########## cassandra ##########
 
