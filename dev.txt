@@ -39,7 +39,7 @@ cd zookeeper/
 docker build -t provision/zookeeper .
 docker build -t provision/zookeeper -–build-arg VERSION=3.4.10 .
 # host:container
-docker run --rm --name zookeeper -p 2181:2181 provision/zookeeper
+docker run --rm --name zookeeper -p 12181:2181 provision/zookeeper
 docker exec -it zookeeper bash
 
 # paths
@@ -50,6 +50,21 @@ docker exec -it zookeeper bash
 # check zookeeper status
 telnet localhost 2181
 > ruok
+
+########## base + kafka ##########
+
+cd kafka/
+docker build -t provision/kafka .
+# host:container
+docker run --rm --name kafka -p 19092:9092 -e ZOOKEEPER_HOSTS="localhost:12181" provision/kafka
+docker exec -it kafka bash
+
+# paths
+/opt/kafka
+/var/log/kafka/
+
+TODO hello world
+https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 
 ########## cassandra ##########
 
