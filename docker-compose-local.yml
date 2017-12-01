@@ -22,6 +22,13 @@ services:
       - network-local
     environment:
       - ZOOKEEPER_HOSTS="zookeeper:2181"
+  cassandra:
+    container_name: cassandra-local
+    image: cassandra:3.11
+    ports:
+      - 19042:9042
+    volumes:
+      - ./cassandra/cql:/cql
 
 networks:
   network-local:

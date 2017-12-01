@@ -104,8 +104,9 @@ docker exec -it cassandra bash
 docker exec -it cassandra bash -c cqlsh
 
 # paths
-/etc/cassandra/
-/var/lib/cassandra/data/
+/etc/cassandra
+/var/lib/cassandra
+/var/log/cassandra
 
 # execute cql from host
 (docker exec -i cassandra bash -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
