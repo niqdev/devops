@@ -63,6 +63,7 @@ docker exec -it kafka bash
 /opt/kafka
 /opt/kafka/logs
 /var/log/kafka
+/var/lib/kafka/data
 
 # test
 cd /opt/kafka/bin

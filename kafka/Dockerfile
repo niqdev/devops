@@ -10,7 +10,7 @@ RUN curl http://www-eu.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERS
   mkdir -p /var/log/kafka
 
 RUN sed -i -r ' \
-  s/log.dirs=\/tmp\/kafka-logs/log.dirs=\/opt\/kafka\/logs/; \
+  s/log.dirs=\/tmp\/kafka-logs/log.dirs=\/var\/lib\/kafka\/data/; \
   ' /opt/kafka/config/server.properties
 
 ADD supervisor.ini /etc/supervisor/conf.d/kafka.conf
