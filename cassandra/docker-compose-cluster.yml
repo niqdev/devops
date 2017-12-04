@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  cassandra-seed:
+    container_name: cassandra-seed
+    image: cassandra:3.11
+    ports:
+      - 19042:9042
+    networks:
+      - network-cluster
+    volumes:
+      - ./cql:/cql
+      - .cassandra/cassandra-seed/data:/var/lib/cassandra
+      - .cassandra/cassandra-seed/log:/var/log/cassandra
+    restart: unless-stopped
+  cassandra-node-1:
+    container_name: cassandra-node-1
+    image: cassandra:3.11
+    depends_on:
+      - cassandra-seed
+    ports:
+      - 19043:9042
+    networks:
+      - network-cluster
+    environment:
+      CASSANDRA_SEEDS: "cassandra-seed"
+    volumes:
+      - ./cql:/cql
+      - .cassandra/cassandra-node-1/data:/var/lib/cassandra
+      - .cassandra/cassandra-node-1/log:/var/log/cassandra
+    restart: unless-stopped
+  cassandra-node-2:
+    container_name: cassandra-node-2
+    image: cassandra:3.11
+    depends_on:
+      - cassandra-seed
+    ports:
+      - 19044:9042
+    networks:
+      - network-cluster
+    environment:
+      CASSANDRA_SEEDS: "cassandra-seed"
+    volumes:
+      - ./cql:/cql
+      - .cassandra/cassandra-node-2/data:/var/lib/cassandra
+      - .cassandra/cassandra-node-2/log:/var/log/cassandra
+    restart: unless-stopped
+
+networks:
+  network-cluster:
