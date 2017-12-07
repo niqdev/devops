@@ -23,5 +23,17 @@ mkdir -p \
   .cassandra/cassandra-node-1/{data,log} \
   .cassandra/cassandra-node-2/{data,log}
 
+# TODO check permissions
+(cassandra) /var/lib/cassandra
+(root) /var/log/cassandra
+
 docker-compose -f docker-compose-cluster.yml up
+
+docker-machine ssh cassandra-cluster
+# TODO
+docker exec -it cassandra-seed bash -c cqlsh
+
+# ISSUE probably due to permissions
+> Small commitlog volume detected at /var/lib/cassandra/commitlog
+> There is insufficient memory for the Java Runtime Environment to continue.
 ```

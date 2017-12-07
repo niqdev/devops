@@ -1,5 +1,19 @@
 DEV info
 
+TODO
+* ansible (vagrant)
+* zookeeper
+* kafka
+* cassandra
+* elastic-search
+* hadoop
+* yarn
+* oozie
+* ganglia
+* spark
+* flink
+* (knox)
+
 ########## TODO git_init.sh ##########
 
 # create directories and move into
