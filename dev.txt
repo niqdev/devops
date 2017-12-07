@@ -130,4 +130,10 @@ docker rm -fv cassandra
 
 ########## ansible + vagrant ##########
 
+# generate file
 vagrant init
+
+vagrant up
+vagrant status
+vagrant ssh default
+vagrant destory
