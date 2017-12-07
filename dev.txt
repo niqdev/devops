@@ -1,7 +1,7 @@
 DEV info
 
 TODO
-* ansible (vagrant)
+* ansible
 * zookeeper
 * kafka
 * cassandra
@@ -127,3 +127,7 @@ docker exec -it cassandra bash -c cqlsh
 (docker exec -i cassandra bash -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
 
 docker rm -fv cassandra
+
+########## ansible + vagrant ##########
+
+vagrant init
