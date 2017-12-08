@@ -135,5 +135,5 @@ vagrant init
 
 vagrant up
 vagrant status
-vagrant ssh default
-vagrant destory
+vagrant ssh ansible
+vagrant destroy
