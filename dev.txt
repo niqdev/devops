@@ -151,3 +151,7 @@ ping 192.168.100.12
 (provision-tool) /vagrant
 (host $HOME) /local
 (.share) /data
+
+# test
+vagrant ssh ansible
+ansible all -i "/vagrant/inventory" -m ping
