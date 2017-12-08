@@ -1,18 +1,18 @@
 DEV info
 
 TODO
-* ansible
-* zookeeper
-* kafka
-* cassandra
-* elastic-search
-* hadoop
-* yarn
-* oozie
-* ganglia
-* spark
-* flink
-* (knox)
+[ ] ansible
+[x] zookeeper
+[x] kafka
+[x] cassandra
+[ ] elastic-search
+[ ] hadoop
+[ ] yarn
+[ ] oozie
+[ ] ganglia
+[ ] spark
+[ ] flink
+[ ] (knox)
 
 ########## TODO git_init.sh ##########
 
@@ -133,7 +133,21 @@ docker rm -fv cassandra
 # generate file
 vagrant init
 
+# setup share
+./setup_share.sh
+tree script
+
 vagrant up
 vagrant status
 vagrant ssh ansible
-vagrant destroy
+vagrant ssh node-1|2|3
+vagrant destory
+
+ping ansible.local
+ping ip-192-168-100-11.local
+ping 192.168.100.12
+
+# shared paths
+(provision-tool) /vagrant
+(host $HOME) /local
+(.share) /data
