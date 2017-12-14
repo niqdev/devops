@@ -4,6 +4,7 @@
 # https://app.vagrantup.com/bento
 BOX_IMAGE = "bento/ubuntu-16.04"
 NODE_COUNT = 3
+PATH_SHARE = ".share"
 
 Vagrant.configure("2") do |config|
 
@@ -17,17 +18,18 @@ Vagrant.configure("2") do |config|
   config.vm.define "ansible" do |ansible|
     ansible.vm.hostname = "ansible"
     ansible.vm.network "private_network", ip: "192.168.100.10"
-    ansible.vm.synced_folder ENV['HOME'], "/local"
-    ansible.vm.provision "file", source: ".share/ssh/ansible_rsa", destination: "$HOME/.ssh/id_rsa"
     ansible.vm.provision "shell", path: "setup_ansible.sh"
+    ansible.vm.synced_folder ENV['HOME'], "/local"
+    ansible.vm.synced_folder "data/", "/etc/ansible"
+    ansible.vm.provision "file", source: PATH_SHARE + "/ssh/ansible_rsa", destination: "$HOME/.ssh/id_rsa"
   end
 
   (1..NODE_COUNT).each do |i|
     config.vm.define "node-#{i}" do |node|
       node.vm.hostname = "ip-192-168-100-#{i + 10}"
       node.vm.network :private_network, ip: "192.168.100.#{i + 10}"
-      node.vm.synced_folder "./.share/node-#{i}", "/data"
-      node.vm.provision "file", source: ".share/ssh/ansible_rsa.pub", destination: "/tmp/ansible_rsa.pub"
+      node.vm.synced_folder PATH_SHARE + "/node-#{i}", "/data"
+      node.vm.provision "file", source: PATH_SHARE + "/ssh/ansible_rsa.pub", destination: "/tmp/ansible_rsa.pub"
       node.vm.provision "shell", inline: <<-SHELL
         cat /tmp/ansible_rsa.pub >> .ssh/authorized_keys
         rm /tmp/ansible_rsa.pub

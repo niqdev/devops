@@ -17,6 +17,7 @@ sudo apt-get install -y \
   software-properties-common \
   ansible
 
+# http://docs.ansible.com/ansible/latest/intro_getting_started.html#host-key-checking
 sudo sed -i -r "s/#host_key_checking = False/host_key_checking = False/" /etc/ansible/ansible.cfg
 
 echo "[-] setup ansible"
