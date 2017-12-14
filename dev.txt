@@ -134,8 +134,9 @@ docker rm -fv cassandra
 vagrant init
 
 # setup share
+rm -fr .vagrant
 ./setup_share.sh
-tree script
+tree .share
 
 vagrant up
 vagrant status
@@ -150,8 +151,9 @@ ping 192.168.100.12
 # shared paths
 (provision-tool) /vagrant
 (host $HOME) /local
+(data) /ansible
 (.share) /data
 
 # test
 vagrant ssh ansible
-ansible all -i "/vagrant/inventory" -m ping
+ansible all -i "/vagrant/data/hosts" -m ping

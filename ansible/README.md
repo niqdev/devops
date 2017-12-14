@@ -10,12 +10,12 @@ Requirements
 vagrant ssh ansible
 
 # ping all nodes (default inventory /etc/ansible/hosts)
-ansible all  -m ping
+ansible all -m ping
 
 # specify inventory
 ansible all -i "/vagrant/data/hosts" -m ping
 
-# specify user
+# specify host and user
 ansible ip-192-168-100-11.local -m ping -u vagrant
 
 # execute command
