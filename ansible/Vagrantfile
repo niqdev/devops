@@ -33,15 +33,18 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = "ip-192-168-100-#{i + 10}"
       node.vm.network :private_network, ip: "192.168.100.#{i + 10}"
       node.vm.synced_folder PATH_SHARE + "/node-#{i}", "/data"
-      node.vm.provision "file", source: PATH_SHARE + "/ssh/ansible_rsa.pub", destination: "/tmp/ansible_rsa.pub"
-      node.vm.provision "shell", inline: <<-SHELL
-        # append ansible key to avoid lose vagrant key with copy
-        cat /tmp/ansible_rsa.pub >> .ssh/authorized_keys
-        rm /tmp/ansible_rsa.pub
-      SHELL
     end
   end
 
+  # give ssh access to each machine
+  config.vm.provision "file", source: PATH_SHARE + "/ssh/ansible_rsa.pub", destination: "/tmp/ansible_rsa.pub"
+  config.vm.provision "shell", inline: <<-SHELL
+    # append ansible key to avoid lose vagrant key with copy
+    cat /tmp/ansible_rsa.pub >> .ssh/authorized_keys
+    rm /tmp/ansible_rsa.pub
+  SHELL
+
+  # config dns
   config.vm.provision "shell", inline: <<-SHELL
     apt-get install -y avahi-daemon libnss-mdns
   SHELL

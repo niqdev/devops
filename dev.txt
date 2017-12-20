@@ -141,8 +141,10 @@ tree .share
 vagrant up
 vagrant status
 vagrant ssh ansible
-vagrant ssh node-1|2|3
+vagrant ssh node-1
 vagrant destory
+# restart
+vagrant reload
 
 ping ansible.local
 ping ip-192-168-100-11.local
