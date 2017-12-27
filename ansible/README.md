@@ -27,7 +27,7 @@ ansible ip-192-168-100-11.local -m ping -u vagrant
 ansible all -a "/bin/echo hello"
 ansible all -a "uptime"
 ansible all -a "/bin/date"
-# NEVER reboot vagrant
+# NEVER reboot vagrant with ansible
 ansible cluster -a "/sbin/reboot" --become
 
 # shell module
