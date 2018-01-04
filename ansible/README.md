@@ -7,6 +7,7 @@ Documentation
 * [Ansible](http://docs.ansible.com/ansible/latest/index.html)
 
 ```
+vagrant up
 vagrant ssh ansible
 
 # ping all nodes (default inventory /etc/ansible/hosts)
