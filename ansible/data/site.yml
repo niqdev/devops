@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: install package
+      become: yes
+      apt:
+        name: jq
+        state: present
+        update_cache: yes

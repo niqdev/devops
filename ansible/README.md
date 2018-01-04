@@ -42,4 +42,8 @@ ansible all -m apt -a "update_cache=yes upgrade=dist" --become
 vagrant reload
 # install package
 ansible all -m apt -a "name=tree state=present" --become
+
+# playbooks
+ansible-playbook -i /ansible/hosts /ansible/site.yml --verbose
+ansible-playbook /ansible/site.yml
 ```
