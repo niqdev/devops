@@ -1,6 +1,7 @@
 ---
 
 - name: create docker group
+  become: yes
   group:
     name: docker
     state: present
@@ -10,8 +11,7 @@
   user:
     name: docker
     shell: /bin/bash
-    group: docker
-    groups: sudo
+    groups: docker,sudo
     append: yes
 
 - name: download setup script

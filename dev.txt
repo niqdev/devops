@@ -1,7 +1,7 @@
 DEV info
 
 TODO
-[ ] ansible
+[x] ansible
 [x] zookeeper
 [x] kafka
 [x] cassandra
