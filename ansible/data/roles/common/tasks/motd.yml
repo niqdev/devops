@@ -1,0 +1,17 @@
+---
+
+# custom banner
+# https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
+
+- name: remove help banner from motd
+  become: yes
+  file:
+    path: /etc/update-motd.d/10-help-text
+    state: absent
+
+- name: add custom banner to motd
+  become: yes
+  template:
+    src: 10-custom-text
+    dest: /etc/update-motd.d/10-custom-text
+    mode: 0755

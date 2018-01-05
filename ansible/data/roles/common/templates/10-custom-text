@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo '\nHost: {{ ansible_nodename }}'
+echo 'Groups: {{ group_names | join(', ') }}'

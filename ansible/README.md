@@ -66,6 +66,9 @@ vagrant ssh node-1
 sudo -i -u docker
 docker ps -a
 
+# custom banner
+ansible-playbook /ansible/site.yml -t motd
+
 # setup all infrastructure at once
 ansible-playbook /ansible/site.yml
 

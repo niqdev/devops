@@ -3,3 +3,7 @@
 - import_tasks: package.yml
   tags:
     - package
+
+- import_tasks: motd.yml
+  tags:
+    - motd
