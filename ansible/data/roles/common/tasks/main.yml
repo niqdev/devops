@@ -2,5 +2,4 @@
 
 - import_tasks: package.yml
   tags:
-    - common
     - package

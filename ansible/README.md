@@ -47,20 +47,18 @@ ansible all -m apt -a "name=tree state=present" --become
 
 ### Playbooks
 ```
-# run all
-ansible-playbook /ansible/site.yml --verbose
+# test uptime on all node
+ansible-playbook /ansible/site.yml --tags=test --verbose
 
-# (tag) run package task only
-ansible-playbook /ansible/site.yml -t package
+# update & upgrade only cluster nodes
+ansible-playbook /ansible/site.yml -t package --skip-tags=java --verbose
+
+# install packages on cluster nodes
+ansible-playbook /ansible/site.yml -t package --verbose
+
+# run common task on cluster node
+ansible-playbook /ansible/site.yml -t common
 
 # dry run
 ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
 ```
-
-# TODO java
-https://gist.github.com/andershedstrom/7c7d0bb5b9450c54a907
-https://github.com/vrischmann/ansible-role-java/blob/master/tasks/main.yml
-https://github.com/deveth0/ansible-oracle-java/blob/master/tasks/main.yml
-
-# TODO use tags
--- tags

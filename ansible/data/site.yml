@@ -1,6 +1,16 @@
 ---
 
-- name: common setup
+- name: test
   hosts: all
+  tasks:
+    - name: test uptime
+      shell: uptime
+  tags:
+    - test
+
+- name: common setup
+  hosts: cluster
   roles:
+    - common
+  tags:
     - common
