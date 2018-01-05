@@ -17,6 +17,7 @@ ansible cluster -m ping
 
 # gathering facts
 ansible all -m setup
+ansible ansible -m setup
 
 # specify inventory
 ansible all -i "/vagrant/data/hosts" -m ping
@@ -43,7 +44,16 @@ vagrant reload
 # install package
 ansible all -m apt -a "name=tree state=present" --become
 
-# playbooks
-ansible-playbook -i /ansible/hosts /ansible/site.yml --verbose
+# playbook
 ansible-playbook /ansible/site.yml
+# dry run
+ansible-playbook -i /ansible/hosts /ansible/site.yml --verbose --check --diff
 ```
+
+# TODO java
+https://gist.github.com/andershedstrom/7c7d0bb5b9450c54a907
+https://github.com/vrischmann/ansible-role-java/blob/master/tasks/main.yml
+https://github.com/deveth0/ansible-oracle-java/blob/master/tasks/main.yml
+
+# TODO use tags
+-- tags

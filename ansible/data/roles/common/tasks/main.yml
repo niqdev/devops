@@ -1,0 +1,14 @@
+---
+- name: add repository
+  tags:
+    - java
+  apt_repository:
+    repo: 'ppa:openjdk-r/ppa'
+    state: present
+
+- name: install openjdk
+  tags:
+    - java
+  apt:
+    name: openjdk-9-jdk
+    state: latest
