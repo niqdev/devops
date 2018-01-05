@@ -6,8 +6,8 @@ Documentation
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [Ansible](http://docs.ansible.com/ansible/latest/index.html)
 
+### Ad-Hoc Commands
 ```
-vagrant up
 vagrant ssh ansible
 
 # ping all nodes (default inventory /etc/ansible/hosts)
@@ -43,11 +43,18 @@ ansible all -m apt -a "update_cache=yes upgrade=dist" --become
 vagrant reload
 # install package
 ansible all -m apt -a "name=tree state=present" --become
+```
 
-# playbook
-ansible-playbook /ansible/site.yml
+### Playbooks
+```
+# run all
+ansible-playbook /ansible/site.yml --verbose
+
+# (tag) run package task only
+ansible-playbook /ansible/site.yml -t package
+
 # dry run
-ansible-playbook -i /ansible/hosts /ansible/site.yml --verbose --check --diff
+ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
 ```
 
 # TODO java

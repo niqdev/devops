@@ -1,14 +1,6 @@
 ---
-- name: add repository
-  tags:
-    - java
-  apt_repository:
-    repo: 'ppa:openjdk-r/ppa'
-    state: present
 
-- name: install openjdk
+- import_tasks: package.yml
   tags:
-    - java
-  apt:
-    name: openjdk-9-jdk
-    state: latest
+    - common
+    - package

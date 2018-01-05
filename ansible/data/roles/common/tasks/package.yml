@@ -1,0 +1,4 @@
+---
+
+- name: print uptime
+  shell: uptime

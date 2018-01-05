@@ -1,23 +1,6 @@
 ---
-- hosts: all
-  tasks:
-    - import_role:
-        name: common
-      tags:
-        - java
-        - TODO
 
-
-
-#TODO
-  tasks:
-    - name: install packages
-      become: yes
-      apt:
-        name: "{{ item }}"
-        state: present
-        update_cache: yes
-        cache_valid_time: 3600
-      with_items:
-       - jq
-       - tree
+- name: common setup
+  hosts: all
+  roles:
+    - common

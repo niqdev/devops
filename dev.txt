@@ -29,6 +29,8 @@ git init
 git add .
 git commit -m "first commit"
 
+TODO git push
+
 ########## docker ##########
 
 # temporary image for tests
@@ -133,7 +135,8 @@ docker rm -fv cassandra
 # generate file
 vagrant init
 
-# setup share
+cd ansible
+# setup share first time
 rm -fr .vagrant
 ./setup_share.sh
 tree .share
@@ -159,3 +162,6 @@ ping 192.168.100.12
 # test
 vagrant ssh ansible
 ansible all -i "/vagrant/data/hosts" -m ping
+
+# tutorial
+https://serversforhackers.com/c/an-ansible-tutorial
