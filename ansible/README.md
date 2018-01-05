@@ -59,6 +59,13 @@ ansible-playbook /ansible/site.yml -t package --verbose
 # run common task on cluster node
 ansible-playbook /ansible/site.yml -t common
 
+# setup docker
+ansible-playbook /ansible/site.yml -t docker
+# test docker
+vagrant ssh node-1
+sudo -i -u docker
+docker ps -a
+
 # dry run
 ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
 ```

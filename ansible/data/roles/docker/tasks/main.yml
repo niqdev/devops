@@ -1,0 +1,29 @@
+---
+
+- name: create docker group
+  group:
+    name: docker
+    state: present
+
+- name: create docker user
+  become: yes
+  user:
+    name: docker
+    shell: /bin/bash
+    group: docker
+    groups: sudo
+    append: yes
+
+- name: download setup script
+  become: yes
+  become_user: docker
+  get_url:
+    url: https://get.docker.com/
+    dest: /home/docker/get-docker.sh
+    mode: u+x
+
+- name: execute setup script
+  become: yes
+  become_method: sudo
+  become_user: docker
+  shell: /home/docker/get-docker.sh

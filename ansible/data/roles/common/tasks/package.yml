@@ -20,7 +20,7 @@
     - jq
     - tree
 
-- name: add repository
+- name: add java repository
   tags:
     - java
   become: yes

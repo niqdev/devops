@@ -14,3 +14,10 @@
     - common
   tags:
     - common
+
+- name: docker setup
+  hosts: docker
+  roles:
+    - docker
+  tags:
+    - docker
