@@ -3,4 +3,5 @@
 
 ansible/.vagrant
 ansible/.share
+ansible/data/site.retry
 cassandra/.cassandra
