@@ -4,8 +4,7 @@
   become: yes
   apt:
     update_cache: yes
-    # TODO variable
-    cache_valid_time: 3600
+    cache_valid_time: "{{ apt_cache }}"
     upgrade: dist
 
 - name: install common packages
@@ -14,8 +13,7 @@
     name: "{{ item }}"
     state: present
     update_cache: yes
-    # TODO variable
-    cache_valid_time: 3600
+    cache_valid_time: "{{ apt_cache }}"
   with_items:
     - jq
     - tree
