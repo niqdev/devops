@@ -12,6 +12,6 @@
 - name: add custom banner to motd
   become: yes
   template:
-    src: 10-custom-text
+    src: motd
     dest: /etc/update-motd.d/10-custom-text
     mode: 0755
