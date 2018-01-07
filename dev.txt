@@ -14,6 +14,13 @@ TODO
 [ ] flink
 [ ] (knox)
 
+TODO docs
+* https://hexo.io
+ - http://mkkhedawat.com
+ - https://svdb.co
+* https://gohugo.io
+ - >>> https://themes.gohugo.io/hugo-code-editor-theme/
+
 ########## TODO git_init.sh ##########
 
 # create directories and move into
