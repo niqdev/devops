@@ -202,8 +202,14 @@ https://serversforhackers.com/c/an-ansible-tutorial
 
 ########## spark ##########
 
+cd spark
+
 # generate file
 vagrant init
+
+vagrant up
+vagrant status
+vagrant ssh spark
 
 vagrant
 java
@@ -211,6 +217,7 @@ hadoop
 yarn
 spark
 
+TODO
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
 vagrant box add manning/spark-in-action spark-in-action-box.json
 vagrant init manning/spark-in-action
