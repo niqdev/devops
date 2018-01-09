@@ -10,6 +10,11 @@ cd ${CURRENT_PATH}
 
 echo "[+] setup hadoop"
 
-# TODO hadoop + yarn
+wget -P /tmp http://www-eu.apache.org/dist/hadoop/common/hadoop-2.7.5/hadoop-2.7.5.tar.gz
+
+tar -xvzf /tmp/hadoop-2.7.5.tar.gz -C /opt
+
+# export HADOOP_HOME=~/sw/hadoop-x.y.z
+# export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 echo "[-] setup hadoop"
