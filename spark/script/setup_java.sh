@@ -17,4 +17,9 @@ apt-get update && apt-get install -y \
   openjdk-8-jdk && \
   apt-get clean
 
+java -version
+
+# https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" | sudo tee --append /etc/profile.d/java.sh
+
 echo "[-] setup java"

@@ -212,12 +212,15 @@ vagrant box update
 
 vagrant up
 vagrant status
-vagrant ssh spark
+vagrant ssh
 # reload (halt + up) + re-provision
 vagrant reload --provision
 
 TODO
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
-vagrant box add manning/spark-in-action spark-in-action-box.json
+vagrant box add spark-in-action-box.json
 vagrant init manning/spark-in-action
 vagrant up
+vagrant halt
+vagrant destroy
+vagrant box remove manning/spark-in-action
