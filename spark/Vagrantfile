@@ -14,7 +14,5 @@ Vagrant.configure("2") do |config|
     vb.cpus = 1
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-    echo "hello spark"
-  SHELL
+  config.vm.provision "shell", path: "./script/setup_all.sh"
 end

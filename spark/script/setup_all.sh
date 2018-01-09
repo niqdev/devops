@@ -8,6 +8,8 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-sudo ./setup_java.sh
-sudo ./setup_hadoop.sh
-sudo ./setup_spark.sh
+BASE_PATH="/vagrant/script"
+
+sudo $BASE_PATH/setup_java.sh
+sudo $BASE_PATH/setup_hadoop.sh
+sudo $BASE_PATH/setup_spark.sh
