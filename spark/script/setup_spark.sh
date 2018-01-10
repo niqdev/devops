@@ -8,21 +8,23 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-SPARK_VERSION="spark-2.2.1"
-SPARK_PATH="$SPARK_VERSION-bin-hadoop2.7.tgz"
-
 echo "[+] setup spark"
 
-wget -P /tmp http://www-eu.apache.org/dist/spark/$SPARK_VERSION/$SPARK_PATH.tgz
+SPARK_VERSION="2.2.1"
+HADOOP_VERSION="2.7"
+SPARK_PATH="spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION"
+SPARK_DIST="$SPARK_PATH.tgz"
 
-tar -xvzf /tmp/$SPARK_PATH.tgz -C /opt
-rm /tmp/$SPARK_PATH.tgz
+wget -P /tmp "http://www-eu.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_DIST"
 
-sudo ln -s /opt/$SPARK_PATH /usr/local/spark
+tar -xvf /tmp/$SPARK_DIST -C /opt
+rm /tmp/$SPARK_DIST
 
-# TODO SPARK_HOME="/usr/local/spark"
+ln -s /opt/$SPARK_PATH /usr/local/spark
 
-# TODO verify signatures and checksums
-# scala version ?
+echo -e "SPARK_HOME=/usr/local/spark\nPATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/environment && \
+  source /etc/environment
+
+spark-shell --version
 
 echo "[-] setup spark"

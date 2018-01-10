@@ -10,22 +10,21 @@ cd ${CURRENT_PATH}
 
 echo "[+] setup hadoop"
 
-wget -P /tmp http://www-eu.apache.org/dist/hadoop/common/hadoop-2.7.5/hadoop-2.7.5.tar.gz
+HADOOP_VERSION="2.7.5"
+HADOOP_PATH="hadoop-$HADOOP_VERSION"
+HADOOP_DIST="$HADOOP_PATH.tar.gz"
 
-tar -xvzf /tmp/hadoop-2.7.5.tar.gz -C /opt
+wget -P /tmp http://www-eu.apache.org/dist/hadoop/common/$HADOOP_PATH/$HADOOP_DIST
 
-#???
-sudo ln -s /opt/hadoop-2.7.5 /usr/local/hadoop
+tar -xvzf /tmp/$HADOOP_DIST -C /opt
+rm /tmp/$HADOOP_DIST
 
-/opt/hadoop-2.7.5/bin/hadoop version
+ln -s /opt/$HADOOP_PATH /usr/local/hadoop
 
-# echo "export HADOOP_HOME=/usr/local/hadoop" | sudo tee --append /etc/profile.d/hadoop.sh
-# echo "export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin" | sudo tee --append /etc/profile.d/hadoop.sh
+# complete path PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+echo -e "HADOOP_HOME=/usr/local/hadoop\nPATH=\$PATH:\$HADOOP_HOME/bin" | tee --append /etc/environment && \
+  source /etc/environment
 
-# export HADOOP_HOME=~/sw/hadoop-x.y.z
-# export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-
-# https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04
-# http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
+hadoop version
 
 echo "[-] setup hadoop"
