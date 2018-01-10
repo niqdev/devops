@@ -11,5 +11,5 @@ cd ${CURRENT_PATH}
 BASE_PATH="/vagrant/script"
 
 sudo $BASE_PATH/setup_java.sh
-sudo $BASE_PATH/setup_hadoop.sh
-sudo $BASE_PATH/setup_spark.sh
+#sudo $BASE_PATH/setup_hadoop.sh
+#sudo $BASE_PATH/setup_spark.sh
