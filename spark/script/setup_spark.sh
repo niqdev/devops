@@ -15,16 +15,16 @@ HADOOP_VERSION="2.7"
 SPARK_PATH="spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION"
 SPARK_DIST="$SPARK_PATH.tgz"
 
-wget -P /tmp "http://www-eu.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_DIST"
+wget -q -P /tmp "http://www-eu.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_DIST"
 
 tar -xvf /tmp/$SPARK_DIST -C /opt
 rm /tmp/$SPARK_DIST
 
 ln -s /opt/$SPARK_PATH /usr/local/spark
 
-echo -e "SPARK_HOME=/usr/local/spark\nPATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/environment && \
-  source /etc/environment
+#echo -e "SPARK_HOME=/usr/local/spark\nPATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/environment && \
+#  source /etc/environment
 
-spark-shell --version
+#spark-shell --version
 
 echo "[-] setup spark"
