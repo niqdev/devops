@@ -21,10 +21,12 @@ rm /tmp/$HADOOP_DIST
 
 ln -s /opt/$HADOOP_PATH /usr/local/hadoop
 
-# complete path PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-#echo -e "HADOOP_HOME=/usr/local/hadoop\nPATH=\$PATH:\$HADOOP_HOME/bin" | tee --append /etc/environment && \
-#  source /etc/environment
+echo -e "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment && \
+  source /etc/environment
 
-#hadoop version
+echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
+  source /etc/profile.d/hadoop.sh
+
+hadoop version
 
 echo "[-] setup hadoop"

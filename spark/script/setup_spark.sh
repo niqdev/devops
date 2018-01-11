@@ -22,9 +22,12 @@ rm /tmp/$SPARK_DIST
 
 ln -s /opt/$SPARK_PATH /usr/local/spark
 
-#echo -e "SPARK_HOME=/usr/local/spark\nPATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/environment && \
-#  source /etc/environment
+echo -e "SPARK_HOME=/usr/local/spark" | tee --append /etc/environment && \
+  source /etc/environment
 
-#spark-shell --version
+echo -e "export PATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/profile.d/spark.sh && \
+  source /etc/profile.d/spark.sh
+
+spark-shell --version
 
 echo "[-] setup spark"
