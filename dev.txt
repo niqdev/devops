@@ -215,6 +215,7 @@ vagrant status
 vagrant ssh
 # reload (halt + up) + re-provision
 vagrant reload --provision
+vagrant destroy -f
 
 TODO
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
@@ -224,3 +225,7 @@ vagrant up
 vagrant halt
 vagrant destroy
 vagrant box remove manning/spark-in-action
+
+TODO
+http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html
+https://github.com/martinprobson/vagrant-hadoop-hive-spark
