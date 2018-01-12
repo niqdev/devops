@@ -10,10 +10,10 @@ cd ${CURRENT_PATH}
 
 echo "[+] setup java"
 
-apt-get update && apt-get upgrade -y
+apt-get -qq update && apt-get -qq upgrade -y
 add-apt-repository ppa:openjdk-r/ppa -y
 
-apt-get update && apt-get install -y \
+apt-get -qq update && apt-get -qq install -y \
   openjdk-8-jdk && \
   apt-get clean
 
