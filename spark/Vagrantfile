@@ -14,5 +14,12 @@ Vagrant.configure("2") do |config|
     vb.cpus = 1
   end
 
+  # NameNode
+  config.vm.network "forwarded_port", guest: 50070, host: 50070
+  # ResourceManager
+  config.vm.network "forwarded_port", guest: 8088, host: 8088
+  # history
+  config.vm.network "forwarded_port", guest: 19888, host: 19888
+
   config.vm.provision "shell", path: "./script/setup_all.sh"
 end
