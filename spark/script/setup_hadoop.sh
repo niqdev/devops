@@ -46,6 +46,7 @@ cat $VAGRANT_HOME/.ssh/id_rsa.pub >> $VAGRANT_HOME/.ssh/authorized_keys
 chmod 0600 $VAGRANT_HOME/.ssh/authorized_keys
 
 echo "[*] fix permissions"
+cp $GUEST_FILES_PATH/ssh-config $VAGRANT_HOME/.ssh/config
 chown -R vagrant:vagrant /opt/$HADOOP_PATH $VAGRANT_HOME/.ssh
 
 echo "[*] init hdfs"
