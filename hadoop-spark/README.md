@@ -1,7 +1,7 @@
-# spark
+# hadoop-spark
 
 ```
-cd spark
+cd hadoop-spark
 
 vagrant up
 vagrant ssh

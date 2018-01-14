@@ -200,9 +200,9 @@ ansible all -i "/vagrant/data/hosts" -m ping
 # tutorial
 https://serversforhackers.com/c/an-ansible-tutorial
 
-########## spark ##########
+########## hadoop-spark ##########
 
-cd spark
+cd hadoop-spark
 
 # generate file
 vagrant init
