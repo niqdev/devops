@@ -10,12 +10,14 @@ cd ${CURRENT_PATH}
 
 echo "[+] setup java"
 
-apt-get -qq update && apt-get -qq upgrade -y
-add-apt-repository ppa:openjdk-r/ppa -y
+LOG_PATH="/tmp/apt-java.log"
 
-# https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
-apt-get -qq update && apt-get -qq install -o=Dpkg::Use-Pty=0 -y \
-  openjdk-8-jdk && \
+apt-get -qq update && apt-get -qq upgrade -y
+add-apt-repository ppa:openjdk-r/ppa -y &> $LOG_PATH
+
+apt-get -qq update && apt-get install -y \
+  openjdk-8-jdk \
+  &> $LOG_PATH && \
   apt-get clean
 
 java -version
