@@ -10,13 +10,35 @@ cd ${CURRENT_PATH}
 
 echo "[*] whoami: $(whoami)"
 echo "[*] pwd: $(pwd)"
+#su --login vagrant
+
+sudo -u vagrant bash << EOF
+  echo "[*] whoami1: $(whoami)"
+  whoami
+EOF
+
+su vagrant << EOF
+  echo "[*] whoami2: $(whoami)"
+  whoami
+EOF
 
 BASE_PATH="/vagrant/script"
 
-sudo $BASE_PATH/setup_java.sh
-sudo $BASE_PATH/setup_hadoop.sh
-sudo $BASE_PATH/setup_spark.sh
+#sudo $BASE_PATH/setup_java.sh
+#sudo $BASE_PATH/setup_hadoop.sh
+#sudo $BASE_PATH/setup_spark.sh
 
 #echo "[*] create user"
 #useradd --create-home --password hadoop --shell /bin/bash hadoop
 #su --login hadoop
+
+GUEST_FILES_PATH="/vagrant/file"
+VAGRANT_HOME="/home/vagrant"
+ssh-keygen -t rsa -P '' -f $VAGRANT_HOME/.ssh/id_rsa
+cat $VAGRANT_HOME/.ssh/id_rsa.pub >> $VAGRANT_HOME/.ssh/authorized_keys
+chmod 0600 $VAGRANT_HOME/.ssh/authorized_keys
+chown -R vagrant:vagrant $VAGRANT_HOME/.ssh
+# TODO switch user
+sudo -u vagrant bash << EOF
+  ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost exit
+EOF
