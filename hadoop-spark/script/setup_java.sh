@@ -12,7 +12,7 @@ echo "[+] setup java"
 
 LOG_PATH="/tmp/apt-java.log"
 
-apt-get -qq update && apt-get -qq upgrade -y
+apt-get -qq update #&& apt-get -qq upgrade -y
 add-apt-repository ppa:openjdk-r/ppa -y &> $LOG_PATH
 
 apt-get -qq update && apt-get install -y \

@@ -46,7 +46,7 @@ cat $VAGRANT_HOME/.ssh/id_rsa.pub >> $VAGRANT_HOME/.ssh/authorized_keys
 chmod 0600 $VAGRANT_HOME/.ssh/authorized_keys
 cp $GUEST_FILES_PATH/ssh-config $VAGRANT_HOME/.ssh/config
 #service sshd restart
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost exit
+#ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost exit
 #ssh-keyscan 0.0.0.0 >> $VAGRANT_HOME/.ssh/known_hosts
 #https://linuxcommando.blogspot.ie/2008/10/how-to-disable-ssh-host-key-checking.html
 
@@ -54,9 +54,13 @@ echo "[*] fix permissions"
 chown -R vagrant:vagrant /opt/$HADOOP_PATH $VAGRANT_HOME/.ssh
 
 echo "[*] init hdfs"
-hdfs namenode -format
-start-dfs.sh
-jps
-hadoop version
+su --login vagrant << EOF
+  source /etc/environment
+  source /etc/profile.d/hadoop.sh
+  /usr/local/hadoop/bin/hdfs namenode -format
+  /usr/local/hadoop/sbin/start-dfs.sh
+  jps
+  hadoop version
+EOF
 
 echo "[-] setup hadoop"
