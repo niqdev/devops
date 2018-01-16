@@ -31,6 +31,9 @@ echo -e "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment && \
 echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
   source /etc/profile.d/hadoop.sh
 
+echo "[*] create data directory"
+mkdir -p /var/hadoop/hadoop-datanode /var/hadoop/hadoop-namenode
+
 HOST_CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
 FILES=( "core-site.xml" "hdfs-site.xml" )
 for FILE in "${FILES[@]}"
@@ -46,8 +49,9 @@ cat $VAGRANT_HOME/.ssh/id_rsa.pub >> $VAGRANT_HOME/.ssh/authorized_keys
 chmod 0600 $VAGRANT_HOME/.ssh/authorized_keys
 cp $GUEST_FILES_PATH/ssh-config $VAGRANT_HOME/.ssh/config
 
+# TODO change user
 echo "[*] fix permissions"
-chown -R vagrant:vagrant /opt/$HADOOP_PATH $VAGRANT_HOME/.ssh
+chown -R vagrant:vagrant /opt/$HADOOP_PATH $VAGRANT_HOME/.ssh /var/hadoop
 
 echo "[*] init hdfs"
 su --login vagrant << EOF
