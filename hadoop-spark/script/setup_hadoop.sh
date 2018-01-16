@@ -54,7 +54,7 @@ su --login vagrant << EOF
   source /etc/environment
   source /etc/profile.d/hadoop.sh
   /usr/local/hadoop/bin/hdfs namenode -format
-  /usr/local/hadoop/sbin/start-dfs.sh
+  #/usr/local/hadoop/sbin/start-dfs.sh
   jps
   hadoop version
 EOF

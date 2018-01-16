@@ -8,7 +8,9 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-#./setup_user.sh
-./setup_java.sh
-./setup_hadoop.sh
-./setup_spark.sh
+function start_daemons {
+  # TODO
+  # /usr/local/hadoop/sbin/start-dfs.sh
+}
+
+start_daemons

@@ -8,7 +8,5 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-#./setup_user.sh
-./setup_java.sh
-./setup_hadoop.sh
-./setup_spark.sh
+echo "[*] create user"
+useradd --create-home --password hadoop --shell /bin/bash hadoop
