@@ -9,8 +9,8 @@ CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
 function start_daemons {
-  # TODO
-  # /usr/local/hadoop/sbin/start-dfs.sh
+  start-dfs.sh
+  jps
 }
 
 start_daemons

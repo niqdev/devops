@@ -1,4 +1,3 @@
-<!-- http://hadoop.apache.org/docs/r2.7.5/hadoop-project-dist/hadoop-common/core-default.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>

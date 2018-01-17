@@ -34,6 +34,7 @@ echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append
 echo "[*] create data directory"
 mkdir -p /var/hadoop/hadoop-datanode /var/hadoop/hadoop-namenode
 
+# http://hadoop.apache.org/docs/r2.7.5/hadoop-project-dist/hadoop-common/core-default.xml
 HOST_CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
 FILES=( "core-site.xml" "hdfs-site.xml" )
 for FILE in "${FILES[@]}"
@@ -57,9 +58,7 @@ echo "[*] init hdfs"
 su --login vagrant << EOF
   source /etc/environment
   source /etc/profile.d/hadoop.sh
-  /usr/local/hadoop/bin/hdfs namenode -format
-  #/usr/local/hadoop/sbin/start-dfs.sh
-  jps
+  hdfs namenode -format
   hadoop version
 EOF
 
