@@ -14,8 +14,9 @@ vagrant ssh
 /usr/local/hadoop/etc/hadoop
 ```
 
-* NameNode http://localhost:50070
-* ResourceManager http://localhost:8088
+* namenode *http://localhost:50070*
+* resource manager *http://localhost:8088*
+* history server *http://localhost:19888*
 
 ### HDFS
 
