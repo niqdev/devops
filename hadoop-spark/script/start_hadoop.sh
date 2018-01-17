@@ -10,6 +10,7 @@ cd ${CURRENT_PATH}
 
 function start_daemons {
   start-dfs.sh
+  start-yarn.sh
   jps
 }
 
