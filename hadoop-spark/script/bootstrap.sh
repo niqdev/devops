@@ -10,4 +10,4 @@ cd ${CURRENT_PATH}
 
 BASE_PATH="/vagrant/script"
 
-source $BASE_PATH/start_hadoop.sh
+su --login vagrant $BASE_PATH/start_hadoop.sh

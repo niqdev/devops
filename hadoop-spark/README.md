@@ -5,6 +5,13 @@ cd hadoop-spark
 
 vagrant up
 vagrant ssh
+
+# logs
+/usr/local/hadoop/logs
+# data
+/var/hadoop
+# config
+/usr/local/hadoop/etc/hadoop
 ```
 
 ### HDFS
