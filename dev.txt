@@ -1,20 +1,20 @@
 DEV info
 
 TODO
-[ ] static site from markdown
+[x] static site from markdown
 [ ] docker-machine
 [x] ansible
 [x] zookeeper
 [x] kafka
 [x] cassandra
 [ ] elastic-search
-[ ] hadoop
-[ ] yarn
+[x] hadoop + hdfs + yarn
 [ ] oozie
 [ ] ganglia
 [ ] spark
 [ ] flink
 [ ] (knox)
+[ ] kong
 
 TODO docs
 * https://hexo.io

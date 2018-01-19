@@ -1,7 +1,8 @@
 # Provision Tools
 
-A collection of Docker and Vagrant images mainly of distributed systems for local development and quick prototyping.
+A collection of Docker and Vagrant images mainly to provision distributed systems for local development and quick prototyping.
 
+<!--
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
@@ -15,3 +16,4 @@ A collection of Docker and Vagrant images mainly of distributed systems for loca
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+-->
