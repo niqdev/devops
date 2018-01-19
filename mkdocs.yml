@@ -1,1 +1,13 @@
-site_name: My Docs
+site_name: Provision Tools
+site_author: niqdev
+repo_url: https://github.com/niqdev/provision-tools
+theme: readthedocs
+
+pages:
+    - Home: index.md
+    - Ansible: ansible.md
+    - Cassandra: cassandra.md
+    - Hadoop and Spark: hadoop-spark.md
+    - Kafka: kafka.md
+    - Zookeeper: zookeeper.md
+    - Other: other.md
