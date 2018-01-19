@@ -1,7 +1,7 @@
 DEV info
 
 TODO
-[ ] hugo/hexo static site from markdown
+[ ] static site from markdown
 [ ] docker-machine
 [x] ansible
 [x] zookeeper
@@ -64,6 +64,14 @@ vim config.toml
 hugo -t code-editor
 hugo new posts/my-first-post.md
 hugo server -D
+
+########## mkdocs ##########
+
+pip install mkdocs
+mkdocs new .
+mkdocs serve
+mkdocs build --clean
+mkdocs gh-deploy
 
 ########## docker ##########
 
