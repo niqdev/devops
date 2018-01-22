@@ -6,8 +6,8 @@ theme: readthedocs
 pages:
     - Home: index.md
     - Ansible: ansible.md
-    - Cassandra: cassandra.md
     - Hadoop and Spark: hadoop-spark.md
-    - Kafka: kafka.md
+    - Cassandra: cassandra.md
     - Zookeeper: zookeeper.md
+    - Kafka: kafka.md
     - Other: other.md
