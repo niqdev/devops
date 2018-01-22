@@ -6,6 +6,42 @@ Documentation
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [Ansible](http://docs.ansible.com/ansible/latest/index.html)
 
+########## ansible + vagrant ##########
+
+# generate file
+vagrant init
+
+cd ansible
+# setup share first time
+rm -fr .vagrant
+./setup_share.sh
+tree .share
+
+vagrant up
+vagrant status
+vagrant ssh ansible
+vagrant ssh node-1
+vagrant destory
+# restart
+vagrant reload
+
+ping ansible.local
+ping ip-192-168-100-11.local
+ping 192.168.100.12
+
+# shared paths
+(provision-tool) /vagrant
+(host $HOME) /local
+(data) /ansible
+(.share) /data
+
+# test
+vagrant ssh ansible
+ansible all -i "/vagrant/data/hosts" -m ping
+
+# tutorial
+https://serversforhackers.com/c/an-ansible-tutorial
+
 ### Ad-Hoc Commands
 ```
 vagrant ssh ansible
