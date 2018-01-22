@@ -96,13 +96,89 @@ The following paths are shared with the boxes
 
 * `/vagrant` provision-tool
 * `/local` host $HOME
-* `/ansible` data
-* `/data` .share
+* `/ansible` data *(ansible only)*
+* `/data` .share *(node only)*
 
 ## Ad-Hoc Commands
 
-TODO
+Access the ansible box with
+```bash
+vagrant ssh ansible
+```
+
+Below a list of examples
+```bash
+
+# ping all nodes (default inventory /etc/ansible/hosts)
+ansible all -m ping
+ansible ansible -m ping
+ansible cluster -m ping
+
+# ping all nodes (specify inventory)
+ansible all -i "/vagrant/data/hosts" -m ping
+
+# gathering facts
+ansible all -m setup
+ansible ansible -m setup
+
+# specify host and user
+ansible ip-192-168-100-11.local -m ping -u vagrant
+
+# execute command
+ansible all -a "/bin/echo hello"
+ansible all -a "uptime"
+ansible all -a "/bin/date"
+# do NOT reboot vagrant through ansible (use vagrant reload)
+ansible cluster -a "/sbin/reboot" --become
+
+# shell module
+ansible all -m shell -a "pwd"
+# be carefull to quotes
+ansible all -m shell -a 'echo $HOME'
+
+# update && upgrade
+ansible all -m apt -a "update_cache=yes upgrade=dist" --become
+# restart after upgrade
+vagrant reload
+# install package
+ansible all -m apt -a "name=tree state=present" --become
+```
 
 ## Playbooks
 
-TODO
+Access the ansible box with
+```bash
+vagrant ssh ansible
+```
+
+Below a list of examples
+
+```bash
+# test uptime on all node
+ansible-playbook /ansible/site.yml --tags=test --verbose
+
+# update & upgrade only cluster nodes
+ansible-playbook /ansible/site.yml -t package --skip-tags=java --verbose
+
+# install packages on cluster nodes
+ansible-playbook /ansible/site.yml -t package --verbose
+
+# run common task on cluster node
+ansible-playbook /ansible/site.yml -t common
+
+# setup docker
+ansible-playbook /ansible/site.yml -t docker
+# test docker
+vagrant ssh node-1
+sudo -i -u docker
+docker ps -a
+
+# custom banner
+ansible-playbook /ansible/site.yml -t motd
+
+# setup all infrastructure at once
+ansible-playbook /ansible/site.yml
+
+# dry run
+ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
+```
