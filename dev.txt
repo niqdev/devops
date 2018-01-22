@@ -65,14 +65,6 @@ hugo -t code-editor
 hugo new posts/my-first-post.md
 hugo server -D
 
-########## mkdocs ##########
-
-pip install mkdocs
-mkdocs new .
-mkdocs serve
-mkdocs build --clean
-mkdocs gh-deploy
-
 ########## docker ##########
 
 # temporary image for tests

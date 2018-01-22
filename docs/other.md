@@ -2,17 +2,63 @@
 
 ## Docker
 
+Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.
+
+Offical documentation
+
+* [Docker](https://docs.docker.com)
+
+### Basic Docker commands
+
 TODO
+```bash
+TODO
+```
+
+### Docker Machine
+
+TODO
+```bash
+TODO
+```
 
 ## Vagrant
 
-TODO
+Vagrant is a tool for building and managing virtual machine environments in a single workflow.
+
+Offical documentation
+
+* [Vagrant](https://www.vagrantup.com/docs)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+### Basic Vagrant commands
+
+Setup project creating a Vagrantfile
+```bash
+vagrant init
+```
+
+Boot and connect to the default virtual machine
+```bash
+vagrant up
+vagrant status
+vagrant ssh
+```
+
+Delete virtual machine without prompt
+```bash
+vagrant destory -f
+```
 
 ## MkDocs
 
-Documentations
+MkDocs is a static site generator.
+
+Offical documentation
 
 * [MkDocs](http://www.mkdocs.org)
+
+### Basic MkDocs commands
 
 Install
 ```bash
