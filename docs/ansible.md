@@ -1,6 +1,8 @@
 # Ansible
 
-Setup 4 Ubuntu boxes, 1 with ansible and 3 nodes to run the playbooks against.
+Setup 4 Ubuntu boxes, 1 with Ansible and 3 nodes to run the playbooks against.
+
+TODO link to files and tree directory structure
 
 Requirements
 
