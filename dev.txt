@@ -16,13 +16,6 @@ TODO
 [ ] (knox)
 [ ] kong
 
-TODO docs
-* https://hexo.io
- - http://mkkhedawat.com
- - https://svdb.co
-* https://gohugo.io
- - >>> https://themes.gohugo.io/hugo-code-editor-theme/
-
 ########## TODO git_init.sh ##########
 
 # create directories and move into
@@ -40,36 +33,21 @@ git commit -m "first commit"
 
 TODO git push
 
-########## hugo ##########
-
-https://gohugo.io/
-# tutorial
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-hugo-a-static-site-generator-on-ubuntu-14-04
-https://gohugo.io/hosting-and-deployment/hosting-on-github/
-
-# release page
-https://github.com/gohugoio/hugo/releases
-# install on ubuntu 64 version
-wget https://github.com/gohugoio/hugo/releases/download/v0.32.3/hugo_0.32.3_Linux-64bit.deb
-sudo dpkg --install hugo*.deb
-rm hugo*.deb
-hugo version
-
-TODO
-hugo new site my-site
-cd my-site
-git clone git@github.com:aubm/hugo-code-editor-theme.git themes/code-editor
-# change
-vim config.toml
-hugo -t code-editor
-hugo new posts/my-first-post.md
-hugo server -D
-
 ########## docker ##########
 
 # temporary image for tests
 docker run --rm --name phusion phusion/baseimage:latest
 docker exec -it phusion bash
+
+TODO
+```
+docker build -t provision/base ./base
+docker-compose -f docker-compose-local.yml up
+
+docker exec -it zookeeper-local bash
+docker exec -it kafka-local bash
+docker exec -it cassandra-local bash
+```
 
 ########## base ##########
 
