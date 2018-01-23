@@ -113,6 +113,8 @@ Create Gradle project
 ```bash
 mkdir -p PROJECT_NAME && cd $_
 gradle init --type java-library
+
+./gradlew clean build
 ```
 
 ## Books
