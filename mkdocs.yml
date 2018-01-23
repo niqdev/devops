@@ -2,6 +2,7 @@ site_name: Provision Tools
 site_author: niqdev
 repo_url: https://github.com/niqdev/provision-tools
 theme: readthedocs
+google_analytics: ['UA-68888222-4', 'niqdev.github.io/provision-tools']
 
 pages:
     - Home: index.md
