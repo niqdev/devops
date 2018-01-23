@@ -16,6 +16,8 @@ TODO
 [ ] (knox)
 [ ] kong
 
+TODO mkdocs google analytics + tags
+
 ########## TODO git_init.sh ##########
 
 # create directories and move into
