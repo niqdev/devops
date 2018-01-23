@@ -85,6 +85,36 @@ Deploy to github
 mkdocs gh-deploy
 ```
 
+## SDKMAN!
+
+SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.
+
+Offical documentation
+
+* [SDKMAN!](http://sdkman.io)
+
+Setup
+```
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+```
+
+### Gradle
+
+Setup
+```bash
+sdk list gradle
+sdk install gradle 4.4.1
+gradle -version
+```
+
+Create Gradle project
+```bash
+mkdir -p PROJECT_NAME && cd $_
+gradle init --type java-library
+```
+
 ## Books
 
 TODO
