@@ -8,8 +8,8 @@ ansible/data/site.retry
 
 cassandra/.cassandra
 
-**.gradle/
-**/build/
+.gradle/
+build/
 
 .idea/
 *.iml
