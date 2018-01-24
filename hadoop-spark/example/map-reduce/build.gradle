@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+mainClassName = "com.github.niqdev.WordCount"
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+}
+
+dependencies {
+    compile group: 'org.apache.hadoop', name: 'hadoop-client', version: '2.7.5'
+}
