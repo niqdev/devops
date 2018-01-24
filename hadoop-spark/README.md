@@ -23,35 +23,7 @@ Example
 
 http://hadoop.apache.org/docs/r2.7.5/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
 
-```bash
-# create base directory using hdfs
-hdfs dfs -mkdir -p /user/ubuntu
 
-# create example directory
-hadoop fs -mkdir -p /user/ubuntu/word-count/input /user/ubuntu/word-count/output
-
-# list directory
-hadoop fs -ls -h -R /
-hadoop fs -ls -h -R /user/ubuntu
-
-# create sample files
-echo "Hello World Bye World" > file01
-echo "Hello Hadoop Goodbye Hadoop" > file02
-
-# copy from local to hdfs
-hadoop fs -copyFromLocal file01 /user/ubuntu/word-count/input
-hadoop fs -put file02 /user/ubuntu/word-count/input
-
-# verify copied files
-hadoop fs -ls -h -R /user/ubuntu
-hadoop fs -cat /user/ubuntu/word-count/input/file01
-hadoop fs -cat /user/ubuntu/word-count/input/file02
-hadoop fs -cat /user/ubuntu/word-count/input/*
-
-# TODO
-hadoop jar mapreducedemo.jar ./input.txt output
-hadoop jar wc.jar WordCount /user/joe/wordcount/input /user/joe/wordcount/output
-```
 
 UI
 
