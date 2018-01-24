@@ -14,9 +14,110 @@
 
 > **Ganglia** A monitoring system for Hadoop
 
+Offical documentation
+
+* [Hadoop](https://hadoop.apache.org)
+* [Oozie](https://oozie.apache.org)
+* [Ganglia](http://ganglia.info)
+
+Requirement
+
+* Vagrant
+* VirtualBox
+
+The following guide explains how to provision a Single Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/provision-tools/blob/master/hadoop-spark/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
+
+## Directory structure
+
+All the commands are executed in this directory `cd hadoop-spark`
+
+```bash
+hadoop-spark/
+├── example
+│   └── map-reduce
+│       ├── build
+│       │   ...
+│       │   └── libs
+│       │      └── map-reduce.jar
+│       ├── build.gradle
+│       ├── gradlew
+│       └── src
+│           ├── main
+│           │   └── java
+│           │       └── com
+│           │           └── github
+│           │               └── niqdev
+│           │                   ├── IntSumReducer.java
+│           │                   ├── TokenizerMapper.java
+│           │                   └── WordCount.java
+│           └── test
+│               └── ...
+├── file
+│   ├── hadoop-core-site.xml
+│   ├── hadoop-hdfs-site.xml
+│   ├── mapred-site.xml
+│   ├── ssh-config
+│   └── yarn-site.xml
+├── README.md
+├── script
+│   ├── bootstrap.sh
+│   ├── setup_all.sh
+│   ├── setup_hadoop.sh
+│   ├── setup_java.sh
+│   ├── setup_spark.sh
+│   ├── setup_user.sh
+│   └── start_hadoop.sh
+└── Vagrantfile
+```
+
+## Web UI
+
+* namenode [http://localhost:50070](http://localhost:50070)
+* resource manager [http://localhost:8088](http://localhost:8088)
+* history server [http://localhost:19888](http://localhost:19888)
+* set log level temporarily [http://localhost:8088/logLevel](http://localhost:8088/logLevel)
+* JVM stack traces [http://localhost:8088/stacks](http://localhost:8088/stacks)
+* namenode metrics [http://localhost:50070/jmx](http://localhost:50070/jmx)
+
+## Setup
+
+Start the box and verify the status
+```bash
+vagrant up
+vagrant status
+```
+*Note that the first time it could take a while*
+
+Access the box
+```bash
+vagrant ssh
+```
+
+Useful paths
+```bash
+# logs
+/usr/local/hadoop/logs
+# data
+/var/hadoop
+# config
+/usr/local/hadoop/etc/hadoop
+```
+
+## HDFS
+
+### Admin
+
+```bash
+# filesystem statistics
+hdfs dfsadmin -report
+
+# filesystem check
+hdfs fsck /
+```
+
 ## Example
 
-### MapReduce Job
+### MapReduce WordCount Job
 
 ```bash
 # create base directory using hdfs
@@ -57,6 +158,31 @@ hadoop fs -cat /user/ubuntu/word-count/output/part-r-00000
 
 # delete directory to run it again
 hadoop fs -rm -R /user/ubuntu/word-count/output
+```
+
+### Benchmarking MapReduce with TeraSort
+
+```bash
+# generate random data
+hadoop jar \
+  $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar \
+  teragen 1000 random-data
+
+# run terasort benchmark
+hadoop jar \
+  $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar \
+  terasort random-data sorted-data
+
+# validate data
+hadoop jar \
+  $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar \
+  teravalidate sorted-data report
+
+# useful commands
+hadoop fs -ls -h -R .
+hadoop fs -rm -r random-data
+hadoop fs -cat random-data/part-m-00000
+hadoop fs -cat sorted-data/part-r-00000
 ```
 
 ### Spark Job

@@ -8,20 +8,18 @@ Documentation
 * [Tutorial](https://serversforhackers.com/c/an-ansible2-tutorial)
 * [Playbook example](https://github.com/phred/ansible-examples/blob/master/pedantically_commented_playbook.yml)
 
-The following guide explain how to provision Ansible locally and play with it. The current [Vagrantfile](https://github.com/niqdev/provision-tools/blob/master/ansible/Vagrantfile) is configured to setup 4 Ubuntu boxes, 1 with Ansible and 3 nodes to run playbooks against it. Feel free to modify it at your own will.
-
 Requirement
 
 * Vagrant
 * VirtualBox
 
-For more details about Vagrant please check [here](other/#vagrant)
+The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/provision-tools/blob/master/ansible/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
 
 ## Directory structure
 
 All the commands are executed in this directory `cd ansible`
 
-```
+```bash
 ansible/
 ├── .share
 │   ├── node-1
@@ -71,7 +69,6 @@ From now on start the boxes with
 ```bash
 vagrant up
 ```
-
 *Note that the first time it could take a while*
 
 Verify status of the boxes with
