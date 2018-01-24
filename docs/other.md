@@ -122,3 +122,5 @@ gradle init --type java-library
 * [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
 * [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (4th)(2015) by Tom White
 * [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći
+* [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (4th)(2016) By Eben Hewitt, Jeff Carpenter
+* [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) By Gwen Shapira, Neha Narkhede, Todd Palino
