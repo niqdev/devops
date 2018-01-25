@@ -45,8 +45,18 @@ vagrant status
 vagrant ssh
 ```
 
-Delete virtual machine without prompt
+Useful commands
 ```bash
+# shut down gracefully
+vagrant halt
+
+# reload (halt + up) + re-provision
+vagrant reload --provision
+
+# update box
+vagrant box update
+
+# delete virtual machine without prompt
 vagrant destory -f
 ```
 

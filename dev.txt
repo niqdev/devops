@@ -15,6 +15,7 @@ TODO
 [ ] flink
 [ ] (knox)
 [ ] kong
+[ ] parquet https://parquet.apache.org/
 
 TODO mkdocs google analytics + tags
 
@@ -146,21 +147,6 @@ docker rm -fv cassandra
 
 ########## hadoop-spark ##########
 
-cd hadoop-spark
-
-# generate file
-vagrant init
-
-# update bento box
-vagrant box update
-
-vagrant up
-vagrant status
-vagrant ssh
-# reload (halt + up) + re-provision
-vagrant reload --provision
-vagrant destroy -f
-
 TODO
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
 vagrant box add spark-in-action-box.json
@@ -170,6 +156,4 @@ vagrant halt
 vagrant destroy
 vagrant box remove manning/spark-in-action
 
-TODO
-http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
