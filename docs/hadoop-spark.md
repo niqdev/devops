@@ -10,6 +10,8 @@
 
 > **Avro** A data serialization system
 
+> **Parquet** A columnar storage format that can efficiently store nested data
+
 > **Oozie** A workflow scheduler system to manage Hadoop jobs
 
 > **Ganglia** A monitoring system for Hadoop
@@ -17,6 +19,7 @@
 Offical documentation
 
 * [Hadoop](https://hadoop.apache.org)
+* [Parquet](https://parquet.apache.org)
 * [Oozie](https://oozie.apache.org)
 * [Ganglia](http://ganglia.info)
 

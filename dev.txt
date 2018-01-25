@@ -9,15 +9,13 @@ TODO
 [x] cassandra
 [ ] elastic-search
 [x] hadoop + hdfs + yarn
+[ ] avro + parquet
 [ ] oozie
 [ ] ganglia
 [ ] spark
 [ ] flink
 [ ] (knox)
 [ ] kong
-[ ] parquet https://parquet.apache.org/
-
-TODO mkdocs google analytics + tags
 
 ########## TODO git_init.sh ##########
 
