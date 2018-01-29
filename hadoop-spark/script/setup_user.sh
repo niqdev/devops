@@ -8,5 +8,13 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-echo "[*] create user"
+echo "[+] setup user"
+
+groupadd hadoop
 useradd --create-home --password hadoop --shell /bin/bash hadoop
+usermod --append --groups sudo,hadoop username
+
+id hadoop
+groups hadoop
+
+echo "[-] setup user"

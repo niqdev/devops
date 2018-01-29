@@ -4,6 +4,7 @@
 # https://app.vagrantup.com/bento
 BOX_IMAGE = "bento/ubuntu-16.04"
 
+VAGRANT_COMMAND = ARGV[0]
 Vagrant.configure("2") do |config|
 
   config.vm.box = BOX_IMAGE
@@ -11,6 +12,11 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 1024
     vb.cpus = 1
+  end
+
+  if VAGRANT_COMMAND == "ssh"
+    config.ssh.username = 'hadoop'
+    config.ssh.private_key_path = "./data/vagrant_rsa"
   end
 
   # NameNode
@@ -21,5 +27,5 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 19888, host: 19888
 
   config.vm.provision "shell", path: "./script/setup_all.sh"
-  config.vm.provision "shell", path: "./script/bootstrap.sh", run: 'always'
+  #config.vm.provision "shell", path: "./script/bootstrap.sh", run: 'always'
 end
