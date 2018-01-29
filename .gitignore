@@ -5,8 +5,8 @@
 
 ansible/.share
 ansible/data/site.retry
-
 cassandra/.cassandra
+hadoop-spark/data/
 
 .gradle/
 build/
