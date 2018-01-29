@@ -83,4 +83,15 @@ function init_hdfs {
 EOF
 }
 
+function main {
+  setup_dist
+  update_env
+  setup_config
+  setup_ssh
+  update_permission
+  init_hdfs
+}
+
+main
+
 echo "[-] setup hadoop"
