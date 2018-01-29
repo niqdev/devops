@@ -34,6 +34,7 @@ function config_ssh {
   cat $KEY_PATH.pub >> $SSH_PATH/authorized_keys
   chmod 0600 $SSH_PATH/authorized_keys
   cp $FILE_PATH/ssh-config $SSH_PATH/config
+  chown -R $USER_NAME:$USER_NAME $SSH_PATH
 }
 
 function main {
