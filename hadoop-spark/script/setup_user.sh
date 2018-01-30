@@ -16,6 +16,7 @@ FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/data"
 
 USER_NAME="hadoop"
+HOME_PATH="/home/$USER_NAME"
 
 ##############################
 
@@ -32,7 +33,7 @@ function create_user {
 }
 
 function config_ssh {
-  local SSH_PATH="/home/$USER_NAME/.ssh"
+  local SSH_PATH="$HOME_PATH/.ssh"
   echo "[*] config ssh"
 
   mkdir -p $SSH_PATH
@@ -42,9 +43,15 @@ function config_ssh {
   chown -R $USER_NAME:$USER_NAME $SSH_PATH
 }
 
+function config_profile {
+  sudo sed -i -r "s/alias ll='ls -alF'/alias ll='ls -alh'/" $HOME_PATH/.bashrc
+  source $HOME_PATH/.bashrc
+}
+
 function main {
   create_user $USER_NAME
   config_ssh
+  config_profile
 }
 
 main
