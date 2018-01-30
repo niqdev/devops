@@ -11,8 +11,10 @@ cd ${CURRENT_PATH}
 ##############################
 
 BOX_NAME="default"
-KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
+
+# common
+KEY_NAME="hadoop_rsa"
 
 ##############################
 
