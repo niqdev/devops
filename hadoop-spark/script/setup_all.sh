@@ -15,7 +15,7 @@ BASE_PATH="/vagrant/script"
 ##############################
 
 source $BASE_PATH/setup_user.sh
-#source $BASE_PATH/setup_java.sh
+source $BASE_PATH/setup_java.sh
 #source $BASE_PATH/setup_hadoop.sh
 #source $BASE_PATH/setup_spark.sh
 

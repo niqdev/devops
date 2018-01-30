@@ -8,11 +8,15 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-echo "[+] setup java"
+##############################
 
 LOG_PATH="/tmp/apt-java.log"
 
-apt-get -qq update #&& apt-get -qq upgrade -y
+##############################
+
+echo "[+] setup java"
+
+apt-get -qq update && apt-get -qq upgrade -y
 add-apt-repository ppa:openjdk-r/ppa -y &> $LOG_PATH
 
 apt-get -qq update && apt-get install -y \
