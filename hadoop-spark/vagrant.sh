@@ -11,7 +11,7 @@ cd ${CURRENT_PATH}
 ##############################
 
 BOX_NAME="default"
-KEY_NAME="vagrant_rsa"
+KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
 
 ##############################
@@ -45,8 +45,8 @@ function start_vagrant {
   echo -e "[*] name=$NAME | status=$STATUS"
 
   case $STATUS in
-    # not created | poweroff
-    "NOT"|"POWEROFF")
+    # not created | poweroff | aborted
+    "NOT"|"POWEROFF"|"ABORTED")
       vagrant up && vagrant ssh
       ;;
     # running
