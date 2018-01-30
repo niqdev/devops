@@ -14,7 +14,6 @@ cd ${CURRENT_PATH}
 KEY_NAME="hadoop_rsa"
 FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/data"
-
 USER_NAME="hadoop"
 HOME_PATH="/home/$USER_NAME"
 

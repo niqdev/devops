@@ -8,32 +8,36 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-echo "[+] setup hadoop"
+##############################
 
+# common
 FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/data"
-VAGRANT_HOME="/home/vagrant"
+USER_NAME="hadoop"
+HOME_PATH="/home/$USER_NAME"
 
 HADOOP_VERSION="2.7.5"
 HADOOP_NAME="hadoop-$HADOOP_VERSION"
-HADOOP_DIST="$HADOOP_NAME.tar.gz"
-HADOOP_TMP_PATH="$DATA_PATH/$HADOOP_DIST"
+
+##############################
+
+echo "[+] setup hadoop"
 
 function download_dist {
-  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_DIST"
-
+  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME.tar.gz"
   echo "[*] download dist"
   wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD
 }
 
 function setup_dist {
-  if [ ! -e $HADOOP_TMP_PATH ]; then
+  local HADOOP_DIST_PATH="$DATA_PATH/$HADOOP_NAME*"
+  echo "[*] setup dist"
+
+  if [ ! -e $HADOOP_DIST_PATH ]; then
     download_dist
   fi
 
-  echo "[*] setup dist"
-  tar -xzf $HADOOP_TMP_PATH -C /opt
-  #rm $HADOOP_TMP_PATH
+  tar -xzf $HADOOP_DIST_PATH -C /opt
   ln -s /opt/$HADOOP_NAME /usr/local/hadoop
 }
 
@@ -60,22 +64,24 @@ function setup_config {
 }
 
 function setup_ssh {
+  local SSH_PATH="$HOME_PATH/.ssh"
   echo "[*] setup ssh"
-  ssh-keygen -t rsa -P '' -f $VAGRANT_HOME/.ssh/id_rsa
-  cat $VAGRANT_HOME/.ssh/id_rsa.pub >> $VAGRANT_HOME/.ssh/authorized_keys
-  chmod 0600 $VAGRANT_HOME/.ssh/authorized_keys
-  cp $FILE_PATH/ssh-config $VAGRANT_HOME/.ssh/config
+
+  ssh-keygen -t rsa -P '' -f $SSH_PATH/id_rsa
+  cat $SSH_PATH/id_rsa.pub >> $SSH_PATH/authorized_keys
+  chmod 0600 $SSH_PATH/authorized_keys
+  cp $FILE_PATH/ssh-config $SSH_PATH/config
+  chown -R $USER_NAME:$USER_NAME $SSH_PATH
 }
 
-# TODO change user
 function update_permission {
   echo "[*] update permission"
-  chown -R vagrant:vagrant /opt/$HADOOP_NAME $VAGRANT_HOME/.ssh /var/hadoop
+  chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME /var/hadoop
 }
 
 function init_hdfs {
   echo "[*] init hdfs"
-  su --login vagrant << EOF
+  su --login $USER_NAME << EOF
     source /etc/environment
     source /etc/profile.d/hadoop.sh
     hdfs namenode -format
