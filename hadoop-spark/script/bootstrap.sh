@@ -8,6 +8,12 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-BASE_PATH="/vagrant/script"
+##############################
 
-su --login vagrant $BASE_PATH/start_hadoop.sh
+# common
+SCRIPT_PATH="/vagrant/script"
+USER_NAME="hadoop"
+
+##############################
+
+su --login $USER_NAME $SCRIPT_PATH/start_hadoop.sh
