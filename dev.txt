@@ -155,3 +155,36 @@ vagrant destroy
 vagrant box remove manning/spark-in-action
 
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
+
+########## avro ##########
+
+https://avro.apache.org/docs/current/gettingstartedjava.html
+
+http://www.foundweekends.org/giter8/setup.html
+
+avro-1.8.2.jar
+avro-tools-1.8.2.jar
+
+http://www-eu.apache.org/dist/avro/stable/java/avro-1.8.2.jar
+http://www-eu.apache.org/dist/avro/stable/java/avro-tools-1.8.2.jar
+
+# jackson
+core-asl
+mapper-asl
+
+avro-maven-plugin
+
+user.avsc
+{"namespace": "example.avro",
+ "type": "record",
+ "name": "User",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "favorite_number",  "type": ["int", "null"]},
+     {"name": "favorite_color", "type": ["string", "null"]}
+ ]
+}
+
+# compile schema to generate code
+java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
+
