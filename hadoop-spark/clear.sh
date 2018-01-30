@@ -10,6 +10,11 @@ cd ${CURRENT_PATH}
 
 ##############################
 
+# common
+KEY_NAME="hadoop_rsa"
+
+##############################
+
 explosion() {
 cat<<"EOT"
                              ____
@@ -34,6 +39,6 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   vagrant destroy -f
-  rm -fr .vagrant data/hadoop_rsa*
+  rm -fr .vagrant data/$KEY_NAME*
   explosion
 fi
