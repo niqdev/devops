@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
   if VAGRANT_COMMAND == "ssh"
     config.ssh.username = 'hadoop'
-    config.ssh.private_key_path = "./data/vagrant_rsa"
+    config.ssh.private_key_path = "./data/hadoop_rsa"
   end
 
   # NameNode

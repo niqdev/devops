@@ -12,7 +12,7 @@ cd ${CURRENT_PATH}
 
 USER_NAME="hadoop"
 FILE_PATH="/vagrant/file"
-KEY_PATH="/vagrant/data/vagrant_rsa"
+KEY_PATH="/vagrant/data/hadoop_rsa"
 
 ##############################
 
