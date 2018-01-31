@@ -1,4 +1,101 @@
-# Hadoop and Spark
+# Hadoop
+
+TODO
+
+## Directory structure
+
+All the commands are executed in this directory `cd hadoop`
+
+```bash
+TODO
+```
+
+## Setup
+
+Create and start a Multi Node Hadoop Cluster
+```bash
+./run.sh
+```
+*Note that the first time it could take a while*
+
+Access the cluster
+```bash
+vagrant ssh namenode
+vagrant ssh resource-manager
+vagrant ssh node-1
+vagrant ssh node-2
+vagrant ssh node-3
+```
+
+Destroy cluster
+```bash
+./clear.sh
+```
+
+## HDFS and MapReduce
+
+TODO
+
+
+TODO
+
+## Spark
+
+TODO
+
+## Flink
+
+TODO
+
+## Avro
+
+TODO
+
+## Parquet
+
+TODO
+
+## Flume
+
+TODO
+
+## Sqoop
+
+TODO
+
+## Pig
+
+TODO
+
+## Hive
+
+TODO
+
+## Crunch
+
+TODO
+
+## HBase
+
+TODO
+
+## Oozie
+
+TODO
+
+## Ganglia
+
+TODO
+
+## Zeppelin
+
+TODO
+
+## Knox
+
+TODO
+
+<!--
 
 > **HDFS** A distributed file system that provides high-throughput access to application data
 
@@ -191,3 +288,5 @@ hadoop fs -cat sorted-data/part-r-00000
 ### Spark Job
 
 TODO
+
+-->

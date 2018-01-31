@@ -7,7 +7,7 @@ google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 pages:
     - Home: index.md
     - Ansible: ansible.md
-    - Hadoop and Spark: hadoop-spark.md
+    - Hadoop: hadoop.md
     - Cassandra: cassandra.md
     - Zookeeper: zookeeper.md
     - Kafka: kafka.md

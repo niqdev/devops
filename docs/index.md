@@ -5,7 +5,7 @@ A collection of Docker and Vagrant images mainly to provision distributed system
 Documentations
 
 * [Ansible](ansible.md)
-* [Hadoop and Spark](hadoop-spark.md)
+* [Hadoop](hadoop.md)
 * [Cassandra](cassandra.md)
 * [Zookeeper](zookeeper.md)
 * [Kafka](kafka.md)
