@@ -8,13 +8,6 @@ TODO
 [x] kafka
 [x] cassandra
 [ ] elastic-search
-[x] hadoop + hdfs + yarn
-[ ] avro + parquet
-[ ] oozie
-[ ] ganglia
-[ ] spark
-[ ] flink
-[ ] (knox)
 [ ] kong
 
 ########## TODO git_init.sh ##########
