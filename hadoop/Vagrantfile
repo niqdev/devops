@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-DATA_PATH = "./data"
+DATA_PATH = ".data"
 KEY_PATH = DATA_PATH + "/hadoop_rsa"
 
 # https://app.vagrantup.com/bento

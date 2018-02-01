@@ -12,7 +12,7 @@ cd ${CURRENT_PATH}
 
 # common
 FILE_PATH="/vagrant/file"
-DATA_PATH="/vagrant/data"
+DATA_PATH="/vagrant/.data"
 USER_NAME="hadoop"
 HOME_PATH="/home/$USER_NAME"
 
@@ -26,9 +26,9 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 #  && md5sum -c <<<"$(cat $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz.md5)  $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz"
 
 function download_dist {
-  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME{.tar.gz,.tar.gz.md5}"
+  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME"
   echo "[*] download dist"
-  wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD
+  wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD{.tar.gz,.tar.gz.mds}
 }
 
 function setup_dist {
