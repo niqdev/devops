@@ -13,6 +13,7 @@ cd ${CURRENT_PATH}
 # common
 KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
+BOX_NAME="hadoop"
 
 ##############################
 
@@ -43,8 +44,7 @@ then
   rm -frv \
     .vagrant \
     ${DATA_PATH}/$KEY_NAME* \
-    ${DATA_PATH}/namenode \
-    ${DATA_PATH}/resource-manager \
+    ${DATA_PATH}/$BOX_NAME \
     ${DATA_PATH}/node-{1,2,3}
   explosion
 fi

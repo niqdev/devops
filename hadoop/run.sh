@@ -13,8 +13,7 @@ cd ${CURRENT_PATH}
 # common
 KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
-
-BOX_NAME="namenode"
+BOX_NAME="master"
 
 ##############################
 
@@ -22,15 +21,6 @@ BOX_NAME="namenode"
 function verify_requirement {
   local BIN=$1
   command -v $BIN >/dev/null 2>&1 || (echo "[-] error: $BIN not found" && exit 1)
-}
-
-# hardcode paths
-function init_folder {
-  echo "[*] init folder"
-  mkdir -pv \
-    ${DATA_PATH}/namenode \
-    ${DATA_PATH}/resource-manager \
-    ${DATA_PATH}/node-{1,2,3}
 }
 
 # param #1: <name>
@@ -58,16 +48,26 @@ function start_vagrant {
   case $STATUS in
     # not created | poweroff | aborted
     "NOT"|"POWEROFF"|"ABORTED")
-      vagrant up && vagrant ssh namenode
+      vagrant up && vagrant ssh $NAME
       ;;
     # running
     "RUNNING")
-      vagrant ssh namenode
+      vagrant ssh $NAME
       ;;
     *)
       echo "[-] error: vagrant status unknown"
       ;;
   esac
+}
+
+##############################
+
+# hardcode paths
+function init_folder {
+  echo "[*] init folder"
+  mkdir -pv \
+    ${DATA_PATH}/$BOX_NAME \
+    ${DATA_PATH}/node-{1,2,3}
 }
 
 function main {

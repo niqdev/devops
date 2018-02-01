@@ -181,3 +181,8 @@ user.avsc
 # compile schema to generate code
 java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
 
+http://hadoop.apache.org/docs/r2.7.5/hadoop-project-dist/hadoop-common/ClusterSetup.html
+https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
+https://www.edureka.co/blog/how-to-set-up-hadoop-cluster-with-hdfs-high-availability/
+https://www.tutorialspoint.com/hadoop/hadoop_multi_node_cluster.htm
+
