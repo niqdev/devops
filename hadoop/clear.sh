@@ -11,9 +11,9 @@ cd ${CURRENT_PATH}
 ##############################
 
 # common
-KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
-BOX_NAME="hadoop"
+KEY_NAME="hadoop_rsa"
+BOX_NAME="master"
 
 ##############################
 

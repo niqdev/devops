@@ -11,8 +11,8 @@ cd ${CURRENT_PATH}
 ##############################
 
 # common
-KEY_NAME="hadoop_rsa"
 DATA_PATH="data"
+KEY_NAME="hadoop_rsa"
 BOX_NAME="master"
 
 ##############################
@@ -62,7 +62,6 @@ function start_vagrant {
 
 ##############################
 
-# hardcode paths
 function init_folder {
   echo "[*] init folder"
   mkdir -pv \

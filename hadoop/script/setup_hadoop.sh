@@ -23,8 +23,12 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 echo "[+] setup hadoop"
 
+# TODO
+#wget $URL_DOWNLOAD_BIN{.tar.gz,.tar.gz.md5} -P $TMP_DIRECTORY \
+#  && md5sum -c <<<"$(cat $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz.md5)  $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz"
+
 function download_dist {
-  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME.tar.gz"
+  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME{.tar.gz,.tar.gz.md5}"
   echo "[*] download dist"
   wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD
 }

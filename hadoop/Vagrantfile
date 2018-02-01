@@ -1,10 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# common
-DATA_PATH = "data"
+DATA_PATH = "./data"
 KEY_PATH = DATA_PATH + "/hadoop_rsa"
-USER_NAME = "hadoop"
 
 # https://app.vagrantup.com/bento
 BOX_IMAGE = "bento/ubuntu-16.04"
@@ -21,7 +19,7 @@ Vagrant.configure("2") do |config|
   end
 
   if VAGRANT_COMMAND == "ssh"
-    config.ssh.username = USER_NAME
+    config.ssh.username = "hadoop"
     config.ssh.private_key_path = KEY_PATH
   end
 
@@ -35,7 +33,6 @@ Vagrant.configure("2") do |config|
     # MapReduce Job History server
     node.vm.network "forwarded_port", guest: 19888, host: 19888
 
-    node.vm.provision "file", source: KEY_PATH, destination: "$HOME/.ssh/id_rsa"
     node.vm.synced_folder DATA_PATH + "/master", "/data"
   end
 
@@ -48,8 +45,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.provision "shell", path: "./script/setup_user.sh"
+  config.vm.provision "shell", path: "./script/setup_ubuntu.sh"
   # TODO
-  #config.vm.provision "shell", path: "./script/setup_all.sh"
   #config.vm.provision "shell", path: "./script/bootstrap.sh", run: 'always'
 end
