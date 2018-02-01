@@ -69,17 +69,22 @@ function config_ssh {
 
 function config_profile {
   echo "[*] config profile"
-  sudo sed -i -r "s/alias ll='ls -alF'/alias ll='ls -alh'/" $HOME_PATH/.bashrc
+  sed -i -r "s/alias ll='ls -alF'/alias ll='ls -alh'/" $HOME_PATH/.bashrc
   source $HOME_PATH/.bashrc
+}
+
+function config_host {
+  cat $FILE_PATH/hadoop/hosts >> /etc/hosts
 }
 
 function main {
   echo "[+] setup ubuntu"
-  #apt_update
-  #setup_java
+  apt_update
+  setup_java
   create_user $USER_NAME
   config_ssh
   config_profile
+  config_host
   echo "[-] setup ubuntu"
 }
 
