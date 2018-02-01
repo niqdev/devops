@@ -20,11 +20,12 @@ Create and start a Multi Node Hadoop Cluster
 
 Access the cluster
 ```bash
-vagrant ssh namenode
-vagrant ssh resource-manager
+vagrant ssh master
+ssh hadoop@172.16.0.10 -i data/hadoop_rsa
+
+# 3 nodes
 vagrant ssh node-1
-vagrant ssh node-2
-vagrant ssh node-3
+ssh hadoop@172.16.0.101 -i data/hadoop_rsa
 ```
 
 Destroy cluster
