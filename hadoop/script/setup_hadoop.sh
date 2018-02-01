@@ -21,14 +21,10 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 ##############################
 
-# TODO
-#wget $URL_DOWNLOAD_BIN{.tar.gz,.tar.gz.md5} -P $TMP_DIRECTORY \
-#  && md5sum -c <<<"$(cat $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz.md5)  $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz"
-
 function download_dist {
-  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME"
+  local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME.tar.gz"
   echo "[*] download dist"
-  wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD{.tar.gz,.tar.gz.mds}
+  wget -q -P $DATA_PATH $HADOOP_MIRROR_DOWNLOAD
 }
 
 function setup_dist {
@@ -51,6 +47,7 @@ function update_env {
     source /etc/profile.d/hadoop.sh
 }
 
+# TODO copy config folder
 function setup_config {
   echo "[*] create data directory"
   mkdir -p /var/hadoop/hadoop-datanode /var/hadoop/hadoop-namenode
@@ -70,6 +67,7 @@ function update_permission {
   chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME /var/hadoop
 }
 
+# TODO use hostname==master
 function init_hdfs {
   echo "[*] init hdfs"
   su --login $USER_NAME << EOF
