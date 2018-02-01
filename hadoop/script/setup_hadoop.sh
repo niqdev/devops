@@ -21,8 +21,6 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 ##############################
 
-echo "[+] setup hadoop"
-
 # TODO
 #wget $URL_DOWNLOAD_BIN{.tar.gz,.tar.gz.md5} -P $TMP_DIRECTORY \
 #  && md5sum -c <<<"$(cat $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz.md5)  $TMP_DIRECTORY/$FILE_NAME-bin.tar.gz"
@@ -67,17 +65,6 @@ function setup_config {
   done
 }
 
-function setup_ssh {
-  local SSH_PATH="$HOME_PATH/.ssh"
-  echo "[*] setup ssh"
-
-  ssh-keygen -t rsa -P '' -f $SSH_PATH/id_rsa
-  cat $SSH_PATH/id_rsa.pub >> $SSH_PATH/authorized_keys
-  chmod 0600 $SSH_PATH/authorized_keys
-  cp $FILE_PATH/ssh/config $SSH_PATH/config
-  chown -R $USER_NAME:$USER_NAME $SSH_PATH
-}
-
 function update_permission {
   echo "[*] update permission"
   chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME /var/hadoop
@@ -94,14 +81,15 @@ EOF
 }
 
 function main {
+  echo "[+] setup hadoop"
   setup_dist
   update_env
-  setup_config
-  setup_ssh
-  update_permission
-  init_hdfs
+  #setup_config
+  #update_permission
+  #init_hdfs
+  echo "[-] setup hadoop"
 }
 
 main
 
-echo "[-] setup hadoop"
+

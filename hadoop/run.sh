@@ -20,6 +20,7 @@ BOX_NAME="master"
 # param #1: <bin>
 function verify_requirement {
   local BIN=$1
+  echo "[*] verify requirement: $BIN"
   command -v $BIN >/dev/null 2>&1 || (echo "[-] error: $BIN not found" && exit 1)
 }
 
@@ -43,7 +44,7 @@ function init_key_pair {
 function start_vagrant {
   local NAME=$1
   local STATUS=$(vagrant status | grep -m 1 $NAME | awk '{ print toupper($2) }')
-  echo -e "[*] name=$NAME | status=$STATUS"
+  echo -e "[*] start vagrant: name=$NAME | status=$STATUS"
 
   case $STATUS in
     # not created | poweroff | aborted
