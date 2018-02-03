@@ -1,6 +1,6 @@
-site_name: Provision Tools
+site_name: DevOps Lab
 site_author: niqdev
-repo_url: https://github.com/niqdev/provision-tools
+repo_url: https://github.com/niqdev/devops-lab
 theme: readthedocs
 google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 

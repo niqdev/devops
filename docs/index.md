@@ -1,6 +1,6 @@
-# Provision Tools
+# DevOps Lab
 
-A collection of Docker and Vagrant images mainly to provision distributed systems for local development and quick prototyping.
+A collection of Docker and Vagrant images mainly to provision distributed systems for local development, learning purpose and quick prototyping.
 
 Documentations
 
