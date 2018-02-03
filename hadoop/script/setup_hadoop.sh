@@ -47,10 +47,14 @@ function update_env {
     source /etc/profile.d/hadoop.sh
 }
 
-# TODO copy config folder
+# TODO copy config folder + permission + share
 function setup_config {
   echo "[*] create data directory"
-  mkdir -p /var/hadoop/hadoop-datanode /var/hadoop/hadoop-namenode
+  mkdir -pv \
+    /var/hadoop/hadoop-datanode \
+    /var/hadoop/hadoop-namenode \
+    /var/hadoop/mr-history/tmp \
+    /var/hadoop/mr-history/done
   
   local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
   local FILES=( "core-site.xml" "hdfs-site.xml" )

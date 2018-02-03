@@ -5,4 +5,22 @@
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
     </property>
+
+    <!-- MapReduce Job History server -->
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>history:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>history:19888</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>/var/hadoop/mr-history/tmp</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>/var/hadoop/mr-history/done</value>
+    </property>
 </configuration>

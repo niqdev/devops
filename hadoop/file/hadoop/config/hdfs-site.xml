@@ -3,14 +3,14 @@
 <configuration>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>file:///var/hadoop/hadoop-namenode</value>
+        <value>file:///var/hadoop/namenode</value>
+    </property>
+    <property>
+        <name>dfs.namenode.checkpoint.dir</name>
+        <value>file:///var/hadoop/secondary</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>file:///var/hadoop/hadoop-datanode</value>
-    </property>
-    <property>
-        <name>dfs.replication</name>
-        <value>1</value>
+        <value>file:///var/hadoop/datanode</value>
     </property>
 </configuration>
