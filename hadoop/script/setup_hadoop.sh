@@ -10,11 +10,9 @@ cd ${CURRENT_PATH}
 
 ##############################
 
-# common
 FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/.data"
 USER_NAME="hadoop"
-HOME_PATH="/home/$USER_NAME"
 
 HADOOP_VERSION="2.7.5"
 HADOOP_NAME="hadoop-$HADOOP_VERSION"
@@ -37,6 +35,7 @@ function setup_dist {
 
   tar -xzf $HADOOP_DIST_PATH -C /opt
   ln -s /opt/$HADOOP_NAME /usr/local/hadoop
+  chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME
 }
 
 function update_env {
@@ -47,48 +46,52 @@ function update_env {
     source /etc/profile.d/hadoop.sh
 }
 
-# TODO copy config folder + permission + share
 function setup_config {
+  local TMP_DATA_PATH="/var/hadoop"
+  local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
+  local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" )
+
   echo "[*] create data directory"
   mkdir -pv \
-    /var/hadoop/hadoop-datanode \
-    /var/hadoop/hadoop-namenode \
-    /var/hadoop/mr-history/tmp \
-    /var/hadoop/mr-history/done
+    $TMP_DATA_PATH/hadoop-datanode \
+    $TMP_DATA_PATH/hadoop-namenode \
+    $TMP_DATA_PATH/mr-history/tmp \
+    $TMP_DATA_PATH/mr-history/done
   
-  local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
-  local FILES=( "core-site.xml" "hdfs-site.xml" )
+  ln -s $TMP_DATA_PATH $DATA_PATH
+  
   for FILE in "${FILES[@]}"
   do
     echo "[*] update config: $FILE"
     mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
-    cp $FILE_PATH/hadoop-$FILE $CONFIG_PATH/$FILE
+    cp $FILE_PATH/hadoop/config/$FILE $CONFIG_PATH/$FILE
   done
+
+  chown -R $USER_NAME:$USER_NAME \
+    $HADOOP_HOME \
+    $TMP_DATA_PATH
 }
 
-function update_permission {
-  echo "[*] update permission"
-  chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME /var/hadoop
-}
-
-# TODO use hostname==master
 function init_hdfs {
-  echo "[*] init hdfs"
-  su --login $USER_NAME << EOF
-    source /etc/environment
-    source /etc/profile.d/hadoop.sh
-    hdfs namenode -format
-    hadoop version
-EOF
+  local HOSTNAME=$(hostname)
+  echo "[*] init hdfs: $HOSTNAME"
+
+  case $HOSTNAME in
+    "master")
+      echo "[+] TODO master"
+      ;;
+    *)
+      echo "[+] TODO all"
+      ;;
+  esac
 }
 
 function main {
   echo "[+] setup hadoop"
   setup_dist
   update_env
-  #setup_config
-  #update_permission
-  #init_hdfs
+  setup_config
+  init_hdfs
   echo "[-] setup hadoop"
 }
 

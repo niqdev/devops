@@ -10,7 +10,6 @@ cd ${CURRENT_PATH}
 
 ##############################
 
-# common
 DATA_PATH=".data"
 KEY_NAME="hadoop_rsa"
 BOX_NAME="master"

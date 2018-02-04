@@ -60,10 +60,14 @@ function config_ssh {
   echo "[*] config ssh"
 
   mkdir -p $SSH_PATH
+  # default name to avoid -i parameter
   cp $DATA_PATH/$KEY_NAME $SSH_PATH/id_rsa
+  # passphraseless
   cat $DATA_PATH/$KEY_NAME.pub >> $SSH_PATH/authorized_keys
-  chmod 0600 $SSH_PATH/id_rsa $SSH_PATH/authorized_keys
+  # avoid prompt first time
   cp $FILE_PATH/ssh/config $SSH_PATH/config
+  # update permissions
+  chmod 0600 $SSH_PATH/id_rsa $SSH_PATH/authorized_keys
   chown -R $USER_NAME:$USER_NAME $SSH_PATH
 }
 
