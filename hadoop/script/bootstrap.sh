@@ -10,7 +10,6 @@ cd ${CURRENT_PATH}
 
 ##############################
 
-# common
 SCRIPT_PATH="/vagrant/script"
 USER_NAME="hadoop"
 

@@ -84,7 +84,7 @@ function config_host {
 
 function main {
   echo "[+] setup ubuntu"
-  apt_update
+  #apt_update
   setup_java
   create_user $USER_NAME
   config_ssh

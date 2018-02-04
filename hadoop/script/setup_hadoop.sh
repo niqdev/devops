@@ -49,7 +49,7 @@ function update_env {
 function setup_config {
   local TMP_DATA_PATH="/var/hadoop"
   local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
-  local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" )
+  local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "masters" "slaves" )
 
   echo "[*] create data directory"
   mkdir -pv \
@@ -58,12 +58,14 @@ function setup_config {
     $TMP_DATA_PATH/mr-history/tmp \
     $TMP_DATA_PATH/mr-history/done
   
-  ln -s $TMP_DATA_PATH $DATA_PATH
+  # TODO
+  #sudo ln -s $TMP_DATA_PATH $DATA_PATH
   
   for FILE in "${FILES[@]}"
   do
     echo "[*] update config: $FILE"
-    mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
+    # rename only if exists
+    [ -e $CONFIG_PATH/$FILE ] && mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
     cp $FILE_PATH/hadoop/config/$FILE $CONFIG_PATH/$FILE
   done
 
@@ -75,13 +77,14 @@ function setup_config {
 function init_hdfs {
   local HOSTNAME=$(hostname)
   echo "[*] init hdfs: $HOSTNAME"
+  hadoop version
 
   case $HOSTNAME in
     "master")
-      echo "[+] TODO master"
+      sudo -i -u $USER_NAME hdfs namenode -format
       ;;
     *)
-      echo "[+] TODO all"
+      # nothing to do
       ;;
   esac
 }
