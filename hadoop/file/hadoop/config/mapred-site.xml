@@ -17,10 +17,10 @@
     </property>
     <property>
         <name>mapreduce.jobhistory.intermediate-done-dir</name>
-        <value>/var/hadoop/mr-history/tmp</value>
+        <value>file:///var/hadoop/mr-history/tmp</value>
     </property>
     <property>
         <name>mapreduce.jobhistory.done-dir</name>
-        <value>/var/hadoop/mr-history/done</value>
+        <value>file:///var/hadoop/mr-history/done</value>
     </property>
 </configuration>

@@ -38,14 +38,6 @@ function setup_dist {
   chown -R $USER_NAME:$USER_NAME /opt/$HADOOP_NAME
 }
 
-function update_env {
-  echo "[*] update env"
-  echo -e "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment && \
-    source /etc/environment
-  echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
-    source /etc/profile.d/hadoop.sh
-}
-
 function setup_config {
   local TMP_DATA_PATH="/var/hadoop"
   local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
@@ -53,13 +45,13 @@ function setup_config {
 
   echo "[*] create data directory"
   mkdir -pv \
-    $TMP_DATA_PATH/hadoop-datanode \
-    $TMP_DATA_PATH/hadoop-namenode \
+    $TMP_DATA_PATH/namenode \
+    $TMP_DATA_PATH/secondary \
+    $TMP_DATA_PATH/datanode \
     $TMP_DATA_PATH/mr-history/tmp \
-    $TMP_DATA_PATH/mr-history/done
-  
-  # TODO
-  #sudo ln -s $TMP_DATA_PATH $DATA_PATH
+    $TMP_DATA_PATH/mr-history/done \
+    $TMP_DATA_PATH/log \
+    $TMP_DATA_PATH/log/app
   
   for FILE in "${FILES[@]}"
   do
@@ -69,9 +61,21 @@ function setup_config {
     cp $FILE_PATH/hadoop/config/$FILE $CONFIG_PATH/$FILE
   done
 
+  # important final slash to be recursive
   chown -R $USER_NAME:$USER_NAME \
-    $HADOOP_HOME \
-    $TMP_DATA_PATH
+    $HADOOP_HOME/ \
+    $TMP_DATA_PATH/
+}
+
+function update_env {
+  echo "[*] update env"
+  # find files containing word
+  # grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
+
+  echo -e "HADOOP_HOME=/usr/local/hadoop\nHADOOP_LOG_DIR=/var/hadoop/log" | tee --append /etc/environment && \
+    source /etc/environment
+  echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
+    source /etc/profile.d/hadoop.sh
 }
 
 function init_hdfs {
@@ -92,8 +96,8 @@ function init_hdfs {
 function main {
   echo "[+] setup hadoop"
   setup_dist
-  update_env
   setup_config
+  update_env
   init_hdfs
   echo "[-] setup hadoop"
 }

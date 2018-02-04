@@ -42,6 +42,16 @@ function setup_java {
     source /etc/environment
 }
 
+function setup_packages {
+  local LOG_PATH="/tmp/apt-packages.log"
+  echo "[*] setup packages"
+
+  apt-get -qq update && apt-get install -y \
+    tree \
+    &> $LOG_PATH && \
+    apt-get clean
+}
+
 # param #1: <name>
 function create_user {
   local NAME=$1
@@ -86,6 +96,7 @@ function main {
   echo "[+] setup ubuntu"
   #apt_update
   setup_java
+  setup_packages
   create_user $USER_NAME
   config_ssh
   config_profile
