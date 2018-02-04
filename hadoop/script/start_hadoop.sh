@@ -11,10 +11,21 @@ cd ${CURRENT_PATH}
 echo "[+] start hadoop"
 
 function start_daemons {
-  start-dfs.sh
-  start-yarn.sh
-  mr-jobhistory-daemon.sh start historyserver
-  jps
+  local HOSTNAME=$(hostname)
+  echo "[*] init hdfs: $HOSTNAME"
+  hadoop version
+
+  case $HOSTNAME in
+    "master")
+      start-dfs.sh
+      start-yarn.sh
+      mr-jobhistory-daemon.sh start historyserver
+      jps
+      ;;
+    *)
+      jps
+      ;;
+  esac
 }
 
 start_daemons

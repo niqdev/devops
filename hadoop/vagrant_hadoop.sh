@@ -60,6 +60,25 @@ function start_vagrant {
   esac
 }
 
+explosion() {
+cat<<"EOT"
+                             ____
+                     __,-~~/~    `---.
+                   _/_,---(      ,    )
+               __ /        <    /   )  \___
+- ------===;;;'====------------------===;;;===----- -  -
+                  \/  ~"~"~"~"~"~\~"~)~"/
+                  (_ (   \  (     >    \)
+                   \_( _ <         >_>'
+                      ~ `-i' ::>|--"
+                          I;|.|.|
+                         <|i::|i|`.
+                        (` ^'"`-' ")
+------------------------------------------------------------------
+
+EOT
+}
+
 ##############################
 
 function init_folder {
@@ -69,7 +88,7 @@ function init_folder {
     ${DATA_PATH}/node-{1,2,3}
 }
 
-function main {
+function vagrant-hadoop-start {
   verify_requirement vagrant
   verify_requirement ssh-keygen
 
@@ -78,4 +97,17 @@ function main {
   start_vagrant $BOX_NAME
 }
 
-main
+function vagrant-hadoop-destroy {
+  read -p "Are you sure? [y/n]" -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    vagrant destroy -f
+    rm -frv \
+      .vagrant \
+      ${DATA_PATH}/$KEY_NAME* \
+      ${DATA_PATH}/$BOX_NAME \
+      ${DATA_PATH}/node-{1,2,3}
+    explosion
+  fi
+}

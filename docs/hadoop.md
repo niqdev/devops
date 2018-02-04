@@ -12,9 +12,14 @@ TODO
 
 ## Setup
 
+Import the script
+```bash
+source vagrant_hadoop.sh
+```
+
 Create and start a Multi Node Hadoop Cluster
 ```bash
-./run.sh
+vagrant-hadoop-start
 ```
 *Note that the first time it could take a while*
 
@@ -28,9 +33,9 @@ vagrant ssh node-1
 ssh hadoop@172.16.0.101 -i data/hadoop_rsa
 ```
 
-Destroy cluster
+Destroy the cluster
 ```bash
-./clear.sh
+vagrant-hadoop-destroy
 ```
 
 ## HDFS and MapReduce
