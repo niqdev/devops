@@ -88,7 +88,7 @@ function init_folder {
     ${DATA_PATH}/node-{1,2,3}
 }
 
-function vagrant-hadoop-start {
+function hadoop-start {
   verify_requirement vagrant
   verify_requirement ssh-keygen
 
@@ -97,7 +97,7 @@ function vagrant-hadoop-start {
   start_vagrant $BOX_NAME
 }
 
-function vagrant-hadoop-destroy {
+function hadoop-destroy {
   read -p "Are you sure? [y/n]" -n 1 -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
