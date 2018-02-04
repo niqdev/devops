@@ -12,20 +12,24 @@ echo "[+] start hadoop"
 
 function start_daemons {
   local HOSTNAME=$(hostname)
-  echo "[*] init hdfs: $HOSTNAME"
+  echo "[*] start daemons: $HOSTNAME"
   hadoop version
 
   case $HOSTNAME in
     "master")
-      start-dfs.sh
-      start-yarn.sh
+      # Secondary NameNode is started on the nodes specified in /usr/local/hadoop/etc/hadoop/masters file
+      hadoop-daemon.sh --script hdfs start namenode
+      yarn-daemon.sh start resourcemanager
+      yarn-daemon.sh start proxyserver
       mr-jobhistory-daemon.sh start historyserver
-      jps
       ;;
     *)
-      jps
+      hadoop-daemons.sh --script hdfs start datanode
+      yarn-daemons.sh start nodemanager
       ;;
   esac
+
+  jps
 }
 
 start_daemons
