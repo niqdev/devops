@@ -48,7 +48,8 @@ function start_vagrant {
   case $STATUS in
     # not created | poweroff | aborted
     "NOT"|"POWEROFF"|"ABORTED")
-      vagrant up && vagrant ssh $NAME
+      vagrant up --debug &> .vagrant/debug.log
+      #vagrant up && vagrant ssh $NAME
       ;;
     # running
     "RUNNING")
