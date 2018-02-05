@@ -96,6 +96,14 @@ function config_host {
   cat $FILE_PATH/hadoop/hosts >> /etc/hosts
 }
 
+function setup_motd {
+  local MOTD_PATH="/etc/update-motd.d"
+  echo "[*] setup motd"
+  rm -fr $MOTD_PATH/10-help-text
+  cp $FILE_PATH/motd $MOTD_PATH/10-custom-text
+  chmod 0755 $MOTD_PATH/10-custom-text
+}
+
 function main {
   echo "[+] setup ubuntu"
   #apt_update
@@ -105,6 +113,7 @@ function main {
   config_ssh
   config_profile
   config_host
+  setup_motd
   echo "[-] setup ubuntu"
 }
 

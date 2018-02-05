@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "\nHostname: \033[1;31m$(hostname -s)\033[0m"
+echo "Uptime:$(uptime)\n"
+echo "HADOOP_HOME: $(echo $HADOOP_HOME)"
+echo 'Data|Logs: /var/hadoop\n'
+echo '* NameNode: http://172.16.0.10:50070'
+echo '* ResourceManager: http://172.16.0.10:8088'
+echo '* MapReduce Job History server: http://172.16.0.10:19888'
