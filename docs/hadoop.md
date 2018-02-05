@@ -26,11 +26,11 @@ hadoop-start
 Access the cluster
 ```bash
 vagrant ssh master
-ssh hadoop@172.16.0.10 -i data/hadoop_rsa
+ssh hadoop@172.16.0.10 -i .data/hadoop_rsa
 
 # 3 nodes
 vagrant ssh node-1
-ssh hadoop@172.16.0.101 -i data/hadoop_rsa
+ssh hadoop@172.16.0.101 -i .data/hadoop_rsa
 ```
 
 Destroy the cluster

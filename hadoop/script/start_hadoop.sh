@@ -17,8 +17,8 @@ function start_daemons {
 
   case $HOSTNAME in
     "master")
-      # Secondary NameNode is started on the nodes specified in /usr/local/hadoop/etc/hadoop/masters file
       hadoop-daemon.sh --script hdfs start namenode
+      hadoop-daemon.sh --script hdfs start secondarynamenode
       yarn-daemon.sh start resourcemanager
       yarn-daemon.sh start proxyserver
       mr-jobhistory-daemon.sh start historyserver

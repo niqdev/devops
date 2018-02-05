@@ -40,7 +40,8 @@ function setup_dist {
 
 function setup_config {
   local TMP_DATA_PATH="/var/hadoop"
-  local CONFIG_PATH="$HADOOP_HOME/etc/hadoop"
+  local HADOOP_BASE_PATH="/usr/local/hadoop"
+  local CONFIG_PATH="$HADOOP_BASE_PATH/etc/hadoop"
   local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "masters" "slaves" )
 
   echo "[*] create data directory"
@@ -63,7 +64,7 @@ function setup_config {
 
   # important final slash to be recursive
   chown -R $USER_NAME:$USER_NAME \
-    $HADOOP_HOME/ \
+    $HADOOP_BASE_PATH/ \
     $TMP_DATA_PATH/
 }
 

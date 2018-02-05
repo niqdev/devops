@@ -14,6 +14,7 @@ FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/.data"
 KEY_NAME="hadoop_rsa"
 USER_NAME="hadoop"
+USER_ID=1001
 HOME_PATH="/home/$USER_NAME"
 
 ##############################
@@ -53,11 +54,14 @@ function setup_packages {
 }
 
 # param #1: <name>
+# param #2: <id>
 function create_user {
   local NAME=$1
+  local ID=$2
   echo "[*] create user: $NAME"
 
-  useradd --create-home --shell /bin/bash $NAME
+  groupadd --gid $ID $NAME
+  useradd --uid $ID --gid $ID --create-home --shell /bin/bash $NAME
   usermod --append --groups sudo,$NAME $NAME
   id $NAME
   groups $NAME
@@ -97,7 +101,7 @@ function main {
   #apt_update
   setup_java
   setup_packages
-  create_user $USER_NAME
+  create_user $USER_NAME $USER_ID
   config_ssh
   config_profile
   config_host
