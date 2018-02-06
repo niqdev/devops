@@ -35,5 +35,9 @@
         <name>yarn.resourcemanager.hostname</name>
         <value>resource-manager</value>
     </property>
+     <property>
+        <name>yarn.web-proxy.address</name>
+        <value>web-proxy:8100</value>
+    </property>
 
 </configuration>
