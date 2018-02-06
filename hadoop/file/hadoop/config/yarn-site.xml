@@ -13,11 +13,11 @@
     </property>
     <property>
         <name>yarn.nodemanager.log-dirs</name>
-        <value>file:///var/hadoop/log/yarn</value>
+        <value>/var/hadoop/log/yarn</value>
     </property>
     <property>
         <name>yarn.nodemanager.remote-app-log-dir</name>
-        <value>file:///var/hadoop/log/yarn/app</value>
+        <value>/var/hadoop/log/yarn/app</value>
     </property>
     <property>
         <name>yarn.nodemanager.remote-app-log-dir-suffix</name>

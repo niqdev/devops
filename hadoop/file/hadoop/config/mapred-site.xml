@@ -16,11 +16,7 @@
         <value>history:19888</value>
     </property>
     <property>
-        <name>mapreduce.jobhistory.intermediate-done-dir</name>
-        <value>file:///var/hadoop/mr-history/tmp</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.done-dir</name>
-        <value>file:///var/hadoop/mr-history/done</value>
+        <name>yarn.app.mapreduce.am.staging-dir</name>
+        <value>/var/hadoop/history</value>
     </property>
 </configuration>

@@ -46,18 +46,13 @@ function setup_config {
 
   echo "[*] create data directory"
   mkdir -pv \
-    $TMP_DATA_PATH/namenode \
-    $TMP_DATA_PATH/secondary \
-    $TMP_DATA_PATH/datanode \
-    $TMP_DATA_PATH/mr-history/tmp \
-    $TMP_DATA_PATH/mr-history/done \
-    $TMP_DATA_PATH/log \
-    $TMP_DATA_PATH/log/app
+    $TMP_DATA_PATH/{namenode,secondary,datanode,history} \
+    $TMP_DATA_PATH/log/{hadoop,yarn/app,mapred}
   
   for FILE in "${FILES[@]}"
   do
     echo "[*] update config: $FILE"
-    # rename only if exists
+    # backup only if exists
     [ -e $CONFIG_PATH/$FILE ] && mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
     cp $FILE_PATH/hadoop/config/$FILE $CONFIG_PATH/$FILE
   done
@@ -73,8 +68,12 @@ function update_env {
   # find files containing word
   # grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
 
-  echo -e "HADOOP_HOME=/usr/local/hadoop\nHADOOP_LOG_DIR=/var/hadoop/log" | tee --append /etc/environment && \
-    source /etc/environment
+  echo "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment
+  echo "HADOOP_LOG_DIR=/var/hadoop/log/hadoop" | tee --append /etc/environment
+  echo "YARN_LOG_DIR=/var/hadoop/log/yarn" | tee --append /etc/environment
+  echo "HADOOP_MAPRED_LOG_DIR=/var/hadoop/log/mapred" | tee --append /etc/environment
+  source /etc/environment
+
   echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
     source /etc/profile.d/hadoop.sh
 }
@@ -104,5 +103,3 @@ function main {
 }
 
 main
-
-
