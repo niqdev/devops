@@ -46,8 +46,8 @@ function setup_config {
 
   echo "[*] create data directory"
   mkdir -pv \
-    $TMP_DATA_PATH/{namenode,secondary,datanode,history} \
-    $TMP_DATA_PATH/log/{hadoop,yarn/app,mapred}
+    $TMP_DATA_PATH/{namenode,secondary,datanode} \
+    $TMP_DATA_PATH/log/{hadoop,yarn,mapred}
   
   for FILE in "${FILES[@]}"
   do

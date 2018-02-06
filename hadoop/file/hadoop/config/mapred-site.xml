@@ -6,7 +6,7 @@
         <value>yarn</value>
     </property>
 
-    <!-- MapReduce Job History server -->
+    <!-- MapReduce Job History Server -->
     <property>
         <name>mapreduce.jobhistory.address</name>
         <value>history:10020</value>
@@ -15,8 +15,9 @@
         <name>mapreduce.jobhistory.webapp.address</name>
         <value>history:19888</value>
     </property>
+    <!-- hdfs path -->
     <property>
         <name>yarn.app.mapreduce.am.staging-dir</name>
-        <value>/var/hadoop/history</value>
+        <value>/mr-history</value>
     </property>
 </configuration>
