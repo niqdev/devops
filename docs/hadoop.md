@@ -1,8 +1,8 @@
 # Hadoop
 
-TODO
+The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops-lab/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
 
-## Directory structure
+### Directory structure
 
 All the commands are executed in this directory `cd hadoop`
 
@@ -10,7 +10,12 @@ All the commands are executed in this directory `cd hadoop`
 TODO
 ```
 
-## Setup
+### Setup
+
+Requirements
+
+* Vagrant
+* VirtualBox
 
 Import the script
 ```bash
@@ -23,7 +28,7 @@ hadoop-start
 ```
 *Note that the first time it could take a while*
 
-Access the cluster
+Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops-lab/blob/master/hadoop/file/hadoop/hosts) file
 ```bash
 vagrant ssh master
 ssh hadoop@172.16.0.10 -i .data/hadoop_rsa
@@ -38,70 +43,34 @@ Destroy the cluster
 hadoop-destroy
 ```
 
+Useful paths
+```bash
+# (local) logs
+/var/hadoop/log
+# (local) data
+/var/hadoop
+# (local) config
+/usr/local/hadoop/etc/hadoop
+# (hdfs) map-reduce history
+/mr-history/history/done_intermediate/hadoop
+# (hdfs) aggregate app logs
+/yarn/app/hadoop/logs/application_XXX
+```
+
+## Web UI links
+
+* NameNode: [http://namenode:50070](http://172.16.0.10:50070)
+* NameNode metrics: [http://namenode:50070/jmx](http://172.16.0.10:50070/jmx)
+* ResourceManager: [http://resource-manager:8088](http://172.16.0.10:8088)
+* Log Level: [http://resource-manager:8088/logLevel](http://172.16.0.10:8088/logLevel)
+* JVM stack traces: [http://resource-manager:8088/stacks](http://172.16.0.10:8088/stacks)
+* Web Application Proxy Server: [http://web-proxy:8100/proxy/application_XXX_0000](http://172.16.0.10:8100/proxy/application_XXX_0000)
+* MapReduce Job History Server: [http://history:19888](http://172.16.0.10:19888)
+* DataNode/NodeManager (1): [http://node-1:8042/node](http://172.16.0.101:8042/node)
+* DataNode/NodeManager (2): [http://node-2:8042/node](http://172.16.0.102:8042/node)
+* DataNode/NodeManager (3): [http://node-3:8042/node](http://172.16.0.103:8042/node)
+
 ## HDFS and MapReduce
-
-TODO
-
-
-TODO
-
-## Spark
-
-TODO
-
-## Flink
-
-TODO
-
-## Avro
-
-TODO
-
-## Parquet
-
-TODO
-
-## Flume
-
-TODO
-
-## Sqoop
-
-TODO
-
-## Pig
-
-TODO
-
-## Hive
-
-TODO
-
-## Crunch
-
-TODO
-
-## HBase
-
-TODO
-
-## Oozie
-
-TODO
-
-## Ganglia
-
-TODO
-
-## Zeppelin
-
-TODO
-
-## Knox
-
-TODO
-
-<!--
 
 > **HDFS** A distributed file system that provides high-throughput access to application data
 
@@ -109,109 +78,11 @@ TODO
 
 > **MapReduce** A YARN-based system for parallel processing of large data sets
 
-> **Spark** An open-source cluster-computing framework
-
-> **Avro** A data serialization system
-
-> **Parquet** A columnar storage format that can efficiently store nested data
-
-> **Oozie** A workflow scheduler system to manage Hadoop jobs
-
-> **Ganglia** A monitoring system for Hadoop
-
 Offical documentation
 
-* [Hadoop](https://hadoop.apache.org)
-* [Parquet](https://parquet.apache.org)
-* [Oozie](https://oozie.apache.org)
-* [Ganglia](http://ganglia.info)
+* [Hadoop v2.7.5](http://hadoop.apache.org/docs/r2.7.5)
 
-Requirement
-
-* Vagrant
-* VirtualBox
-
-The following guide explains how to provision a Single Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/provision-tools/blob/master/hadoop-spark/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
-
-## Directory structure
-
-All the commands are executed in this directory `cd hadoop-spark`
-
-```bash
-hadoop-spark/
-├── example
-│   └── map-reduce
-│       ├── build
-│       │   ...
-│       │   └── libs
-│       │      └── map-reduce.jar
-│       ├── build.gradle
-│       ├── gradlew
-│       └── src
-│           ├── main
-│           │   └── java
-│           │       └── com
-│           │           └── github
-│           │               └── niqdev
-│           │                   ├── IntSumReducer.java
-│           │                   ├── TokenizerMapper.java
-│           │                   └── WordCount.java
-│           └── test
-│               └── ...
-├── file
-│   ├── hadoop-core-site.xml
-│   ├── hadoop-hdfs-site.xml
-│   ├── mapred-site.xml
-│   ├── ssh-config
-│   └── yarn-site.xml
-├── README.md
-├── script
-│   ├── bootstrap.sh
-│   ├── setup_all.sh
-│   ├── setup_hadoop.sh
-│   ├── setup_java.sh
-│   ├── setup_spark.sh
-│   ├── setup_user.sh
-│   └── start_hadoop.sh
-└── Vagrantfile
-```
-
-## Web UI
-
-* namenode [http://localhost:50070](http://localhost:50070)
-* resource manager [http://localhost:8088](http://localhost:8088)
-* history server [http://localhost:19888](http://localhost:19888)
-* set log level temporarily [http://localhost:8088/logLevel](http://localhost:8088/logLevel)
-* JVM stack traces [http://localhost:8088/stacks](http://localhost:8088/stacks)
-* namenode metrics [http://localhost:50070/jmx](http://localhost:50070/jmx)
-
-## Setup
-
-Start the box and verify the status
-```bash
-vagrant up
-vagrant status
-```
-*Note that the first time it could take a while*
-
-Access the box
-```bash
-vagrant ssh
-```
-
-Useful paths
-```bash
-# logs
-/usr/local/hadoop/logs
-# data
-/var/hadoop
-# config
-/usr/local/hadoop/etc/hadoop
-```
-
-## HDFS
-
-### Admin
+### HDFS Admin
 
 ```bash
 # filesystem statistics
@@ -220,8 +91,6 @@ hdfs dfsadmin -report
 # filesystem check
 hdfs fsck /
 ```
-
-## Example
 
 ### MapReduce WordCount Job
 
@@ -251,7 +120,7 @@ hadoop fs -cat /user/ubuntu/word-count/input/file02
 hadoop fs -cat /user/ubuntu/word-count/input/*
 
 # build the jar (outside the machine to avoid permission issues)
-cd provision-tools/hadoop-spark/example/map-reduce
+cd devops-lab/hadoop/example/map-reduce
 ./gradlew clean build
 
 # run application
@@ -264,6 +133,9 @@ hadoop fs -cat /user/ubuntu/word-count/output/part-r-00000
 
 # delete directory to run it again
 hadoop fs -rm -R /user/ubuntu/word-count/output
+
+# well known WARN issue
+# https://issues.apache.org/jira/browse/HDFS-10429
 ```
 
 ### Benchmarking MapReduce with TeraSort
@@ -291,8 +163,68 @@ hadoop fs -cat random-data/part-m-00000
 hadoop fs -cat sorted-data/part-r-00000
 ```
 
-### Spark Job
+## Spark
+
+> **Spark** An open-source cluster-computing framework
 
 TODO
 
--->
+## Flink
+
+TODO
+
+## Avro
+
+> **Avro** A data serialization system
+
+TODO
+
+## Parquet
+
+> **Parquet** A columnar storage format that can efficiently store nested data
+
+TODO
+
+## Flume
+
+TODO
+
+## Sqoop
+
+TODO
+
+## Pig
+
+TODO
+
+## Hive
+
+TODO
+
+## Crunch
+
+TODO
+
+## HBase
+
+TODO
+
+## Oozie
+
+> **Oozie** A workflow scheduler system to manage Hadoop jobs
+
+TODO
+
+## Ganglia
+
+> **Ganglia** A monitoring system for Hadoop
+
+TODO
+
+## Zeppelin
+
+TODO
+
+## Knox
+
+TODO

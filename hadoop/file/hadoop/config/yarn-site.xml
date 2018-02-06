@@ -10,10 +10,9 @@
         <name>yarn.log-aggregation-enable</name>
         <value>true</value>
     </property>
-    <!-- hdfs path -->
     <property>
         <name>yarn.nodemanager.log-dirs</name>
-        <value>/yarn</value>
+        <value>/var/hadoop/log/yarn</value>
     </property>
     <!-- hdfs path -->
     <property>
