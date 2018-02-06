@@ -72,11 +72,11 @@ Useful paths
 
 ## HDFS and MapReduce
 
-> **HDFS** A distributed file system that provides high-throughput access to application data
+> **HDFS** is a distributed file system that provides high-throughput access to application data
 
-> **YARN** A framework for job scheduling and cluster resource management
+> **YARN** is a framework for job scheduling and cluster resource management
 
-> **MapReduce** A YARN-based system for parallel processing of large data sets
+> **MapReduce** is a YARN-based system for parallel processing of large data sets
 
 Offical documentation
 
@@ -165,7 +165,7 @@ hadoop fs -cat sorted-data/part-r-00000
 
 ## Spark
 
-> **Spark** An open-source cluster-computing framework
+> **Spark** is an open-source cluster-computing framework
 
 TODO
 
@@ -175,13 +175,13 @@ TODO
 
 ## Avro
 
-> **Avro** A data serialization system
+> **Avro** is a data serialization system
 
 TODO
 
 ## Parquet
 
-> **Parquet** A columnar storage format that can efficiently store nested data
+> **Parquet** is a columnar storage format that can efficiently store nested data
 
 TODO
 
@@ -211,13 +211,13 @@ TODO
 
 ## Oozie
 
-> **Oozie** A workflow scheduler system to manage Hadoop jobs
+> **Oozie** is a workflow scheduler system to manage Hadoop jobs
 
 TODO
 
 ## Ganglia
 
-> **Ganglia** A monitoring system for Hadoop
+> **Ganglia** is a monitoring system for Hadoop
 
 TODO
 

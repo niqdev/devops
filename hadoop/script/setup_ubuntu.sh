@@ -24,6 +24,39 @@ function apt_update {
   apt-get -qq update && apt-get -qq upgrade -y
 }
 
+function setup_packages {
+  local LOG_PATH="/tmp/apt-packages.log"
+  echo "[*] setup packages"
+
+  apt-get -qq update && apt-get install -y \
+    tree \
+    zip \
+    unzip \
+    &> $LOG_PATH && \
+    apt-get clean
+}
+
+# TODO
+function setup_sdk {
+  echo "[*] setup sdk"
+  #echo "SDKMAN_DIR=/usr/local/sdkman" | sudo tee --append /etc/environment && \
+  #  source /etc/environment
+
+  # DEBUG ssh: stderr: /root/.sdkman/bin/sdkman-init.sh: line 27: SDKMAN_VERSION: unbound variable
+  local SDKMAN_VERSION=
+  # DEBUG ssh: stderr: /root/.sdkman/bin/sdkman-init.sh: line 31: SDKMAN_LEGACY_API: unbound variable
+  local SDKMAN_LEGACY_API=
+
+  curl -s "https://get.sdkman.io" | bash
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  sdk version
+  echo "VERSION >>> $SDKMAN_VERSION"
+  # TODO path
+  # /home/vagrant/.sdkman/candidates/java/current/bin/java
+  sdk install java
+  sdk install maven
+}
+
 function setup_java {
   local LOG_PATH="/tmp/apt-java.log"
   echo "[*] setup java"
@@ -41,17 +74,6 @@ function setup_java {
   # /usr/lib/jvm/java-8-openjdk-amd64
   echo "JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")" | sudo tee --append /etc/environment && \
     source /etc/environment
-}
-
-function setup_packages {
-  local LOG_PATH="/tmp/apt-packages.log"
-  echo "[*] setup packages"
-
-  apt-get -qq update && apt-get install -y \
-    tree \
-    unzip \
-    &> $LOG_PATH && \
-    apt-get clean
 }
 
 # param #1: <name>
@@ -108,8 +130,9 @@ function setup_motd {
 function main {
   echo "[+] setup ubuntu"
   #apt_update
-  setup_java
   setup_packages
+  setup_sdk
+  #setup_java
   create_user $USER_NAME $USER_ID
   config_ssh
   config_profile
@@ -118,4 +141,7 @@ function main {
   echo "[-] setup ubuntu"
 }
 
-main
+#main
+# TODO
+setup_packages
+setup_sdk

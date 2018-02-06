@@ -154,7 +154,7 @@ https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
 
 ########## oozie ##########
 
-http://archive.cloudera.com/gplextras/misc/ext-2.2.zip
+http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 
 ########## avro ##########
 
