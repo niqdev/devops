@@ -6,6 +6,7 @@
         <value>mapreduce_shuffle</value>
     </property>
 
+    <!-- logs -->
     <property>
         <name>yarn.log-aggregation-enable</name>
         <value>true</value>
@@ -24,7 +25,7 @@
         <value>logs</value>
     </property>
 
-    <!-- MapReduce Job History server -->
+    <!-- MapReduce Job History Server -->
     <property>
         <name>yarn.log.server.url</name>
         <value>http://history:19888/jobhistory/logs</value>
@@ -34,7 +35,8 @@
         <name>yarn.resourcemanager.hostname</name>
         <value>resource-manager</value>
     </property>
-     <property>
+    <!-- Web Application Proxy Server -->
+    <property>
         <name>yarn.web-proxy.address</name>
         <value>web-proxy:8100</value>
     </property>

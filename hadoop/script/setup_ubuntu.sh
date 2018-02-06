@@ -49,6 +49,7 @@ function setup_packages {
 
   apt-get -qq update && apt-get install -y \
     tree \
+    unzip \
     &> $LOG_PATH && \
     apt-get clean
 }

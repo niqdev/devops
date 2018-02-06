@@ -10,6 +10,8 @@ TODO
 [ ] elastic-search
 [ ] kong
 
+>>> TODO rename hosts with .local
+
 ########## TODO git_init.sh ##########
 
 # create directories and move into
@@ -148,6 +150,11 @@ vagrant destroy
 vagrant box remove manning/spark-in-action
 
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
+https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
+
+########## oozie ##########
+
+http://archive.cloudera.com/gplextras/misc/ext-2.2.zip
 
 ########## avro ##########
 
@@ -180,9 +187,3 @@ user.avsc
 
 # compile schema to generate code
 java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
-
-http://hadoop.apache.org/docs/r2.7.5/hadoop-project-dist/hadoop-common/ClusterSetup.html
-https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
-https://www.edureka.co/blog/how-to-set-up-hadoop-cluster-with-hdfs-high-availability/
-https://www.tutorialspoint.com/hadoop/hadoop_multi_node_cluster.htm
-
