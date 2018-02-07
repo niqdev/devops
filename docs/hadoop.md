@@ -78,9 +78,10 @@ Useful paths
 
 > **MapReduce** is a YARN-based system for parallel processing of large data sets
 
-Offical documentation
+Documentation
 
 * [Hadoop v2.7.5](http://hadoop.apache.org/docs/r2.7.5)
+* [Untangling Apache Hadoop YARN](http://blog.cloudera.com/blog/2015/09/untangling-apache-hadoop-yarn-part-1/) series
 
 ### HDFS Admin
 
@@ -133,6 +134,14 @@ hadoop fs -cat /user/ubuntu/word-count/output/part-r-00000
 
 # delete directory to run it again
 hadoop fs -rm -R /user/ubuntu/word-count/output
+
+# run sample job in a different queue
+hadoop jar \
+  $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar \
+  wordcount \
+  -Dmapreduce.job.queuename=root.priority_queue \
+  /user/ubuntu/word-count/input \
+  /user/ubuntu/word-count/output
 
 # well known WARN issue
 # https://issues.apache.org/jira/browse/HDFS-10429

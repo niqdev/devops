@@ -131,8 +131,8 @@ function main {
   echo "[+] setup ubuntu"
   #apt_update
   setup_packages
-  setup_sdk
-  #setup_java
+  #setup_sdk
+  setup_java
   create_user $USER_NAME $USER_ID
   config_ssh
   config_profile
@@ -141,7 +141,4 @@ function main {
   echo "[-] setup ubuntu"
 }
 
-#main
-# TODO
-setup_packages
-setup_sdk
+main

@@ -6,7 +6,7 @@ Documentation
 
 * [Ansible](http://docs.ansible.com/ansible/latest/index.html)
 * [Tutorial](https://serversforhackers.com/c/an-ansible2-tutorial)
-* [Playbook example](https://github.com/phred/ansible-examples/blob/master/pedantically_commented_playbook.yml)
+* [Playbook example](https://gist.github.com/marktheunissen/2979474)
 
 Requirement
 

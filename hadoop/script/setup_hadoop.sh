@@ -42,7 +42,7 @@ function setup_config {
   local TMP_DATA_PATH="/var/hadoop"
   local HADOOP_BASE_PATH="/usr/local/hadoop"
   local CONFIG_PATH="$HADOOP_BASE_PATH/etc/hadoop"
-  local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "masters" "slaves" )
+  local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "fair-scheduler.xml" "masters" "slaves" )
 
   echo "[*] create data directory"
   mkdir -pv \
@@ -67,6 +67,8 @@ function update_env {
   echo "[*] update env"
   # find files containing word
   # grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
+  # find file
+  # find /usr/local/hadoop -name 'yarn-site.xml'
 
   echo "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment
   echo "HADOOP_LOG_DIR=/var/hadoop/log/hadoop" | tee --append /etc/environment

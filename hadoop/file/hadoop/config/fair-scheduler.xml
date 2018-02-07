@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<allocations>
+
+    <!--
+        if "priority_queue" does not receive 80% of its FairShare within 120 seconds,
+        FairScheduler will begin preempting applications from "default_queue"
+        and giving resources to "priority_queue"
+    -->
+    <queue name="priority_queue">
+        <weight>60.0</weight>
+        <fairSharePreemptionThreshold>0.8</fairSharePreemptionThreshold>
+        <fairSharePreemptionTimeout>120</fairSharePreemptionTimeout>
+    </queue>
+    <queue name="default_queue">
+        <weight>40.0</weight>
+    </queue>
+
+    <queuePlacementPolicy>
+        <rule name="specified" />
+        <rule name="default" queue="default_queue" />
+    </queuePlacementPolicy>
+
+</allocations>

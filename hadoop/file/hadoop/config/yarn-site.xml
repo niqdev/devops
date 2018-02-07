@@ -6,6 +6,16 @@
         <value>mapreduce_shuffle</value>
     </property>
 
+    <!-- Fair Scheduler -->
+    <property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
+    </property>
+    <property>
+        <name>yarn.scheduler.fair.preemption</name>
+        <value>true</value>
+    </property>
+
     <!-- logs -->
     <property>
         <name>yarn.log-aggregation-enable</name>
