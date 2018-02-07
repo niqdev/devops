@@ -19,6 +19,15 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 ##############################
 
+# list files containing word
+#grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
+
+# find files
+#find /usr/local/hadoop -name 'yarn-site.xml'
+#find . -name '*war*'
+
+##############################
+
 function download_dist {
   local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME.tar.gz"
   echo "[*] download dist"
@@ -44,7 +53,7 @@ function setup_config {
   local CONFIG_PATH="$HADOOP_BASE_PATH/etc/hadoop"
   local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "fair-scheduler.xml" "masters" "slaves" )
 
-  echo "[*] create data directory"
+  echo "[*] create directories"
   mkdir -pv \
     $TMP_DATA_PATH/{namenode,secondary,datanode} \
     $TMP_DATA_PATH/log/{hadoop,yarn,mapred}
@@ -57,27 +66,15 @@ function setup_config {
     cp $FILE_PATH/hadoop/config/$FILE $CONFIG_PATH/$FILE
   done
 
+  echo "[*] update permissions"
   # important final slash to be recursive
   chown -R $USER_NAME:$USER_NAME \
     $HADOOP_BASE_PATH/ \
     $TMP_DATA_PATH/
-}
-
-function update_env {
+  
   echo "[*] update env"
-  # find files containing word
-  # grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
-  # find file
-  # find /usr/local/hadoop -name 'yarn-site.xml'
-
-  echo "HADOOP_HOME=/usr/local/hadoop" | tee --append /etc/environment
-  echo "HADOOP_LOG_DIR=/var/hadoop/log/hadoop" | tee --append /etc/environment
-  echo "YARN_LOG_DIR=/var/hadoop/log/yarn" | tee --append /etc/environment
-  echo "HADOOP_MAPRED_LOG_DIR=/var/hadoop/log/mapred" | tee --append /etc/environment
-  source /etc/environment
-
-  echo -e "export PATH=\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin" | tee --append /etc/profile.d/hadoop.sh && \
-    source /etc/profile.d/hadoop.sh
+  cp $FILE_PATH/hadoop/profile-hadoop.sh /etc/profile.d/profile-hadoop.sh && \
+    source /etc/profile.d/profile-hadoop.sh
 }
 
 function init_hdfs {
@@ -99,7 +96,6 @@ function main {
   echo "[+] setup hadoop"
   setup_dist
   setup_config
-  update_env
   init_hdfs
   echo "[-] setup hadoop"
 }
