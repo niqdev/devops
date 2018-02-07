@@ -3,6 +3,7 @@
 
 DATA_PATH = ".data"
 KEY_PATH = DATA_PATH + "/hadoop_rsa"
+HADOOP_ID = 1001
 
 # https://app.vagrantup.com/bento
 BOX_IMAGE = "bento/ubuntu-16.04"
@@ -36,7 +37,7 @@ Vagrant.configure("2") do |config|
 
     # synced_folder permission issue https://github.com/hashicorp/vagrant/issues/936
     node.vm.synced_folder DATA_PATH + "/master", "/var/hadoop",
-      mount_options: ["uid=1001", "gid=1001"]
+      mount_options: ["uid=" + HADOOP_ID, "gid=" + HADOOP_ID]
   end
 
   (1..NODE_COUNT).each do |i|
@@ -51,7 +52,7 @@ Vagrant.configure("2") do |config|
       node.vm.network :private_network, ip: "172.16.0.#{i + 100}"
 
       node.vm.synced_folder DATA_PATH + "/node-#{i}", "/var/hadoop",
-        mount_options: ["uid=1001", "gid=1001"]
+        mount_options: ["uid=" + HADOOP_ID, "gid=" + HADOOP_ID]
     end
   end
 
