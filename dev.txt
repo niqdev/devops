@@ -10,7 +10,8 @@ TODO
 [ ] elastic-search
 [ ] kong
 
->>> TODO rename hosts with .local
+>>> TODO add suffix .local to hosts
+>>> TODO rename node- to worker-
 
 ########## TODO git_init.sh ##########
 
