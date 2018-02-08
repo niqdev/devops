@@ -1,6 +1,6 @@
 # DevOps Lab
 
-A collection of Docker and Vagrant images mainly to provision distributed systems for local development, learning purpose and quick prototyping.
+A collection of Docker and Vagrant images mainly to provision distributed systems for local development, learning purposes and quick prototyping.
 
 Documentations
 

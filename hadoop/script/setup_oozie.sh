@@ -15,7 +15,7 @@ USER_NAME="hadoop"
 
 HADOOP_VERSION="2.7.5"
 EXTJS_NAME="ext-2.2"
-OOZIE_VERSION="4.3.0"
+OOZIE_VERSION="5.0.0-beta1"
 OOZIE_NAME="oozie-$OOZIE_VERSION"
 
 ##############################
@@ -55,7 +55,6 @@ function setup_dist {
   local OOZIE_DIST_PATH="$DATA_PATH/$OOZIE_NAME*"
   local EXTJS_DIST_PATH="$DATA_PATH/$EXTJS_NAME*"
   local OOZIE_BASE_PATH="/usr/local/oozie"
-  local LIB_BASE_PATH="$OOZIE_BASE_PATH/libext"
   echo "[*] setup dist"
 
   if [ ! -e $OOZIE_DIST_PATH ]; then
@@ -65,20 +64,26 @@ function setup_dist {
     download_extjs_dist
   fi
 
-  # TODO
   echo "[*] build sources"
   tar -xzf $OOZIE_DIST_PATH -C /tmp
-  /tmp/$OOZIE_NAME/bin/mkdistro.sh -DskipTests -Puber -Dhadoop.version=$HADOOP_VERSION
-  tar -xzf /tmp/oozie-4.3.0/distro/target/oozie-4.3.0-distro.tar.gz -C /opt
-  cd /opt/oozie-4.3.0
-  cp /vagrant/.data/ext-2.2.zip libext/
-  bin/oozie-setup.sh prepare-war
+  /tmp/$OOZIE_NAME/bin/mkdistro.sh \
+    -DskipTests \
+    -Puber \
+    -Dhadoop.version=$HADOOP_VERSION
+  tar -xzf /tmp/$OOZIE_NAME/distro/target/$OOZIE_NAME-distro.tar.gz -C /opt
+  ln -s /opt/$OOZIE_NAME $OOZIE_BASE_PATH
 
-  #mkdir -p $LIB_BASE_PATH
-  #cp $EXTJS_DIST_PATH $LIB_BASE_PATH
+  mkdir -p $OOZIE_BASE_PATH/libext
+  cp $EXTJS_DIST_PATH $OOZIE_BASE_PATH/libext
 
-  #ln -s /opt/$OOZIE_NAME $OOZIE_BASE_PATH
-  #chown -R $USER_NAME:$USER_NAME /opt/$OOZIE_NAME
+  echo "[*] update permissions"
+  chown -R $USER_NAME:$USER_NAME $OOZIE_BASE_PATH/
+
+  # TODO verify permissions logs and other folder as rood
+  # TODO exectute command as hadoop or add root to hadoop group
+  # http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
+  # https://oozie.apache.org/docs/5.0.0-beta1/DG_QuickStart.html
+  $OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000
 }
 
 function main {

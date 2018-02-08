@@ -45,15 +45,15 @@ hadoop-destroy
 
 Useful paths
 ```bash
-# (local) logs
-/var/hadoop/log
-# (local) data
+# data
 /var/hadoop
+# logs
+/var/hadoop/log
 # (local) config
 /usr/local/hadoop/etc/hadoop
 # (hdfs) map-reduce history
 /mr-history/history/done_intermediate/hadoop
-# (hdfs) aggregate app logs
+# (hdfs) aggregated app logs
 /yarn/app/hadoop/logs/application_XXX
 ```
 
