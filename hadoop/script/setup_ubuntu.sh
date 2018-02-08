@@ -55,25 +55,6 @@ function setup_java {
     source /etc/environment
 }
 
-function setup_maven {
-  local LOG_PATH="/tmp/apt-maven.log"
-  echo "[*] setup maven"
-
-  apt-get -qq update && apt-get install -y \
-    maven \
-    &> $LOG_PATH && \
-    apt-get clean
-  
-  mvn -version
-
-  # environment variables
-  # export M2_HOME=/usr/share/maven
-  # export PATH=${M2_HOME}/bin:${PATH}
-
-  # configuration path
-  # /etc/maven
-}
-
 # param #1: <name>
 # param #2: <id>
 function create_user {
@@ -130,7 +111,6 @@ function main {
   #apt_update
   setup_packages
   setup_java
-  setup_maven
   create_user $USER_NAME $USER_ID
   config_ssh
   config_profile
