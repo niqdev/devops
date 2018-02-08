@@ -3,7 +3,7 @@
 
 DATA_PATH = ".data"
 KEY_PATH = DATA_PATH + "/hadoop_rsa"
-HADOOP_ID = 1001
+HADOOP_ID = "1001"
 
 # https://app.vagrantup.com/bento
 BOX_IMAGE = "bento/ubuntu-16.04"

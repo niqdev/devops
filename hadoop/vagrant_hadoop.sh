@@ -47,7 +47,7 @@ function start_vagrant {
 
   case $STATUS in
     # not created | poweroff | aborted
-    "NOT"|"POWEROFF"|"ABORTED")
+    "NOT"|"POWEROFF"|"ABORTED"|"SAVED")
       #vagrant up --debug &> .vagrant/debug.log
       vagrant up && vagrant ssh $NAME
       ;;
