@@ -79,12 +79,26 @@ function setup_dist {
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME $OOZIE_BASE_PATH/
 
-  # TODO verify permissions logs and other folder as rood
-  # TODO exectute command as hadoop or add root to hadoop group
+  echo "[*] init oozie"
+  $OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000
+  $OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run
+
+  echo "[*] start oozie"
+  $OOZIE_BASE_PATH/bin/oozied.sh start
+
+  # TODO change path
+  # logs/oozie.log
+  # TODO verify is NORMAL
+  # bin/oozie admin -oozie http://localhost:11000/oozie -status
+  # TODO ui + hosts
+  # http://172.16.0.10:11000/
+
+  # https://github.com/martinprobson/vagrant-hadoop-hive-spark
   # http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
   # https://oozie.apache.org/docs/5.0.0-beta1/DG_QuickStart.html
-  $OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000
 }
+
+# 6 - https://oozie.apache.org/docs/4.3.0/CoordinatorFunctionalSpec.html
 
 function main {
   echo "[+] setup oozie"
