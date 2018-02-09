@@ -84,6 +84,7 @@ function setup_dist {
   $OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run
 
   echo "[*] start oozie"
+  # TODO su --login hadoop ??? or move in bootstrap? check if exists first
   $OOZIE_BASE_PATH/bin/oozied.sh start
 
   # TODO change path
@@ -96,9 +97,16 @@ function setup_dist {
   # https://github.com/martinprobson/vagrant-hadoop-hive-spark
   # http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
   # https://oozie.apache.org/docs/5.0.0-beta1/DG_QuickStart.html
+
+  # tar -xzf /usr/local/oozie/oozie-examples.tar.gz
+  # sudo cp -R /usr/local/oozie/examples/ /vagrant/.data/
+  # hadoop fs -put /usr/local/oozie/examples /examples
+  # hadoop fs -rm -R /examples
+  # /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
+  # Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
 }
 
-# 6 - https://oozie.apache.org/docs/4.3.0/CoordinatorFunctionalSpec.html
+# https://www.edureka.co/blog/apache-oozie-tutorial/
 
 function main {
   echo "[+] setup oozie"
