@@ -26,7 +26,7 @@ Create and start a Multi Node Hadoop Cluster
 ```bash
 hadoop-start
 ```
-*Note that the first time it could take a while*
+*The first time it might take a while*
 
 Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops-lab/blob/master/hadoop/file/hadoop/hosts) file
 ```bash
@@ -221,6 +221,26 @@ TODO
 ## Oozie
 
 > **Oozie** is a workflow scheduler system to manage Hadoop jobs
+
+Documentation
+
+* [Oozie](https://oozie.apache.org)
+
+### Setup
+
+Oozie is not installed by default
+
+```
+# access master node
+vagrant ssh master
+# login as root
+sudo su -
+# build, install and init
+/vagrant/script/setup_oozie.sh
+```
+*It might take a while*
+
+### Examples
 
 TODO
 

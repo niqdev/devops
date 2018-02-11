@@ -55,6 +55,8 @@ function setup_dist {
   local OOZIE_DIST_PATH="$DATA_PATH/$OOZIE_NAME*"
   local EXTJS_DIST_PATH="$DATA_PATH/$EXTJS_NAME*"
   local OOZIE_BASE_PATH="/usr/local/oozie"
+  local CONFIG_PATH="$OOZIE_BASE_PATH/conf"
+  local FILES=( "oozie-env.sh" )
   echo "[*] setup dist"
 
   if [ ! -e $OOZIE_DIST_PATH ]; then
@@ -77,15 +79,15 @@ function setup_dist {
   cp $EXTJS_DIST_PATH $OOZIE_BASE_PATH/libext
 
   echo "[*] update permissions"
-  chown -R $USER_NAME:$USER_NAME $OOZIE_BASE_PATH/
+  chown -R $USER_NAME:$USER_NAME "$OOZIE_BASE_PATH/"
 
   echo "[*] init oozie"
-  $OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000
-  $OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run
+  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000"
+  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run"
 
   echo "[*] start oozie"
   # TODO su --login hadoop ??? or move in bootstrap? check if exists first
-  $OOZIE_BASE_PATH/bin/oozied.sh start
+  #su --login $USER_NAME $OOZIE_BASE_PATH/bin/oozied.sh start
 
   # TODO change path
   # logs/oozie.log
