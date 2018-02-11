@@ -17,6 +17,7 @@ HADOOP_VERSION="2.7.5"
 EXTJS_NAME="ext-2.2"
 OOZIE_VERSION="5.0.0-beta1"
 OOZIE_NAME="oozie-$OOZIE_VERSION"
+OOZIE_BASE_PATH="/usr/local/oozie"
 
 ##############################
 
@@ -54,7 +55,6 @@ function download_extjs_dist {
 function setup_dist {
   local OOZIE_DIST_PATH="$DATA_PATH/$OOZIE_NAME*"
   local EXTJS_DIST_PATH="$DATA_PATH/$EXTJS_NAME*"
-  local OOZIE_BASE_PATH="/usr/local/oozie"
   local CONFIG_PATH="$OOZIE_BASE_PATH/conf"
   local FILES=( "oozie-env.sh" )
   echo "[*] setup dist"
@@ -78,43 +78,45 @@ function setup_dist {
   mkdir -p $OOZIE_BASE_PATH/libext
   cp $EXTJS_DIST_PATH $OOZIE_BASE_PATH/libext
 
+  for FILE in "${FILES[@]}"
+  do
+    echo "[*] update config: $FILE"
+    # backup only if exists
+    [ -e $CONFIG_PATH/$FILE ] && mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
+    cp $FILE_PATH/oozie/config/$FILE $CONFIG_PATH/$FILE
+  done
+
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME "$OOZIE_BASE_PATH/"
+}
 
-  echo "[*] init oozie"
-  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000"
-  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run"
+function setup_example {
+  echo "[*] setup example"
+  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz
+  cp -R $OOZIE_BASE_PATH/examples/ $DATA_PATH/oozie
+  hadoop fs -put $OOZIE_BASE_PATH/examples /oozie/examples
 
-  echo "[*] start oozie"
-  # TODO su --login hadoop ??? or move in bootstrap? check if exists first
-  #su --login $USER_NAME $OOZIE_BASE_PATH/bin/oozied.sh start
-
-  # TODO change path
-  # logs/oozie.log
-  # TODO verify is NORMAL
-  # bin/oozie admin -oozie http://localhost:11000/oozie -status
-  # TODO ui + hosts
-  # http://172.16.0.10:11000/
-
-  # https://github.com/martinprobson/vagrant-hadoop-hive-spark
-  # http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
-  # https://oozie.apache.org/docs/5.0.0-beta1/DG_QuickStart.html
-
-  # tar -xzf /usr/local/oozie/oozie-examples.tar.gz
-  # sudo cp -R /usr/local/oozie/examples/ /vagrant/.data/
-  # hadoop fs -put /usr/local/oozie/examples /examples
-  # hadoop fs -rm -R /examples
+  # hadoop fs -rm -R /oozie/examples
   # /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
   # Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
 }
 
-# https://www.edureka.co/blog/apache-oozie-tutorial/
+function init_oozie {
+  echo "[*] init oozie"
+  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000"
+  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run"
+}
 
 function main {
   echo "[+] setup oozie"
   setup_maven
   setup_dist
+  setup_example
+  init_oozie
   echo "[-] setup oozie"
 }
 
 main
+
+# http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
+# https://www.edureka.co/blog/apache-oozie-tutorial/

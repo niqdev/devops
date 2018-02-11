@@ -10,7 +10,6 @@ cd ${CURRENT_PATH}
 
 ##############################
 
-SCRIPT_PATH="/vagrant/script"
 USER_NAME="hadoop"
 
 ##############################
@@ -38,6 +37,7 @@ function start_hadoop {
 }
 
 function start_oozie {
+  # check if exists
   if [ -x "$(command -v oozie)" ]; then
     echo "[*] start oozie"
     oozied.sh start
@@ -48,7 +48,7 @@ function start_oozie {
 function main {
   echo "[+] boostrap"
   start_hadoop
-  #start_oozie
+  start_oozie
   echo "[-] boostrap"
 }
 

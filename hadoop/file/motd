@@ -5,6 +5,7 @@ echo "Uptime:$(uptime)\n"
 echo '* NameNode: http://172.16.0.10:50070'
 echo '* ResourceManager: http://172.16.0.10:8088'
 echo '* MapReduce Job History Server: http://172.16.0.10:19888'
+echo '* Oozie: http://172.16.0.10:11000'
 echo '* DataNode/NodeManager (1): http://172.16.0.101:8042/node'
 echo '* DataNode/NodeManager (2): http://172.16.0.102:8042/node'
 echo '* DataNode/NodeManager (3): http://172.16.0.103:8042/node'

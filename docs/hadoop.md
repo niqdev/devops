@@ -228,15 +228,30 @@ Documentation
 
 Oozie is not installed by default
 
-```
+```bash
 # access master node
 vagrant ssh master
+
 # login as root
 sudo su -
+
 # build, install and init
 /vagrant/script/setup_oozie.sh
+
+# start oozie
+su --login hadoop /vagrant/script/bootstrap.sh
 ```
-*It might take a while*
+*It might take a while to build the sources*
+
+Useful paths
+```bash
+# data and logs
+/vol/oozie
+# (local) config
+/usr/local/oozie/conf
+# (hdfs) examples
+/oozie/examples
+```
 
 ### Examples
 
