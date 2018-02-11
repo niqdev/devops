@@ -41,6 +41,7 @@ function start_oozie {
   if [ -x "$(command -v oozie)" ]; then
     echo "[*] start oozie"
     oozied.sh start
+    oozie admin -oozie http://localhost:11000/oozie -status
   fi
 }
 
@@ -51,4 +52,8 @@ function main {
   echo "[-] boostrap"
 }
 
-sudo -i -u $USER_NAME main
+if [ $USER_NAME == "$(whoami)" ]; then
+  main
+else
+  echo "[-] execute as [$USER_NAME] user only"
+fi
