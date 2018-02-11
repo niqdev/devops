@@ -10,6 +10,7 @@ cd ${CURRENT_PATH}
 
 ##############################
 
+FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/.data"
 USER_NAME="hadoop"
 
@@ -86,20 +87,23 @@ function setup_dist {
     cp $FILE_PATH/oozie/config/$FILE $CONFIG_PATH/$FILE
   done
 
+  echo "[*] setup examples"
+  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz -C $OOZIE_BASE_PATH
+  cp -R $OOZIE_BASE_PATH/examples/ $DATA_PATH/oozie
+  # TODO error
+  su --login $USER_NAME -c "hadoop fs -put $OOZIE_BASE_PATH/examples /oozie/examples"
+
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME "$OOZIE_BASE_PATH/"
+
+  echo "[*] update env"
+  cp $FILE_PATH/oozie/profile-oozie.sh /etc/profile.d/profile-oozie.sh && \
+    source /etc/profile.d/profile-oozie.sh
 }
 
-function setup_example {
-  echo "[*] setup example"
-  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz
-  cp -R $OOZIE_BASE_PATH/examples/ $DATA_PATH/oozie
-  hadoop fs -put $OOZIE_BASE_PATH/examples /oozie/examples
-
-  # hadoop fs -rm -R /oozie/examples
-  # /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
-  # Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
-}
+# hadoop fs -rm -R /oozie/examples
+# /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
+# Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
 
 function init_oozie {
   echo "[*] init oozie"
