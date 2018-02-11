@@ -5,8 +5,9 @@
 BOX_IMAGE = "bento/ubuntu-16.04"
 NODE_COUNT = 3
 
-DATA_PATH = ".data"
-KEY_PATH = DATA_PATH + "/hadoop_rsa"
+DATA_PATH_HOST = ".data"
+DATA_PATH_GUEST = "/vol"
+KEY_PATH = DATA_PATH_HOST + "/hadoop_rsa"
 HADOOP_ID = "1001"
 
 VAGRANT_COMMAND = ARGV[0]
@@ -36,7 +37,7 @@ Vagrant.configure("2") do |config|
     node.vm.network "forwarded_port", guest: 19888, host: 19888
 
     # synced_folder permission issue https://github.com/hashicorp/vagrant/issues/936
-    node.vm.synced_folder DATA_PATH + "/master", "/var/hadoop",
+    node.vm.synced_folder DATA_PATH_HOST + "/master", DATA_PATH_GUEST,
       mount_options: ["uid=" + HADOOP_ID, "gid=" + HADOOP_ID]
   end
 
@@ -51,7 +52,7 @@ Vagrant.configure("2") do |config|
 
       node.vm.network :private_network, ip: "172.16.0.#{i + 100}"
 
-      node.vm.synced_folder DATA_PATH + "/node-#{i}", "/var/hadoop",
+      node.vm.synced_folder DATA_PATH_HOST + "/node-#{i}", DATA_PATH_GUEST,
         mount_options: ["uid=" + HADOOP_ID, "gid=" + HADOOP_ID]
     end
   end

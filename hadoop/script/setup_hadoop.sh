@@ -48,15 +48,15 @@ function setup_dist {
 }
 
 function setup_config {
-  local TMP_DATA_PATH="/var/hadoop"
+  local DATA_PATH_GUEST="/vol/hadoop"
   local HADOOP_BASE_PATH="/usr/local/hadoop"
   local CONFIG_PATH="$HADOOP_BASE_PATH/etc/hadoop"
   local FILES=( "core-site.xml" "hdfs-site.xml" "mapred-site.xml" "yarn-site.xml" "fair-scheduler.xml" "masters" "slaves" )
 
   echo "[*] create directories"
   mkdir -pv \
-    $TMP_DATA_PATH/{namenode,secondary,datanode} \
-    $TMP_DATA_PATH/log/{hadoop,yarn,mapred}
+    $DATA_PATH_GUEST/{namenode,secondary,datanode} \
+    $DATA_PATH_GUEST/log/{hadoop,yarn,mapred}
   
   for FILE in "${FILES[@]}"
   do
@@ -70,7 +70,7 @@ function setup_config {
   # important final slash to be recursive
   chown -R $USER_NAME:$USER_NAME \
     $HADOOP_BASE_PATH/ \
-    $TMP_DATA_PATH/
+    $DATA_PATH_GUEST/
   
   echo "[*] update env"
   cp $FILE_PATH/hadoop/profile-hadoop.sh /etc/profile.d/profile-hadoop.sh && \

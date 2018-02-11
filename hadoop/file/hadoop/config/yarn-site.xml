@@ -23,7 +23,7 @@
     </property>
     <property>
         <name>yarn.nodemanager.log-dirs</name>
-        <value>/var/hadoop/log/yarn</value>
+        <value>/vol/hadoop/log/yarn</value>
     </property>
     <!-- hdfs path -->
     <property>

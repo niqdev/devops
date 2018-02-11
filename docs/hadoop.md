@@ -45,10 +45,8 @@ hadoop-destroy
 
 Useful paths
 ```bash
-# data
-/var/hadoop
-# logs
-/var/hadoop/log
+# data and logs
+/vol/hadoop
 # (local) config
 /usr/local/hadoop/etc/hadoop
 # (hdfs) map-reduce history
