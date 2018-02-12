@@ -58,7 +58,7 @@ function setup_dist {
   local OOZIE_DIST_PATH="$DATA_PATH/$OOZIE_NAME*"
   local EXTJS_DIST_PATH="$DATA_PATH/$EXTJS_NAME*"
   local CONFIG_PATH="$OOZIE_BASE_PATH/conf"
-  local FILES=( "oozie-env.sh" )
+  local FILES=( "oozie-site.xml" "oozie-env.sh" )
   echo "[*] setup dist"
 
   if [ ! -e $OOZIE_DIST_PATH ]; then

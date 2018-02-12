@@ -61,6 +61,7 @@ function main {
       start_oozie
       ;;
     *)
+      # TODO all
       start_all
       ;;
   esac

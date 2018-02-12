@@ -255,7 +255,30 @@ Useful paths
 
 ### Examples
 
+```bash
+# example path
+hadoop fs -ls -h -R /oozie/examples
+
+# run default example
+oozie job \
+  -oozie http://localhost:11000/oozie \
+  -config $OOZIE_HOME/examples/apps/map-reduce/job.properties \
+  -run
+
 TODO
+vim examples/apps/map-reduce/job.properties
+hadoop fs -rm -R /user/$(whoami)/examples
+hadoop fs -ls -h -R /
+hdfs dfs -mkdir -p /user/$(whoami)
+hdfs dfs -mkdir -p /user/hadoop/examples/output-data/
+hadoop fs -put $OOZIE_HOME/examples /user/$(whoami)/examples
+
+oozie.wf.application.path=${nameNode}/user/${user.name}/${examplesRoot}/apps/map-reduce/workflow.xml
+
+oozie job   -oozie http://localhost:11000/oozie   -config $OOZIE_HOME/examples/apps/map-reduce/job.properties   -run
+
+oozie job -oozie http://localhost:11000/oozie -info 0000001-180212150923038-oozie-hado-W
+```
 
 ## Ganglia
 
