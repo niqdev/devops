@@ -68,6 +68,10 @@ function setup_dist {
     download_extjs_dist
   fi
 
+  echo "[*] create directories"
+  mkdir -pv \
+    $DATA_PATH_GUEST/{log,data}
+
   echo "[*] build sources"
   tar -xzf $OOZIE_DIST_PATH -C /tmp
   /tmp/$OOZIE_NAME/bin/mkdistro.sh \
@@ -77,12 +81,12 @@ function setup_dist {
   tar -xzf /tmp/$OOZIE_NAME/distro/target/$OOZIE_NAME-distro.tar.gz -C /opt
   ln -s /opt/$OOZIE_NAME $OOZIE_BASE_PATH
 
+  echo "[*] add ExtJS external lib"
   mkdir -p $OOZIE_BASE_PATH/libext
   cp $EXTJS_DIST_PATH $OOZIE_BASE_PATH/libext
-
-  echo "[*] create directories"
-  mkdir -pv \
-    $DATA_PATH_GUEST/{log,data}
+  
+  echo "[*] setup examples"
+  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz -C $DATA_PATH_GUEST
 
   for FILE in "${FILES[@]}"
   do
@@ -102,37 +106,34 @@ function setup_dist {
     source /etc/profile.d/profile-oozie.sh
 }
 
-# hadoop fs -rm -R /oozie/examples
-# /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
-# Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
-
-function setup_example {
-  local EXAMPLES_PATH="$OOZIE_BASE_PATH/examples"
-  echo "[*] setup examples"
-  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz -C $OOZIE_BASE_PATH
-  cp -R $EXAMPLES_PATH $DATA_PATH/oozie
-  su --login $USER_NAME -c "hdfs dfs -mkdir -p /oozie"
-  su --login $USER_NAME -c "hadoop fs -put $EXAMPLES_PATH /oozie/examples"
-
-  chown -R $USER_NAME:$USER_NAME $EXAMPLES_PATH/
-}
-
 function init_oozie {
   echo "[*] init oozie"
   su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000"
   su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run"
 }
 
+# only for development purpose
+function remove_oozie {
+  echo "[*] remove oozie"
+  hadoop fs -rm -f -R /user/$USER_NAME/examples
+
+  rm -frv \
+    "/vol/oozie" \
+    "/usr/local/oozie" \
+    "/opt/oozie-*" \
+    "/tmp/oozie*"
+}
+
 function main {
   echo "[+] setup oozie"
   setup_maven
   setup_dist
-  setup_example
   init_oozie
   echo "[-] setup oozie"
 }
 
 main
+#remove_oozie
 
 # http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 # https://www.edureka.co/blog/apache-oozie-tutorial/

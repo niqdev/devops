@@ -67,6 +67,7 @@ Useful paths
 * DataNode/NodeManager (1): [http://node-1:8042/node](http://172.16.0.101:8042/node)
 * DataNode/NodeManager (2): [http://node-2:8042/node](http://172.16.0.102:8042/node)
 * DataNode/NodeManager (3): [http://node-3:8042/node](http://172.16.0.103:8042/node)
+* Oozie*: [http://oozie.local:11000](http://172.16.0.10:11000)
 
 ## HDFS and MapReduce
 
@@ -250,34 +251,85 @@ Useful paths
 # (local) config
 /usr/local/oozie/conf
 # (hdfs) examples
-/oozie/examples
+/user/hadoop/examples
 ```
+
+TODO
+
+* run default examples
+* custom example workflow and coordinator
+* list command line https://oozie.apache.org/docs/5.0.0-beta1/DG_CommandLineTool.html
+* Docker PostgreSQL
 
 ### Examples
 
-```bash
-# example path
-hadoop fs -ls -h -R /oozie/examples
+Bundled examples within distribution
 
-# run default example
+> TODO always in PREP
+
+```bash
+# host path
+.data/master/oozie/examples
+# guest path
+/vol/oozie/examples
+
+# access master node (hadoop user)
+vagrant ssh master
+
+export OOZIE_EXAMPLE_PATH=/vol/oozie/examples
+export OOZIE_HDFS_PATH=/user/$(whoami)/examples
+
+# open map-reduce job.properties
+vim $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties
+
+# edit the following properties
+nameNode=hdfs://namenode:9000
+jobTracker=resource-manager:8031 #yarn.resourcemanager.resource-tracker.address
+queueName=priority_queue
+
+# upload all the examples
+hadoop fs -put $OOZIE_EXAMPLE_PATH $OOZIE_HDFS_PATH
+# create output directory
+hdfs dfs -mkdir -p $OOZIE_HDFS_PATH/output-data
+
+# verify uploaded files
+hadoop fs -ls -h -R /user/$(whoami)
+
+# run the map-reduce example
 oozie job \
   -oozie http://localhost:11000/oozie \
-  -config $OOZIE_HOME/examples/apps/map-reduce/job.properties \
+  -config $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties \
   -run
 
+# verify status
+oozie job -oozie http://localhost:11000/oozie -info WORKFLOW_ID
+
+# remove all the examples
+hadoop fs -rm -R $OOZIE_HDFS_PATH
+```
+
+Workflow example
+```bash
 TODO
-vim examples/apps/map-reduce/job.properties
-hadoop fs -rm -R /user/$(whoami)/examples
-hadoop fs -ls -h -R /
-hdfs dfs -mkdir -p /user/$(whoami)
-hdfs dfs -mkdir -p /user/hadoop/examples/output-data/
-hadoop fs -put $OOZIE_HOME/examples /user/$(whoami)/examples
 
-oozie.wf.application.path=${nameNode}/user/${user.name}/${examplesRoot}/apps/map-reduce/workflow.xml
+oozie.wf.application.path
+```
 
-oozie job   -oozie http://localhost:11000/oozie   -config $OOZIE_HOME/examples/apps/map-reduce/job.properties   -run
+Coordinator example
+```bash
+TODO
 
-oozie job -oozie http://localhost:11000/oozie -info 0000001-180212150923038-oozie-hado-W
+oozie.coord.application.path
+```
+
+### Command line Tool
+
+```bash
+# verify status
+oozie admin -oozie http://localhost:11000/oozie -status
+
+# verify workflow status
+oozie job -oozie http://localhost:11000/oozie -info WORKFLOW_ID
 ```
 
 ## Ganglia

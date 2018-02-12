@@ -60,9 +60,11 @@ function main {
     "OOZIE")
       start_oozie
       ;;
-    *)
-      # TODO all
+    "ALL")
       start_all
+      ;;
+    *)
+      echo "[-] invalid parameters"
       ;;
   esac
   echo "[-] boostrap"
