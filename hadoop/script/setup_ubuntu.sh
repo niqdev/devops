@@ -14,7 +14,7 @@ FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/.data"
 KEY_NAME="hadoop_rsa"
 USER_NAME="hadoop"
-USER_ID=1001
+USER_ID=1101
 HOME_PATH="/home/$USER_NAME"
 
 ##############################
