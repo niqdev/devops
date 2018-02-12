@@ -12,6 +12,8 @@ cd ${CURRENT_PATH}
 
 USER_NAME="hadoop"
 
+PARAM_SERVICE_NAME=${1:-"all"}
+
 ##############################
 
 function start_hadoop {
@@ -45,10 +47,23 @@ function start_oozie {
   fi
 }
 
-function main {
-  echo "[+] boostrap"
+function start_all {
   start_hadoop
   start_oozie
+}
+
+function main {
+  echo "[+] boostrap"
+  local SERVICE_NAME=$(echo "${PARAM_SERVICE_NAME}" | awk '{print toupper($0)}')
+
+  case $SERVICE_NAME in
+    "OOZIE")
+      start_oozie
+      ;;
+    *)
+      start_all
+      ;;
+  esac
   echo "[-] boostrap"
 }
 
