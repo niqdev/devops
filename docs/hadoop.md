@@ -284,7 +284,7 @@ vim $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties
 
 # edit the following properties
 nameNode=hdfs://namenode:9000
-jobTracker=resource-manager:8031 #yarn.resourcemanager.resource-tracker.address
+jobTracker=resource-manager:8032 #yarn.resourcemanager.address
 queueName=priority_queue
 
 # upload all the examples
@@ -303,6 +303,9 @@ oozie job \
 
 # verify status
 oozie job -oozie http://localhost:11000/oozie -info WORKFLOW_ID
+
+# verify result
+hadoop fs -cat $OOZIE_HDFS_PATH/output-data/map-reduce/part-00000
 
 # remove all the examples
 hadoop fs -rm -R $OOZIE_HDFS_PATH
