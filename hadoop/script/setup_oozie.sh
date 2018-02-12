@@ -54,6 +54,7 @@ function download_extjs_dist {
 }
 
 function setup_dist {
+  local DATA_PATH_GUEST="/vol/oozie"
   local OOZIE_DIST_PATH="$DATA_PATH/$OOZIE_NAME*"
   local EXTJS_DIST_PATH="$DATA_PATH/$EXTJS_NAME*"
   local CONFIG_PATH="$OOZIE_BASE_PATH/conf"
@@ -79,6 +80,10 @@ function setup_dist {
   mkdir -p $OOZIE_BASE_PATH/libext
   cp $EXTJS_DIST_PATH $OOZIE_BASE_PATH/libext
 
+  echo "[*] create directories"
+  mkdir -pv \
+    $DATA_PATH_GUEST/{log,data}
+
   for FILE in "${FILES[@]}"
   do
     echo "[*] update config: $FILE"
@@ -87,14 +92,10 @@ function setup_dist {
     cp $FILE_PATH/oozie/config/$FILE $CONFIG_PATH/$FILE
   done
 
-  echo "[*] setup examples"
-  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz -C $OOZIE_BASE_PATH
-  cp -R $OOZIE_BASE_PATH/examples/ $DATA_PATH/oozie
-  # TODO error
-  su --login $USER_NAME -c "hadoop fs -put $OOZIE_BASE_PATH/examples /oozie/examples"
-
   echo "[*] update permissions"
-  chown -R $USER_NAME:$USER_NAME "$OOZIE_BASE_PATH/"
+  chown -R $USER_NAME:$USER_NAME \
+    $OOZIE_BASE_PATH/ \
+    $DATA_PATH_GUEST/
 
   echo "[*] update env"
   cp $FILE_PATH/oozie/profile-oozie.sh /etc/profile.d/profile-oozie.sh && \
@@ -104,6 +105,17 @@ function setup_dist {
 # hadoop fs -rm -R /oozie/examples
 # /usr/local/oozie$ bin/oozie job -oozie http://localhost:11000/oozie -config examples/apps/map-reduce/job.properties -run
 # Error: E0501 : E0501: Could not perform authorization operation, Call From master/127.0.0.1 to localhost:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+
+function setup_example {
+  local EXAMPLES_PATH="$OOZIE_BASE_PATH/examples"
+  echo "[*] setup examples"
+  tar -xzf $OOZIE_BASE_PATH/oozie-examples.tar.gz -C $OOZIE_BASE_PATH
+  cp -R $EXAMPLES_PATH $DATA_PATH/oozie
+  su --login $USER_NAME -c "hdfs dfs -mkdir -p /oozie"
+  su --login $USER_NAME -c "hadoop fs -put $EXAMPLES_PATH /oozie/examples"
+
+  chown -R $USER_NAME:$USER_NAME $EXAMPLES_PATH/
+}
 
 function init_oozie {
   echo "[*] init oozie"

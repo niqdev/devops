@@ -239,7 +239,7 @@ sudo su -
 /vagrant/script/setup_oozie.sh
 
 # start oozie
-su --login hadoop /vagrant/script/bootstrap.sh
+su --login hadoop /vagrant/script/bootstrap.sh oozie
 ```
 *It might take a while to build the sources*
 
