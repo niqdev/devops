@@ -239,7 +239,7 @@ sudo su -
 # build, install and init
 /vagrant/script/setup_oozie.sh
 
-# start oozie
+# start oozie manually (first time only)
 su --login hadoop /vagrant/script/bootstrap.sh oozie
 ```
 *It might take a while to build the sources*
@@ -256,7 +256,6 @@ Useful paths
 
 TODO
 
-* run default examples
 * custom example workflow and coordinator
 * list command line https://oozie.apache.org/docs/5.0.0-beta1/DG_CommandLineTool.html
 * Docker PostgreSQL
@@ -264,16 +263,13 @@ TODO
 ### Examples
 
 Bundled examples within distribution
-
-> TODO always in PREP
-
 ```bash
 # host path
 .data/master/oozie/examples
 # guest path
 /vol/oozie/examples
 
-# access master node (hadoop user)
+# access master node as hadoop user
 vagrant ssh master
 
 export OOZIE_EXAMPLE_PATH=/vol/oozie/examples
@@ -283,9 +279,9 @@ export OOZIE_HDFS_PATH=/user/$(whoami)/examples
 vim $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties
 
 # edit the following properties
-nameNode=hdfs://namenode:9000
-jobTracker=resource-manager:8032 #yarn.resourcemanager.address
-queueName=priority_queue
+nameNode=hdfs://namenode:9000 # fs.defaultFS @ core-site.xml
+jobTracker=resource-manager:8032 # yarn.resourcemanager.address @ yarn-site.xml
+queueName=priority_queue # or default @ fair-scheduler.xml
 
 # upload all the examples
 hadoop fs -put $OOZIE_EXAMPLE_PATH $OOZIE_HDFS_PATH
@@ -328,6 +324,8 @@ oozie.coord.application.path
 ### Command line Tool
 
 ```bash
+TODO
+
 # verify status
 oozie admin -oozie http://localhost:11000/oozie -status
 
