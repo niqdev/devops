@@ -290,7 +290,7 @@ Documentation
 
 > *Oozie is not installed by default*
 
-**Experimental PostgreSQL configuration** - By default Oozie is configured to use Embedded Derby
+**Optional PostgreSQL configuration** - By default Oozie is configured to use Embedded Derby
 ```bash
 # access master node
 vagrant ssh master
@@ -316,9 +316,9 @@ docker run \
   --detach \
   --name oozie-postgres \
   -p 5432:5432 \
-  -e POSTGRES_DB=oozie-db \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=oozie-password \
+  -e POSTGRES_DB="oozie-db" \
+  -e POSTGRES_USER="postgres" \
+  -e POSTGRES_PASSWORD="password" \
   postgres
 
 # permission issue
@@ -328,8 +328,15 @@ docker run \
 # access container
 docker exec -it oozie-postgres bash
 psql --username=postgres
-# list databases
+# list all databases
 \list
+\connect oozie-db
+# list all tables
+\dt
+# describe table
+\d+ wf_jobs
+# list workflow
+select * from wf_jobs;
 ```
 
 Install and start Oozie
@@ -365,10 +372,9 @@ devops-lab/hadoop/.data/master/oozie # host
 
 Run bundled examples within distribution
 ```bash
-# host path
-.data/master/oozie/examples
-# guest path
-/vol/oozie/examples
+# examples path
+.data/master/oozie/examples # host
+/vol/oozie/examples # guest
 
 # access master node as hadoop user
 vagrant ssh master
