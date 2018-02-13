@@ -2,16 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
 
-    <!-- core-site.xml -->
-    <property>
-        <name>hadoop.proxyuser.hadoop.hosts</name>
-        <value>*</value>
-    </property>
-    <property>
-        <name>hadoop.proxyuser.hadoop.groups</name>
-        <value>*</value>
-    </property>
-
     <property>
         <name>oozie.service.HadoopAccessorService.hadoop.configurations</name>
         <value>*=/usr/local/hadoop/etc/hadoop</value>
@@ -40,11 +30,11 @@
     </property>
     <property>
         <name>oozie.service.JPAService.jdbc.username</name>
-        <value>oozie-username</value>
+        <value>postgres</value>
     </property>
     <property>
         <name>oozie.service.JPAService.jdbc.password</name>
-        <value>oozie-password</value>
+        <value>postgres</value>
     </property>
     <property>
         <name>oozie.service.JPAService.connection.properties</name>

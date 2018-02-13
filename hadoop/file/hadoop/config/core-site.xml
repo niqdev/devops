@@ -5,4 +5,14 @@
         <name>fs.defaultFS</name>
         <value>hdfs://namenode.local:9000</value>
     </property>
+
+    <!-- Oozie -->
+    <property>
+        <name>hadoop.proxyuser.hadoop.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hadoop.groups</name>
+        <value>*</value>
+    </property>
 </configuration>
