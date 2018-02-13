@@ -57,18 +57,18 @@ Useful paths
 /yarn/app/hadoop/logs/application_XXX
 ```
 
-## Web UI links
+Web UI links
 
-* NameNode: [http://namenode:50070](http://172.16.0.10:50070)
-* NameNode metrics: [http://namenode:50070/jmx](http://172.16.0.10:50070/jmx)
-* ResourceManager: [http://resource-manager:8088](http://172.16.0.10:8088)
-* Log Level: [http://resource-manager:8088/logLevel](http://172.16.0.10:8088/logLevel)
-* JVM stack traces: [http://resource-manager:8088/stacks](http://172.16.0.10:8088/stacks)
-* Web Application Proxy Server: [http://web-proxy:8100/proxy/application_XXX_0000](http://172.16.0.10:8100/proxy/application_XXX_0000)
-* MapReduce Job History Server: [http://history:19888](http://172.16.0.10:19888)
-* DataNode/NodeManager (1): [http://node-1:8042/node](http://172.16.0.101:8042/node)
-* DataNode/NodeManager (2): [http://node-2:8042/node](http://172.16.0.102:8042/node)
-* DataNode/NodeManager (3): [http://node-3:8042/node](http://172.16.0.103:8042/node)
+* NameNode: [http://namenode.local:50070](http://172.16.0.10:50070)
+* NameNode metrics: [http://namenode.local:50070/jmx](http://172.16.0.10:50070/jmx)
+* ResourceManager: [http://resource-manager.local:8088](http://172.16.0.10:8088)
+* Log Level: [http://resource-manager.local:8088/logLevel](http://172.16.0.10:8088/logLevel)
+* JVM stack traces: [http://resource-manager.local:8088/stacks](http://172.16.0.10:8088/stacks)
+* Web Application Proxy Server: [http://web-proxy.local:8100/proxy/application_XXX_0000](http://172.16.0.10:8100/proxy/application_XXX_0000)
+* MapReduce Job History Server: [http://history.local:19888](http://172.16.0.10:19888)
+* DataNode/NodeManager (1): [http://node-1.local:8042/node](http://172.16.0.101:8042/node)
+* DataNode/NodeManager (2): [http://node-2.local:8042/node](http://172.16.0.102:8042/node)
+* DataNode/NodeManager (3): [http://node-3.local:8042/node](http://172.16.0.103:8042/node)
 * Oozie*: [http://oozie.local:11000](http://172.16.0.10:11000)
 
 ## HDFS and MapReduce
@@ -229,8 +229,43 @@ Documentation
 
 ### Setup
 
-Oozie is not installed by default
+> Oozie is not installed by default
 
+TODO
+
+**Experimental** Optionally install PostgreSQL, by default Oozie is configured to use Embedded Derby. Note that the bootstrap script will not start the container.
+```bash
+# access master node
+vagrant ssh master
+
+# uncomment PostgreSQL configuration
+vim devops-lab/hadoop/file/oozie/config/oozie-site.xml
+
+# install docker
+curl -fsSL get.docker.com -o get-docker.sh && \
+  chmod u+x $_ && \
+  ./$_ && \
+  sudo usermod -aG docker hadoop
+
+# start temporary postgres on guest machine 
+docker run \
+  --rm \
+  --name oozie-postgres \
+  -p 5432:5432 \
+  -e POSTGRES_DB=oozie-db \
+  -e POSTGRES_USER=oozie-username \
+  -e POSTGRES_PASSWORD=oozie-password \
+  postgres
+
+# access container
+docker exec -it oozie-postgres bash
+
+psql --username=postgres
+# list databases
+\list
+```
+
+Install and start Oozie
 ```bash
 # access master node
 vagrant ssh master
@@ -256,15 +291,9 @@ Useful paths
 /user/hadoop/examples
 ```
 
-TODO
-
-* custom example workflow and coordinator
-* list command line https://oozie.apache.org/docs/5.0.0-beta1/DG_CommandLineTool.html
-* Docker PostgreSQL
-
 ### Examples
 
-Bundled examples within distribution
+Run bundled examples within distribution
 ```bash
 # host path
 .data/master/oozie/examples
@@ -281,8 +310,8 @@ export OOZIE_HDFS_PATH=/user/$(whoami)/examples
 vim $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties
 
 # edit the following properties
-nameNode=hdfs://namenode:9000 # fs.defaultFS @ core-site.xml
-jobTracker=resource-manager:8032 # yarn.resourcemanager.address @ yarn-site.xml
+nameNode=hdfs://namenode.local:9000 # fs.defaultFS @ core-site.xml
+jobTracker=resource-manager.local:8032 # yarn.resourcemanager.address @ yarn-site.xml
 queueName=priority_queue # or default @ fair-scheduler.xml
 
 # upload all the examples
@@ -291,14 +320,14 @@ hadoop fs -put $OOZIE_EXAMPLE_PATH $OOZIE_HDFS_PATH
 # verify uploaded files
 hadoop fs -ls -h -R /user/$(whoami)
 
-# run the map-reduce example
+# run the map-reduce workflow example
 oozie job \
-  -oozie http://localhost:11000/oozie \
+  -oozie http://oozie.local:11000/oozie \
   -config $OOZIE_EXAMPLE_PATH/apps/map-reduce/job.properties \
   -run
 
 # verify status
-oozie job -oozie http://localhost:11000/oozie -info WORKFLOW_ID
+oozie job -oozie http://oozie.local:11000/oozie -info WORKFLOW_ID
 
 # verify result
 hadoop fs -cat $OOZIE_HDFS_PATH/output-data/map-reduce/part-00000
@@ -307,30 +336,30 @@ hadoop fs -cat $OOZIE_HDFS_PATH/output-data/map-reduce/part-00000
 hadoop fs -rm -R $OOZIE_HDFS_PATH
 ```
 
-Workflow example
-```bash
-TODO
+### Useful commands
 
-oozie.wf.application.path
-```
-
-Coordinator example
-```bash
-TODO
-
-oozie.coord.application.path
-```
-
-### Command line Tool
+* Workflow requires `oozie.wf.application.path` property
+* Coordinator requires `oozie.coord.application.path` property
 
 ```bash
-TODO
+# verify oozie status
+oozie admin \
+  -oozie http://oozie.local:11000/oozie \
+  -status
 
-# verify status
-oozie admin -oozie http://localhost:11000/oozie -status
+# verify workflow or coordinator status
+oozie job \
+  -oozie http://oozie.local:11000/oozie \
+  -info JOB_ID \
+  -verbose
 
-# verify workflow status
-oozie job -oozie http://localhost:11000/oozie -info WORKFLOW_ID
+# poll workflow or coordinator status
+oozie job \
+  -oozie http://oozie.local:11000/oozie \
+  -poll JOB_ID \
+  -interval 10 \
+  -timeout 60 \
+  -verbose
 ```
 
 ## Ganglia

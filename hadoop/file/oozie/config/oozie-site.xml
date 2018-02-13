@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
+
+    <!-- core-site.xml -->
+    <property>
+        <name>hadoop.proxyuser.hadoop.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hadoop.groups</name>
+        <value>*</value>
+    </property>
+
     <property>
         <name>oozie.service.HadoopAccessorService.hadoop.configurations</name>
         <value>*=/usr/local/hadoop/etc/hadoop</value>
+    </property>
+
+    <!-- PostgreSQL -->
+    <property>
+        <name>oozie.db.schema.name</name>
+        <value>oozie</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.create.db.schema</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.validate.db.connection</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.jdbc.driver</name>
+        <value>org.postgresql.Driver</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.jdbc.url</name>
+        <value>jdbc:postgresql://postgres.local:5432/oozie-db</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.jdbc.username</name>
+        <value>oozie-username</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.jdbc.password</name>
+        <value>oozie-password</value>
+    </property>
+    <property>
+        <name>oozie.service.JPAService.connection.properties</name>
+        <value>connectTimeout=30,socketTimeout=30</value>
     </property>
 </configuration>
