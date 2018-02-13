@@ -95,7 +95,7 @@ function config_profile {
 
 function config_host {
   echo "[*] config host"
-  cat $FILE_PATH/hadoop/hosts >> /etc/hosts
+  cat $FILE_PATH/hosts >> /etc/hosts
 }
 
 function setup_motd {

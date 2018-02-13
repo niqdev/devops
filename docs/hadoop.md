@@ -1,3 +1,5 @@
+# TODO .local
+
 # Hadoop
 
 The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops-lab/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
@@ -285,8 +287,6 @@ queueName=priority_queue # or default @ fair-scheduler.xml
 
 # upload all the examples
 hadoop fs -put $OOZIE_EXAMPLE_PATH $OOZIE_HDFS_PATH
-# create output directory
-hdfs dfs -mkdir -p $OOZIE_HDFS_PATH/output-data
 
 # verify uploaded files
 hadoop fs -ls -h -R /user/$(whoami)

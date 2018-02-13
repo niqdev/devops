@@ -108,7 +108,7 @@ function setup_dist {
 
 function init_oozie {
   echo "[*] init oozie"
-  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode:9000"
+  su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/oozie-setup.sh sharelib create -fs hdfs://namenode.local:9000"
   su --login $USER_NAME -c "$OOZIE_BASE_PATH/bin/ooziedb.sh create -sqlfile oozie.sql -run"
 }
 

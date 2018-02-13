@@ -9,11 +9,11 @@
     <!-- MapReduce Job History Server -->
     <property>
         <name>mapreduce.jobhistory.address</name>
-        <value>history:10020</value>
+        <value>history.local:10020</value>
     </property>
     <property>
         <name>mapreduce.jobhistory.webapp.address</name>
-        <value>history:19888</value>
+        <value>history.local:19888</value>
     </property>
     <!-- hdfs path -->
     <property>

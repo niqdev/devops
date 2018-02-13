@@ -1,5 +1,0 @@
-# hadoop hosts
-172.16.0.10 master namenode secondary-namenode resource-manager web-proxy history
-172.16.0.101 node-1 datanode-1 node-manager-1
-172.16.0.102 node-2 datanode-2 node-manager-2
-172.16.0.103 node-3 datanode-3 node-manager-3

@@ -38,17 +38,17 @@
     <!-- MapReduce Job History Server -->
     <property>
         <name>yarn.log.server.url</name>
-        <value>http://history:19888/jobhistory/logs</value>
+        <value>http://history.local:19888/jobhistory/logs</value>
     </property>
 
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>resource-manager</value>
+        <value>resource-manager.local</value>
     </property>
     <!-- Web Application Proxy Server -->
     <property>
         <name>yarn.web-proxy.address</name>
-        <value>web-proxy:8100</value>
+        <value>web-proxy.local:8100</value>
     </property>
 
 </configuration>

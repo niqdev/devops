@@ -43,7 +43,7 @@ function start_oozie {
   if [ -x "$(command -v oozie)" ]; then
     echo "[*] start oozie"
     oozied.sh start
-    oozie admin -oozie http://localhost:11000/oozie -status
+    oozie admin -oozie http://oozie.local:11000/oozie -status
   fi
 }
 

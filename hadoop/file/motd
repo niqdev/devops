@@ -3,10 +3,11 @@
 echo "\nHostname: \033[1;31m$(hostname -s)\033[0m"
 echo "Uptime:$(uptime)\n"
 
-echo '* NameNode: http://172.16.0.10:50070'
-echo '* ResourceManager: http://172.16.0.10:8088'
-echo '* MapReduce Job History Server: http://172.16.0.10:19888'
-echo '* DataNode/NodeManager (1): http://172.16.0.101:8042/node'
-echo '* DataNode/NodeManager (2): http://172.16.0.102:8042/node'
-echo '* DataNode/NodeManager (3): http://172.16.0.103:8042/node'
-echo '* Oozie: http://172.16.0.10:11000'
+echo '* master: 172.16.0.10'
+echo '* node-1: 172.16.0.101\n'
+
+echo '* NameNode: http://namenode.local:50070'
+echo '* ResourceManager: http://resource-manager.local:8088'
+echo '* MapReduce Job History Server: http://history.local:19888'
+echo '* DataNode/NodeManager (1): http://node-1.local:8042/node'
+echo '* Oozie: http://oozie.local:11000'
