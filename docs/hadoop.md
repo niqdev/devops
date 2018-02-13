@@ -1,16 +1,6 @@
-# TODO .local
-
 # Hadoop
 
 The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops-lab/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
-
-### Directory structure
-
-All the commands are executed in this directory `cd hadoop`
-
-```bash
-TODO
-```
 
 ### Setup
 
@@ -18,6 +8,67 @@ Requirements
 
 * Vagrant
 * VirtualBox
+
+Directory structure
+```bash
+cd devops-lab/hadoop
+
+tree -a hadoop/
+hadoop/
+├── .data # mounted volume
+│   ├── hadoop_rsa
+│   ├── hadoop_rsa.pub
+│   ├── master
+│   │   ├── hadoop
+│   │   │   ├── log
+│   │   │   │   ├── hadoop
+│   │   │   │   ├── mapred
+│   │   │   │   └── yarn
+│   │   │   ├── namenode
+│   │   │   └── secondary
+│   │   └── oozie
+│   │       ├── data
+│   │       └── log
+│   ├── node-1
+│   │   └── hadoop
+│   │       ├── datanode
+│   │       └── log
+│   │           ├── hadoop
+│   │           ├── mapred
+│   │           └── yarn
+│   ├── node-2
+│   ├── node-3
+├── example
+│   └── map-reduce
+├── file
+│   ├── hadoop
+│   │   ├── config
+│   │   │   ├── core-site.xml
+│   │   │   ├── fair-scheduler.xml
+│   │   │   ├── hdfs-site.xml
+│   │   │   ├── mapred-site.xml
+│   │   │   ├── masters
+│   │   │   ├── slaves
+│   │   │   └── yarn-site.xml
+│   │   └── profile-hadoop.sh
+│   ├── hosts
+│   ├── motd
+│   ├── oozie
+│   │   ├── config
+│   │   │   ├── oozie-env.sh
+│   │   │   └── oozie-site.xml
+│   │   └── profile-oozie.sh
+│   └── ssh
+│       └── config
+├── script
+│   ├── bootstrap.sh
+│   ├── setup_hadoop.sh
+│   ├── setup_oozie.sh
+│   ├── setup_spark.sh
+│   └── setup_ubuntu.sh
+├── Vagrantfile
+└── vagrant_hadoop.sh
+```
 
 Import the script
 ```bash
@@ -30,7 +81,7 @@ hadoop-start
 ```
 *The first time it might take a while*
 
-Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops-lab/blob/master/hadoop/file/hadoop/hosts) file
+Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops-lab/blob/master/hadoop/file/hosts) file
 ```bash
 vagrant ssh master
 ssh hadoop@172.16.0.10 -i .data/hadoop_rsa
@@ -45,16 +96,9 @@ Destroy the cluster
 hadoop-destroy
 ```
 
-Useful paths
+For convenience add to the host machine
 ```bash
-# data and logs
-/vol/hadoop
-# (local) config
-/usr/local/hadoop/etc/hadoop
-# (hdfs) map-reduce history
-/mr-history/history/done_intermediate/hadoop
-# (hdfs) aggregated app logs
-/yarn/app/hadoop/logs/application_XXX
+cat hadoop/file/hosts | sudo tee --append /etc/hosts
 ```
 
 Web UI links
@@ -63,7 +107,6 @@ Web UI links
 * NameNode metrics: [http://namenode.local:50070/jmx](http://172.16.0.10:50070/jmx)
 * ResourceManager: [http://resource-manager.local:8088](http://172.16.0.10:8088)
 * Log Level: [http://resource-manager.local:8088/logLevel](http://172.16.0.10:8088/logLevel)
-* JVM stack traces: [http://resource-manager.local:8088/stacks](http://172.16.0.10:8088/stacks)
 * Web Application Proxy Server: [http://web-proxy.local:8100/proxy/application_XXX_0000](http://172.16.0.10:8100/proxy/application_XXX_0000)
 * MapReduce Job History Server: [http://history.local:19888](http://172.16.0.10:19888)
 * DataNode/NodeManager (1): [http://node-1.local:8042/node](http://172.16.0.101:8042/node)
@@ -92,6 +135,22 @@ hdfs dfsadmin -report
 
 # filesystem check
 hdfs fsck /
+```
+
+Useful paths
+```bash
+# data and logs
+devops-lab/hadoop/.data/master/hadoop # host
+/vol/hadoop # guest
+
+# (guest) config
+/usr/local/hadoop/etc/hadoop
+
+# (hdfs) map-reduce history
+/mr-history/history/done_intermediate/hadoop
+
+# (hdfs) aggregated app logs
+/yarn/app/hadoop/logs/application_XXX
 ```
 
 ### MapReduce WordCount Job
@@ -229,17 +288,12 @@ Documentation
 
 ### Setup
 
-> Oozie is not installed by default
+> *Oozie is not installed by default*
 
-TODO
-
-**Experimental** Optionally install PostgreSQL, by default Oozie is configured to use Embedded Derby. Note that the bootstrap script will not start the container.
+**Experimental PostgreSQL configuration** - By default Oozie is configured to use Embedded Derby
 ```bash
 # access master node
 vagrant ssh master
-
-# uncomment PostgreSQL configuration
-vim devops-lab/hadoop/file/oozie/config/oozie-site.xml
 
 # install docker
 curl -fsSL get.docker.com -o get-docker.sh && \
@@ -247,19 +301,32 @@ curl -fsSL get.docker.com -o get-docker.sh && \
   ./$_ && \
   sudo usermod -aG docker hadoop
 
-# start temporary postgres on guest machine 
+# logout and login again to verify docker installation
+exit
+vagrant ssh master
+whoami # whoami
+docker ps -a
+
+# uncomment PostgreSQL configurations
+vim devops-lab/hadoop/file/oozie/config/oozie-site.xml # from host
+vim /vagrant/file/oozie/config/oozie-site.xml # from guest
+
+# start postgres on guest machine 
 docker run \
-  --rm \
+  --detach \
   --name oozie-postgres \
   -p 5432:5432 \
   -e POSTGRES_DB=oozie-db \
-  -e POSTGRES_USER=oozie-username \
+  -e POSTGRES_USER=postgres \
   -e POSTGRES_PASSWORD=oozie-password \
   postgres
 
+# permission issue
+# https://github.com/docker-library/postgres/issues/116
+# --volume /vol/postgres:/var/lib/postgresql/data
+
 # access container
 docker exec -it oozie-postgres bash
-
 psql --username=postgres
 # list databases
 \list
@@ -284,9 +351,12 @@ su --login hadoop /vagrant/script/bootstrap.sh oozie
 Useful paths
 ```bash
 # data and logs
-/vol/oozie
-# (local) config
+devops-lab/hadoop/.data/master/oozie # host
+/vol/oozie # guest
+
+# (guest) config
 /usr/local/oozie/conf
+
 # (hdfs) examples
 /user/hadoop/examples
 ```
