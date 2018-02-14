@@ -61,6 +61,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "./script/setup_ubuntu.sh"
   config.vm.provision "shell", path: "./script/setup_hadoop.sh"
+  config.vm.provision "shell", path: "./script/setup_spark.sh"
   config.vm.provision "shell", run: "always", inline: <<-SHELL
     su --login hadoop /vagrant/script/bootstrap.sh
   SHELL

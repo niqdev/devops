@@ -8,26 +8,54 @@ IFS=$'\n\t'
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
 
-echo "[+] setup spark"
+##############################
+
+FILE_PATH="/vagrant/file"
+DATA_PATH="/vagrant/.data"
+USER_NAME="hadoop"
 
 SPARK_VERSION="2.2.1"
 HADOOP_VERSION="2.7"
-SPARK_PATH="spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION"
-SPARK_DIST="$SPARK_PATH.tgz"
+SPARK_NAME="spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION"
 
-wget -q -P /tmp "http://www-eu.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_DIST"
+##############################
 
-tar -xvf /tmp/$SPARK_DIST -C /opt
-rm /tmp/$SPARK_DIST
+function download_dist {
+  local SPARK_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_NAME.tgz"
+  echo "[*] download dist"
+  wget -q -P $DATA_PATH $SPARK_MIRROR_DOWNLOAD
+}
 
-ln -s /opt/$SPARK_PATH /usr/local/spark
+function setup_dist {
+  local SPARK_DIST_PATH="$DATA_PATH/$SPARK_NAME*"
+  echo "[*] setup dist"
 
-echo -e "SPARK_HOME=/usr/local/spark" | tee --append /etc/environment && \
-  source /etc/environment
+  if [ ! -e $SPARK_DIST_PATH ]; then
+    download_dist
+  fi
 
-echo -e "export PATH=\$PATH:\$SPARK_HOME/bin" | tee --append /etc/profile.d/spark.sh && \
-  source /etc/profile.d/spark.sh
+  tar -xf $SPARK_DIST_PATH -C /opt
+  ln -s /opt/$SPARK_NAME /usr/local/spark
+  chown -R $USER_NAME:$USER_NAME /opt/$SPARK_NAME
+}
 
-spark-shell --version
+function setup_config {
+  local SPARK_BASE_PATH="/usr/local/spark"
 
-echo "[-] setup spark"
+  echo "[*] update permissions"
+  chown -R $USER_NAME:$USER_NAME \
+    $SPARK_BASE_PATH/
+  
+  echo "[*] update env"
+  cp $FILE_PATH/spark/profile-spark.sh /etc/profile.d/profile-spark.sh && \
+    source /etc/profile.d/profile-spark.sh
+}
+
+function main {
+  echo "[+] setup spark"
+  setup_dist
+  setup_config
+  echo "[-] setup spark"
+}
+
+main

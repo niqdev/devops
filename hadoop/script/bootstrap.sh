@@ -38,6 +38,11 @@ function start_hadoop {
   jps
 }
 
+function start_spark {
+  echo "[*] start spark"
+  spark-shell --version
+}
+
 function start_oozie {
   # check if exists
   if [ -x "$(command -v oozie)" ]; then
@@ -49,6 +54,7 @@ function start_oozie {
 
 function start_all {
   start_hadoop
+  start_spark
   start_oozie
 }
 
