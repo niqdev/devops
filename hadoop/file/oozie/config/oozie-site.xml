@@ -8,6 +8,7 @@
     </property>
 
     <!-- PostgreSQL -->
+    <!--
     <property>
         <name>oozie.db.schema.name</name>
         <value>oozie</value>
@@ -40,4 +41,5 @@
         <name>oozie.service.JPAService.connection.properties</name>
         <value>connectTimeout=30,socketTimeout=30</value>
     </property>
+    -->
 </configuration>
