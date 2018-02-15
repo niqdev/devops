@@ -8,18 +8,94 @@ Offical documentation
 
 * [Docker](https://docs.docker.com)
 
-### Basic Docker commands
+Setup
+```bash
+# install docker
+curl -fsSL get.docker.com -o get-docker.sh && \
+  chmod u+x $_ && \
+  ./$_ && \
+  sudo usermod -aG docker hadoop
 
-TODO
+docker --version
+
+# install docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` \
+  -o /usr/local/bin/docker-compose && \
+  sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+# install docker-machine (VirtualBox required)
+curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
+  sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+
+docker-machine --version
+```
+
+Useful commands
 ```bash
 TODO
 ```
 
-### Docker Machine
-
-TODO
+Docker Machine
 ```bash
-TODO
+# create local machine
+docker-machine create --driver virtualbox default
+
+# list
+docker-machine ls
+docker-machine ls --filter name=default
+docker-machine ls --filter state=Running
+docker-machine ls --format "{{.Name}}: {{.DriverName}} - {{.State}}"
+
+# info
+docker-machine inspect default
+docker-machine inspect --format='{{.Driver.IPAddress}}' default
+docker-machine status default
+docker-machine ip default
+
+# management
+docker-machine start default
+docker-machine stop default
+docker-machine restart default
+docker-machine rm default
+
+# mount volume
+#https://docs.docker.com/machine/reference/mount
+
+# show command to connect to machine
+docker-machine env default
+# check if variables are set
+env | grep DOCKER
+
+# connect to machine
+eval "$(docker-machine env default)"
+docker ps -a
+
+# show command to disconnect from machine
+docker-machine env -u
+# unset all
+eval $(docker-machine env -u)
+
+---------- TODO review example
+
+# access
+docker-machine ssh default
+# execute command and exit
+docker-machine ssh default uptime
+
+docker-machine scp -r /FROM default:/TO
+
+# example nginx
+docker run -d -p 8000:80 nginx
+# tunnel to forward port 8080
+docker-machine ssh default -L 8080:localhost:8080
+
+# from another shell
+curl $(docker-machine ip default):8000
+
+# disable error crash reporting
+mkdir -p ~/.docker/machine && touch ~/.docker/machine/no-error-report
 ```
 
 ## Vagrant
