@@ -236,6 +236,13 @@ hadoop fs -cat sorted-data/part-r-00000
 
 > **Spark** is an open-source cluster-computing framework
 
+Documentation
+
+* [Spark](https://spark.apache.org/docs/latest)
+* [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
+
+
+http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application/
 TODO
 
 ## Flink
