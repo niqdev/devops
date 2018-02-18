@@ -2,7 +2,7 @@
 
 Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.
 
-Offical documentation
+Documentation
 
 * [Docker](https://docs.docker.com)
 

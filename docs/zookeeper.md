@@ -11,7 +11,7 @@ Documentation
 Build `devops/base` image
 ```bash
 # change path
-cd devops-lab/base
+cd devops/base
 # build image
 docker build -t devops/base .
 ```
@@ -19,7 +19,7 @@ docker build -t devops/base .
 Build `devops/zookeeper` image
 ```bash
 # change path
-cd devops-lab/zookeeper
+cd devops/zookeeper
 
 # build image
 docker build -t devops/zookeeper:latest .

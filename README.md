@@ -1,16 +1,14 @@
-# DevOps Lab
+# DevOps
 
-A collection of Docker and Vagrant images mainly to provision distributed systems for local development, learning purposes and quick prototyping.
+A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
-Documentations
-
-* [Docker](https://niqdev.github.io/devops-lab/docker) 
-* [Ansible](https://niqdev.github.io/devops-lab/ansible)
-* [Hadoop](https://niqdev.github.io/devops-lab/hadoop)
-  * [HDFS and MapReduce](https://niqdev.github.io/devops-lab/hadoop/#hdfs-and-mapreduce)
-  * [Spark](https://niqdev.github.io/devops-lab/hadoop/#spark)
-  * [Oozie](https://niqdev.github.io/devops-lab/hadoop/#oozie)
-* [Cassandra](https://niqdev.github.io/devops-lab/cassandra)
-* [Zookeeper](https://niqdev.github.io/devops-lab/zookeeper)
-* [Kafka](https://niqdev.github.io/devops-lab/kafka)
-* [Other](https://niqdev.github.io/devops-lab/other)
+* [Docker](https://niqdev.github.io/devops/docker) 
+* [Ansible](https://niqdev.github.io/devops/ansible)
+* [Hadoop](https://niqdev.github.io/devops/hadoop)
+  * [HDFS and MapReduce](https://niqdev.github.io/devops/hadoop/#hdfs-and-mapreduce)
+  * [Spark](https://niqdev.github.io/devops/hadoop/#spark)
+  * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
+* [Cassandra](https://niqdev.github.io/devops/cassandra)
+* [Zookeeper](https://niqdev.github.io/devops/zookeeper)
+* [Kafka](https://niqdev.github.io/devops/kafka)
+* [Other](https://niqdev.github.io/devops/other)

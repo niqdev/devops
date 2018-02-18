@@ -1,6 +1,6 @@
 # Hadoop
 
-The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops-lab/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
+The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
 
 ### Setup
 
@@ -11,7 +11,7 @@ Requirements
 
 Directory structure
 ```bash
-cd devops-lab/hadoop
+cd devops/hadoop
 
 tree -a hadoop/
 hadoop/
@@ -81,7 +81,7 @@ hadoop-start
 ```
 *The first time it might take a while*
 
-Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops-lab/blob/master/hadoop/file/hosts) file
+Access the cluster via ssh, check also the [/etc/hosts](https://github.com/niqdev/devops/blob/master/hadoop/file/hosts) file
 ```bash
 vagrant ssh master
 ssh hadoop@172.16.0.10 -i .data/hadoop_rsa
@@ -140,7 +140,7 @@ hdfs fsck /
 Useful paths
 ```bash
 # data and logs
-devops-lab/hadoop/.data/master/hadoop # host
+devops/hadoop/.data/master/hadoop # host
 /vol/hadoop # guest
 
 # (guest) config
@@ -181,7 +181,7 @@ hadoop fs -cat /user/ubuntu/word-count/input/file02
 hadoop fs -cat /user/ubuntu/word-count/input/*
 
 # build the jar (outside the machine to avoid permission issues)
-cd devops-lab/hadoop/example/map-reduce
+cd devops/hadoop/example/map-reduce
 ./gradlew clean build
 
 # run application
@@ -276,7 +276,7 @@ whoami # whoami
 docker ps -a
 
 # uncomment PostgreSQL configurations
-vim devops-lab/hadoop/file/oozie/config/oozie-site.xml # from host
+vim devops/hadoop/file/oozie/config/oozie-site.xml # from host
 vim /vagrant/file/oozie/config/oozie-site.xml # from guest
 
 # start postgres on guest machine 
@@ -326,7 +326,7 @@ su --login hadoop /vagrant/script/bootstrap.sh oozie
 Useful paths
 ```bash
 # data and logs
-devops-lab/hadoop/.data/master/oozie # host
+devops/hadoop/.data/master/oozie # host
 /vol/oozie # guest
 
 # (guest) config

@@ -1,8 +1,6 @@
-# DevOps Lab
+# DevOps
 
-A collection of Docker and Vagrant images mainly to provision distributed systems for local development, learning purposes and quick prototyping.
-
-Documentations
+A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
 * [Docker](docker.md)
 * [Ansible](ansible.md)

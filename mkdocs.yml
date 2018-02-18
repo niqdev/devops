@@ -1,6 +1,6 @@
-site_name: DevOps Lab
+site_name: DevOps
 site_author: niqdev
-repo_url: https://github.com/niqdev/devops-lab
+repo_url: https://github.com/niqdev/devops
 theme: readthedocs
 google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 
