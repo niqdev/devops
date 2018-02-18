@@ -6,6 +6,7 @@ google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 
 pages:
     - Home: index.md
+    - Docker: docker.md
     - Ansible: ansible.md
     - Hadoop: hadoop.md
     - Cassandra: cassandra.md

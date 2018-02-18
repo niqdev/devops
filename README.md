@@ -4,6 +4,7 @@ A collection of Docker and Vagrant images mainly to provision distributed system
 
 Documentations
 
+* [Docker](https://niqdev.github.io/devops-lab/docker) 
 * [Ansible](https://niqdev.github.io/devops-lab/ansible)
 * [Hadoop](https://niqdev.github.io/devops-lab/hadoop)
   * [HDFS and MapReduce](https://niqdev.github.io/devops-lab/hadoop/#hdfs-and-mapreduce)

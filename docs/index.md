@@ -4,6 +4,7 @@ A collection of Docker and Vagrant images mainly to provision distributed system
 
 Documentations
 
+* [Docker](docker.md)
 * [Ansible](ansible.md)
 * [Hadoop](hadoop.md)
 * [Cassandra](cassandra.md)
