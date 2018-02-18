@@ -11,8 +11,6 @@ Requirements
 
 Directory structure
 ```bash
-cd devops/hadoop
-
 tree -a hadoop/
 hadoop/
 ├── .data # mounted volume

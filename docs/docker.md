@@ -6,7 +6,7 @@ Documentation
 
 * [Docker](https://docs.docker.com)
 
-## How-To
+### How-To
 
 Setup
 ```bash

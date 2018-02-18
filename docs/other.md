@@ -93,11 +93,11 @@ gradle init --type java-library
 
 ## Further reading
 
-* [How Linux Works](https://nostarch.com/howlinuxworks2) (2014) Brian Ward
+* [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) Brian Ward
 * [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
-* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (4th)(2015) by Tom White
+* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (2015)(4th) by Tom White
 * [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći
-* [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (4th)(2016) By Eben Hewitt, Jeff Carpenter
+* [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (2016)(4th) By Eben Hewitt, Jeff Carpenter
 * [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) By Gwen Shapira, Neha Narkhede, Todd Palino
 
 <br>

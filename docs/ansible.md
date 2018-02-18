@@ -8,18 +8,18 @@ Documentation
 * [Tutorial](https://serversforhackers.com/c/an-ansible2-tutorial)
 * [Playbook example](https://gist.github.com/marktheunissen/2979474)
 
+The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
+
+### Setup
+
 Requirement
 
 * Vagrant
 * VirtualBox
 
-The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
-
-## Directory structure
-
-All the commands are executed in this directory `cd ansible`
-
+Directory structure
 ```bash
+tree -a ansible/
 ansible/
 ├── .share
 │   ├── node-1
@@ -57,19 +57,17 @@ ansible/
 └── setup_share.sh
 ```
 
-## Setup
-
 The first time *only*, you have to setup the shared folders and generate the ssh key needed by ansible to access all nodes executing
 
 ```bash
 ./setup_share.sh
 ```
 
-From now on start the boxes with
+Start the boxes with
 ```bash
 vagrant up
 ```
-*Note that the first time it could take a while*
+*The first time it could take a while*
 
 Verify status of the boxes with
 ```bash
@@ -179,3 +177,5 @@ ansible-playbook /ansible/site.yml
 # dry run
 ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
 ```
+
+<br>
