@@ -34,7 +34,30 @@ docker-machine --version
 
 Useful commands
 ```bash
-TODO
+# list images
+docker images
+# list containers
+docker ps -a
+# list volumes
+docker volume ls
+
+# temporary container
+docker run --rm --name phusion phusion/baseimage:latest
+# access container from another shell
+docker exec -it phusion bash
+```
+
+Build `devops/base` image
+```bash
+# change path
+cd devops-lab/base
+# build image
+docker build -t devops/base .
+
+# temporary container
+docker run --rm --name devops-base devops/base
+# access container
+docker exec -it devops-base bash
 ```
 
 Docker Machine

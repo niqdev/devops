@@ -32,10 +32,6 @@ TODO git push
 
 ########## docker ##########
 
-# temporary image for tests
-docker run --rm --name phusion phusion/baseimage:latest
-docker exec -it phusion bash
-
 TODO
 ```
 docker build -t provision/base ./base
@@ -48,15 +44,7 @@ docker exec -it cassandra-local bash
 
 ########## base ##########
 
-cd base/
-docker build -t provision/base .
 
-# paths
-/var/log/supervisord.log
-
-# check service status
-supervisorctl status
-supervisorctl restart zookeeper
 
 ########## base + zookeeper ##########
 
@@ -75,6 +63,12 @@ docker exec -it zookeeper bash
 # check zookeeper status
 telnet localhost 2181
 > ruok
+
+# logs
+tail -F /var/log/supervisord.log
+# check service status
+supervisorctl status
+supervisorctl restart zookeeper
 
 ########## base + kafka ##########
 
