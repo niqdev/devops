@@ -1,6 +1,6 @@
 ## Vagrant
 
-Vagrant is a tool for building and managing virtual machine environments in a single workflow.
+> **Vagrant** is a tool for building and managing virtual machine environments in a single workflow
 
 Documentation
 
@@ -36,7 +36,7 @@ vagrant destory -f
 
 ## MkDocs
 
-MkDocs is a static site generator.
+> **MkDocs** is a static site generator
 
 Documentation
 
@@ -64,7 +64,7 @@ mkdocs gh-deploy
 
 ## SDKMAN!
 
-SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.
+> **SDKMAN!** is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems
 
 Documentation
 

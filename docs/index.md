@@ -4,8 +4,8 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 
 * [Docker](docker.md)
 * [Ansible](ansible.md)
-* [Hadoop](hadoop.md)
 * [Cassandra](cassandra.md)
 * [Zookeeper](zookeeper.md)
 * [Kafka](kafka.md)
+* [Hadoop](hadoop.md)
 * [Other](other.md)

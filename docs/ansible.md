@@ -1,6 +1,6 @@
 # Ansible
 
-Ansible is an open source automation platform that can help with config management, deployment and task automation.
+> **Ansible** is an open source automation platform that can help with config management, deployment and task automation
 
 Documentation
 
