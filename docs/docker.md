@@ -6,6 +6,8 @@ Offical documentation
 
 * [Docker](https://docs.docker.com)
 
+## How-To
+
 Setup
 ```bash
 # install docker

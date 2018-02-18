@@ -1,10 +1,8 @@
-# Other
-
 ## Vagrant
 
 Vagrant is a tool for building and managing virtual machine environments in a single workflow.
 
-Offical documentation
+Documentation
 
 * [Vagrant](https://www.vagrantup.com/docs)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -40,7 +38,7 @@ vagrant destory -f
 
 MkDocs is a static site generator.
 
-Offical documentation
+Documentation
 
 * [MkDocs](http://www.mkdocs.org)
 
@@ -68,7 +66,7 @@ mkdocs gh-deploy
 
 SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.
 
-Offical documentation
+Documentation
 
 * [SDKMAN!](http://sdkman.io)
 
@@ -79,27 +77,27 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 ```
 
-### Gradle
-
-Setup
+Gradle
 ```bash
+# setup
 sdk list gradle
 sdk install gradle 4.4.1
 gradle -version
-```
 
-Create Gradle project
-```bash
+# create Gradle project
 mkdir -p PROJECT_NAME && cd $_
 gradle init --type java-library
 
 ./gradlew clean build
 ```
 
-## Books
+## Further reading
 
+* [How Linux Works](https://nostarch.com/howlinuxworks2) (2014) Brian Ward
 * [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
 * [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (4th)(2015) by Tom White
 * [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći
 * [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (4th)(2016) By Eben Hewitt, Jeff Carpenter
 * [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) By Gwen Shapira, Neha Narkhede, Todd Palino
+
+<br>

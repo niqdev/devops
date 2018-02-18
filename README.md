@@ -8,6 +8,7 @@ Documentations
 * [Ansible](https://niqdev.github.io/devops-lab/ansible)
 * [Hadoop](https://niqdev.github.io/devops-lab/hadoop)
   * [HDFS and MapReduce](https://niqdev.github.io/devops-lab/hadoop/#hdfs-and-mapreduce)
+  * [Spark](https://niqdev.github.io/devops-lab/hadoop/#spark)
   * [Oozie](https://niqdev.github.io/devops-lab/hadoop/#oozie)
 * [Cassandra](https://niqdev.github.io/devops-lab/cassandra)
 * [Zookeeper](https://niqdev.github.io/devops-lab/zookeeper)

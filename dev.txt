@@ -1,16 +1,28 @@
 DEV info
 
 TODO
-[x] static site from markdown
-[ ] docker-machine
-[x] ansible
-[x] kafka
-[x] cassandra
-[ ] elastic-search
-[ ] kong
+* rename project
+* review Ansible
+* cassandra
+* kafka
+* elastic-search
+* kong
 
->>> TODO add suffix .local to hosts
->>> TODO rename node- to worker-
+---
+
+* Avro **Avro** is a data serialization system
+* Parquet **Parquet** is a columnar storage format that can efficiently store nested data
+* Flume
+* Sqoop
+* Pig
+* Hive
+* Presto
+* Crunch
+* HBase
+* Flink
+* Ganglia **Ganglia** is a monitoring system for Hadoop
+* Zeppelin
+* Knox
 
 ########## TODO git_init.sh ##########
 
@@ -117,10 +129,6 @@ vagrant box remove manning/spark-in-action
 
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
-
-########## oozie ##########
-
-http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 
 ########## avro ##########
 

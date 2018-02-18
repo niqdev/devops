@@ -240,50 +240,11 @@ Documentation
 
 * [Spark](https://spark.apache.org/docs/latest)
 * [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
+* [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
 
-
-http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application/
+```bash
 TODO
-
-## Flink
-
-TODO
-
-## Avro
-
-> **Avro** is a data serialization system
-
-TODO
-
-## Parquet
-
-> **Parquet** is a columnar storage format that can efficiently store nested data
-
-TODO
-
-## Flume
-
-TODO
-
-## Sqoop
-
-TODO
-
-## Pig
-
-TODO
-
-## Hive
-
-TODO
-
-## Crunch
-
-TODO
-
-## HBase
-
-TODO
+```
 
 ## Oozie
 
@@ -445,16 +406,4 @@ oozie job \
   -verbose
 ```
 
-## Ganglia
-
-> **Ganglia** is a monitoring system for Hadoop
-
-TODO
-
-## Zeppelin
-
-TODO
-
-## Knox
-
-TODO
+<br>
