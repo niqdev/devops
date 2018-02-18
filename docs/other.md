@@ -129,8 +129,6 @@ Offical documentation
 * [Vagrant](https://www.vagrantup.com/docs)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-### Basic Vagrant commands
-
 Setup project creating a Vagrantfile
 ```bash
 vagrant init
@@ -166,30 +164,23 @@ Offical documentation
 
 * [MkDocs](http://www.mkdocs.org)
 
-### Basic MkDocs commands
-
 Install
 ```bash
 pip install mkdocs
 ```
 
-Setup in current directory
+Useful commands
 ```bash
+# setup in current directory
 mkdocs new .
-```
 
-Start dev server with hot reload on [http://127.0.0.1:8000](http://127.0.0.1:8000)
-```bash
+# start dev server with hot reload @ http://127.0.0.1:8000
 mkdocs serve
-```
 
-Build static site
-```bash
+# build static site
 mkdocs build --clean
-```
 
-Deploy to github
-```bash
+# deploy to github
 mkdocs gh-deploy
 ```
 
