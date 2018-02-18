@@ -77,22 +77,21 @@ docker-machine env -u
 # unset all
 eval $(docker-machine env -u)
 
----------- TODO review example
-
 # access
 docker-machine ssh default
 # execute command and exit
 docker-machine ssh default uptime
-
+# copy files from host to guest
 docker-machine scp -r /FROM default:/TO
 
-# example nginx
+# start nginx on default machine
 docker run -d -p 8000:80 nginx
-# tunnel to forward port 8080
-docker-machine ssh default -L 8080:localhost:8080
-
-# from another shell
+# verify from host
 curl $(docker-machine ip default):8000
+# forward to port 8080
+docker-machine ssh default -L 8080:localhost:8000
+# verify tunnel from host
+curl localhost:8080
 
 # disable error crash reporting
 mkdir -p ~/.docker/machine && touch ~/.docker/machine/no-error-report
