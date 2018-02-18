@@ -4,7 +4,6 @@ TODO
 [x] static site from markdown
 [ ] docker-machine
 [x] ansible
-[x] zookeeper
 [x] kafka
 [x] cassandra
 [ ] elastic-search
@@ -41,34 +40,6 @@ docker exec -it zookeeper-local bash
 docker exec -it kafka-local bash
 docker exec -it cassandra-local bash
 ```
-
-########## base ##########
-
-
-
-########## base + zookeeper ##########
-
-cd zookeeper/
-docker build -t provision/zookeeper .
-docker build -t provision/zookeeper -–build-arg VERSION=3.4.10 .
-# host:container
-docker run --rm --name zookeeper -p 12181:2181 provision/zookeeper
-docker exec -it zookeeper bash
-
-# paths
-/opt/zookeeper/
-/var/log/zookeeper/
-/var/lib/zookeeper
-
-# check zookeeper status
-telnet localhost 2181
-> ruok
-
-# logs
-tail -F /var/log/supervisord.log
-# check service status
-supervisorctl status
-supervisorctl restart zookeeper
 
 ########## base + kafka ##########
 

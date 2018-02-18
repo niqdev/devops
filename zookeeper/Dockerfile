@@ -1,4 +1,4 @@
-FROM provision/base:latest
+FROM devops/base:latest
 
 ARG VERSION=3.4.11
 
