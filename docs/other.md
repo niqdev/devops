@@ -34,6 +34,8 @@ vagrant box update
 vagrant destory -f
 ```
 
+<br>
+
 ## MkDocs
 
 > **MkDocs** is a static site generator
@@ -61,6 +63,8 @@ mkdocs build --clean
 # deploy to github
 mkdocs gh-deploy
 ```
+
+<br>
 
 ## SDKMAN!
 
@@ -91,9 +95,12 @@ gradle init --type java-library
 ./gradlew clean build
 ```
 
+<br>
+
 ## Further reading
 
 * [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) Brian Ward
+* [Docker in Action](https://www.manning.com/books/docker-in-action) (2016) Jeff Nickoloff
 * [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
 * [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (2015)(4th) by Tom White
 * [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći

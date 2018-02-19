@@ -1,7 +1,6 @@
 DEV info
 
 TODO
-* rename project
 * review Ansible
 * cassandra
 * kafka
