@@ -3,10 +3,12 @@ FROM devops/base:latest
 ARG VERSION=3.4.11
 
 RUN apt-get install -y \
-  telnet && \
+  telnet \
+  netcat && \
   apt-get clean
 
-RUN curl http://www-eu.apache.org/dist/zookeeper/zookeeper-${VERSION}/zookeeper-${VERSION}.tar.gz | tar -xzf - -C /opt && \
+# version 3.5.x ERROR not in gzip format: use "tar -xf"
+RUN curl https://www-eu.apache.org/dist/zookeeper/zookeeper-${VERSION}/zookeeper-${VERSION}.tar.gz | tar -xzf - -C /opt && \
   ln -s /opt/zookeeper-${VERSION} /opt/zookeeper && \
   mkdir -p /var/log/zookeeper /var/lib/zookeeper/data
 
