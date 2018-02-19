@@ -22,7 +22,7 @@ docker build -t devops/zookeeper:latest .
 # build image with specific version - see Dockerfile for version 3.5.x
 docker build -t devops/zookeeper:3.4.10 --build-arg VERSION=3.4.10 .
 
-# temporary container host:container
+# temporary container [host:container]
 docker run --rm --name zookeeper -p 12181:2181 devops/zookeeper
 # access container
 docker exec -it zookeeper bash

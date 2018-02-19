@@ -10,19 +10,39 @@ Documentation
 
 Requirement
 
-* [Base](docker/#base-image) image 
-* [ZooKeeper](zookeeper) image
+* [Base](docker/#base-image) docker image 
+* [ZooKeeper](zookeeper) docker image
 
 Build `devops/kafka` image
 ```bash
-TODO
+# change path
+cd devops/kafka
 
-########## base + kafka ##########
+# build image
+docker build -t devops/kafka .
 
-cd kafka/
-docker build -t provision/kafka .
-# host:container
-docker run --rm --name kafka -p 19092:9092 -e ZOOKEEPER_HOSTS="localhost:2181" provision/kafka
+# create network
+docker network create --driver bridge my_network
+docker network ls
+docker network inspect my_network
+
+# start temporary zookeeper container [host:container]
+docker run --rm \
+  --name zookeeper \
+  -p 12181:2181 \
+  --network=my_network \
+  devops/zookeeper
+# access container
+docker exec -it zookeeper bash
+
+# start temporary kafka container [host:container]
+docker run --rm \
+  --name kafka \
+  -p 19092:9092 \
+  --network=my_network \
+  -e ZOOKEEPER_HOSTS="zookeeper:2181" \
+  devops/kafka
+# access container
 docker exec -it kafka bash
 
 # paths
@@ -30,39 +50,17 @@ docker exec -it kafka bash
 /opt/kafka/logs
 /var/log/kafka
 /var/lib/kafka/data
+```
 
-# test
+Example
+```bash
+docker exec -it kafka bash
 cd /opt/kafka/bin
+
 ./kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
 ./kafka-topics.sh --list --zookeeper zookeeper:2181
 ./kafka-console-producer.sh --broker-list kafka:9092 --topic test
 ./kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic test --from-beginning
-
-# tutorial
-https://kafka.apache.org/quickstart
-https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
-
-########## zookeeper + kafka ##########
-
-docker network create --driver bridge my_network
-docker network ls
-docker network inspect my_network
-
-docker run --rm \
-  --name kafka \
-  -p 19092:9092 \
-  --network=my_network \
-  -e ZOOKEEPER_HOSTS="zookeeper:2181" \
-  provision/kafka
-
-docker run --rm \
-  --name zookeeper \
-  -p 12181:2181 \
-  --network=my_network \
-  provision/zookeeper
-
-apt-get install iputils-ping telnet -y
-ping IP_V4_ADDRESS
 ```
 
 <br>
