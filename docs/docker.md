@@ -6,7 +6,7 @@ Documentation
 
 * [Docker](https://docs.docker.com)
 
-### How-To
+## How-To
 
 Setup
 ```bash
@@ -112,6 +112,22 @@ curl localhost:8080
 
 # disable error crash reporting
 mkdir -p ~/.docker/machine && touch ~/.docker/machine/no-error-report
+```
+
+## Base image
+
+Build `devops/base` image
+```bash
+# change path
+cd devops/base
+
+# build image
+docker build -t devops/base .
+
+# temporary container
+docker run --rm --name devops-base devops/base
+# access container
+docker exec -it devops-base bash
 ```
 
 <br>
