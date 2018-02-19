@@ -4,23 +4,13 @@
 
 Documentation
 
-* [ZooKeeper](https://zookeeper.apache.org/)
+* [ZooKeeper](https://zookeeper.apache.org)
 
 ## Setup
 
-Build `devops/base` image
-```bash
-# change path
-cd devops/base
+Requirement
 
-# build image
-docker build -t devops/base .
-
-# temporary container (for test)
-docker run --rm --name devops-base devops/base
-# access container
-docker exec -it devops-base bash
-```
+* [Base](docker/#base-image) image
 
 Build `devops/zookeeper` image
 ```bash
