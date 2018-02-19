@@ -52,6 +52,11 @@ docker exec -it kafka bash
 /var/lib/kafka/data
 ```
 
+Alternatively use compose
+```bash
+TODO
+```
+
 Example
 ```bash
 docker exec -it kafka bash
