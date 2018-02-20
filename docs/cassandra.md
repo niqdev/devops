@@ -8,7 +8,7 @@ Documentation
 
 ## Setup
 
-Single node cluster
+Single Node Cluster
 ```bash
 # change path
 cd devops/cassandra
@@ -21,8 +21,8 @@ docker exec -it devops-cassandra bash
 docker exec -it devops-cassandra bash -c cqlsh
 
 # execute cql from host
-(docker exec -i cassandra bash \
-  -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
+(docker exec -i devops-cassandra bash \
+  -c "cat > example.cql; cqlsh -f example.cql") < cql/example.cql
 
 # paths
 /etc/cassandra
@@ -31,6 +31,16 @@ docker exec -it devops-cassandra bash -c cqlsh
 
 # remove container and volume
 docker rm -fv devops-cassandra
+```
+
+Example
+```bash
+docker exec -it devops-cassandra bash -c cqlsh
+
+DESCRIBE keyspaces;
+DESCRIBE KEYSPACE example;
+DESCRIBE TABLE example.messages;
+SELECT * FROM example.messages;
 ```
 
 <br>
