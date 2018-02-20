@@ -3,20 +3,20 @@ version: '3.2'
 services:
 
   cassandra-seed:
-    container_name: cassandra-seed
+    container_name: devops-cassandra-seed
     image: cassandra:3.11
     restart: unless-stopped
     ports:
       - 19042:9042
     networks:
-      - network-cluster
+      - network_cluster
     volumes:
       - ./cql:/cql
       #- .cassandra/cassandra-seed/data:/var/lib/cassandra
       #- .cassandra/cassandra-seed/log:/var/log/cassandra
 
   cassandra-node-1:
-    container_name: cassandra-node-1
+    container_name: devops-cassandra-node-1
     image: cassandra:3.11
     depends_on:
       - cassandra-seed
@@ -24,16 +24,16 @@ services:
     ports:
       - 19043:9042
     networks:
-      - network-cluster
+      - network_cluster
     environment:
-      CASSANDRA_SEEDS: "cassandra-seed"
+      CASSANDRA_SEEDS: "devops-cassandra-seed"
     volumes:
       - ./cql:/cql
       #- .cassandra/cassandra-node-1/data:/var/lib/cassandra
       #- .cassandra/cassandra-node-1/log:/var/log/cassandra
 
   cassandra-node-2:
-    container_name: cassandra-node-2
+    container_name: devops-cassandra-node-2
     image: cassandra:3.11
     depends_on:
       - cassandra-seed
@@ -41,13 +41,13 @@ services:
     ports:
       - 19044:9042
     networks:
-      - network-cluster
+      - network_cluster
     environment:
-      CASSANDRA_SEEDS: "cassandra-seed"
+      CASSANDRA_SEEDS: "devops-cassandra-seed"
     volumes:
       - ./cql:/cql
       #- .cassandra/cassandra-node-2/data:/var/lib/cassandra
       #- .cassandra/cassandra-node-2/log:/var/log/cassandra
 
 networks:
-  network-cluster:
+  network_cluster:
