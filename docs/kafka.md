@@ -63,8 +63,8 @@ docker build -t devops/base ../base
 docker-compose up
 
 # access container
-docker exec -it zookeeper-local bash
-docker exec -it kafka-local bash
+docker exec -it devops-zookeeper bash
+docker exec -it devops-kafka bash
 ```
 
 Example

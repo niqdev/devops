@@ -2,7 +2,7 @@ version: '3'
 
 services:
   zookeeper:
-    container_name: zookeeper-local
+    container_name: devops-zookeeper
     build:
       context: ../zookeeper
       args:
@@ -10,18 +10,18 @@ services:
     ports:
       - 12181:2181
     networks:
-      - network-local
+      - devops_network
   kafka:
-    container_name: kafka-local
+    container_name: devops-kafka
     build: .
     depends_on:
       - zookeeper
     ports:
       - 19092:9092
     networks:
-      - network-local
+      - devops_network
     environment:
       - ZOOKEEPER_HOSTS="zookeeper:2181"
 
 networks:
-  network-local:
+  devops_network:
