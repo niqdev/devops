@@ -6,24 +6,31 @@ Documentation
 
 * [Cassandra](https://cassandra.apache.org)
 
+## Setup
+
+Single node cluster
 ```bash
-TODO
+# change path
+cd devops/cassandra
 
-########## cassandra ##########
-
+# start single node
 docker-compose up
-docker exec -it cassandra bash
-docker exec -it cassandra bash -c cqlsh
+
+# access container
+docker exec -it devops-cassandra bash
+docker exec -it devops-cassandra bash -c cqlsh
+
+# execute cql from host
+(docker exec -i cassandra bash \
+  -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
 
 # paths
 /etc/cassandra
 /var/lib/cassandra
 /var/log/cassandra
 
-# execute cql from host
-(docker exec -i cassandra bash -c "cat > EXAMPLE.cql; cqlsh -f EXAMPLE.cql") < PATH/TO/EXAMPLE.cql
-
-docker rm -fv cassandra
+# remove container and volume
+docker rm -fv devops-cassandra
 ```
 
 <br>
