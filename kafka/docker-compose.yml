@@ -4,7 +4,7 @@ services:
   zookeeper:
     container_name: zookeeper-local
     build:
-      context: ./zookeeper
+      context: ../zookeeper
       args:
         - VERSION=3.4.10
     ports:
@@ -13,7 +13,7 @@ services:
       - network-local
   kafka:
     container_name: kafka-local
-    build: ./kafka
+    build: .
     depends_on:
       - zookeeper
     ports:
@@ -22,13 +22,6 @@ services:
       - network-local
     environment:
       - ZOOKEEPER_HOSTS="zookeeper:2181"
-  cassandra:
-    container_name: cassandra-local
-    image: cassandra:3.11
-    ports:
-      - 19042:9042
-    volumes:
-      - ./cassandra/cql:/cql
 
 networks:
   network-local:
