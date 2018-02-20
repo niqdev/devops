@@ -1,8 +1,7 @@
 DEV info
 
 TODO
-* cassandra
-* kafka
+
 * elastic-search
 * kong
 
@@ -21,33 +20,6 @@ TODO
 * Ganglia **Ganglia** is a monitoring system for Hadoop
 * Zeppelin
 * Knox
-
-########## TODO git_init.sh ##########
-
-# create directories and move into
-mkdir -p ~/Projects/provision-tools && cd $_
-cd ~/Projects/provision-tools
-
-# git
-git config user.name "niqdev"
-git config user.email niqdev@gmail.com
-echo "# provision-tools" > README.md
-echo -e "*~\n.DS_Store" > .gitignore
-git init
-git add .
-git commit -m "first commit"
-
-TODO git push
-
-########## docker ##########
-
-TODO
-```
-docker build -t provision/base ./base
-docker-compose -f docker-compose-local.yml up
-
-docker exec -it cassandra-local bash
-```
 
 # tutorial
 https://kafka.apache.org/quickstart
