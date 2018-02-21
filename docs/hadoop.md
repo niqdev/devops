@@ -270,7 +270,7 @@ curl -fsSL get.docker.com -o get-docker.sh && \
 # logout and login again to verify docker installation
 exit
 vagrant ssh master
-whoami # whoami
+whoami # hadoop
 docker ps -a
 
 # uncomment PostgreSQL configurations
