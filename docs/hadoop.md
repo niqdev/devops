@@ -2,6 +2,11 @@
 
 The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
 
+Documentation
+
+* [Hadoop](https://hadoop.apache.org)
+* [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
+
 ### Setup
 
 Requirements
