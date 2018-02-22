@@ -32,6 +32,8 @@ function setup_packages {
     tree \
     zip \
     unzip \
+    jq \
+    httpie \
     &> $LOG_PATH && \
     apt-get clean
 }
