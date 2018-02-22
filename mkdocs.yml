@@ -12,4 +12,5 @@ pages:
     - ZooKeeper: zookeeper.md
     - Kafka: kafka.md
     - Hadoop: hadoop.md
+    - Papers: papers.md
     - Other: other.md

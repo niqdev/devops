@@ -8,4 +8,5 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Zookeeper](zookeeper.md)
 * [Kafka](kafka.md)
 * [Hadoop](hadoop.md)
+* [Papers](papers.md)
 * [Other](other.md)
