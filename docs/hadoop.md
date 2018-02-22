@@ -115,7 +115,10 @@ Web UI links
 * DataNode/NodeManager (1): [http://node-1.local:8042/node](http://172.16.0.101:8042/node)
 * DataNode/NodeManager (2): [http://node-2.local:8042/node](http://172.16.0.102:8042/node)
 * DataNode/NodeManager (3): [http://node-3.local:8042/node](http://172.16.0.103:8042/node)
+* Spark: [http://spark.local:4040](http://172.16.0.10:4040)
 * Oozie*: [http://oozie.local:11000](http://172.16.0.10:11000)
+
+<br>
 
 ## HDFS and MapReduce
 
@@ -235,6 +238,8 @@ hadoop fs -cat random-data/part-m-00000
 hadoop fs -cat sorted-data/part-r-00000
 ```
 
+<br>
+
 ## Spark
 
 > **Spark** is an open-source cluster-computing framework
@@ -246,8 +251,26 @@ Documentation
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
 
 ```bash
-TODO
+# start REPL
+spark-shell
+pyspark
 ```
+
+### Examples
+
+```bash
+spark-shell
+
+# hello world
+val licenceLines = sc.textFile("file:/usr/local/spark/LICENSE")
+val lineCount = licenceLines.count
+val isBsd = (line: String) => line.contains("BSD")
+val bsdLines = licenceLines.filter(isBsd)
+bsdLines.count
+bsdLines.foreach(println)
+```
+
+<br>
 
 ## Oozie
 

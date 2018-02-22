@@ -71,24 +71,3 @@ user.avsc
 
 # compile schema to generate code
 java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
-
-########## spark ##########
-
-http://172.16.0.10:4040
-spark-shell
-pyspark
-
-val licenceLines = sc.textFile("/usr/local/spark/LICENSE")
-val lineCount = licenceLines.count
-val bsdLines1 = licenceLines.filter(_.contains("BSD"))
-bsdLines1.count
-val isBsd = (line: String) => line.contains("BSD")
-val bsdLines2 = licenceLines.filter(isBsd)
-bsdLines2.count
-bsdLines2.foreach(println)
-
-# range
-val numbers = sc.parallelize(10 to 50 by 10)
-numbers.foreach(println)
-val numberSquared = numbers.map(n => n * n)
-numberSquared.foreach(println)

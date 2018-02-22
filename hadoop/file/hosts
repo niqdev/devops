@@ -1,5 +1,6 @@
 # hadoop hosts
-172.16.0.10 master master.local namenode.local secondary-namenode.local resource-manager.local web-proxy.local history.local postgres.local oozie.local
+172.16.0.10 master master.local namenode.local secondary-namenode.local resource-manager.local web-proxy.local history.local
+172.16.0.10 spark.local postgres.local oozie.local
 172.16.0.101 node-1 node-1.local datanode-1.local node-manager-1.local
 172.16.0.102 node-2 node-2.local datanode-2.local node-manager-2.local
 172.16.0.103 node-3 node-3.local datanode-3.local node-manager-3.local
