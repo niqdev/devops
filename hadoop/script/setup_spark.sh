@@ -42,7 +42,7 @@ function setup_dist {
 function setup_config {
   local DATA_PATH_GUEST="/vol/spark"
   local SPARK_BASE_PATH="/usr/local/spark"
-  local CONFIG_PATH="$DATA_PATH_GUEST/conf"
+  local CONFIG_PATH="$SPARK_BASE_PATH/conf"
   local FILES=( "spark-env.sh" "log4j.properties" )
 
   echo "[*] create directories"
