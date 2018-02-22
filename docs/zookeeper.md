@@ -5,6 +5,7 @@
 Documentation
 
 * [ZooKeeper](https://zookeeper.apache.org)
+* [Curator](https://curator.apache.org/)
 
 ## Setup
 
