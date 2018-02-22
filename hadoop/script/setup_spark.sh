@@ -40,7 +40,22 @@ function setup_dist {
 }
 
 function setup_config {
+  local DATA_PATH_GUEST="/vol/spark"
   local SPARK_BASE_PATH="/usr/local/spark"
+  local CONFIG_PATH="$DATA_PATH_GUEST/conf"
+  local FILES=( "spark-env.sh" "log4j.properties" )
+
+  echo "[*] create directories"
+  mkdir -pv \
+    $DATA_PATH_GUEST/log
+  
+  for FILE in "${FILES[@]}"
+  do
+    echo "[*] update config: $FILE"
+    # backup only if exists
+    [ -e $CONFIG_PATH/$FILE ] && mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
+    cp $FILE_PATH/spark/config/$FILE $CONFIG_PATH/$FILE
+  done
 
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME \
