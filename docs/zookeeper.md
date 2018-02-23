@@ -28,14 +28,6 @@ docker run --rm --name zookeeper -p 12181:2181 devops/zookeeper
 # access container
 docker exec -it zookeeper bash
 
-# (option 1) check zookeeper status
-echo ruok | nc localhost 2181
-
-# (option 2) check zookeeper status
-telnet localhost 2181
-# expect answer imok
-> ruok
-
 # paths
 /opt/zookeeper
 /var/log/zookeeper
@@ -47,6 +39,32 @@ tail -F /var/log/supervisord.log
 # check service status
 supervisorctl status
 supervisorctl restart zookeeper
+```
+
+Example
+```bash
+docker exec -it zookeeper bash
+
+# (option 1) check zookeeper status
+echo ruok | nc localhost 2181
+
+# (option 2) check zookeeper status
+telnet localhost 2181
+# expect answer imok
+> ruok
+
+zkCli.sh -server 127.0.0.1:2181
+help
+# list znodes
+ls /
+# create znode and associate value
+create /zk_test my_data
+# verify data
+get /zk_test
+# change value
+set /zk_test junk
+# delete znode
+delete /zk_test
 ```
 
 ## The four-letter words
