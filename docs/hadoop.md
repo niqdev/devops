@@ -280,7 +280,7 @@ bsdLines.foreach(println)
 
 # build jar on the host machine
 cd devops/hadoop/example/spark
-sbt package
+sbt clean package
 
 cd devops/hadoop
 vagrant ssh master

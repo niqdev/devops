@@ -9,5 +9,7 @@ echo '* node-1: 172.16.0.101\n'
 echo '* NameNode: http://namenode.local:50070'
 echo '* ResourceManager: http://resource-manager.local:8088'
 echo '* MapReduce Job History Server: http://history.local:19888'
-echo '* DataNode/NodeManager (1): http://node-1.local:8042/node'
+echo '* DataNode/NodeManager (1): http://node-1.local:8042/node\n'
+
+echo '* Spark: http://spark.local:4040'
 echo '* Oozie: http://oozie.local:11000'

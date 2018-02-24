@@ -16,11 +16,16 @@ object App {
     val inputPath = s"file:$homeDir/github-archive"
     val githubLog = spark.read.json(inputPath)
     val pushes = githubLog.filter("type = 'PushEvent'")
-    pushes.printSchema
 
+    pushes.printSchema
     println(s"all events: ${githubLog.count}")
     println(s"only pushes: ${pushes.count}")
     pushes.show(5)
+
+    val grouped = pushes.groupBy("actor.login").count
+    grouped.show(5)
+    val ordered = grouped.orderBy(grouped("count").desc)
+    ordered.show(5)
   }
 
 }
