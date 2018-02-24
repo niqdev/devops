@@ -15,6 +15,7 @@ object Dependencies {
   }
 
   lazy val libDependencies = Seq(
+    N.spark %% "spark-core" % V.spark % Provided,
     N.spark %% "spark-sql" % V.spark % Provided
   )
 

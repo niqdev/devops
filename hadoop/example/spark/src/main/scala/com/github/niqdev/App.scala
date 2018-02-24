@@ -13,7 +13,8 @@ object App {
     val sc = spark.sparkContext
 
     val homeDir = System.getenv("HOME")
-    val inputPath = s"file:$homeDir/github-archive"
+    val inputPath = s"file:$homeDir/github-archive/*.json"
+    val outputDir = s"file:$homeDir/github-archive/output"
     val githubLog = spark.read.json(inputPath)
     val pushes = githubLog.filter("type = 'PushEvent'")
 
@@ -26,6 +27,8 @@ object App {
     grouped.show(5)
     val ordered = grouped.orderBy(grouped("count").desc)
     ordered.show(5)
+
+    ordered.write.format("json").save(outputDir)
   }
 
 }
