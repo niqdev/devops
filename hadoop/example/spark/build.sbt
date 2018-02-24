@@ -1,12 +1,12 @@
-import Dependencies._
+import Dependencies.{V, allDependencies}
 
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
       organization := "com.github.niqdev",
-      scalaVersion := "2.12.3",
-      version      := "0.1.0-SNAPSHOT"
+      scalaVersion := V.scala,
+      version := "0.1.0-SNAPSHOT"
     )),
     name := "spark",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies ++= allDependencies
   )
