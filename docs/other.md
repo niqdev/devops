@@ -136,9 +136,9 @@ cs foundweekends/giter8
 Example
 ```bash
 # interactive
-g8 scala/hello-world.g8
+g8 sbt/scala-seed.g8
 # non-interactive
-g8 scala/hello-world.g8 --name=my-new-website
+g8 sbt/scala-seed.g8 --name=my-new-website
 ```
 
 <br>

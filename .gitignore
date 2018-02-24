@@ -11,7 +11,8 @@ hadoop/.data/
 .gradle/
 build/
 
-.idea/
 *.iml
+.idea/
+target/
 
 site
