@@ -258,16 +258,31 @@ pyspark
 
 ### Examples
 
+Hello Workd
 ```bash
 spark-shell
 
-# hello world
 val licenceLines = sc.textFile("file:/usr/local/spark/LICENSE")
 val lineCount = licenceLines.count
 val isBsd = (line: String) => line.contains("BSD")
 val bsdLines = licenceLines.filter(isBsd)
 bsdLines.count
 bsdLines.foreach(println)
+```
+
+Spark Job
+```bash
+# GitHub event documentation
+https://developer.github.com/v3/activity/events/types
+
+vagrant ssh master
+
+# sample dataset
+mkdir -p github-archive && cd $_
+wget http://data.githubarchive.org/2018-01-01-{0..10}.json.gz && \
+  gunzip -k *
+# sample line
+head -n 1 2018-01-01-0.json | jq '.'
 ```
 
 <br>
