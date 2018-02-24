@@ -95,6 +95,52 @@ gradle init --type java-library
 ./gradlew clean build
 ```
 
+Scala
+```bash
+# setup sbt
+sdk list sbt
+sdk install sbt
+sbt sbtVersion
+sbt about
+
+# setup scala
+sdk list scala
+sdk install scala
+scala -version
+
+# sample project
+sbt new sbt/scala-seed.g8
+```
+
+<br>
+
+## Giter8
+
+> **Giter8** is a command line tool to generate files and directories from templates published on GitHub or any other git repository
+
+Documentation
+
+* [Giter8](http://www.foundweekends.org/giter8)
+* [Templates](https://github.com/foundweekends/giter8/wiki/giter8-templates)
+
+Setup
+```bash
+# install conscript
+curl https://raw.githubusercontent.com/foundweekends/conscript/master/setup.sh | sh
+source ~/.bashrc
+
+# install g8
+cs foundweekends/giter8
+```
+
+Example
+```bash
+# interactive
+g8 scala/hello-world.g8
+# non-interactive
+g8 scala/hello-world.g8 --name=my-new-website
+```
+
 <br>
 
 ## Further reading

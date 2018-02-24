@@ -4,6 +4,8 @@ TODO
 
 * elastic-search
 * kong
+* aws: cli + emr + s3
+* giter8 spark-seed
 
 ---
 
