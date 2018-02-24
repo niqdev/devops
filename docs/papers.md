@@ -30,4 +30,6 @@
 
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
 
+* [Merkle Hash Tree](http://ceur-ws.org/Vol-1366/paper13.pdf)
+
 <br>
