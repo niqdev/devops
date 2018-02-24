@@ -162,6 +162,13 @@ devops/hadoop/.data/master/hadoop # host
 ### MapReduce WordCount Job
 
 ```bash
+# build jar on the host machine
+cd devops/hadoop/example/map-reduce
+./gradlew clean build
+
+cd devops/hadoop
+vagrant ssh master
+
 # create base directory using hdfs
 hdfs dfs -mkdir -p /user/ubuntu
 
@@ -185,10 +192,6 @@ hadoop fs -ls -h -R /user/ubuntu
 hadoop fs -cat /user/ubuntu/word-count/input/file01
 hadoop fs -cat /user/ubuntu/word-count/input/file02
 hadoop fs -cat /user/ubuntu/word-count/input/*
-
-# build the jar (outside the machine to avoid permission issues)
-cd devops/hadoop/example/map-reduce
-./gradlew clean build
 
 # run application
 hadoop jar /vagrant/example/map-reduce/build/libs/map-reduce.jar \
@@ -256,9 +259,8 @@ spark-shell
 pyspark
 ```
 
-### Examples
+### Interactive Analysis example
 
-Hello Workd
 ```bash
 spark-shell
 
@@ -270,19 +272,32 @@ bsdLines.count
 bsdLines.foreach(println)
 ```
 
-Spark Job
+### Spark Job example
+
 ```bash
 # GitHub event documentation
-https://developer.github.com/v3/activity/events/types
+# https://developer.github.com/v3/activity/events/types
 
+# build jar on the host machine
+cd devops/hadoop/example/spark
+sbt package
+
+cd devops/hadoop
 vagrant ssh master
 
 # sample dataset
-mkdir -p github-archive && cd $_
-wget http://data.githubarchive.org/2018-01-01-{0..10}.json.gz && \
+mkdir -p github-archive && \
+  cd $_ && \
+  wget http://data.githubarchive.org/2018-01-01-{0..10}.json.gz && \
   gunzip -k *
 # sample line
 head -n 1 2018-01-01-0.json | jq '.'
+
+# run job
+spark-submit \
+  --class "com.github.niqdev.App" \
+  --master local[0] \
+  /vagrant/example/spark/target/scala-2.11/spark-github_2.11-0.1.0-SNAPSHOT.jar
 ```
 
 <br>

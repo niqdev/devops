@@ -2,10 +2,12 @@ DEV info
 
 TODO
 
-* elastic-search
-* kong
-* aws: cli + emr + s3
+* giter8 scala-seed: build, scopt, log, config, plugin, readme
 * giter8 spark-seed
+https://github.com/josephpconley/spark-seed.g8
+* giter8 akka-seed
+
+* aws: cli + emr + s3
 
 ---
 
@@ -22,6 +24,9 @@ TODO
 * Ganglia **Ganglia** is a monitoring system for Hadoop
 * Zeppelin
 * Knox
+
+* elastic-search
+* kong
 
 # tutorial
 https://kafka.apache.org/quickstart

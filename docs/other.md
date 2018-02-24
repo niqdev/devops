@@ -105,7 +105,7 @@ sbt about
 
 # setup scala
 sdk list scala
-sdk install scala
+sdk install scala 2.11.8
 scala -version
 
 # sample project

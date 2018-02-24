@@ -11,6 +11,16 @@ object App {
       .getOrCreate()
 
     val sc = spark.sparkContext
+
+    val homeDir = System.getenv("HOME")
+    val inputPath = s"file:$homeDir/github-archive"
+    val githubLog = spark.read.json(inputPath)
+    val pushes = githubLog.filter("type = 'PushEvent'")
+    pushes.printSchema
+
+    println(s"all events: ${githubLog.count}")
+    println(s"only pushes: ${pushes.count}")
+    pushes.show(5)
   }
 
 }
