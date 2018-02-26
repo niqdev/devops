@@ -152,17 +152,30 @@ Documentation
 * [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html)
 * [venv](https://docs.python.org/3/library/venv.html)
 
-### virtualenv
+TODO https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+
+### setup
 ```bash
+# search
+apt-get update && apt-cache search python | grep python2
+
+# setup python
+apt-get install -y python2.7
+apt-get install -y python3
+
 # install pip + setuptools
-curl https://bootstrap.pypa.io/get-pip.py | python -
+curl https://bootstrap.pypa.io/get-pip.py | python2.7 -
+curl https://bootstrap.pypa.io/get-pip.py | python3 -
 
 # upgrade pip
 pip install -U pip
 
 # install virtualenv globally 
-sudo pip install virtualenv
+pip install virtualenv
+```
 
+### virtualenv
+```bash
 # create virtualenv
 virtualenv env
 virtualenv -p python3 env
