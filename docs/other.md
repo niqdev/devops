@@ -149,10 +149,7 @@ Documentation
 
 * [pip](https://pip.pypa.io/en/stable/user_guide)
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide)
-* [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html)
-* [venv](https://docs.python.org/3/library/venv.html)
-
-TODO https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+* [What is the difference between virtualenv|pyenv|virtualenvwrapper|venv ?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
 
 ### setup
 ```bash
