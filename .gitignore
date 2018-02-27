@@ -7,9 +7,13 @@ ansible/.share
 ansible/data/site.retry
 cassandra/.cassandra
 hadoop/.data/
+aws/venv
 
 .gradle/
 build/
+
+__pycache__
+*.pyc
 
 *.iml
 .idea/
