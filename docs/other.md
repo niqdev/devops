@@ -150,6 +150,7 @@ Documentation
 * [pip](https://pip.pypa.io/en/stable/user_guide)
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide)
 * [What is the difference between virtualenv|pyenv|virtualenvwrapper|venv ?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
+* [Flask](http://flask.pocoo.org)
 
 ### setup
 ```bash
@@ -174,12 +175,12 @@ pip install virtualenv
 ### virtualenv
 ```bash
 # create virtualenv
-virtualenv env
-virtualenv -p python3 env
-virtualenv -p $(which python3) env
+virtualenv venv
+virtualenv -p python3 venv
+virtualenv -p $(which python3) venv
 
 # activate virtualenv
-source env/bin/activate
+source venv/bin/activate
 
 # verify virtualenv
 which python
