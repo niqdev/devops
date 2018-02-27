@@ -149,10 +149,10 @@ Documentation
 
 * [pip](https://pip.pypa.io/en/stable/user_guide)
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide)
-* [What is the difference between virtualenv|pyenv|virtualenvwrapper|venv ?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
+* [What is the difference between virtualenv | pyenv | virtualenvwrapper | venv ?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe/41573588#41573588)
 * [Flask](http://flask.pocoo.org)
 
-### setup
+Setup
 ```bash
 # search
 apt-get update && apt-cache search python | grep python2
@@ -172,7 +172,7 @@ pip install -U pip
 pip install virtualenv
 ```
 
-### virtualenv
+virtualenv
 ```bash
 # create virtualenv
 virtualenv venv
@@ -190,7 +190,7 @@ python --version
 deactivate
 ```
 
-### pip
+pip
 ```bash
 # search package
 pip search <package>
@@ -198,14 +198,14 @@ pip search <package>
 # install new package
 pip install <package>
 
-# update requirements with new package
+# update requirements with new packages
 pip freeze > requirements.txt
 
 # install all requirements
 pip install -r requirements.txt
 ```
 
-### Other
+Other
 ```bash
 # generate rc file
 pylint --generate-rcfile > .pylintrc

@@ -33,6 +33,9 @@ https://kafka.apache.org/quickstart
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 
+TODO
+https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
+
 ########## hadoop-spark ##########
 
 TODO
