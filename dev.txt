@@ -9,6 +9,8 @@ TODO
 https://github.com/josephpconley/spark-seed.g8
 * giter8 akka-seed
 
+* awesome links, best practices
+
 ---
 
 * Avro **Avro** is a data serialization system
@@ -35,6 +37,11 @@ http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 
 TODO
 https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
+
+# TODO api
+https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
+https://github.com/WhiteHouse/api-standards
+https://geemus.gitbooks.io/http-api-design/content/en/
 
 ########## hadoop-spark ##########
 

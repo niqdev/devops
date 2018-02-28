@@ -150,7 +150,6 @@ Documentation
 * [pip](https://pip.pypa.io/en/stable/user_guide)
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide)
 * [What is the difference between virtualenv | pyenv | virtualenvwrapper | venv ?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe/41573588#41573588)
-* [Flask](http://flask.pocoo.org)
 
 Setup
 ```bash
