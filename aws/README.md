@@ -28,10 +28,6 @@ export FLASK_DEBUG=1
 export FLASK_APP=app/main.py
 
 flask run
-
-TODO api
-http://127.0.0.1:5000/emr/TODO/clusters
-http://127.0.0.1:5000/static/example.txt
 ```
 
 ### Development
