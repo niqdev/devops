@@ -3,6 +3,7 @@
 Documentation
 
 * [Flask](http://flask.pocoo.org)
+* [Click](http://click.pocoo.org)
 
 
 ### Setup
@@ -36,6 +37,8 @@ flask run
 # install package
 pip install Flask
 pip install pylint
+# TODO remove
+pip install pytest
 
 # update requirements
 pip freeze > requirements.txt
@@ -46,4 +49,9 @@ find ./app -iname "*.py" | xargs pylint
 
 # install the application
 pip install --editable .
+pip install -e .
+
+# run tests
+python tests/app_test.py
+py.test
 ```
