@@ -54,4 +54,5 @@ pip install -e .
 # run tests
 python tests/app_test.py
 py.test
+python setup.py test
 ```
