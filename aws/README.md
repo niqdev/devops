@@ -24,8 +24,8 @@ pip install -r requirements.txt
 ### Run
 
 ```
+export FLASK_APP=app
 export FLASK_DEBUG=1
-export FLASK_APP=app/main.py
 
 flask run
 ```
@@ -43,4 +43,7 @@ pip freeze > requirements.txt
 # verify code
 pylint app/main.py
 find ./app -iname "*.py" | xargs pylint
+
+# install the application
+pip install --editable .
 ```

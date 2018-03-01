@@ -8,6 +8,7 @@ ansible/data/site.retry
 cassandra/.cassandra
 hadoop/.data/
 aws/venv
+aws/aws.egg-info
 
 .gradle/
 build/
