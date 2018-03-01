@@ -29,9 +29,11 @@ hadoop/
 │   │   │   │   └── yarn
 │   │   │   ├── namenode
 │   │   │   └── secondary
-│   │   └── oozie
-│   │       ├── data
-│   │       └── log
+│   │   ├── oozie
+│   │   │   ├── data
+│   │   │   └── log
+│   │   └── spark
+│   │       └── log
 │   ├── node-1
 │   │   └── hadoop
 │   │       ├── datanode
@@ -42,7 +44,8 @@ hadoop/
 │   ├── node-2
 │   ├── node-3
 ├── example
-│   └── map-reduce
+│   ├── map-reduce
+│   └── spark
 ├── file
 │   ├── hadoop
 │   │   ├── config
@@ -61,6 +64,11 @@ hadoop/
 │   │   │   ├── oozie-env.sh
 │   │   │   └── oozie-site.xml
 │   │   └── profile-oozie.sh
+│   ├── spark
+│   │   ├── config
+│   │   │   ├── log4j.properties
+│   │   │   └── spark-env.sh
+│   │   └── profile-spark.sh
 │   └── ssh
 │       └── config
 ├── script
