@@ -9,6 +9,7 @@ cassandra/.cassandra
 hadoop/.data/
 aws/venv
 aws/aws.egg-info
+aws/.eggs
 
 .gradle/
 build/

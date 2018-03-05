@@ -9,6 +9,8 @@ TODO
 https://github.com/josephpconley/spark-seed.g8
 * giter8 akka-seed
 
+* monit
+
 * awesome links, best practices
 
 ---

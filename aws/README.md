@@ -25,10 +25,7 @@ pip install -r requirements.txt
 ### Run
 
 ```
-export FLASK_APP=app
-export FLASK_DEBUG=1
-
-flask run
+TODO
 ```
 
 ### Development
@@ -37,13 +34,15 @@ flask run
 # install package
 pip install Flask
 pip install pylint
-# TODO remove
-pip install pytest
 
 # update requirements
 pip freeze > requirements.txt
 
-# verify code
+# run tests
+python tests/app_test.py
+python setup.py test
+
+# linting
 pylint app/main.py
 find ./app -iname "*.py" | xargs pylint
 
@@ -51,8 +50,8 @@ find ./app -iname "*.py" | xargs pylint
 pip install --editable .
 pip install -e .
 
-# run tests
-python tests/app_test.py
-py.test
-python setup.py test
+# run in debug
+export FLASK_APP=app
+export FLASK_DEBUG=1
+flask run
 ```
