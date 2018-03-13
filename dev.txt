@@ -2,7 +2,7 @@ DEV info
 
 TODO
 
-* aws: cli + emr + s3
+* aws: emr + s3
 
 * giter8 scala-seed: build, scopt, log, config, plugin, readme
 * giter8 spark-seed
