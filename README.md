@@ -1,6 +1,6 @@
 # DevOps
 
-A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
+A collection of Docker, Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
 * [Docker](https://niqdev.github.io/devops/docker) 
 * [Ansible](https://niqdev.github.io/devops/ansible)
