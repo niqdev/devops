@@ -1,3 +1,13 @@
+## Online tools
+
+* [Regular Expressions](https://regexr.com)
+* [JSFiddle](https://jsfiddle.net)
+* [ScalaFiddle](https://scalafiddle.io)
+* [JSON Formatter](https://jsonformatter.curiousconcept.com)
+* [Beautify JavaScript or HTML](http://jsbeautifier.org)
+
+<br>
+
 ## Vagrant
 
 > **Vagrant** is a tool for building and managing virtual machine environments in a single workflow
@@ -215,30 +225,3 @@ touch app/{__init__,main}.py
 
 <br>
 
-## Online tools
-
-* [Regular Expressions](https://regexr.com)
-* [JSFiddle](https://jsfiddle.net)
-* [ScalaFiddle](https://scalafiddle.io)
-* [JSON Formatter](https://jsonformatter.curiousconcept.com)
-* [Beautify JavaScript or HTML](http://jsbeautifier.org)
-
-<br>
-
-## Further reading
-
-* [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) by Brian Ward
-* [Docker in Action](https://www.manning.com/books/docker-in-action) (2016) by Jeff Nickoloff
-* [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
-* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (2015)(4th) by Tom White
-* [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći
-* [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (2016)(4th) by Eben Hewitt, Jeff Carpenter
-* [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) by Gwen Shapira, Neha Narkhede, Todd Palino
-
-Scala
-
-* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners
-* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason
-* [Akka in Action](https://www.manning.com/books/akka-in-action) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams
-
-<br>
