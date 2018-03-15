@@ -1,6 +1,6 @@
 # Unix
 
-### Basic commands
+### Useful commands
 
 ```bash
 # create nested directories
@@ -14,6 +14,8 @@ find /etc -name '*shadow'
 # -v inverts the search
 # -c count lines
 grep -E '^root' /etc/passwd
+# password encryption
+grep password.*unix /etc/pam.d/*
 
 # example substitution
 echo -e "a='1st' b='2nd' c='3rd'\na='4th' b='5th' c='6th'" > test.txt
@@ -45,6 +47,28 @@ uuidgen | tr "[:upper:]" "[:lower:]"
 
 # number of bytes
 stat --printf="%s" file
+
+# unix timestamp
+date +%s
+```
+
+### Diagnostic
+
+```bash
+# sysfs info
+udevadm info --query=all --name=/dev/xvda
+# monitor kernel uevents
+udevadm monitor
+
+# view kernel's boot and runtime diagnostic messages
+dmesg | less
+
+# system logs paths configuration
+vim /etc/rsyslog.conf
+vim /etc/rsyslog.d/50-default.conf
+# test system logger
+logger -p mail.info mail-message
+tail -n 1 /var/log/syslog
 ```
 
 ### Filesystem
@@ -86,18 +110,18 @@ du -sh /*
 free -h
 
 # (1) create swap file (~1GB)
-dd if=/dev/zero of=/dev/SWAP_NAME bs=1024 count=1024000
+dd if=/dev/zero of=/dev/SWAP_FILE bs=1024 count=1024000
 # (2) create swap file (2GB)
-fallocate -l 2G /dev/SWAP_NAME
+fallocate -l 2G /dev/SWAP_FILE
 # change owner and permissions
-chown root:root /dev/SWAP_NAME
-chmod 0600 /dev/SWAP_NAME
+chown root:root /dev/SWAP_FILE
+chmod 0600 /dev/SWAP_FILE
 # put swap signature on partition
-mkswap /dev/SWAP_NAME
+mkswap /dev/SWAP_FILE
 # register space with the kernel
-swapon /dev/SWAP_NAME
+swapon /dev/SWAP_FILE
 # make changes permanent after reboot
-echo "/dev/SWAP_NAME    none    swap    sw    0   0" | tee -a /etc/fstab
+echo "/dev/SWAP_FILE    none    swap    sw    0   0" | tee -a /etc/fstab
 # list swap partitions
 swapon --show
 ```
@@ -116,11 +140,8 @@ ps aux
 ```bash
 TODO
 
-# sysfs info
-udevadm info --query=all --name=/dev/xvda
-# monitor kernel uevents
-udevadm monitor
-
 jq
 http
 ```
+
+<br>
