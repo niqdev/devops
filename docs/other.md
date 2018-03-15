@@ -215,6 +215,16 @@ touch app/{__init__,main}.py
 
 <br>
 
+## Online tools
+
+* [Regular Expressions](https://regexr.com)
+* [JSFiddle](https://jsfiddle.net)
+* [ScalaFiddle](https://scalafiddle.io)
+* [JSON Formatter](https://jsonformatter.curiousconcept.com)
+* [Beautify JavaScript or HTML](http://jsbeautifier.org)
+
+<br>
+
 ## Further reading
 
 * [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) by Brian Ward
