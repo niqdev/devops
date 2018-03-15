@@ -1,6 +1,7 @@
 ## Online tools
 
 * [Regular Expressions](https://regexr.com)
+* [Current Millis](https://currentmillis.com)
 * [JSFiddle](https://jsfiddle.net)
 * [ScalaFiddle](https://scalafiddle.io)
 * [JSON Formatter](https://jsonformatter.curiousconcept.com)
