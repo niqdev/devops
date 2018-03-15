@@ -19,15 +19,6 @@ HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 ##############################
 
-# list files containing word
-#grep -rnw /usr/local/hadoop -e 'HADOOP_LOG_DIR'
-
-# find files
-#find /usr/local/hadoop -name 'yarn-site.xml'
-#find . -name '*war*'
-
-##############################
-
 function download_dist {
   local HADOOP_MIRROR_DOWNLOAD="http://www-eu.apache.org/dist/hadoop/common/$HADOOP_NAME/$HADOOP_NAME.tar.gz"
   echo "[*] download dist"
