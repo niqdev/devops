@@ -6,6 +6,9 @@
 # create nested directories
 mkdir -p parent/child1/child2 && cd $_
 
+# scroll file from bottom
+less +G /var/log/auth.log
+
 # find files
 find /etc -name '*shadow'
 
@@ -129,10 +132,63 @@ swapon --show
 ### Monitoring
 
 ```bash
-TODO
-
 # list processes
+# m show threads
 ps aux
+
+# display current system status
+# Spacebar Updates the display immediately
+# M Sorts by current resident memory usage
+# T Sorts by total (cumulative) CPU usage
+# P Sorts by current CPU usage (the default)
+# u Displays only one user’s processes
+# f Selects different statistics to display
+# ? Displays a usage summary for all top commands
+top
+top -p PID1 PID2
+# alternatives
+htop
+atop
+
+# monitor system performance
+vmstat 2
+
+# list open files and the processes using them
+lsof | less
+lsof /dev
+
+# print all the system calls that a process makes
+strace cat /dev/null
+strace uptime
+# track shared library calls
+ltrace ls /
+
+# CPU usage
+/usr/bin/time ls
+
+# change process priority (-20 < nice value < +20)
+renice 20 PID
+
+# load average: for the past 1 minute, 5 minutes and 15 minutes
+uptime
+
+# check memory status
+free
+cat /proc/meminfo
+
+# check major/minor page faults
+/usr/bin/time cal > /dev/null
+
+# show statistics for machine’s current uptime (install sysstat)
+iostat
+# show partition information
+iostat -p ALL
+
+# show I/O resources used by individual processes
+iotop
+
+# see the resource consumption of a process over time
+pidstat -p PID 1
 ```
 
 ### Other
