@@ -13,6 +13,8 @@ https://github.com/josephpconley/spark-seed.g8
 
 * awesome links, best practices
 
+* bash keyboard shortcuts, jq, http
+
 ---
 
 * Avro **Avro** is a data serialization system

@@ -200,13 +200,22 @@ iotop
 pidstat -p PID 1
 ```
 
-### Other
+### Network
+
+Documentation
+
+* [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
 
 ```bash
-TODO
+# active network interfaces
+ifconfig
 
-jq
-http
+# show routing table
+# Destination: network prefix e.g. 0.0.0.0/0 matches every address (default route)
+# flag U: up
+# flag G: gateway
+# convention: the router is usually at address 1 of the subnet
+route -n
 ```
 
 <br>
