@@ -31,6 +31,8 @@ https://github.com/josephpconley/spark-seed.g8
 
 * elastic-search
 * kong
+* etcd
+* linux containers LXD
 
 # tutorial
 https://kafka.apache.org/quickstart

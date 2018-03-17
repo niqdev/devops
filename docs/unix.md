@@ -39,9 +39,6 @@ tar zcvf archive.tar.gz /path/to/images/*.jpg
 # unpack compressed archive
 tar zxvf archive.tar.gz
 
-# calculator
-echo 1+2 | bc
-
 # count lines
 wc -l file
 
@@ -51,8 +48,18 @@ uuidgen | tr "[:upper:]" "[:lower:]"
 # number of bytes
 stat --printf="%s" file
 
+# calculator
+echo 1+2 | bc
+# print number in binary base 2 format
+echo 'obase=2; 240' | bc
+# reverse-polish calculator
+echo '1 2 + p' | dc
+
 # unix timestamp
 date +%s
+
+# calendar
+cal -3
 ```
 
 ### Diagnostic
@@ -156,6 +163,8 @@ vmstat 2
 # list open files and the processes using them
 lsof | less
 lsof /dev
+# open TCP ports
+lsof -i -n -P | grep TCP
 
 # print all the system calls that a process makes
 strace cat /dev/null
