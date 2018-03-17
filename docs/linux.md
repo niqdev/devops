@@ -216,6 +216,36 @@ ifconfig
 # flag G: gateway
 # convention: the router is usually at address 1 of the subnet
 route -n
+
+# ICMP echo request
+# icmp_req: verify order and no gap
+# time: round-trip time
+ping -c 3 8.8.8.8
+
+# show path packets take to a remote host
+traceroute 8.8.8.8
+
+# (DNS) find the IP address behind a domain name
+host www.github.com
+
+# network manager
+nmcli
+nmcli device show
+# returns zero as its exit code if network is up
+nm-online
+# network details e.g. ssid/password
+cat /etc/NetworkManager/system-connections/NETWORK_NAME
+
+# override hostname lookups
+vim /etc/hosts
+
+# traditional configuration file for DNS servers
+cat /etc/resolv.conf
+# DNS settings
+cat /etc/nsswitch.conf
+
+# static IP
+/etc/network/interfaces
 ```
 
 <br>
