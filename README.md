@@ -2,7 +2,7 @@
 
 A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
-* [Unix](https://niqdev.github.io/devops/unix)
+* [Linux](https://niqdev.github.io/devops/linux)
 * [Docker](https://niqdev.github.io/devops/docker) 
 * [Ansible](https://niqdev.github.io/devops/ansible)
 * [Cassandra](https://niqdev.github.io/devops/cassandra)

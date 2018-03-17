@@ -1,4 +1,4 @@
-# Unix
+# Linux
 
 ### Useful commands
 
