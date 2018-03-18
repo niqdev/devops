@@ -60,6 +60,9 @@ date +%s
 
 # calendar
 cal -3
+
+# configure kernel parameters at runtime
+sysctl
 ```
 
 ### Diagnostic
@@ -163,8 +166,6 @@ vmstat 2
 # list open files and the processes using them
 lsof | less
 lsof /dev
-# open TCP ports
-lsof -i -n -P | grep TCP
 
 # print all the system calls that a process makes
 strace cat /dev/null
@@ -202,9 +203,11 @@ pidstat -p PID 1
 
 ### Network
 
-Documentation
+Links
 
 * [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
+* [OpenWrt](https://openwrt.org)
+* [BusyBox](https://www.busybox.net)
 
 ```bash
 # active network interfaces
@@ -246,6 +249,46 @@ cat /etc/nsswitch.conf
 
 # static IP
 /etc/network/interfaces
+
+# list open TCP connections
+netstat -nt
+# list listening TCP ports
+netstat -ntl
+
+# processes listening on open TCP ports
+lsof -i -n -P | grep TCP
+
+# well-known ports
+cat /etc/services
+
+# release IP with DHCP
+dhclient -r NETWORK_INTERFACE_NAME
+# renew IP
+dhclient -v NETWORK_INTERFACE_NAME
+
+# Linux kernel does not automatically move packets from one subnet to another
+# enable temporary IP forwarding in the router's kernel
+sysctl -w net.ipv4.ip_forward
+# change permanent configs upon reboot
+vim /etc/sysctl.conf
+
+# example NAT (IP masquerading)
+sysctl -w net.ipv4.ip_forward
+iptables -P FORWARD DROP
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+
+# firewalling on individual machines is sometimes called IP filtering
+TODO
+
+# public IP via external services
+http ident.me
+http ipv4.ident.me
+http ipv6.ident.me
+http icanhazip.com
+http ipv4.icanhazip.com
+http ipv6.icanhazip.com
 ```
 
 <br>
