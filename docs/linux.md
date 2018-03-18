@@ -203,15 +203,23 @@ pidstat -p PID 1
 
 ### Network
 
-Links
+Useful links
 
 * [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
 * [OpenWrt](https://openwrt.org)
 * [BusyBox](https://www.busybox.net)
+* [Netfilter](https://en.wikipedia.org/wiki/Netfilter)
+* [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+* [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
+* [Shorewall](http://www.shorewall.net)
+* [tshark](https://hackertarget.com/tshark-tutorial-and-filter-examples)
 
 ```bash
 # active network interfaces
 ifconfig
+# enable/disable network interface
+ifconfig NETWORK_INTERFACE up
+ifconfig NETWORK_INTERFACE down
 
 # show routing table
 # Destination: network prefix e.g. 0.0.0.0/0 matches every address (default route)
@@ -266,6 +274,14 @@ dhclient -r NETWORK_INTERFACE_NAME
 # renew IP
 dhclient -v NETWORK_INTERFACE_NAME
 
+# public IP via external services
+http ident.me
+http ipv4.ident.me
+http ipv6.ident.me
+http icanhazip.com
+http ipv4.icanhazip.com
+http ipv6.icanhazip.com
+
 # Linux kernel does not automatically move packets from one subnet to another
 # enable temporary IP forwarding in the router's kernel
 sysctl -w net.ipv4.ip_forward
@@ -280,15 +296,34 @@ iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCE
 iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
 
 # firewalling on individual machines is sometimes called IP filtering
-TODO
+# firewall rules in series or chain make up a table
+# INPUT chain: protect individual machine
+# FORWARD chain: protect a network of machines
+# show iptable configuration
+iptables -L
+# block IP
+iptables -A INPUT -s BLOCKED_IP -j DROP
+# block IP/port
+iptables -A INPUT -s BLOCKED_IP/CIDR -p tcp --destination-port BLOCKED_PORT -j DROP
+# allow IP (insert at the bottom)
+iptables -A INPUT -s ALLOWED_IP -j ACCEPT
+# allow IP (insert at the top)
+iptables -I INPUT -s ALLOWED_IP -j ACCEPT
+# allow IP (specify order)
+iptables -I INPUT RULE_NUMBER -s ALLOWED_IP -j ACCEPT
+# delete rule #number in chain
+iptables -D INPUT RULE_NUMBER
 
-# public IP via external services
-http ident.me
-http ipv4.ident.me
-http ipv6.ident.me
-http icanhazip.com
-http ipv4.icanhazip.com
-http ipv6.icanhazip.com
+# show ARP kernel cache
+arp -n
+
+# list wireless network
+iw dev NETWORK_INTERFACE scan
+# show details of connected network
+iw dev NETWORK_INTERFACE link
+
+# manage both authentication and encryption for a wireless network interface
+wpa_supplicant
 ```
 
 <br>
