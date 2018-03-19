@@ -203,17 +203,6 @@ pidstat -p PID 1
 
 ### Network
 
-Useful links
-
-* [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
-* [OpenWrt](https://openwrt.org)
-* [BusyBox](https://www.busybox.net)
-* [Netfilter](https://en.wikipedia.org/wiki/Netfilter)
-* [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
-* [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
-* [Shorewall](http://www.shorewall.net)
-* [tshark](https://hackertarget.com/tshark-tutorial-and-filter-examples)
-
 ```bash
 # active network interfaces
 ifconfig
@@ -267,7 +256,7 @@ cat /etc/nsswitch.conf
 netstat -nt
 # print listening TCP ports
 netstat -ntl
-# lit running services
+# list running services
 netstat -plunt
 
 # processes listening on open TCP ports
@@ -275,6 +264,8 @@ lsof -i -n -P | grep TCP
 lsof -iTCP -sTCP:LISTEN
 # process running on specific port
 lsof -n -i:PORT_NUMBER
+# list unix domain socket
+lsof -U
 
 # well-known ports
 cat /etc/services
@@ -338,12 +329,6 @@ wpa_supplicant
 
 ### Applications
 
-TODO examples
-
-* ssh/scp/sftp
-* curl/wget/http
-* jq
-
 ```bash
 # old insecure
 telnet www.wikipedia.org 80
@@ -378,6 +363,29 @@ cat <(echo ls -la) - | netcat IP_ADDRESS 6996
 
 # scan open ports
 nmap -Pn IP_ADDRESS
+
+# other
+# * ssh/scp/sftp/rsync
+# * curl/wget
+
+# system calls
+man recv
+man send
 ```
+
+### Useful links
+
+* [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
+* [OpenWrt](https://openwrt.org)
+* [BusyBox](https://www.busybox.net)
+* [Netfilter](https://en.wikipedia.org/wiki/Netfilter)
+* [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+* [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
+* [Shorewall](http://www.shorewall.net)
+* [Nmap](https://nmap.org)
+* [tshark](https://hackertarget.com/tshark-tutorial-and-filter-examples)
+* [Postfix](http://www.postfix.org)
+* [HTTPie](https://httpie.org)
+* [jq](https://stedolan.github.io/jq)
 
 <br>
