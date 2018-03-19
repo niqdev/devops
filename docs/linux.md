@@ -258,13 +258,23 @@ cat /etc/nsswitch.conf
 # static IP
 /etc/network/interfaces
 
+# -t Prints TCP port information
+# -u Prints UDP port information
+# -l Prints listening ports
+# -a Prints every active port
+# -n Disables name lookups (speeds things up; also useful if DNS isn’t working)
 # list open TCP connections
 netstat -nt
-# list listening TCP ports
+# print listening TCP ports
 netstat -ntl
+# lit running services
+netstat -plunt
 
 # processes listening on open TCP ports
 lsof -i -n -P | grep TCP
+lsof -iTCP -sTCP:LISTEN
+# process running on specific port
+lsof -n -i:PORT_NUMBER
 
 # well-known ports
 cat /etc/services
@@ -324,6 +334,50 @@ iw dev NETWORK_INTERFACE link
 
 # manage both authentication and encryption for a wireless network interface
 wpa_supplicant
+```
+
+### Applications
+
+TODO examples
+
+* ssh/scp/sftp
+* curl/wget/http
+* jq
+
+```bash
+# old insecure
+telnet www.wikipedia.org 80
+# press enter twice after
+GET / HTTP/1.0
+
+# details about communication
+curl --trace-ascii trace_file https://www.wikipedia.org > /dev/null
+vim trace_file
+
+# sshd server configs
+vim /etc/ssh/sshd_config
+# generate key pair
+ssh-keygen -t rsa -b 4096 -C KEY_NAME -N "PASSPHRASE" -f KEY_PATH
+
+# list network interfaces
+tcpdump -D
+# sniff hex and ascii (-A) by interface/host/port
+tcpdump -XX -n -i INTERFACE_NAME tcp and host IP_ADDRESS and port PORT_NUMBER
+
+# Swiss Army knife
+# banner grabbing
+cat <(echo HEAD / HTTP/1.0) - | netcat IP_ADDRESS PORT_NUMBER
+# install traditional (with -e option)
+apt-get install netcat -y
+# choose /bin/nc.traditional
+update-alternatives --config nc
+# listen on server
+netcat -l -p 6996 -e /bin/bash
+# run client
+cat <(echo ls -la) - | netcat IP_ADDRESS 6996
+
+# scan open ports
+nmap -Pn IP_ADDRESS
 ```
 
 <br>
