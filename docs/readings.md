@@ -50,6 +50,8 @@
 
 * [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) by Gwen Shapira, Neha Narkhede, Todd Palino
 
+* [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
+
 **Scala**
 
 * [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners
