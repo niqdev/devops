@@ -122,7 +122,7 @@ exec cat
 tar cf - orig | (cd target; tar xvf -)
 ```
 
-Script template
+Script templates
 ```bash
 # shebang
 #!/bin/sh
@@ -135,6 +135,16 @@ IFS=$'\n\t'
 # run from any directory (no symlink allowed)
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 cd ${CURRENT_PATH}
+
+# import
+. imported_file.sh
+source imported_file.sh
+
+# read and store in a variable
+read MY_VAR
+echo $MY_VAR
+# read stdin
+read -p "Are you sure? [y/n]" -n 1 -r
 ```
 
 ### Diagnostic
@@ -154,16 +164,6 @@ vim /etc/rsyslog.d/50-default.conf
 # test system logger
 logger -p mail.info mail-message
 tail -n 1 /var/log/syslog
-
-# import
-. imported_file.sh
-source imported_file.sh
-
-# read and store in a variable
-read MY_VAR
-echo $MY_VAR
-# read stdin
-read -p "Are you sure? [y/n]" -n 1 -r
 ```
 
 ### Filesystem
@@ -281,6 +281,12 @@ iotop
 
 # see the resource consumption of a process over time
 pidstat -p PID 1
+
+# reports CPU and IO stats
+iostat -mt 2
+
+# system resource statistics
+dstat
 ```
 
 ### Network
@@ -457,6 +463,7 @@ man send
 
 ### Useful links
 
+* [perf-tools](https://github.com/brendangregg/perf-tools)
 * [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
 * [OpenWrt](https://openwrt.org)
 * [BusyBox](https://www.busybox.net)
