@@ -8,6 +8,8 @@ mkdir -p parent/child1/child2 && cd $_
 
 # scroll file from bottom
 less +G /var/log/auth.log
+# follow also if doesn't exist
+tail -F /var/log/auth.log
 
 # find files
 find /etc -name '*shadow'
@@ -20,10 +22,15 @@ grep -E '^root' /etc/passwd
 # password encryption
 grep password.*unix /etc/pam.d/*
 
+# sed = stream editor
 # example substitution
 echo -e "a='1st' b='2nd' c='3rd'\na='4th' b='5th' c='6th'" > test.txt
 cat test.txt | sed -nE "s/^.*a='([^']*).*c='([^']*).*$/\2\n\1/gp" | sort -r | uniq
+# delete lines three through six
+sed 3,6d /etc/passwd
 
+# pick a single field out of an input stream
+ls -l | awk '{print $9}'
 # extract 2nd string
 echo "aaa bbb ccc" > test.txt
 cat test.txt | awk '{printf("2nd: %s\n",$2)}'
@@ -54,6 +61,8 @@ echo 1+2 | bc
 echo 'obase=2; 240' | bc
 # reverse-polish calculator
 echo '1 2 + p' | dc
+# evaluate expressions
+expr 1 + 2
 
 # unix timestamp
 date +%s
@@ -63,6 +72,69 @@ cal -3
 
 # configure kernel parameters at runtime
 sysctl
+
+# test conditions ([)
+test a = a && echo equal
+
+# create temporary file
+mktemp
+# X is a template
+mktemp /tmp/my-tmp.XXXXXX
+# signal handler to catch the signal that CTRL-C generates and remove the temporary files
+TMPFILE=$(mktemp /tmp/my-tmp.XXXXXX)
+trap "rm -f $TMPFILE; exit 1" INT
+
+# compare files
+diff FILE1 FILE2
+
+# here document
+DATE=$(date)
+cat <<EOF
+Date: $DATE
+line1
+line2
+EOF
+
+# strip full path and extension if specified e.g. mail
+basename /var/log/mail.log .log
+
+# image conversion
+giftopnm
+pnmtopng
+
+# when operating on huge number of files to avoid buffer issues
+# e.g. verify file's type
+# INSECURE find . -name '*.md' -print | xargs file
+# change the find output separator and the xargs argument delimiter from a newline to a NULL character
+# two dashes if there is a chance that any of the target files start with a single dash
+find . -name '*.md' -print0 | xargs -0 file --
+# supply a {} to substitute the filename and a literal ; to indicate the end of the command
+find . -name '*.md' -exec file {} \;
+
+# replaces current shell process with the program you name after exec system call
+# after you press CTRL-D or CTRL-C to terminate the cat program,
+# your window should disappear because its child process no longer exists
+exec cat
+
+# subshell example () e.g. path remains the same outside
+(PATH=/bad/invalid:$PATH; echo $PATH)
+# fast way to copy and preserve permissions
+tar cf - orig | (cd target; tar xvf -)
+```
+
+Script template
+```bash
+# shebang
+#!/bin/sh
+#!/bin/bash
+
+# unofficial bash strict mode
+set -euo pipefail
+IFS=$'\n\t'
+
+# run from any directory (no symlink allowed)
+CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
+cd ${CURRENT_PATH}
 ```
 
 ### Diagnostic
@@ -82,6 +154,16 @@ vim /etc/rsyslog.d/50-default.conf
 # test system logger
 logger -p mail.info mail-message
 tail -n 1 /var/log/syslog
+
+# import
+. imported_file.sh
+source imported_file.sh
+
+# read and store in a variable
+read MY_VAR
+echo $MY_VAR
+# read stdin
+read -p "Are you sure? [y/n]" -n 1 -r
 ```
 
 ### Filesystem
