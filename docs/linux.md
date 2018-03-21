@@ -219,6 +219,17 @@ swapon /dev/SWAP_FILE
 echo "/dev/SWAP_FILE    none    swap    sw    0   0" | tee -a /etc/fstab
 # list swap partitions
 swapon --show
+
+# simple static server on port 8000
+python -m SimpleHTTPServer
+
+# copy directory to remote host
+scp -r directory remote_host:~/new-directory
+tar cBvf - directory | ssh remote_host tar xBvpf -
+rsync -az directory remote_host:~/new-
+# equivalent to /*
+# -nv dry run
+rsync -a directory/ remote_host:~/new-directory
 ```
 
 ### Monitoring
@@ -463,7 +474,6 @@ man send
 
 ### Useful links
 
-* [perf-tools](https://github.com/brendangregg/perf-tools)
 * [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
 * [OpenWrt](https://openwrt.org)
 * [BusyBox](https://www.busybox.net)
@@ -476,5 +486,7 @@ man send
 * [Postfix](http://www.postfix.org)
 * [HTTPie](https://httpie.org)
 * [jq](https://stedolan.github.io/jq)
+* [perf-tools](https://github.com/brendangregg/perf-tools)
+* [Samba](https://www.samba.org)
 
 <br>
