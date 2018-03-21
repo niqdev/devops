@@ -120,6 +120,19 @@ exec cat
 (PATH=/bad/invalid:$PATH; echo $PATH)
 # fast way to copy and preserve permissions
 tar cf - orig | (cd target; tar xvf -)
+
+# X Window System
+xwininfo
+xlsclients -l
+xev
+xinput --list
+dbus-monitor --system
+dbus-monitor --session
+
+# compile C program
+cc -o hello hello.c
+# list shared library (so)
+ldd /bin/bash
 ```
 
 Script templates
@@ -488,5 +501,6 @@ man send
 * [jq](https://stedolan.github.io/jq)
 * [perf-tools](https://github.com/brendangregg/perf-tools)
 * [Samba](https://www.samba.org)
+* [Program Library HOWTO](https://www.dwheeler.com/program-library)
 
 <br>
