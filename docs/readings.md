@@ -32,6 +32,8 @@
 
 * [Merkle Hash Tree](http://ceur-ws.org/Vol-1366/paper13.pdf)
 
+* [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
+
 <br>
 
 ## Books
