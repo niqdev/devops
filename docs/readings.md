@@ -34,6 +34,8 @@
 
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
 
+* [Statistically Rigorous Java Performance Evaluation](https://dri.es/files/oopsla07-georges.pdf)
+
 <br>
 
 ## Books

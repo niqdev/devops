@@ -4,7 +4,7 @@ TODO
 
 * aws: emr + s3
 
-* giter8 scala-seed: build, scopt, log, config, plugin, readme
+* giter8 scala-seed: build, scopt, log, config, plugin, readme, scalameter JMX
 * giter8 spark-seed
 https://github.com/josephpconley/spark-seed.g8
 * giter8 akka-seed
