@@ -38,6 +38,19 @@
 
 <br>
 
+## Articles
+
+**CAP Theorem**
+
+* [Brewer's CAP Theorem](http://www.julianbrowne.com/article/brewers-cap-theorem)
+
+* [CAP Twelve Years Later: How the "Rules" Have Changed
+](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
+
+* [Please stop calling databases CP or AP](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)
+
+<br>
+
 ## Books
 
 * [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) by Brian Ward
