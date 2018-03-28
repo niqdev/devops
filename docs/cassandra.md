@@ -6,6 +6,14 @@ Documentation
 
 * [Cassandra](https://cassandra.apache.org)
 
+* [A Decentralized Structured Storage System](https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf) (Paper)
+
+* [A Big Data Modeling Methodology for Apache Cassandra](https://pdfs.semanticscholar.org/22c6/740341ef13d3c5ee52044a4fbaad911f7322.pdf) (Paper)
+
+* [Facebook’s Cassandra paper](https://docs.datastax.com/en/articles/cassandra/cassandrathenandnow.html) (Article)
+
+Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
+
 ## Setup
 
 Single Node Cluster
@@ -63,6 +71,15 @@ DESCRIBE keyspaces;
 DESCRIBE KEYSPACE example;
 DESCRIBE TABLE example.messages;
 SELECT * FROM example.messages;
+```
+
+Old `cassandra-cli` deprecated and removed in Cassandra 3.0
+
+```bash
+USE keyspace_name;
+LIST table_name;
+GET table_name["primary_key"];
+SET table_name["primary_key"]["column_name"]
 ```
 
 <br>
