@@ -72,6 +72,8 @@ docker exec -it devops-cassandra-node-1 bash
   -c "cat > example.cql; cqlsh -f example.cql") < cql/example_create.cql
 ```
 
+## Examples
+
 `cqlsh` example [scripts](https://github.com/niqdev/devops/tree/master/cassandra/cql)
 
 ```bash
