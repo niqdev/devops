@@ -55,19 +55,33 @@ tree .cassandra/
 (root) /var/log/cassandra
 ```
 
-Example
+Access container
 ```bash
-# execute cql from host
-(docker exec -i devops-cassandra bash \
-  -c "cat > example.cql; cqlsh -f example.cql") < cql/example.cql
-
 # access container
 docker exec -it devops-cassandra bash
 docker exec -it devops-cassandra bash -c cqlsh
 docker exec -it devops-cassandra-seed bash
 docker exec -it devops-cassandra-node-1 bash
 
-DESCRIBE keyspaces;
+# execute cql script from host
+(docker exec -i devops-cassandra bash \
+  -c "cat > example.cql; cqlsh -f example.cql") < cql/example_create.cql
+```
+
+`cqlsh` examples
+
+```bash
+# connect
+cqlsh localhost 9042
+cqlsh localhost 9042 -u cassandra -p cassandra
+
+# execute cql script
+cqlsh -f cql/example_create.cql
+
+# info
+SHOW VERSION;
+DESCRIBE CLUSTER;
+DESCRIBE KEYSPACES;
 DESCRIBE KEYSPACE example;
 DESCRIBE TABLE example.messages;
 SELECT * FROM example.messages;
@@ -75,11 +89,11 @@ SELECT * FROM example.messages;
 
 Old `cassandra-cli` deprecated and removed in Cassandra 3.0
 
-```bash
+```
 USE keyspace_name;
 LIST table_name;
 GET table_name["primary_key"];
-SET table_name["primary_key"]["column_name"]
+SET table_name["primary_key"]["column_name"];
 ```
 
 <br>
