@@ -14,5 +14,7 @@ CREATE TABLE IF NOT EXISTS messages (
 INSERT INTO messages(id, body, created_at, updated_at)
 VALUES(uuid(), 'message1', toTimestamp(now()), toTimestamp(now()));
 
-INSERT INTO messages(id, body, created_at, updated_at)
-VALUES(uuid(), 'message2', toTimestamp(now()), toTimestamp(now()));
+ALTER TABLE example.messages ADD title text;
+
+INSERT INTO messages(id, body, title, created_at, updated_at)
+VALUES(uuid(), 'message2', 'title2', toTimestamp(now()), toTimestamp(now()));

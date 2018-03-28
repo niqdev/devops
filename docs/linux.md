@@ -66,6 +66,8 @@ expr 1 + 2
 
 # unix timestamp
 date +%s
+# timestamp in microsecond
+date +%s%N
 
 # calendar
 cal -3

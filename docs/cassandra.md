@@ -2,7 +2,7 @@
 
 > **Cassandra** is a distributed database for managing large amounts of structured data across many commodity servers, while providing highly available service and no single point of failure
 
-Documentation
+Useful documentation
 
 * [Cassandra](https://cassandra.apache.org)
 
@@ -10,7 +10,11 @@ Documentation
 
 * [A Big Data Modeling Methodology for Apache Cassandra](https://pdfs.semanticscholar.org/22c6/740341ef13d3c5ee52044a4fbaad911f7322.pdf) (Paper)
 
-* [Facebook’s Cassandra paper](https://docs.datastax.com/en/articles/cassandra/cassandrathenandnow.html) (Article)
+* [Facebook’s Cassandra paper](https://docs.datastax.com/en/articles/cassandra/cassandrathenandnow.html)
+
+* [Cassandra Data Modeling Best Practices](https://www.ebayinc.com/stories/blogs/tech/cassandra-data-modeling-best-practices-part-1)
+
+* [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata)
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
 
@@ -68,7 +72,7 @@ docker exec -it devops-cassandra-node-1 bash
   -c "cat > example.cql; cqlsh -f example.cql") < cql/example_create.cql
 ```
 
-`cqlsh` examples
+`cqlsh` example [scripts](https://github.com/niqdev/devops/tree/master/cassandra/cql)
 
 ```bash
 # connect
@@ -85,6 +89,16 @@ DESCRIBE KEYSPACES;
 DESCRIBE KEYSPACE example;
 DESCRIBE TABLE example.messages;
 SELECT * FROM example.messages;
+
+# timestamp - not allowed on pk
+SELECT id, body, WRITETIME(body) FROM example.messages;
+
+# timestamp in microsecond - old timestamp are ignored
+UPDATE example.messages USING TIMESTAMP 1434373756626000
+SET body = 'message3' WHERE id = 'INVALID_UUID';
+
+# time to live TTL - stored on a per-column level no row
+SELECT id, TTL(body) FROM example.messages;
 ```
 
 Old `cassandra-cli` deprecated and removed in Cassandra 3.0
