@@ -15,8 +15,7 @@ ALTER TABLE messages ADD title text;
 
 CREATE TABLE IF NOT EXISTS example.counters (
   id timeuuid PRIMARY KEY,
-  total counter,
-  today counter
+  total counter
 );
 
 CREATE TABLE IF NOT EXISTS example.users (
@@ -41,14 +40,12 @@ CREATE TYPE example.address (
 );
 
 -- frozen: user-defined data type is considered a collection
-ALTER TABLE user ADD addresses map<text, frozen<address>>;
+ALTER TABLE example.users ADD addresses map<text, frozen<address>>;
 
--- avoid secondary indexes TODP pag 76
+-- avoid secondary indexes
 CREATE INDEX users_last_name_idx ON example.users ( last_name );
 
-CREATE CUSTOM INDEX user_last_name_sasi_idx ON user (last_name)
+CREATE CUSTOM INDEX users_last_name_sasi_idx ON example.users ( last_name )
 USING 'org.apache.cassandra.index.sasi.SASIIndex';
-
-SELECT * FROM user WHERE last_name LIKE 'N%';
 
 CREATE INDEX ON example.users ( emails );

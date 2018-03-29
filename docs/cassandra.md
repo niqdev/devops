@@ -90,17 +90,6 @@ DESCRIBE CLUSTER;
 DESCRIBE KEYSPACES;
 DESCRIBE KEYSPACE example;
 DESCRIBE TABLE example.messages;
-SELECT * FROM example.messages;
-
-# timestamp - not allowed on pk
-SELECT id, body, WRITETIME(body) FROM example.messages;
-
-# timestamp in microsecond - old timestamp are ignored
-UPDATE example.messages USING TIMESTAMP 1434373756626000
-SET body = 'message3' WHERE id = 'INVALID_UUID';
-
-# time to live TTL - stored on a per-column level no row
-SELECT id, TTL(body) FROM example.messages;
 ```
 
 Old `cassandra-cli` deprecated and removed in Cassandra 3.0
