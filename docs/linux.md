@@ -48,6 +48,8 @@ tar zxvf archive.tar.gz
 
 # pack archive
 zip -r backup.zip file-name directory-name
+# zip with password (prompt)
+zip -e backup.zip file-name
 # unpack jar
 unzip my-lib.jar -d /tmp/my-lib
 
