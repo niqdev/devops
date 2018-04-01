@@ -46,6 +46,11 @@ tar zcvf archive.tar.gz /path/to/images/*.jpg
 # unpack compressed archive
 tar zxvf archive.tar.gz
 
+# pack archive
+zip -r backup.zip file-name directory-name
+# unpack jar
+unzip my-lib.jar -d /tmp/my-lib
+
 # count lines
 wc -l file
 
