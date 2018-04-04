@@ -14,6 +14,8 @@ Useful documentation
 
 * [Cassandra Data Modeling Best Practices](https://www.ebayinc.com/stories/blogs/tech/cassandra-data-modeling-best-practices-part-1)
 
+* [Difference between partition key, composite key and clustering key](https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra)
+
 <!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes

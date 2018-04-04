@@ -24,6 +24,8 @@
 
 * [Life beyond Distributed Transactions](http://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf)
 
+* [The ϕ Accrual Failure Detector](http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf)
+
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
 
 * [Merkle Hash Tree](http://ceur-ws.org/Vol-1366/paper13.pdf)
