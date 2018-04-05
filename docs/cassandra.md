@@ -20,6 +20,28 @@ Useful documentation
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
 
+## Architecture
+
+* A **rack** is a logical set of nodes in close proximity to each other
+
+* A **data center** is a logical set of racks
+
+* Cassandra uses a **gossip protocol** (called epidemic protocol) that allows each node to keep track of state information about the other nodes in the cluster implementing an algorithm called *Phi Accrual Failure Detection* instead of simple heartbeats
+
+* The job of a **snitch** is to determine relative host proximity for each node in a cluster, which is used to determine which nodes to read and write from
+
+* Cassandra represents the data managed by a cluster as a **ring**. Each node in the ring is assigned one or more ranges of data described by a **token**, which determines its position in the ring and is used to identify each partition
+
+![token-ring](img/cassandra-token-ring.png)
+
+* **virtual nodes** allow to broken a token range and assign multiple tokens to a single physical node
+
+* A **partitioner** is a hash function for computing the token of a partition key and determines how a (wide) row or partition of data is distributed within the ring
+
+* The **replication factor** is the number of nodes in a cluster that will receive copies of the same row and the replication strategy is set independently for each keyspace
+
+* Cassandra provides tuneable **consistency** levels and must be specified on each read or write
+
 ## Setup
 
 Single Node Cluster
@@ -74,9 +96,9 @@ docker exec -it devops-cassandra-node-1 bash
   -c "cat > example.cql; cqlsh -f example.cql") < cql/example_create.cql
 ```
 
-## Examples
+## CQL
 
-`cqlsh` example [scripts](https://github.com/niqdev/devops/tree/master/cassandra/cql)
+`cqlsh` script [examples](https://github.com/niqdev/devops/tree/master/cassandra/cql)
 
 ```bash
 # connect
