@@ -32,7 +32,7 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 * Cassandra represents the data managed by a cluster as a **ring**. Each node in the ring is assigned one or more ranges of data described by a **token**, which determines its position in the ring and is used to identify each partition
 
-![token-ring](img/cassandra-token-ring.png)
+![cassandra-token-ring](img/cassandra-token-ring.png)
 
 * **virtual nodes** allow to broken a token range and assign multiple tokens to a single physical node
 
@@ -41,6 +41,12 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 * The **replication factor** is the number of nodes in a cluster that will receive copies of the same row and the replication strategy is set independently for each keyspace
 
 * Cassandra provides tuneable **consistency** levels and must be specified on each read or write
+
+* A client may connect to any node, named **coordinator node**, in the cluster to initiate a read or write query. The coordinator identifies which nodes are replicas for the data and forwards the queries to them
+
+![cassandra-query](img/cassandra-query.png)
+
+<!-- TODO ![cassandra-memory](img/cassandra-memory.png) -->
 
 ## Setup
 
@@ -114,6 +120,9 @@ DESCRIBE CLUSTER;
 DESCRIBE KEYSPACES;
 DESCRIBE KEYSPACE example;
 DESCRIBE TABLE example.messages;
+
+# nice format
+EXPAND ON;
 ```
 
 Old `cassandra-cli` deprecated and removed in Cassandra 3.0
