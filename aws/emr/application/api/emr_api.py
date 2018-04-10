@@ -1,33 +1,52 @@
 from application import app
 from application.service.emr_service import EmrService
 
+import json
 from datetime import datetime
 from flask import jsonify, request
 
 emr_service = EmrService()
 
-@app.route('/v1/emr/clusters/create')
-def route_clusters_create():
-    # POST env|region|config-name (yaml)
-    data = emr_service.create_cluster()
-    return __build_response(request, data, False)
+# TODO env|region|config-name (yaml)
 
-def __build_response(request, data_response = {}, debug = True):
+@app.route('/v1/emr/clusters/create', methods=['POST'])
+def route_clusters_create():
+    data = emr_service.create_cluster()
+    return __build_response(request, data)
+
+@app.route('/v1/emr/clusters/destroy', methods=['POST'])
+def route_clusters_destroy():
+    data = emr_service.destroy_cluster()
+    return __build_response(request, data)
+
+@app.route('/v1/emr/clusters/info')
+def route_clusters_info():
+    data = emr_service.info_cluster()
+    return __build_response(request, data)
+
+def __build_response(request, data = {}, debug = True):
     """
     Build Response
     """
+
+    #app.logger.debug("Request Headers %s", request.headers)
+    #app.logger.debug('\n'.join('{}: {}'.format(k, v) for k, v in request.headers.items()))
+
     if debug:
         data_request = {
             'href': request.url,
-            'method': request.method,
+            'method': request.method
+        }
+        data_response = {
             #'headers': request.headers,
             #'params': request.params,
-            #'data': request.data,
-            'timestamp': datetime.utcnow().isoformat()
+            #'body': request.body,
+            'data': data
         }
         return jsonify({
+            'timestamp': datetime.utcnow().isoformat(),
             'request': data_request,
             'response': data_response
         })
     else:
-        return jsonify(data_response)
+        return jsonify(data)
