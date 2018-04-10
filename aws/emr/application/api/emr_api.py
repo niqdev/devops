@@ -29,16 +29,14 @@ def __build_response(request, data = {}, debug = True):
     Build Response
     """
 
-    #app.logger.debug("Request Headers %s", request.headers)
-    #app.logger.debug('\n'.join('{}: {}'.format(k, v) for k, v in request.headers.items()))
-
     if debug:
         data_request = {
-            'href': request.url,
-            'method': request.method
+            'url': request.url,
+            'method': request.method,
+            'headers': dict(request.headers),
+            'params': request.args
         }
         data_response = {
-            #'headers': request.headers,
             #'params': request.params,
             #'body': request.body,
             'data': data
