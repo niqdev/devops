@@ -6,6 +6,7 @@ Logger().init()
 # api
 import application.api.status_api
 import application.api.example_api
+import application.api.emr_api
 
 # if run with cli this is NOT executed
 if __name__ == '__main__':
