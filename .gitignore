@@ -5,11 +5,9 @@
 
 ansible/.share
 ansible/data/site.retry
+aws/*/logs/
 cassandra/.cassandra
 hadoop/.data/
-aws/venv
-aws/aws.egg-info
-aws/.eggs
 
 .gradle/
 build/
@@ -17,6 +15,9 @@ build/
 __pycache__
 *.pyc
 .pytest_cache/
+venv/
+.eggs/
+*.egg-info
 
 *.iml
 .idea/

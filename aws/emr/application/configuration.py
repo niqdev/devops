@@ -1,7 +1,7 @@
 import os
 
 class DefaultConfig(object):
-    APP_NAME = 'flask-boilerplate'
+    APP_NAME = 'aws-emr'
     LOG_PATH = 'logs/application.log'
     ENVIRONMENT = 'DEFAULT'
     DEBUG = False
