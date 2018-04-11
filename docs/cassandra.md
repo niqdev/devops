@@ -52,7 +52,7 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 * When the number of objects stored in the memtable or in the commit log reaches a threshold, the contents of the memtable are flushed (non-blocking operation) to disk in a file called **SSTable** and a new memtable or commit log is then created/recycled
 
-* No reads or seeks of any kind are required for writing a value to Cassandra because all writes are append operations and then **compaction** is used to amortize the reorganization of data and gain better future read performance
+* No reads or seeks of any kind are required for writing a value to Cassandra because all writes are append operations to immutable SSTables. However, periodic **compaction** operations in Cassandra are performed in order to support fast read performance: the keys are merged, columns are combined, tombstones are discarded, and a new index is created
 
 * The **key cache** stores a map of partition keys to row index entries, facilitating faster read access into SSTables stored on disk. The key cache is stored on the JVM heap
 
@@ -64,11 +64,15 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 ![cassandra-memory](img/cassandra-memory.png)
 
-* To provide *linearizable consistency* e.g. read-before-write Cassandra supports a **lightweight transaction** or LWT. The implementation is based on *paxos* and is limited to a single partition
+* To provide *linearizable consistency* e.g. read-before-write, Cassandra supports a **lightweight transaction** or LWT. The implementation is based on *paxos* and is limited to a single partition
 
 * A **tombstone** is a deletion marker that is required to suppress older data in SSTables until compaction or garbage collection run. Data is not immediately deleted but it's treated as an update operation
 
 * **Bloom filters** are very fast, non-deterministic algorithms for testing whether an element is a member of a set. It is possible to get a false-positive read, but not a false-negative. When a read is performed, the filter is checked first before accessing disk, if it indicates that the element does not exist in the set, it certainly doesn't, but if the filter thinks that the element is in the set, the disk is accessed to make sure
+
+* *Replica Synchronization (1)* Cassandra reads data from multiple replicas in order to achieve the requested consistency level and detects if any replicas have out of date values. If an insufficient number of nodes have the latest value, a **read repair** is performed immediately to update the out of date replicas
+
+* *Replica Synchronization (2)* **Anti-entropy repair** is a manually initiated operation performed on nodes as part of a regular maintenance process executed with *nodetool* causing a *major compaction* during which a node exchange *Merkle trees* with neighboring nodes
 
 ## Setup
 
