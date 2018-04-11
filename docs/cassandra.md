@@ -34,7 +34,7 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 ![cassandra-token-ring](img/cassandra-token-ring.png)
 
-* **virtual nodes** allow to broken a token range and assign multiple tokens to a single physical node
+* **virtual nodes** allow to break a token range and assign multiple tokens to a single physical node
 
 * A **partitioner** is a hash function for computing the token of a partition key and determines how a (wide) row or partition of data is distributed within the ring
 
@@ -42,11 +42,33 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 * Cassandra provides tuneable **consistency** levels and must be specified on each read or write
 
-* A client may connect to any node, named **coordinator node**, in the cluster to initiate a read or write query. The coordinator identifies which nodes are replicas for the data and forwards the queries to them
+* A client may connect to any node in the cluster, named **coordinator node**, to initiate a read or write query. The coordinator identifies which nodes are replicas for the data and forwards the queries to them
 
 ![cassandra-query](img/cassandra-query.png)
 
-<!-- TODO ![cassandra-memory](img/cassandra-memory.png) -->
+* When a write operation is performed, it's immediately written to a **commit log** to ensure that data is not lost. It is a crash-recovery mechanism only, clients never read from it
+
+* After it's written to the commit log, the value is written (already ordered) to a memory-resident data structure called the **memtable** divided by Column Family (table)
+
+* When the number of objects stored in the memtable or in the commit log reaches a threshold, the contents of the memtable are flushed (non-blocking operation) to disk in a file called **SSTable** and a new memtable or commit log is then created/recycled
+
+* No reads or seeks of any kind are required for writing a value to Cassandra because all writes are append operations and then **compaction** is used to amortize the reorganization of data and gain better future read performance
+
+* The **key cache** stores a map of partition keys to row index entries, facilitating faster read access into SSTables stored on disk. The key cache is stored on the JVM heap
+
+* The **row cache** caches entire rows and can greatly speed up read access for frequently accessed rows, at the cost of more memory usage. The row cache is stored in off-heap memory
+
+* The **counter cache** is used to improve counter performance by reducing lock contention for the most frequently accessed counters
+
+* In a scenario in which a write request is sent to Cassandra, but a replica node where the write properly belongs is not available due to network partition, hardware failure, or some other reason, to ensure general availability Cassandra implements a feature called **hinted handoff**. The coordinator node while store temporarily the data until it detects that the node is available again
+
+![cassandra-memory](img/cassandra-memory.png)
+
+* To provide *linearizable consistency* e.g. read-before-write Cassandra supports a **lightweight transaction** or LWT. The implementation is based on *paxos* and is limited to a single partition
+
+* A **tombstone** is a deletion marker that is required to suppress older data in SSTables until compaction or garbage collection run. Data is not immediately deleted but it's treated as an update operation
+
+* **Bloom filters** are very fast, non-deterministic algorithms for testing whether an element is a member of a set. It is possible to get a false-positive read, but not a false-negative. When a read is performed, the filter is checked first before accessing disk, if it indicates that the element does not exist in the set, it certainly doesn't, but if the filter thinks that the element is in the set, the disk is accessed to make sure
 
 ## Setup
 
