@@ -22,5 +22,6 @@ venv/
 *.iml
 .idea/
 target/
+.vscode/
 
 site
