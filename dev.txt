@@ -13,6 +13,8 @@ https://github.com/josephpconley/spark-seed.g8
 
 * monit
 
+* add in linux: nohup, mc
+
 * awesome links, best practices
 
 * bash keyboard shortcuts, jq, http
