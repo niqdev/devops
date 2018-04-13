@@ -14,7 +14,7 @@ Documentation
 
 * [A Guide to Branching in Mercurial](http://stevelosh.com/blog/2009/08/a-guide-to-branching-in-mercurial)
 
-```
+```bash
 # changes since last commit
 hg st
 
@@ -110,3 +110,5 @@ hg ls
 # pretty log
 hg history --graph --limit 10
 ```
+
+<br>
