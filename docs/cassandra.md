@@ -16,6 +16,8 @@ Useful documentation
 
 * [Difference between partition key, composite key and clustering key](https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra)
 
+* [Cassandra Cluster Manager](https://github.com/riptano/ccm)
+
 <!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
@@ -62,7 +64,11 @@ Cassandra uses a tick-tock release model, even-numbered releases are feature rel
 
 * In a scenario in which a write request is sent to Cassandra, but a replica node where the write properly belongs is not available due to network partition, hardware failure, or some other reason, to ensure general availability Cassandra implements a feature called **hinted handoff**. The coordinator node while store temporarily the data until it detects that the node is available again
 
-![cassandra-memory](img/cassandra-memory.png)
+*Write Path*
+![cassandra-write-path](img/cassandra-write-path.png)
+
+*Read Path*
+![cassandra-read-path](img/cassandra-read-path.png)
 
 * To provide *linearizable consistency* e.g. read-before-write, Cassandra supports a **lightweight transaction** or LWT. The implementation is based on *paxos* and is limited to a single partition
 
