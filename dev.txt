@@ -3,21 +3,19 @@ DEV info
 TODO
 
 * aws: emr + s3
+* EMR docs, boto3, zeppelin
 
-* giter8 scala-seed: build, scopt, log, config, plugin, readme, scalameter JMX scalafix + scaladoc
+* giter8 scala-seed: build, scopt, log, config, plugin, readme, scalameter JMX scalafix, dropwizard-metrics/metrics-scala + scaladoc
 * giter8 spark-seed
 https://github.com/josephpconley/spark-seed.g8
 * giter8 akka-seed
 
-* EMR docs, boto3, zeppelin
+* add in linux: monit, nohup, screen, mc
 
-* monit
+* awesome links, best practices, bash/vim keyboard shortcuts
 
-* add in linux: nohup, mc
-
-* awesome links, best practices
-
-* bash keyboard shortcuts, jq, http
+* sla, percentile, jmx, mbeans, jconsole
+* add notes from JVM course
 
 ---
 
