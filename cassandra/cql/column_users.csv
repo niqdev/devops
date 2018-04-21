@@ -1,0 +1,5 @@
+first_name,last_name,addresses,emails,enable
+firstNameCsv1,lastNameCsv1,"{'home': {street: 'street1', city: 'city1', state: 'STATE', zip_code: 12345}}","{'csv1a@example.com', 'csv1b@example.com'}",True
+firstNameCsv2,lastNameCsv2,"{'home': {street: 'street1', city: 'city1', state: 'STATE', zip_code: 12345}}","{'csv2a@example.com', 'csv2b@example.com'}",True
+firstNameCsv3,lastNameCsv3,"{'home': {street: 'street1', city: 'city1', state: 'STATE', zip_code: 12345}}","{'csv3a@example.com', 'csv3b@example.com'}",False
+firstNameCsv4,lastNameCsv4,"{'home': {street: 'street1', city: 'city1', state: 'STATE', zip_code: 12345}}","{'csv4a@example.com', 'csv4b@example.com'}",False
