@@ -28,6 +28,8 @@
 
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
 
+* [SEDA: An Architecture for Well-Conditioned, Scalable Internet Services](http://nms.lcs.mit.edu/~kandula/projects/killbots/killbots_files/seda-sosp01.pdf)
+
 * [Merkle Hash Tree](http://ceur-ws.org/Vol-1366/paper13.pdf)
 
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
