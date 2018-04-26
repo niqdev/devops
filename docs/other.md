@@ -154,6 +154,29 @@ g8 sbt/scala-seed.g8 --name=my-new-website
 
 <br>
 
+## Snap
+
+Documentation
+
+* [Snap](https://docs.snapcraft.io)
+
+Useful commands
+```bash
+# search
+snap find gimp
+
+# info
+snap info gimp
+
+# install
+snap install gimp
+
+# list installed app
+snap list
+```
+
+<br>
+
 ## Python
 
 Documentation
