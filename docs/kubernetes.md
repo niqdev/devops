@@ -6,7 +6,7 @@ Documentation
 
 * [Kubernetes](https://kubernetes.io/docs/home/?path=browse)
 
-## Tutorial
+## Setup
 
 Requirements
 
@@ -19,7 +19,7 @@ minikube version
 kubectl version
 
 # start local cluster
-minikube start
+minikube start --vm-driver=virtualbox
 
 # cluster info
 kubectl cluster-info
