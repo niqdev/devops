@@ -6,7 +6,7 @@ Documentation
 
 * [Kubernetes](https://kubernetes.io/docs/home/?path=browse)
 
-## Setup
+## Tutorial
 
 Requirements
 
@@ -31,6 +31,16 @@ kubectl get nodes
 kubectl run kubernetes-bootcamp \
   --image=gcr.io/google-samples/kubernetes-bootcamp:v1 \
   --port=8080
+
+# update app
+kubectl set image deployments/kubernetes-bootcamp \
+  kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+
+# verify update
+kubectl rollout status deployments/kubernetes-bootcamp
+
+# undo latest deployment
+kubectl rollout undo deployments/kubernetes-bootcamp
 
 # list deployments
 kubectl get deployments
@@ -104,4 +114,15 @@ kubectl get pods -l app=v1
 
 # delete service
 kubectl delete service -l run=kubernetes-bootcamp
+```
+
+Scaling
+```bash
+# add 4 replicas
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
+
+# verify scaling
+kubectl get deployments
+kubectl get pods -o wide
+kubectl describe deployments/kubernetes-bootcamp
 ```
