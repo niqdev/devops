@@ -14,6 +14,5 @@ pages:
     - Kafka: kafka.md
     - Hadoop: hadoop.md
     - Kubernetes: kubernetes.md
-    - VCS: vcs.md
     - Readings: readings.md
     - Other: other.md

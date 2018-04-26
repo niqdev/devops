@@ -10,6 +10,5 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Kafka](kafka.md)
 * [Hadoop](hadoop.md)
 * [Kubernetes](kubernetes.md)
-* [VCS](vcs.md)
 * [Readings](readings.md)
 * [Other](other.md)
