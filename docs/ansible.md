@@ -12,7 +12,7 @@ The following guide explains how to provision Ansible locally and play with it. 
 
 ### Setup
 
-Requirement
+Requirements
 
 * Vagrant
 * VirtualBox

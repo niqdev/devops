@@ -8,7 +8,7 @@ Documentation
 
 ## Setup
 
-Requirement
+Requirements
 
 * [Base](docker/#base-image) docker image 
 * [ZooKeeper](zookeeper) docker image

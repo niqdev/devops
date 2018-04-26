@@ -9,7 +9,7 @@ Documentation
 
 ## Setup
 
-Requirement
+Requirements
 
 * [Base](docker/#base-image) image
 
