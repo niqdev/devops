@@ -2,6 +2,8 @@ DEV info
 
 TODO
 
+* review kubernetes + minikube
+
 * aws: emr + s3
 * EMR docs, boto3, zeppelin
 

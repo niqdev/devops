@@ -58,6 +58,7 @@ Documentation
 Install
 ```bash
 pip install mkdocs
+sudo -H pip3 install mkdocs
 ```
 
 Useful commands
@@ -197,6 +198,8 @@ apt-get install -y python3
 # install pip + setuptools
 curl https://bootstrap.pypa.io/get-pip.py | python2.7 -
 curl https://bootstrap.pypa.io/get-pip.py | python3 -
+apt install -y python-pip
+apt install -y python3-pip
 
 # upgrade pip
 pip install -U pip
