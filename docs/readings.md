@@ -20,6 +20,8 @@
 
 * [Dapper](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 
+* [Borg](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf)
+
 * [Harvest, Yield, and Scalable Tolerant Systems](https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf)
 
 * [Life beyond Distributed Transactions](http://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf)
