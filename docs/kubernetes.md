@@ -12,20 +12,83 @@ Requirements
 
 * [Minikube](https://github.com/kubernetes/minikube)
 
-Basic
+Local cluster
 ```bash
 # verify installation
 minikube version
-kubectl version
 
-# start local cluster
+# lifecycle
 minikube start --vm-driver=virtualbox
+minikube stop
+minikube delete
+
+# dashboard
+export NO_PROXY=localhost,127.0.0.1,$(minikube ip)
+minikube dashboard
+
+# access
+minikube ssh
+docker ps -a
+
+# reuse the minikube's built-in docker daemon
+eval $(minikube docker-env)
+```
+
+Basic
+```bash
+# verify installation
+kubectl version
 
 # cluster info
 kubectl cluster-info
-
-# nodes info
 kubectl get nodes
+kubectl describe nodes
+kubectl config view
+
+# namespace
+kubectl create namespace local
+kubectl get namespaces
+kubectl config set-context $(kubectl config current-context) --namespace=local
+kubectl config view | grep namespace
+kubectl delete namespace local
+```
+
+---
+
+TODO
+```bash
+
+# create objects
+run
+expose
+autoscale
+# update objects
+scale
+annotate
+label
+# delete
+delete
+# view an object
+get
+describe
+logs
+
+# generate yaml
+kubectl create service -o yaml --dry-run
+
+# create deployment object
+# imperative commands
+kubectl run nginx --image nginx
+kubectl create deployment nginx --image nginx
+
+# imperative object configuration
+kubectl create -f nginx.yaml
+kubectl delete -f nginx.yaml
+kubectl replace -f nginx.yaml
+
+# declarative object configuration
+kubectl apply -f xxx
+
 
 # deploy demo app
 kubectl run kubernetes-bootcamp \
@@ -47,6 +110,11 @@ kubectl get deployments
 
 # list pods
 kubectl get pods
+TODO
+# filter with equality-based labels
+kubectl get pods -l environment=production,tier=frontend
+# filter with set-based labels
+kubectl get pods -l 'environment in (production),tier in (frontend)'
 
 # list containers inside pods
 kubectl describe pods
@@ -74,6 +142,9 @@ kubectl exec $POD_NAME ls -- -la
 
 # access the container
 kubectl exec -ti $POD_NAME bash
+
+# delete pod
+kubectl delete pod $POD_NAME
 ```
 
 Services
