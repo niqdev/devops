@@ -6,6 +6,7 @@
 * [ScalaFiddle](https://scalafiddle.io)
 * [JSON Formatter](https://jsonformatter.curiousconcept.com)
 * [Beautify JavaScript or HTML](http://jsbeautifier.org)
+* [devdocs](https://devdocs.io)
 
 <br>
 
