@@ -12,6 +12,7 @@ Documentation
 Requirements
 
 * [Minikube](https://github.com/kubernetes/minikube)
+* [VirtualBox](https://www.virtualbox.org)
 
 Local cluster
 ```bash
@@ -147,3 +148,5 @@ kubectl describe deployments/kubernetes-bootcamp
 # cleanup
 kubectl delete deployment,service kubernetes-bootcamp
 ```
+
+<br>
