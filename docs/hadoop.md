@@ -11,8 +11,8 @@ Documentation
 
 Requirements
 
-* Vagrant
-* VirtualBox
+* [Vagrant](https://www.vagrantup.com)
+* [VirtualBox](https://www.virtualbox.org)
 
 Directory structure
 ```bash
