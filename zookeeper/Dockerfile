@@ -1,6 +1,6 @@
 FROM devops/base:latest
 
-ARG VERSION=3.4.11
+ARG VERSION=3.4.12
 
 ENV ZOOKEEPER_HOME "/opt/zookeeper"
 ENV PATH "$ZOOKEEPER_HOME/bin:$PATH"
