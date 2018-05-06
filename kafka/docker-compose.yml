@@ -6,7 +6,7 @@ services:
     build:
       context: ../zookeeper
       args:
-        - VERSION=3.4.10
+        - VERSION=3.4.12
     ports:
       - 12181:2181
     networks:

@@ -72,9 +72,17 @@ Example
 docker exec -it kafka bash
 cd /opt/kafka/bin
 
+# create topic
 ./kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
+
+# view topic
 ./kafka-topics.sh --list --zookeeper zookeeper:2181
+./kafka-topics.sh --zookeeper zookeeper:2181 --describe --topic test
+
+# produce
 ./kafka-console-producer.sh --broker-list kafka:9092 --topic test
+
+# consume
 ./kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic test --from-beginning
 ```
 
