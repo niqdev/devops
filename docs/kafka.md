@@ -6,6 +6,12 @@ Documentation
 
 * [Kafka](https://kafka.apache.org)
 
+* [Kafka: a Distributed Messaging System for Log Processing](http://notes.stephenholiday.com/Kafka.pdf) (Paper)
+
+* [Schema Registry](https://docs.confluent.io/current/schema-registry/docs/index.html)
+
+* [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
+
 ## Architecture
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*
@@ -30,6 +36,12 @@ increases. Each message in a given partition has a unique offset stored either i
 ![kafka-consumer](img/kafka-consumer.png)
 
 * Consumers work as part of a **consumer group**, which is one or more consumers that work together to consume a topic. The group assures that each partition is only consumed by one member. The mapping of a consumer to a partition is often called **ownership** of the partition by the consumer
+
+* When a new consumer is added to a group, or when a consumer shuts down or crashes leaving the group, it cause reassignment of partitions to other consumers. Moving partition ownership from one consumer to another is called a **rebalance** which provide high availability and scalability
+
+* Consumers maintain membership in a consumer group and ownership of the partitions assigned to them by sending **heartbeats** to a Kafka broker designated as the **group coordinator**
+
+* You can't have multiple consumers that belong to the same group in one thread and you can't have multiple threads safely use the same consumer
 
 ![kafka-consumer-group](img/kafka-consumer-group.png)
 
