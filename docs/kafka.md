@@ -22,10 +22,16 @@ Documentation
 
 * **Producers**, publishers or writers, create new messages to a specific topic. By default, the producer does not care what partition a specific message is written to and will balance messages over all partitions of a topic evenly
 
+![kafka-producer](img/kafka-producer.png)
+
 * **Consumers**, subscribers or readers, read messages. The consumer subscribes to one or more topics and reads the messages in the order in which they were produced. The consumer keeps track of which messages it has already consumed by keeping track of the **offset** of messages i.e. an integer value that continually
 increases. Each message in a given partition has a unique offset stored either in Zookeeper or in Kafka itself
 
+![kafka-consumer](img/kafka-consumer.png)
+
 * Consumers work as part of a **consumer group**, which is one or more consumers that work together to consume a topic. The group assures that each partition is only consumed by one member. The mapping of a consumer to a partition is often called **ownership** of the partition by the consumer
+
+![kafka-consumer-group](img/kafka-consumer-group.png)
 
 * A single Kafka server is called a **broker**. The broker receives messages from producers, assigns offsets to them, and commits the messages to storage on disk. It also services consumers, responding to fetch requests for partitions and responding with the messages that have been committed to disk
 
