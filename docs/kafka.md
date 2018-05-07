@@ -52,15 +52,15 @@ increases. Each message in a given partition has a unique offset stored either i
 
 * A single Kafka server is called a **broker**. The broker receives messages from producers, assigns offsets to them, and commits the messages to storage on disk. It also services consumers, responding to fetch requests for partitions and responding with the messages that have been committed to disk
 
-* Kafka brokers are designed to operate as part of a **cluster**. Within a cluster of brokers, one broker will also function as the cluster **controller**. The controller is responsible for administrative operations, including assigning partitions to brokers and monitoring for broker failures. A partition is owned by a single broker in the cluster, and that broker is called the **leader** of the partition. A partition may be assigned to multiple brokers, which will result in
-the partition being replicated. All consumers and producers operating on that partition must connect to the leader
+* Kafka brokers are designed to operate as part of a **cluster**. A partition is owned by a single broker in the cluster and that broker is called the **leader** of the partition. A partition may be assigned to multiple brokers, which will result in the partition being replicated. All consumers and producers operating on that partition must connect to the leader
 
-* Kafka uses **Zookeeper** to maintain the list of brokers that are currently members of a cluster. Every broker has a unique identifier that is either set in the broker configuration file or automatically generated. Every time a broker process starts, it registers itself with its ID in Zookeeper by creating an [ephemeral node](http://zookeeper.apache.org/doc/current/zookeeperProgrammers.html#Ephemeral+Nodes)
+* Kafka uses **Zookeeper** to maintain the list of brokers that are currently members of a cluster. Every time a broker process starts, it registers itself with a unique identifier by creating an [ephemeral node](http://zookeeper.apache.org/doc/current/zookeeperProgrammers.html#Ephemeral+Nodes). Kafka uses Zookeeper's ephemeral node feature to elect a **controller**. The controller is responsible for electing leaders among the partitions and replicas whenever it notices nodes join and leave the cluster
 
 ![kafka-cluster](img/kafka-cluster.png)
 
-* A key feature is that of **retention**. Brokers are configured with a default retention setting for topics, either retaining messages for some period of time or until the topic reaches a certain size in bytes. Once these limits are
-reached, messages are expired and deleted
+* Data in Kafka is organized by topics. Each topic is partitioned and each partition can have multiple **replicas**. Those replicas are stored on brokers and each broker stores replicas belonging to different topics and partitions
+
+* A key feature is that of **retention**. Brokers are configured with a default retention setting for topics, either retaining messages for some period of *time* or until the topic reaches a certain *size* in bytes. Once these limits are reached, messages are expired and deleted
 
 * **MirrorMaker** is a tool to coordinates multiple clusters or datacenters and replicate data
 
@@ -128,24 +128,23 @@ docker exec -it devops-kafka bash
 Example Kafka
 ```bash
 docker exec -it devops-kafka bash
-cd /opt/kafka/bin
 
 # create topic
-./kafka-topics.sh --zookeeper zookeeper:2181 \
+kafka-topics.sh --zookeeper zookeeper:2181 \
   --create --replication-factor 1 --partitions 1 --topic test
 
 # view topic
-./kafka-topics.sh --zookeeper zookeeper:2181 \
+kafka-topics.sh --zookeeper zookeeper:2181 \
   --list 
-./kafka-topics.sh --zookeeper zookeeper:2181 \
+kafka-topics.sh --zookeeper zookeeper:2181 \
   --describe --topic test
 
 # produce
-./kafka-console-producer.sh --broker-list kafka:9092 \
+kafka-console-producer.sh --broker-list kafka:9092 \
   --topic test
 
 # consume
-./kafka-console-consumer.sh --bootstrap-server kafka:9092 \
+kafka-console-consumer.sh --bootstrap-server kafka:9092 \
   --topic test --from-beginning
 ```
 

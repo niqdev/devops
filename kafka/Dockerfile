@@ -4,6 +4,8 @@ ARG SCALA_VERSION=2.12
 ARG KAFKA_VERSION=1.1.0
 
 ENV ZOOKEEPER_HOSTS="localhost:2181"
+ENV KAFKA_HOME "/opt/kafka"
+ENV PATH "$KAFKA_HOME/bin:$PATH"
 
 RUN curl https://www-eu.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xzf - -C /opt && \
   ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka && \
