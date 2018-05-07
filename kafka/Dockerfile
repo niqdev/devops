@@ -13,10 +13,13 @@ RUN apt-get install -y \
 
 RUN curl https://www-eu.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xzf - -C /opt && \
   ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka && \
-  mkdir -p /var/log/kafka
+  # bash expansion non working /var/log/{kafka,connect}
+  mkdir -p /var/log/kafka /var/log/connect
 
+# update data directory
 RUN sed -i -r ' \
   s/log.dirs=\/tmp\/kafka-logs/log.dirs=\/var\/lib\/kafka\/data/; \
   ' /opt/kafka/config/server.properties
 
-ADD supervisor.ini /etc/supervisor/conf.d/kafka.conf
+ADD supervisor-kafka.ini /etc/supervisor/conf.d/kafka.conf
+ADD supervisor-connect.ini /etc/supervisor/conf.d/connect.conf

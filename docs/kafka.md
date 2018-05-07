@@ -108,8 +108,11 @@ docker exec -it kafka bash
 # paths
 /opt/kafka
 /opt/kafka/logs
-/var/log/kafka
 /var/lib/kafka/data
+
+# supervisor logs
+/var/log/kafka
+/var/log/connect
 ```
 
 Alternatively use `docker-compose`
@@ -152,6 +155,10 @@ kafka-console-consumer.sh --bootstrap-server kafka:9092 \
   --topic test --from-beginning
 # util
 kafkacat -C -b 0 -t test
+
+# verify connect
+http :8083
+http :8083/connector-plugins
 ```
 
 Example ZooKeeper

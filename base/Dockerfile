@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
   iputils-ping \
   python2.7 \
   python-pip \
+  httpie \
+  jq \
   openjdk-8-jdk && \
   apt-get clean
 

@@ -53,6 +53,9 @@ https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d
 https://github.com/WhiteHouse/api-standards
 https://geemus.gitbooks.io/http-api-design/content/en/
 
+# supervisor
+https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
+
 ########## hadoop-spark ##########
 
 TODO

@@ -116,6 +116,8 @@ mkdir -p ~/.docker/machine && touch ~/.docker/machine/no-error-report
 
 ## Base image
 
+* [Supervisor](http://supervisord.org)
+
 Build `devops/base` image
 ```bash
 # change path
@@ -128,6 +130,14 @@ docker build -t devops/base .
 docker run --rm --name devops-base devops/base
 # access container
 docker exec -it devops-base bash
+
+# configurations
+/etc/supervisor/conf.d
+
+# supervisor actions
+supervisorctl status
+supervisorctl start SERVICE_NAME
+supervisorctl stop SERVICE_NAME
 ```
 
 <br>
