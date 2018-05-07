@@ -18,13 +18,13 @@ Documentation
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*
 
-* The unit of data is called a **message**, which is simply an array of bytes and it can have a **key** used to assign partitions
+* The unit of data is called a **message**, which is simply an array of bytes and it can have a **key** used to assign partitions. A **batch** is a collection of messages, all of which are being produced to the same topic and partition
 
-* A **batch** is a collection of messages, all of which are being produced to the same topic and partition
-
-* Messages are categorized into **topics** which are additionally broken down into a number of **partitions**
+* Messages are categorized into **topics** which are additionally broken down into a number of **partitions**. Each partition is splitted into **segments** for storage purposes and each segment is stored in a single data file which contains messages and their offsets
 
 * Messages are written in an append-only fashion and are read in order from beginning to end. As a topic typically has multiple partitions, there is no guarantee of message time-ordering across the entire topic, just within a single partition
+
+* In order to help brokers quickly locate the message for a given offset, Kafka maintains an **index** for each partition. The index maps offsets to segment files and positions within the file
 
 * A **stream** is considered to be a single topic of data, regardless of the number of partitions
 
@@ -54,7 +54,7 @@ increases. Each message in a given partition has a unique offset stored either i
 
 * A single Kafka server is called a **broker**. The broker receives messages from producers, assigns offsets to them, and commits the messages to storage on disk. It also services consumers, responding to fetch requests for partitions and responding with the messages that have been committed to disk
 
-* Kafka brokers are designed to operate as part of a **cluster**. A partition is owned by a single broker in the cluster and that broker is called the **leader** of the partition. A partition may be assigned to multiple brokers, which will result in the partition being replicated. All consumers and producers operating on that partition must connect to the leader
+* Kafka brokers are designed to operate as part of a **cluster**. A partition is owned by a single broker in the cluster and that broker is called the **leader** of the partition. A partition may be assigned to multiple brokers, which will result in the partition being replicated. All events are produced to and consumed from the *leader* replica. Other *follower* replicas just need to stay **in-sync** with the leader and replicate all the recent events on time
 
 * Kafka uses **Zookeeper** to maintain the list of brokers that are currently members of a cluster. Every time a broker process starts, it registers itself with a unique identifier by creating an [ephemeral node](http://zookeeper.apache.org/doc/current/zookeeperProgrammers.html#Ephemeral+Nodes). Kafka uses Zookeeper's ephemeral node feature to elect a **controller**. The controller is responsible for electing leaders among the partitions and replicas whenever it notices nodes join and leave the cluster
 
