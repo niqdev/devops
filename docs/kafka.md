@@ -12,6 +12,8 @@ Documentation
 
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
 
+* [kafkacat](https://github.com/edenhill/kafkacat)
+
 ## Architecture
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*
@@ -142,10 +144,14 @@ kafka-topics.sh --zookeeper zookeeper:2181 \
 # produce
 kafka-console-producer.sh --broker-list kafka:9092 \
   --topic test
+# util
+kafkacat -P -b 0 -t test
 
 # consume
 kafka-console-consumer.sh --bootstrap-server kafka:9092 \
   --topic test --from-beginning
+# util
+kafkacat -C -b 0 -t test
 ```
 
 Example ZooKeeper
