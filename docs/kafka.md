@@ -45,6 +45,11 @@ increases. Each message in a given partition has a unique offset stored either i
 
 ![kafka-consumer-group](img/kafka-consumer-group.png)
 
+* Consumers must keep polling or they will be considered dead and the partitions they are consuming will be handed to another consumer in the group to continue consuming. Consumers **commit** (track) their offset (position) in each partition to a special `__consumer_offsets` topic. If a consumer crashes or a new consumer joins the consumer group, this will trigger a rebalance. After a rebalance, each consumer may be assigned a new set of partitions than the one it processed before. In order to know where to pick up the work, the consumer will read the latest committed offset of each partition and continue from there
+
+![kafka-rebalance-duplicate](img/kafka-rebalance-duplicate.png)
+![kafka-rebalance-lost](img/kafka-rebalance-lost.png)
+
 * A single Kafka server is called a **broker**. The broker receives messages from producers, assigns offsets to them, and commits the messages to storage on disk. It also services consumers, responding to fetch requests for partitions and responding with the messages that have been committed to disk
 
 * Kafka brokers are designed to operate as part of a **cluster**. Within a cluster of brokers, one broker will also function as the cluster **controller**. The controller is responsible for administrative operations, including assigning partitions to brokers and monitoring for broker failures. A partition is owned by a single broker in the cluster, and that broker is called the **leader** of the partition. A partition may be assigned to multiple brokers, which will result in
