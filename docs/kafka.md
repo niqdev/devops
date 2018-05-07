@@ -113,6 +113,8 @@ docker exec -it kafka bash
 # supervisor logs
 /var/log/kafka
 /var/log/connect
+tail -F /var/log/kafka/stdout
+less +G /var/log/connect/stdout
 ```
 
 Alternatively use `docker-compose`
@@ -155,10 +157,36 @@ kafka-console-consumer.sh --bootstrap-server kafka:9092 \
   --topic test --from-beginning
 # util
 kafkacat -C -b 0 -t test
+```
+
+Example Connect
+```bash
+docker exec -it devops-kafka bash
 
 # verify connect
 http :8083
 http :8083/connector-plugins
+
+# write file to topic
+http POST :8083/connectors \
+  name=load-kafka-config \
+  config:='{"connector.class":"FileStreamSource","file":"/opt/kafka/config/server.properties","topic":"kafka-config-topic"}'
+
+# verify topic
+kafka-console-consumer.sh --bootstrap-server=kafka:9092 \
+  --topic kafka-config-topic --from-beginning
+
+# write topic to file
+http POST :8083/connectors \
+  name=dump-kafka-config \
+  config:='{"connector.class":"FileStreamSink","file":"/tmp/copy-of-server-properties","topics":"kafka-config-topic"}'
+
+# verify file
+vim /tmp/copy-of-server-properties
+
+# manage connectors
+http :8083/connectors
+http DELETE :8083/connectors/dump-kafka-config
 ```
 
 Example ZooKeeper

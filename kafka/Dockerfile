@@ -13,7 +13,7 @@ RUN apt-get install -y \
 
 RUN curl https://www-eu.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xzf - -C /opt && \
   ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka && \
-  # bash expansion non working /var/log/{kafka,connect}
+  # bash expansion not working /var/log/{kafka,connect}
   mkdir -p /var/log/kafka /var/log/connect
 
 # update data directory
