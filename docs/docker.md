@@ -140,4 +140,31 @@ supervisorctl start SERVICE_NAME
 supervisorctl stop SERVICE_NAME
 ```
 
+## Docker Hub
+
+```bash
+docker login
+
+# phusion-base
+docker build -t devops/base:latest ./base
+docker tag devops/base niqdev/phusion-base:1.0.0
+docker tag devops/base niqdev/phusion-base:latest
+docker push niqdev/phusion-base:1.0.0
+docker push niqdev/phusion-base:latest
+
+# zookeeper
+docker build -t devops/zookeeper:latest ./zookeeper
+docker tag devops/zookeeper niqdev/zookeeper:1.0.0
+docker tag devops/zookeeper niqdev/zookeeper
+docker push niqdev/zookeeper:1.0.0
+docker push niqdev/zookeeper:latest
+
+# kafka
+docker build -t devops/kafka:latest ./kafka
+docker tag devops/kafka niqdev/kafka:1.0.0
+docker tag devops/kafka niqdev/kafka
+docker push niqdev/kafka:1.0.0
+docker push niqdev/kafka:latest
+```
+
 <br>

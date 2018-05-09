@@ -1,4 +1,5 @@
 FROM devops/base:latest
+#FROM niqdev/phusion-base:latest
 
 ARG SCALA_VERSION=2.12
 ARG KAFKA_VERSION=1.1.0
