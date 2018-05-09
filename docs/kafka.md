@@ -138,25 +138,38 @@ docker exec -it devops-kafka bash
 
 # create topic
 kafka-topics.sh --zookeeper zookeeper:2181 \
-  --create --replication-factor 1 --partitions 1 --topic test
+  --create --if-not-exists --replication-factor 1 --partitions 1 --topic test
 
 # view topic
-kafka-topics.sh --zookeeper zookeeper:2181 \
-  --list 
-kafka-topics.sh --zookeeper zookeeper:2181 \
-  --describe --topic test
+kafka-topics.sh --zookeeper zookeeper:2181 --list 
+kafka-topics.sh --zookeeper zookeeper:2181 --describe --topic test
+kafka-topics.sh --zookeeper zookeeper:2181 --describe --under-replicated-partitions
+kafka-topics.sh --zookeeper zookeeper:2181 --describe --unavailable-partitions
 
 # produce
-kafka-console-producer.sh --broker-list kafka:9092 \
-  --topic test
+kafka-console-producer.sh --broker-list kafka:9092 --topic test
 # util
 kafkacat -P -b 0 -t test
 
 # consume
-kafka-console-consumer.sh --bootstrap-server kafka:9092 \
-  --topic test --from-beginning
+kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic test --from-beginning
 # util
 kafkacat -C -b 0 -t test
+
+# list consumers
+kafka-consumer-groups.sh --bootstrap-server kafka:9092 --list
+# view lag (GROUP_NAME from previous command)
+kafka-consumer-groups.sh --bootstrap-server kafka:9092 --describe --group GROUP_NAME
+
+# delete
+kafka-topics.sh --zookeeper zookeeper:2181 --delete --topic test
+
+# verify log segment and index
+kafka-run-class.sh kafka.tools.DumpLogSegments \
+  --files /var/lib/kafka/data/test-0/00000000000000000000.log
+kafka-run-class.sh kafka.tools.DumpLogSegments \
+  --index-sanity-check \
+  --files /var/lib/kafka/data/test-0/00000000000000000000.index
 ```
 
 Example Connect
