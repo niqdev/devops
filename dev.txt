@@ -19,6 +19,11 @@ https://github.com/josephpconley/spark-seed.g8
 * sla, percentile, jmx, mbeans, jconsole
 * add notes from JVM course
 
+# schema registry
+https://github.com/confluentinc/cp-docker-images
+https://hub.docker.com/r/confluentinc/cp-schema-registry/
+https://docs.confluent.io/current/installation/docker/docs/quickstart.html#schema-registry
+
 ---
 
 * Avro **Avro** is a data serialization system

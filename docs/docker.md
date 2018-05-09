@@ -142,6 +142,10 @@ supervisorctl stop SERVICE_NAME
 
 ## Docker Hub
 
+* [niqdev/phusion-base](https://hub.docker.com/r/niqdev/phusion-base)
+* [niqdev/zookeeper](https://hub.docker.com/r/niqdev/zookeeper)
+* [niqdev/kafka](https://hub.docker.com/r/niqdev/kafka)
+
 ```bash
 docker login
 
