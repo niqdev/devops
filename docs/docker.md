@@ -169,6 +169,8 @@ docker tag devops/kafka niqdev/kafka:1.0.0
 docker tag devops/kafka niqdev/kafka
 docker push niqdev/kafka:1.0.0
 docker push niqdev/kafka:latest
+
+docker-compose -f kafka/docker-compose-hub.yml up
 ```
 
 <br>
