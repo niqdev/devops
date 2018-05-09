@@ -132,7 +132,9 @@ docker exec -it devops-zookeeper bash
 docker exec -it devops-kafka bash
 ```
 
-Example Kafka
+## How-To
+
+Kafka
 ```bash
 docker exec -it devops-kafka bash
 
@@ -172,7 +174,7 @@ kafka-run-class.sh kafka.tools.DumpLogSegments \
   --files /var/lib/kafka/data/test-0/00000000000000000000.index
 ```
 
-Example Connect
+Connect
 ```bash
 docker exec -it devops-kafka bash
 
@@ -202,7 +204,7 @@ http :8083/connectors
 http DELETE :8083/connectors/dump-kafka-config
 ```
 
-Example ZooKeeper
+ZooKeeper
 ```bash
 docker exec -it devops-zookeeper bash
 
