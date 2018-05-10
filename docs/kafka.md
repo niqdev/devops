@@ -172,6 +172,12 @@ kafka-run-class.sh kafka.tools.DumpLogSegments \
 kafka-run-class.sh kafka.tools.DumpLogSegments \
   --index-sanity-check \
   --files /var/lib/kafka/data/test-0/00000000000000000000.index
+
+# inspect __consumer_offsets
+kafka-console-consumer.sh --bootstrap-server kafka:9092 \
+  --topic __consumer_offsets \
+  --formatter "kafka.coordinator.group.GroupMetadataManager\$OffsetsMessageFormatter" \
+  --max-messages 1
 ```
 
 Connect
