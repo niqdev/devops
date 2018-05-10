@@ -44,7 +44,7 @@ services:
     depends_on:
       - schema-registry
     ports:
-      - 8000:8000
+      - 8082:8000
     hostname: schema-registry-ui
     networks:
       - devops_network
