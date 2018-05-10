@@ -1,23 +1,42 @@
 version: '3'
 
 services:
+
   zookeeper:
     container_name: devops-zookeeper
     image: niqdev/zookeeper:latest
     ports:
-      - 12181:2181
+      - 2181:2181
+    hostname: zookeeper
     networks:
       - devops_network
+
   kafka:
     container_name: devops-kafka
     image: niqdev/kafka:latest
     ports:
-      - 19092:9092
-      - 18083:8083
+      - 9092:9092
+      - 8083:8083
+    hostname: kafka
     networks:
       - devops_network
     environment:
       - ZOOKEEPER_HOSTS="zookeeper:2181"
+
+  schema-registry:
+    container_name: devops-schema-registry
+    image: confluentinc/cp-schema-registry
+    depends_on:
+      - kafka
+    ports:
+      - 8081:8081
+    hostname: schema-registry
+    networks:
+      - devops_network
+    environment:
+      - SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL=zookeeper:2181
+      - SCHEMA_REGISTRY_HOST_NAME=schema-registry
+      - SCHEMA_REGISTRY_LISTENERS=http://schema-registry:8081
 
 networks:
   devops_network:

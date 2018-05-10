@@ -19,11 +19,6 @@ https://github.com/josephpconley/spark-seed.g8
 * sla, percentile, jmx, mbeans, jconsole
 * add notes from JVM course
 
-# schema registry
-https://github.com/confluentinc/cp-docker-images
-https://hub.docker.com/r/confluentinc/cp-schema-registry/
-https://docs.confluent.io/current/installation/docker/docs/quickstart.html#schema-registry
-
 ---
 
 * Avro **Avro** is a data serialization system
@@ -106,3 +101,20 @@ user.avsc
 
 # compile schema to generate code
 java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
+
+# kafka port mapping
+
+docker exec -it kafka bash
+vim /opt/kafka/config/zookeeper.properties
+# deprecated TODO list advertised.listeners
+# docker-compose change port 9092:9092 to use kafkacat locally
+advertised.host.name=kafka
+advertised.port:9092
+supervisorctl restart kafka
+
+docker exec -it zookeeper bash
+zkCli.sh
+get /brokers/ids/0
+
+echo "127.0.0.1 kafka" | sudo tee -a /etc/hosts
+kafkacat -C -b kafka:9092 -t test
