@@ -38,5 +38,19 @@ services:
       - SCHEMA_REGISTRY_HOST_NAME=schema-registry
       - SCHEMA_REGISTRY_LISTENERS=http://schema-registry:8081
 
+  schema-registry-ui:
+    container_name: devops-schema-registry-ui
+    image: landoop/schema-registry-ui
+    depends_on:
+      - schema-registry
+    ports:
+      - 8000:8000
+    hostname: schema-registry-ui
+    networks:
+      - devops_network
+    environment:
+      - SCHEMAREGISTRY_URL=http://schema-registry:8081
+      - PROXY=true
+
 networks:
   devops_network:

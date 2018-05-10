@@ -104,6 +104,12 @@ java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
 
 # kafka port mapping
 
+https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry/
+https://github.com/lagom/lagom/issues/668
+https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
+http://cloudurable.com/blog/kafka-avro-schema-registry/index.html
+https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
+
 docker exec -it kafka bash
 vim /opt/kafka/config/zookeeper.properties
 # deprecated TODO list advertised.listeners
