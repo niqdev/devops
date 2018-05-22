@@ -185,4 +185,33 @@ GET table_name["primary_key"];
 SET table_name["primary_key"]["column_name"];
 ```
 
+## nodetool
+
+```bash
+# help
+nodetool
+
+# cluster informations
+nodetool describecluster
+nodetool status
+
+# node informations
+nodetool -h xxx.xxx.xxx.xxx info
+nodetool -h xxx.xxx.xxx.xxx statusgossip|statusthrift|statusbinary|statushandoff
+nodetool gossipinfo
+
+# ring informations
+nodetool ring
+nodetool describering KEYSPACE
+
+# dynamic logging via JMX
+nodetool getlogginglevels
+
+# threadpool statistics
+nodetool tpstats
+
+# keyspace statistics
+nodetool tablestats KEYSPACE
+```
+
 <br>
