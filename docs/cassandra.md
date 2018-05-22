@@ -204,14 +204,31 @@ nodetool gossipinfo
 nodetool ring
 nodetool describering KEYSPACE
 
-# dynamic logging via JMX
-nodetool getlogginglevels
+# monitor network
+nodetool netstats
 
 # threadpool statistics
 nodetool tpstats
 
 # keyspace statistics
 nodetool tablestats KEYSPACE
+
+# dynamic logging via JMX
+nodetool getlogginglevels
+
+# force to write data from memtables to SSTables
+nodetool flush
+
+# gracefully shutdown
+nodetool drain
+
+# discards any data that is no longer owned by the node
+# e.g. after changing replication factor or token range
+nodetool cleanup
+
+# anti-entropy repair or manual repair: reconcile data exchanging Merkle trees among nodes
+# maintenance: incremental parallel repair on the primary token range (run on each node)
+nodetool repair -pr 
 ```
 
 <br>
