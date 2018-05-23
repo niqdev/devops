@@ -20,6 +20,10 @@ Documentation
 
 * [Netflix Priam](https://github.com/Netflix/Priam)
 
+* [cstar_perf](https://www.datastax.com/dev/blog/cassandra-performance-testing-with-cstar_perf)
+
+* [Amy's Cassandra 2.1 tuning guide](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html)
+
 <!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
@@ -242,6 +246,10 @@ nodetool listsnapshots
 nodetool refresh
 # 2) different configuration (e.g. topology, token ranges, or replication)
 sstableloader
+
+# stress tool
+cassandra-stress write n=1000000
+cassandra-stress read n=200000
 ```
 
 <br>

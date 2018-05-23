@@ -20,6 +20,9 @@ https://github.com/josephpconley/spark-seed.g8
 * add notes from JVM course
 * https://jolokia.org
 
+https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
+https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
+
 ---
 
 * Avro **Avro** is a data serialization system
