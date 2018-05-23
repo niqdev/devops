@@ -18,6 +18,8 @@ Documentation
 
 * [Cassandra Cluster Manager](https://github.com/riptano/ccm)
 
+* [Netflix Priam](https://github.com/Netflix/Priam)
+
 <!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
@@ -228,7 +230,18 @@ nodetool cleanup
 
 # anti-entropy repair or manual repair: reconcile data exchanging Merkle trees among nodes
 # maintenance: incremental parallel repair on the primary token range (run on each node)
-nodetool repair -pr 
+nodetool repair -pr
+
+# create snapshot
+nodetool snapshot
+nodetool listsnapshots
+
+# restore snapshot (create schema or truncate table before)
+# 1) same cluster and configuration
+# copy SSTable ".db" files into the data directory and on the running node execute refresh
+nodetool refresh
+# 2) different configuration (e.g. topology, token ranges, or replication)
+sstableloader
 ```
 
 <br>
