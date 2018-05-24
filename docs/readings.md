@@ -22,6 +22,8 @@
 
 * [Borg](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf)
 
+* [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)
+
 * [Harvest, Yield, and Scalable Tolerant Systems](https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf)
 
 * [Life beyond Distributed Transactions](http://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf)
@@ -29,6 +31,8 @@
 * [The ϕ Accrual Failure Detector](http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf)
 
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
+
+* [FLP - Impossibility of Distributed Consensus with One Faulty Process](http://macs.citadel.edu/rudolphg/csci604/ImpossibilityofConsensus.pdf)
 
 * [SEDA: An Architecture for Well-Conditioned, Scalable Internet Services](http://nms.lcs.mit.edu/~kandula/projects/killbots/killbots_files/seda-sosp01.pdf)
 
@@ -40,7 +44,11 @@
 
 <br>
 
-## Articles
+## Articles and Resources
+
+* [There is No Now](https://queue.acm.org/detail.cfm?id=2745385)
+
+* [Jepsen](https://aphyr.com/tags/Jepsen)
 
 **CAP Theorem**
 
