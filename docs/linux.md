@@ -221,7 +221,9 @@ umount /dev/PARTITION_NAME
 # view size and utilization of mounted filesystems
 df -h
 # disk usage
-du -sh /*
+du -sh /* | sort -g
+# disk size
+fdisk --list
 
 # check memory and swap size
 free -h
