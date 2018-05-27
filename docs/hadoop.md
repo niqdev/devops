@@ -32,8 +32,11 @@ hadoop/
 │   │   ├── oozie
 │   │   │   ├── data
 │   │   │   └── log
-│   │   └── spark
-│   │       └── log
+│   │   ├── spark
+│   │   │   └── log
+│   │   └── zeppelin
+│   │       ├── log
+│   │       └── notebook
 │   ├── node-1
 │   │   └── hadoop
 │   │       ├── datanode
@@ -69,14 +72,19 @@ hadoop/
 │   │   │   ├── log4j.properties
 │   │   │   └── spark-env.sh
 │   │   └── profile-spark.sh
-│   └── ssh
-│       └── config
+│   ├── ssh
+│   │   └── config
+│   └── zeppelin
+│       ├── config
+│       │   └── zeppelin-env.sh
+│       └── profile-zeppelin.sh
 ├── script
 │   ├── bootstrap.sh
 │   ├── setup_hadoop.sh
 │   ├── setup_oozie.sh
 │   ├── setup_spark.sh
-│   └── setup_ubuntu.sh
+│   ├── setup_ubuntu.sh
+│   └── setup_zeppelin.sh
 ├── Vagrantfile
 └── vagrant_hadoop.sh
 ```

@@ -41,6 +41,20 @@ function setup_dist {
 function setup_config {
   local DATA_PATH_GUEST="/vol/zeppelin"
   local ZEPPELIN_BASE_PATH="/usr/local/zeppelin"
+  local CONFIG_PATH="$ZEPPELIN_BASE_PATH/conf"
+  local FILES=( "zeppelin-env.sh" )
+
+  echo "[*] create directories"
+  mkdir -pv \
+    $DATA_PATH_GUEST/{log,notebook}
+  
+  for FILE in "${FILES[@]}"
+  do
+    echo "[*] update config: $FILE"
+    # backup only if exists
+    [ -e $CONFIG_PATH/$FILE ] && mv $CONFIG_PATH/$FILE $CONFIG_PATH/$FILE.orig
+    cp $FILE_PATH/zeppelin/config/$FILE $CONFIG_PATH/$FILE
+  done
 
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME \

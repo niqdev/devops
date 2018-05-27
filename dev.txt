@@ -71,6 +71,8 @@ vagrant halt
 vagrant destroy
 vagrant box remove manning/spark-in-action
 
-# other vagrant images
-https://github.com/martinprobson/vagrant-hadoop-hive-spark
+# hadoop
 https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
+
+# vagrant images
+https://github.com/martinprobson/vagrant-hadoop-hive-spark
