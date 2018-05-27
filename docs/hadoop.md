@@ -124,9 +124,10 @@ Web UI links
 * DataNode/NodeManager (2): [http://node-2.local:8042/node](http://172.16.0.102:8042/node)
 * DataNode/NodeManager (3): [http://node-3.local:8042/node](http://172.16.0.103:8042/node)
 * Spark: [http://spark.local:4040](http://172.16.0.10:4040)
-* Oozie*: [http://oozie.local:11000](http://172.16.0.10:11000)
+* Zeppelin (*): [http://zeppelin.local:8080](http://172.16.0.10:8080)
+* Oozie (*): [http://oozie.local:11000](http://172.16.0.10:11000)
 
-<br>
+*(\*) Not installed by default*
 
 ## HDFS and MapReduce
 
@@ -320,8 +321,6 @@ Documentation
 
 ### Setup
 
-> *Zeppelin is not installed by default*
-
 Install and start Zeppelin
 ```bash
 # access master node
@@ -348,8 +347,6 @@ Documentation
 * [Oozie](https://oozie.apache.org)
 
 ### Setup
-
-> *Oozie is not installed by default*
 
 **Optional PostgreSQL configuration** - By default Oozie is configured to use Embedded Derby
 ```bash

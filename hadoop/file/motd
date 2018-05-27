@@ -12,4 +12,5 @@ echo '* MapReduce Job History Server: http://history.local:19888'
 echo '* DataNode/NodeManager (1): http://node-1.local:8042/node\n'
 
 echo '* Spark: http://spark.local:4040'
+echo '* Zeppelin: http://zeppelin.local:8080'
 echo '* Oozie: http://oozie.local:11000'
