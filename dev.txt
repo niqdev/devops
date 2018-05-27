@@ -1,27 +1,18 @@
 DEV info
 
-TODO
+---
 
 * review kubernetes + minikube
 
 * aws: emr + s3
 * EMR docs, boto3, zeppelin
 
-* giter8 scala-seed: build, scopt, log, config, plugin, readme, scalameter JMX scalafix, dropwizard-metrics/metrics-scala + scaladoc
-* giter8 spark-seed
-https://github.com/josephpconley/spark-seed.g8
-* giter8 akka-seed
-
 * add in linux: monit, nohup, screen, mc
 
+* sla, percentile, jmx, mbeans, jconsole, jolokia
+* add notes from JVM memory course
+
 * awesome links, best practices, bash/vim keyboard shortcuts
-
-* sla, percentile, jmx, mbeans, jconsole
-* add notes from JVM course
-* https://jolokia.org
-
-https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
-https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
 ---
 
@@ -44,15 +35,29 @@ https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with
 * etcd
 * linux containers LXD
 
-# tutorial
-https://kafka.apache.org/quickstart
+---
+
+# kafka
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
+
+# oozie
 http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
 
-TODO
-https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
+# keytool
+https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
+https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
-# TODO api
+# avro
+https://avro.apache.org/docs/current/gettingstartedjava.html
+https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
+# avro + schema registry
+https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry/
+https://github.com/lagom/lagom/issues/668
+https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
+http://cloudurable.com/blog/kafka-avro-schema-registry/index.html
+https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
+
+# api
 https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
 https://github.com/WhiteHouse/api-standards
 https://geemus.gitbooks.io/http-api-design/content/en/
@@ -60,9 +65,7 @@ https://geemus.gitbooks.io/http-api-design/content/en/
 # supervisor
 https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
 
-########## hadoop-spark ##########
-
-TODO
+# spark-in-action
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
 vagrant box add spark-in-action-box.json
 vagrant init manning/spark-in-action
@@ -71,60 +74,6 @@ vagrant halt
 vagrant destroy
 vagrant box remove manning/spark-in-action
 
+# other vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
-
-########## avro ##########
-
-https://avro.apache.org/docs/current/gettingstartedjava.html
-
-http://www.foundweekends.org/giter8/setup.html
-
-avro-1.8.2.jar
-avro-tools-1.8.2.jar
-
-http://www-eu.apache.org/dist/avro/stable/java/avro-1.8.2.jar
-http://www-eu.apache.org/dist/avro/stable/java/avro-tools-1.8.2.jar
-
-# jackson
-core-asl
-mapper-asl
-
-avro-maven-plugin
-
-user.avsc
-{"namespace": "example.avro",
- "type": "record",
- "name": "User",
- "fields": [
-     {"name": "name", "type": "string"},
-     {"name": "favorite_number",  "type": ["int", "null"]},
-     {"name": "favorite_color", "type": ["string", "null"]}
- ]
-}
-
-# compile schema to generate code
-java -jar /path/to/avro-tools-1.8.2.jar compile schema user.avsc .
-
-# kafka port mapping
-
-https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry/
-https://github.com/lagom/lagom/issues/668
-https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
-http://cloudurable.com/blog/kafka-avro-schema-registry/index.html
-https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
-
-docker exec -it kafka bash
-vim /opt/kafka/config/zookeeper.properties
-# deprecated TODO list advertised.listeners
-# docker-compose change port 9092:9092 to use kafkacat locally
-advertised.host.name=kafka
-advertised.port:9092
-supervisorctl restart kafka
-
-docker exec -it zookeeper bash
-zkCli.sh
-get /brokers/ids/0
-
-echo "127.0.0.1 kafka" | sudo tee -a /etc/hosts
-kafkacat -C -b kafka:9092 -t test

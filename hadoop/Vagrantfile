@@ -1,8 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# https://app.vagrantup.com/bento
-BOX_IMAGE = "bento/ubuntu-16.04"
+BOX_IMAGE = "ubuntu/bionic64"
 NODE_COUNT = 3
 
 DATA_PATH_HOST = ".data"

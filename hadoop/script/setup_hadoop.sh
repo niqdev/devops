@@ -14,7 +14,7 @@ FILE_PATH="/vagrant/file"
 DATA_PATH="/vagrant/.data"
 USER_NAME="hadoop"
 
-HADOOP_VERSION="2.7.5"
+HADOOP_VERSION="2.7.6"
 HADOOP_NAME="hadoop-$HADOOP_VERSION"
 
 ##############################

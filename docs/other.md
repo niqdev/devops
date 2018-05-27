@@ -41,6 +41,7 @@ vagrant reload --provision
 
 # update box
 vagrant box update
+vagrant box list
 
 # delete virtual machine without prompt
 vagrant destory -f
