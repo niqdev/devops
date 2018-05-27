@@ -43,6 +43,14 @@ function start_spark {
   spark-shell --version
 }
 
+function start_zeppelin {
+  # check if exists
+  if [ -x "$(command -v zeppelin.sh)" ]; then
+    echo "[*] start zeppelin"
+    zeppelin-daemon.sh start
+  fi
+}
+
 function start_oozie {
   # check if exists
   if [ -x "$(command -v oozie)" ]; then
@@ -55,6 +63,7 @@ function start_oozie {
 function start_all {
   start_hadoop
   start_spark
+  start_zeppelin
   start_oozie
 }
 
@@ -63,6 +72,9 @@ function main {
   local SERVICE_NAME=$(echo "${PARAM_SERVICE_NAME}" | awk '{print toupper($0)}')
 
   case $SERVICE_NAME in
+    "ZEPPELIN")
+      start_zeppelin
+      ;;
     "OOZIE")
       start_oozie
       ;;

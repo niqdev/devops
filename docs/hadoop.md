@@ -310,6 +310,35 @@ spark-submit \
 
 <br>
 
+## Zeppelin
+
+> **Zeppelin** is a web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more
+
+Documentation
+
+* [Zeppelin](https://zeppelin.apache.org)
+
+### Setup
+
+> *Zeppelin is not installed by default*
+
+Install and start Zeppelin
+```bash
+# access master node
+vagrant ssh master
+
+# login as root
+sudo su -
+
+# install and init
+/vagrant/script/setup_zeppelin.sh
+
+# start manually (first time only)
+su --login hadoop /vagrant/script/bootstrap.sh zeppelin
+```
+
+<br>
+
 ## Oozie
 
 > **Oozie** is a workflow scheduler system to manage Hadoop jobs

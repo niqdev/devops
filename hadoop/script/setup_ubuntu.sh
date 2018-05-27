@@ -67,6 +67,7 @@ function create_user {
   groupadd --gid $ID $NAME
   useradd --uid $ID --gid $ID --create-home --shell /bin/bash $NAME
   usermod --append --groups sudo,$NAME $NAME
+  echo "$NAME ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$NAME
   id $NAME
   groups $NAME
 }

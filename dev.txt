@@ -40,9 +40,6 @@ DEV info
 # kafka
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 
-# oozie
-http://www.thecloudavenue.com/2013/10/installation-and-configuration-of.html
-
 # keytool
 https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
 https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
