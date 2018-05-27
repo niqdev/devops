@@ -344,6 +344,23 @@ sudo su -
 su --login hadoop /vagrant/script/bootstrap.sh zeppelin
 ```
 
+### Examples
+
+* [Learning Spark SQL with Zeppelin](https://hortonworks.com/tutorial/learning-spark-sql-with-zeppelin)
+
+```
+# verify to have enough memory (Error: Cannot allocate memory)
+free -m
+
+# markdown interpreter
+%md
+hello
+
+# shell interptere
+%sh
+hadoop fs -ls -h -R /
+```
+
 <br>
 
 ## Oozie

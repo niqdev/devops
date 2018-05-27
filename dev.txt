@@ -11,6 +11,7 @@ DEV info
 
 * sla, percentile, jmx, mbeans, jconsole, jolokia
 * add notes from JVM memory course
+java -XX:+PrintFlagsFinal -version
 
 * awesome links, best practices, bash/vim keyboard shortcuts
 
