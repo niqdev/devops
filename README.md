@@ -11,6 +11,7 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Hadoop](https://niqdev.github.io/devops/hadoop)
   * [HDFS and MapReduce](https://niqdev.github.io/devops/hadoop/#hdfs-and-mapreduce)
   * [Spark](https://niqdev.github.io/devops/hadoop/#spark)
+  * [Zeppelin](https://niqdev.github.io/devops/hadoop/#zeppelin)
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [Readings](https://niqdev.github.io/devops/readings)
