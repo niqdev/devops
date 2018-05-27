@@ -23,5 +23,6 @@ venv/
 .idea/
 target/
 .vscode/
+*.log
 
 site
