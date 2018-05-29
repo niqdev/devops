@@ -7,6 +7,9 @@ DEV info
 * aws: emr + s3
 * EMR docs, boto3, zeppelin
 
+# emr info on master node
+cat /mnt/var/lib/info/job-flow.json | jq
+
 * add in linux: monit, nohup, screen, mc
 
 * sla, percentile, jmx, mbeans, jconsole, jolokia

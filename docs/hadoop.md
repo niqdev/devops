@@ -147,17 +147,33 @@ Web UI links
 
 Documentation
 
-* [Hadoop v2.7.5](http://hadoop.apache.org/docs/r2.7.5)
+* [Hadoop v2.7.6](http://hadoop.apache.org/docs/r2.7.6)
 * [Untangling Apache Hadoop YARN](http://blog.cloudera.com/blog/2015/09/untangling-apache-hadoop-yarn-part-1/) series
 
-### HDFS Admin
+### Admin
 
+HDFS cli
 ```bash
+# help
+hdfs
+
 # filesystem statistics
 hdfs dfsadmin -report
 
 # filesystem check
 hdfs fsck /
+```
+
+YARN cli
+```bash
+# help
+yarn
+
+# list yarn applications
+yarn application -list
+
+# kill yarn applications
+yarn application -kill application_XXX
 ```
 
 Useful paths
@@ -349,17 +365,16 @@ su --login hadoop /vagrant/script/bootstrap.sh zeppelin
 * [Learning Spark SQL with Zeppelin](https://hortonworks.com/tutorial/learning-spark-sql-with-zeppelin)
 
 ```
-# verify to have enough memory (Error: Cannot allocate memory)
-free -m
-
 # markdown interpreter
 %md
 hello
 
-# shell interptere
+# shell interpreter
 %sh
 hadoop fs -ls -h -R /
 ```
+
+Cluster issue: verify to have enough memory with `free -m` e.g. *Error: Cannot allocate memory*
 
 <br>
 
@@ -519,6 +534,37 @@ oozie job \
   -interval 10 \
   -timeout 60 \
   -verbose
+
+# find running coordinator
+oozie jobs \
+  -oozie http://oozie.local:11000/oozie/ \
+  -filter status=RUNNING \
+  -jobtype coordinator
+
+# suspend|resume|kill coordinator
+oozie job \
+  -oozie http://oozie.local:11000/oozie/ \
+  [-suspend|-resume|-kill] \
+  XXX-C
+
+# re-run coordinator's workflow (action)
+oozie job \
+  -oozie http://oozie.local:11000/oozie/ \
+  -rerun XXX-C \
+  -action 1,2,3,N
+
+# kill workflow
+oozie job \
+  -oozie http://oozie.local:11000/oozie/ \
+  -kill \
+  XXX-W
+
+# re-run all workflow's actions
+oozie job \
+  -oozie http://oozie.local:11000/oozie/ \
+  -rerun \
+  XXX-W \
+  -Doozie.wf.rerun.failnodes=false
 ```
 
 <br>
