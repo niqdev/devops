@@ -24,6 +24,8 @@ Documentation
 
 * [Amy's Cassandra 2.1 tuning guide](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html)
 
+* [Repair in Cassandra](https://www.datastax.com/dev/blog/repair-in-cassandra)
+
 <!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
 
 Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes
