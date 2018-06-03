@@ -2,25 +2,25 @@
 
 * [The Google File System](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 
-* [MapReduce](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf)
+* [MapReduce: Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf)
 
-* [Raft](https://raft.github.io/raft.pdf)
+* [Raft: In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)
 
-* [Paxos](https://www.microsoft.com/en-us/research/uploads/prod/2016/12/paxos-simple-Copy.pdf)
+* [Paxos Made Simple](https://www.microsoft.com/en-us/research/uploads/prod/2016/12/paxos-simple-Copy.pdf)
 
-* [Zab](http://diyhpl.us/~bryan/papers2/distributed/distributed-systems/zab.totally-ordered-broadcast-protocol.2008.pdf)
+* [Zab: A simple totally ordered broadcast protocol](http://diyhpl.us/~bryan/papers2/distributed/distributed-systems/zab.totally-ordered-broadcast-protocol.2008.pdf)
 
-* [Chubby](https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
+* [The Chubby lock service for loosely-coupled distributed systems](https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
 
-* [Spanner](https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf)
+* [Spanner: Google's Globally-Distributed Database](https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf)
 
-* [Dynamo](https://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf)
+* [Dynamo: Amazon’s Highly Available Key-value Store](https://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf)
 
-* [HyperLogLog](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf)
+* [HyperLogLog in Practice](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf)
 
-* [Dapper](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
+* [Dapper, a Large-Scale Distributed Systems Tracing Infrastructure](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 
-* [Borg](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf)
+* [Large-scale cluster management at Google with Borg](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf)
 
 * [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)
 
@@ -28,7 +28,7 @@
 
 * [Life beyond Distributed Transactions](http://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf)
 
-* [The ϕ Accrual Failure Detector](http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf)
+* [The ϕ Accrual Failure Detector](https://web.archive.org/web/20170517022242/http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf)
 
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
 
@@ -36,7 +36,7 @@
 
 * [SEDA: An Architecture for Well-Conditioned, Scalable Internet Services](http://nms.lcs.mit.edu/~kandula/projects/killbots/killbots_files/seda-sosp01.pdf)
 
-* [Merkle Hash Tree](http://ceur-ws.org/Vol-1366/paper13.pdf)
+* [Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data](http://ceur-ws.org/Vol-1366/paper13.pdf)
 
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
 
