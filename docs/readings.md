@@ -42,6 +42,8 @@
 
 * [Statistically Rigorous Java Performance Evaluation](https://dri.es/files/oopsla07-georges.pdf)
 
+* [Pregel: A System for Large-Scale Graph Processing](https://kowshik.github.io/JPregel/pregel_paper.pdf)
+
 <br>
 
 ## Articles and Resources
