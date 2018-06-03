@@ -157,13 +157,17 @@ Anatomy of a YARN Application Run
 
 ![yarn-application](img/yarn-application.png)
 
+YARN's schedulers
+
+![yarn-scheduler](img/yarn-scheduler.png)
+
 > **MapReduce** is a YARN-based system for parallel processing of large data sets
 
 MapReduce data flow
 
 ![map-reduce-data-flow](img/map-reduce-data-flow.png)
 
-Anatomy of a MapReduce Job Run
+MapReduce application on YARN
 
 ![map-reduce-job](img/map-reduce-job.png)
 
@@ -309,6 +313,10 @@ Documentation
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
 
 ![spark-architecture](img/spark-architecture.png)
+
+Spark application on YARN
+
+![spark-job](img/spark-job.png)
 
 ```bash
 # start REPL
