@@ -43,11 +43,13 @@ function setup_config {
   local DATA_PATH_GUEST="/vol/spark"
   local SPARK_BASE_PATH="/usr/local/spark"
   local CONFIG_PATH="$SPARK_BASE_PATH/conf"
+  local HISTORY_PATH="/tmp/spark-events"
   local FILES=( "spark-env.sh" "log4j.properties" )
 
   echo "[*] create directories"
   mkdir -pv \
-    $DATA_PATH_GUEST/log
+    $DATA_PATH_GUEST/log \
+    $HISTORY_PATH
   
   for FILE in "${FILES[@]}"
   do
@@ -59,7 +61,8 @@ function setup_config {
 
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME \
-    $SPARK_BASE_PATH/
+    $SPARK_BASE_PATH/ \
+    $HISTORY_PATH
   
   echo "[*] update env"
   cp $FILE_PATH/spark/profile-spark.sh /etc/profile.d/profile-spark.sh && \

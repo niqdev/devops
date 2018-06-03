@@ -41,6 +41,11 @@ function start_hadoop {
 function start_spark {
   echo "[*] start spark"
   spark-shell --version
+
+  # set "spark.eventLog.enabled" to "true"
+  # History Server expects to find a file named APPLICATION_COMPLETE
+  # in the applicationSs directory (/tmp/spark-events/<application_id> by default)
+  /usr/local/spark/sbin/start-history-server.sh
 }
 
 function start_zeppelin {

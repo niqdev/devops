@@ -13,7 +13,7 @@ cat /mnt/var/lib/info/job-flow.json | jq
 * add in linux: monit, nohup, screen, mc
 
 * sla, percentile, jmx, mbeans, jconsole, jolokia
-* add notes from JVM memory course
+* add notes from JVM memory course, jps
 java -XX:+PrintFlagsFinal -version
 
 * awesome links, best practices, bash/vim keyboard shortcuts

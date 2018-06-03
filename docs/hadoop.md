@@ -133,6 +133,7 @@ Web UI links
 * DataNode/NodeManager (2): [http://node-2.local:8042/node](http://172.16.0.102:8042/node)
 * DataNode/NodeManager (3): [http://node-3.local:8042/node](http://172.16.0.103:8042/node)
 * Spark: [http://spark.local:4040](http://172.16.0.10:4040)
+* Spark History Server: [http://spark-history.local:18080](http://172.16.0.10:18080)
 * Zeppelin (*): [http://zeppelin.local:8080](http://172.16.0.10:8080)
 * Oozie (*): [http://oozie.local:11000](http://172.16.0.10:11000)
 
