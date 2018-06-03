@@ -6,6 +6,7 @@ Documentation
 
 * [Hadoop](https://hadoop.apache.org)
 * [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
+* [Hadoop Internals](https://ercoppa.github.io/HadoopInternals)
 
 ### Setup
 
@@ -141,9 +142,29 @@ Web UI links
 
 > **HDFS** is a distributed file system that provides high-throughput access to application data
 
+Anatomy of a File Read
+
+![hdfs-read](img/hdfs-read.png)
+
+Anatomy of a File Write
+
+![hdfs-write](img/hdfs-write.png)
+
 > **YARN** is a framework for job scheduling and cluster resource management
 
+Anatomy of a YARN Application Run
+
+![yarn-application](img/yarn-application.png)
+
 > **MapReduce** is a YARN-based system for parallel processing of large data sets
+
+MapReduce data flow
+
+![map-reduce-data-flow](img/map-reduce-data-flow.png)
+
+Anatomy of a MapReduce Job Run
+
+![map-reduce-job](img/map-reduce-job.png)
 
 Documentation
 
@@ -286,6 +307,8 @@ Documentation
 * [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
 
+![spark-architecture](img/spark-architecture.png)
+
 ```bash
 # start REPL
 spark-shell
@@ -296,6 +319,9 @@ pyspark
 
 ```bash
 spark-shell
+
+# view all configured parameters
+sc.getConf.getAll.foreach(x => println(s"${x._1}: ${x._2}"))
 
 val licenceLines = sc.textFile("file:/usr/local/spark/LICENSE")
 val lineCount = licenceLines.count
