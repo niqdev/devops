@@ -143,33 +143,9 @@ Web UI links
 
 > **HDFS** is a distributed file system that provides high-throughput access to application data
 
-Anatomy of a File Read
-
-![hdfs-read](img/hdfs-read.png)
-
-Anatomy of a File Write
-
-![hdfs-write](img/hdfs-write.png)
-
 > **YARN** is a framework for job scheduling and cluster resource management
 
-Anatomy of a YARN Application Run
-
-![yarn-application](img/yarn-application.png)
-
-YARN's schedulers
-
-![yarn-scheduler](img/yarn-scheduler.png)
-
 > **MapReduce** is a YARN-based system for parallel processing of large data sets
-
-MapReduce data flow
-
-![map-reduce-data-flow](img/map-reduce-data-flow.png)
-
-MapReduce application on YARN
-
-![map-reduce-job](img/map-reduce-job.png)
 
 Documentation
 
