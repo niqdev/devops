@@ -198,8 +198,14 @@ yarn
 # list yarn applications
 yarn application -list
 
-# kill yarn applications
-yarn application -kill application_XXX
+# list nodes
+yarn node -list
+
+# view application logs
+yarn logs -applicationId APPLICATION_ID
+
+# kill yarn application
+yarn application -kill APPLICATION_ID
 ```
 
 Useful paths
@@ -311,6 +317,7 @@ Documentation
 * [Spark](https://spark.apache.org/docs/latest)
 * [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
+* [Mastering Apache Spark](https://legacy.gitbook.com/book/jaceklaskowski/mastering-apache-spark)
 
 ![spark-architecture](img/spark-architecture.png)
 
@@ -328,6 +335,8 @@ pyspark
 
 ```bash
 spark-shell
+# spark shell with yarn
+spark-shell --master yarn --deploy-mode client
 
 # view all configured parameters
 sc.getConf.getAll.foreach(x => println(s"${x._1}: ${x._2}"))
@@ -340,9 +349,16 @@ bsdLines.count
 bsdLines.foreach(println)
 ```
 
-### Spark Job example
+### Spark Job examples
 
+Example local
 ```bash
+# run SparkPi example
+spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[*] \
+  $SPARK_HOME/examples/jars/spark-examples_*.jar 10
+
 # GitHub event documentation
 # https://developer.github.com/v3/activity/events/types
 
@@ -361,11 +377,27 @@ mkdir -p github-archive && \
 # sample line
 head -n 1 2018-01-01-0.json | jq '.'
 
-# run job
+# run local job
 spark-submit \
   --class "com.github.niqdev.App" \
   --master local[*] \
   /vagrant/example/spark/target/scala-2.11/spark-github_2.11-0.1.0-SNAPSHOT.jar
+```
+
+Example cluster
+```bash
+# run job in YARN cluster-deploy mode
+spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master yarn \
+  --deploy-mode cluster \
+  --driver-memory 4g \
+  --executor-memory 2g \
+  --executor-cores 1 \
+  --queue default \
+  --conf "spark.yarn.jars=hdfs://namenode.local:9000/user/spark/share/lib/*.jar" \
+  $SPARK_HOME/examples/jars/spark-examples*.jar \
+  10
 ```
 
 <br>

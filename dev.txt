@@ -77,6 +77,8 @@ vagrant box remove manning/spark-in-action
 
 # hadoop
 https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
+https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/
+https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
 
 # vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark

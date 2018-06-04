@@ -7,3 +7,6 @@ export HADOOP_LOG_PATH=/vol/hadoop/log
 export HADOOP_LOG_DIR=${HADOOP_LOG_PATH}/hadoop
 export YARN_LOG_DIR=${HADOOP_LOG_PATH}/yarn
 export HADOOP_MAPRED_LOG_DIR=${HADOOP_LOG_PATH}/mapred
+
+# required by spark
+export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop

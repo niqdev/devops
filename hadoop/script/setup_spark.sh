@@ -43,13 +43,11 @@ function setup_config {
   local DATA_PATH_GUEST="/vol/spark"
   local SPARK_BASE_PATH="/usr/local/spark"
   local CONFIG_PATH="$SPARK_BASE_PATH/conf"
-  local HISTORY_PATH="/tmp/spark-events"
   local FILES=( "spark-env.sh" "log4j.properties" )
 
   echo "[*] create directories"
   mkdir -pv \
-    $DATA_PATH_GUEST/log \
-    $HISTORY_PATH
+    $DATA_PATH_GUEST/log
   
   for FILE in "${FILES[@]}"
   do
@@ -61,12 +59,34 @@ function setup_config {
 
   echo "[*] update permissions"
   chown -R $USER_NAME:$USER_NAME \
-    $SPARK_BASE_PATH/ \
-    $HISTORY_PATH
+    $SPARK_BASE_PATH/
   
   echo "[*] update env"
   cp $FILE_PATH/spark/profile-spark.sh /etc/profile.d/profile-spark.sh && \
     source /etc/profile.d/profile-spark.sh
+  
+  # FIXME spark on yarn (NOT WORKING)
+  # https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
+  
+  # spark-shell --master yarn --deploy-mode client
+  # ERROR SparkContext: Error initializing SparkContext
+  # org.apache.spark.SparkException: Yarn application has already ended! It might have been killed or unable to launch application master.
+  
+  # >>> spark-defaults.conf
+  
+  # hadoop fs -ls -h -R /
+  # hdfs dfs -mkdir -p /user/spark/{log,share/lib}
+  # hadoop fs -put /usr/local/spark/jars/*.jar /user/spark/share/lib/
+
+  # yarn-site.xml
+  #<!-- required by Spark -->
+  #<property>
+  #    <name>yarn.resourcemanager.address</name>
+  #    <value>resource-manager.local:8032</value>
+  #</property>
+
+  # zip -j /vol/spark/log/spark-archive.zip /usr/local/spark/jars/*.jar
+  # hadoop fs -put /vol/spark/log/spark-archive.zip /user/spark/share/spark-archive.zip
 }
 
 function main {
