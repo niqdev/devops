@@ -68,7 +68,8 @@ function setup_config {
   cp $FILE_PATH/spark/profile-spark.sh /etc/profile.d/profile-spark.sh && \
     source /etc/profile.d/profile-spark.sh
   
-  # TODO spark on yarn (NOT WORKING)
+  # TODO config spark on yarn as default
+  # verify jars/archive path, ports between nodes and memory issues
   # https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
   
   # spark-shell --master yarn --deploy-mode client

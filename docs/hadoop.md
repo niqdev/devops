@@ -367,13 +367,14 @@ spark-submit \
   --class org.apache.spark.examples.SparkPi \
   --master yarn \
   --deploy-mode cluster \
-  --driver-memory 4g \
-  --executor-memory 2g \
-  --executor-cores 1 \
+  --driver-memory 2g \
+  --executor-memory 1g \
+  --executor-cores 3 \
   --queue default \
-  --conf "spark.yarn.jars=hdfs://namenode.local:9000/user/spark/share/lib/*.jar" \
   $SPARK_HOME/examples/jars/spark-examples*.jar \
   10
+
+# --conf "spark.yarn.jars=hdfs://namenode.local:9000/user/spark/share/lib/*.jar"
 ```
 
 <br>
