@@ -14,5 +14,6 @@ pages:
     - Kafka: kafka.md
     - Hadoop: hadoop.md
     - Kubernetes: kubernetes.md
+    #- Scala: _scala.md
     - Readings: readings.md
     - Other: other.md
