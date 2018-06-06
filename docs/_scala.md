@@ -16,6 +16,17 @@ Hence a pure function is **modular** and **composable**
 > A **recursive function** is a function which calls itself.
 A **tail recursive function** is a special case of recursion in which the last instruction executed in the method is the recursive call.
 As long as the recursive call is in tail position, Scala detects compiles it to the same sort of bytecode as would be emitted for a while loop
+```scala
+def factorial(n: Int): Int = {
+  @tailrec
+  def loop(index: Int, result: Int): Int = index match {
+    case i if i == 0 => loop(1, 1 * result)
+    case i if i < n => loop(i + 1, i * result)
+    case i => i * result
+  }
+  loop(0, 1)
+}
+```
 
 > **Function literal** is a synonyms for **anonymous function**.
 Because functions are just ordinary Scala objects, we say that they are **first-class values**.
