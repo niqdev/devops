@@ -501,7 +501,7 @@ man send
 * [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
 * [OpenWrt](https://openwrt.org)
 * [BusyBox](https://www.busybox.net)
-* [Netfilter](https://en.wikipedia.org/wiki/Netfilter)
+* [Netfilter](https://netfilter.org/index.html)
 * [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
 * [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
 * [Shorewall](http://www.shorewall.net)
@@ -510,7 +510,7 @@ man send
 * [Postfix](http://www.postfix.org)
 * [HTTPie](https://httpie.org)
 * [jq](https://stedolan.github.io/jq)
-* [perf-tools](https://github.com/brendangregg/perf-tools)
+* [Linux Performance](http://www.brendangregg.com/linuxperf.html)
 * [Samba](https://www.samba.org)
 * [Program Library HOWTO](https://www.dwheeler.com/program-library)
 
