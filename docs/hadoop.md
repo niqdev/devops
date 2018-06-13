@@ -293,6 +293,7 @@ Documentation
 * [Spark](https://spark.apache.org/docs/latest)
 * [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
+* [Apache Spark: Config Cheatsheet](http://c2fo.io/c2fo/spark/aws/emr/2016/07/06/apache-spark-config-cheatsheet)
 * [Mastering Apache Spark](https://legacy.gitbook.com/book/jaceklaskowski/mastering-apache-spark)
 
 ![spark-architecture](img/spark-architecture.png)

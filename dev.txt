@@ -82,3 +82,6 @@ https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-
 
 # vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
+
+# course
+https://developers.google.com/machine-learning/crash-course/
