@@ -4,7 +4,7 @@ Documentations
 
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
 
-Definition
+## Definition
 
 > An expression `e` is **referentially transparent** if, for all programs `p`,
 all occurrences of `e` in `p` can be replaced by the result of evaluating `e` without affecting the meaning of `p`.
@@ -38,3 +38,22 @@ val lessThan2 = new Function2[Int, Int, Boolean] {
   override def apply(a: Int, b: Int): Boolean = a < b
 }
 ```
+---
+
+* TODO companion object
+* a **variadic function** accepts zero or more arguments
+
+* TODO variance / covariance
+ of type A
+
+```scala
+
+// + covariant
+// List[Dog] is considered a subtype of List[Animal], assuming Dog is a subtype of Animal
+sealed trait List[+A]
+// Nothing is a subtype of all types
+case object Nil extends List[Nothing]
+case class Cons[+A](head: A, tail: List[A]) extends List[A]
+```
+
+<br>

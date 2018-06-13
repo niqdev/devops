@@ -6,6 +6,7 @@ Documentation
 
 * [Kubernetes](https://kubernetes.io/docs/home/?path=browse)
 * [Kubernetes by Example](http://kubernetesbyexample.com)
+* [Running akka-cluster on Kubernetes](https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951)
 
 ## Setup
 
