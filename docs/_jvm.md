@@ -1,4 +1,109 @@
-# Java Virtual Machine
+# JVM
+
+## Java Memory Management
+
+### Stack
+
+The stack is a First In Last Out data structure managed by the JVM i.e. push to the top, pull or pop from the top. Every thread has its own stack and data can be seen only by that thread
+
+Each time you call a function, Java pushes the local variables for that function onto the stack. A copy of the value is passed to the methods. When the method returns, all the data are popped or pulled from the stack
+
+When you reach a closing curly bracket (not only after a return) any local variables declared inside the block you are leaving is popped from the stack and destroyed, this is how scope works
+
+### Heap
+
+The Heap allows to store data that has a longer lifetime than a single code block or function e.g. objects that need to be shared across multiple methods
+
+All the memory in the JVM is mainly heap, is massive compared with the stack and there is only one heap shared across all the threads and a number of stacks (each thread has its own stack)
+
+### Variables
+
+How variable are store in Java
+
+* objects are stored physically on the heap
+* variables are a reference to the object
+* local variables are stored on the stack
+* primitive vaiables resides entirely in the stack
+
+```
+int age = 30
+String name = "niqdev"
+
+Stack          Heap
+[  name* ] --> [ "niqdev" ]
+[  age   ]
+```
+
+In Java variable can *only* be passed by values i.e. a new variable is added in the stack
+
+Passing by reference is *not* possible, but don't confuse that when objects are passed into methods, *the **reference** of the object is passed **by value***
+
+`final` keyword means that the value can only be assigned once (can be assigned later), but we can change the value referenced by the object. Lack of const correctness in Java: `const` unfortunately is a reserved keyword and cannot be used, but allows to freeze the whole state of the object internally: *mutable states are bad!*
+
+Example
+```java
+final Customer c = new Customer("a")
+// or
+final Customer c
+c = new Customer("a")
+
+// this is NOT allowed - compiler error
+c = new Customer("b")
+// but this yes
+c.setName("b")
+```
+
+### String
+
+As a general rule of thumb, all objects are stored in the heap and only references are stored in the stack. In reality the jvm for optimization maybe store some objects also in the stack, but this is not visibile.
+
+Strings are immutable and if "short" are stored in a pool in the heap to be reused, you can verify the refernce with `==`.
+Note that this are `true`, `intern()` force to look for object in the pool.
+
+```java
+// true
+"hello" == "hello"
+new Integer(42).toString().intern() == "42"
+// false: this instead are different
+new Integer(42).toString() == "42"
+```
+
+### Garbage collection
+
+**Garbage collection** removes object no more referenced in the heap from the stack. Most of the objects don't live for long, if an object survives it is likely to live forever. **Mark and sweep** is the algorithm used: instead of look for all the objects that must be removed, it looks for the object that need to be retained
+
+* all the threads in the application are paused (stop the world event)
+* follow all the references from the stack and mark it as alive
+* full scan an all the heap and wipe unmarked reference
+* reorder contiguos memory in order to avoid fragmentation
+* more stuff there is to clean, more is faster cos it looks only for what to retain
+
+**Generational garbage collection** is a way to organize the heap into 2 section to try to avoid freeze the application while garbage collecting the whole heap:
+
+* **young generation** is small, so gc is quick, after gc reference are moved in old generation heap (few fraction of seconds to scan)
+* **old generation** no gc scan usually, only if needed i.e. when is full (few seconds to scan)
+* young generation is divided in Eden, Survivor0 and Survivor1
+* new objects are created in the Eden
+* when eden gets full, objects are moved in the Survivor space and moved amongs the two alternatively to be compacted
+* memory is reserved in the heap for S0 and S1 even if not used
+* after an object survived 8 generations (movement and compacting between Survivor collection) then is stored in the old generation
+* VM can change the number of generations (default is 8) based on the amount of memory available
+* old generation is also called Tenured
+* class variables (static variables) are stored as part of the class object associated with that class and stored in the permanent generation (PermGen) prior Java 8 or in the MetaSpace
+
+![jvm-gc](img/jvm-gc.png)
+
+Run `jvisualvm` and add `Visual GC` plugin
+
+**Memory leak** are objects that are not free in the heap and continue to consume memory also after the program finish. Memory leaks are difficult to find. Java avoid memory leaks by running on a virtual machine the garbage collector (invented in lisp around 1959).
+Any object on the heap which cannot be reached through a reference from the stack is *eligible for garbage collection*
+
+User can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can suggest JVM to run garbage collection, but there is no guarentee.
+You should never in generally invoke `gc()` directly. While it is running the application is temporarily supsended and it will pause all the threads.
+`finalize()` is invoked when object is garbage collected, but there is absolutely no guarentee if and when it will happen.
+Is useful to check for example memory leak, as warning, if some resouces were not closed properly
+
+**Soft leak** happens when an object is referenced on the stack even thought it will never be used again
 
 ## Perfomance
 
@@ -28,16 +133,17 @@ A **percentile** is a measurement indicating the value below which a given perce
 > A **profiler** enables white-box testing to help you identify bottlenecks by capturing the execution time and resource consumption of each part of your
 program. Most profilers instrument the code under observation, either at compile time or runtime, to inject counters and profiling components. This instrumentation imposes a runtime cost that degrades system throughput and latency
 
-> The **Just-In-Time (JIT)** compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Java programs consists of classes, which contain platform neutral bytecode that can be interpreted by a JVM on many different computer architectures.
-At run time, the JVM loads the class files, determines the semantics of each individual bytecode, and performs the appropriate computation.
-The additional processor and memory usage during interpretation means that a Java application performs more slowly than a native application.
-The JIT compiler helps improve the performance of Java programs by compiling bytecode into native machine code at run time
-
 > The **coordinated omission problem** happen we you measure the time required to process a command without taking into account the time the command had to wait to be processed
 
 > **Java Flight Recorder (JFR)** is a tool for collecting, diagnosing, and profiling data about a running Java application. It is integrated into the Java Virtual Machine and causes almost no performance overhead and is able to access data outside of **JVM safepoints**. Safepoints are necessary
 to coordinate global JVM activities, including stop-the-world garbage collection
 
 > **Java Mission Control (JMC)** allows to connect to a running Java application via JMX and capture runtime information from the Flight Recorder (JFR), executing commands via JMX or displaying reports from JFR sessions
+
+> The **Just-In-Time (JIT)** compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Java programs consists of classes, which contain platform neutral bytecode that can be interpreted by a JVM on many different computer architectures.
+At run time, the JVM loads the class files, determines the semantics of each individual bytecode, and performs the appropriate computation.
+The additional processor and memory usage during interpretation means that a Java application performs more slowly than a native application.
+The JIT compiler helps improve the performance of Java programs by compiling bytecode into native machine code at run time
+
 
 <br>
