@@ -32,7 +32,7 @@ How variable are store in Java
 * objects are stored physically on the heap
 * variables are a reference to the object
 * local variables are stored on the stack
-* primitive vaiables resides entirely in the stack
+* primitive variables resides entirely in the stack
 
 ```
 int age = 30
@@ -77,7 +77,7 @@ String s4 = new String("hello").intern();
 // true - 2 strings created using quotes refer to the same object
 System.out.println(s1 == s2);
 // false - if you create a string using new operator
-// it's not a part of the constant pool, so objects are different
+// it's not part of the constant pool, so objects are different
 System.out.println(s1 == s3);
 // true - if you call intern() method Java adds current string to the string pool
 // and 2 string become the same object
@@ -111,15 +111,12 @@ System.out.println(s1 == s4);
 
 Run `jvisualvm` and add `Visual GC` plugin
 
-**Memory leak** are objects that are not free in the heap and continue to consume memory also after the program finish. Memory leaks are difficult to find. Java avoid memory leaks by running on a virtual machine the garbage collector (invented in lisp around 1959).
-Any object on the heap which cannot be reached through a reference from the stack is *eligible for garbage collection*
+Any object on the heap which cannot be reached through a reference from the stack is *eligible for garbage collection*. **Memory leak** are objects that are not free on the heap and continue to consume memory after a program finish. Memory leaks are difficult to find and the JVM try to avoid them running the garbage collector (invented in lisp around 1959). **Soft leak** happens when an object is referenced on the stack even thought it will never be used again
 
-User can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can suggest JVM to run garbage collection, but there is no guarentee.
-You should never in generally invoke `gc()` directly. While it is running the application is temporarily supsended and it will pause all the threads.
-`finalize()` is invoked when object is garbage collected, but there is absolutely no guarentee if and when it will happen.
-Is useful to check for example memory leak, as warning, if some resouces were not closed properly
+You can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can only suggest JVM to run garbage collection, but there is no guarentee. In genrally, you should never invoke `gc()` directly. While it is running the application is temporarily suspended and it will pause all the threads. `finalize()` is invoked when andobject is garbage collected, but there is absolutely no guarentee if and when it will happen.
+Is useful to check for example memory leak, as warning, if some resources were not closed properly
 
-**Soft leak** happens when an object is referenced on the stack even thought it will never be used again
+<br>
 
 ## Perfomance
 
