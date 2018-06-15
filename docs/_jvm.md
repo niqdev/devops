@@ -86,21 +86,22 @@ System.out.println(s1 == s4);
 
 ### Garbage collection
 
-**Garbage collection** removes object no more referenced in the heap from the stack. Most of the objects don't live for long, if an object survives it is likely to live forever. **Mark and sweep** is the algorithm used: instead of look for all the objects that must be removed, it looks for the object that need to be retained
+**Garbage collection** removes object no more referenced in the heap from the stack. Most of the objects don't live for long, if an object survives it is likely to live forever. **Mark and sweep** is the algorithm used:
 
+* instead of look for all the objects that must be removed, it looks for the object that need to be retained
 * all the threads in the application are paused (stop the world event)
 * follow all the references from the stack and mark it as alive
-* full scan an all the heap and wipe unmarked reference
+* full scan on all the heap and wipe unmarked reference
 * reorder contiguos memory in order to avoid fragmentation
 * more stuff there is to clean, more is faster cos it looks only for what to retain
 
-**Generational garbage collection** is a way to organize the heap into 2 section to try to avoid freeze the application while garbage collecting the whole heap:
+**Generational garbage collection** is a way to organize the heap into 2 sections to try to avoid freeze the application while garbage collecting the whole heap:
 
 * **young generation** is small, so gc is quick, after gc reference are moved in old generation heap (few fraction of seconds to scan)
 * **old generation** no gc scan usually, only if needed i.e. when is full (few seconds to scan)
 * young generation is divided in Eden, Survivor0 and Survivor1
 * new objects are created in the Eden
-* when eden gets full, objects are moved in the Survivor space and moved amongs the two alternatively to be compacted
+* when Eden gets full, objects are moved in the Survivor space and moved amongs the two alternatively to be compacted
 * memory is reserved in the heap for S0 and S1 even if not used
 * after an object survived 8 generations (movement and compacting between Survivor collection) then is stored in the old generation
 * VM can change the number of generations (default is 8) based on the amount of memory available
@@ -115,6 +116,63 @@ Any object on the heap which cannot be reached through a reference from the stac
 
 You can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can only suggest JVM to run garbage collection, but there is no guarentee. In genrally, you should never invoke `gc()` directly. While it is running the application is temporarily suspended and it will pause all the threads. `finalize()` is invoked when andobject is garbage collected, but there is absolutely no guarentee if and when it will happen.
 Is useful to check for example memory leak, as warning, if some resources were not closed properly
+
+### PermGen and Metaspace
+
+Permanent Generation (heap memory) since Java 6 contains objects that will never garbage collected:
+
+* string pool is in PermGen
+* class metadata are stored in PermGen
+
+If the PermGen run out of space the only solution is to increase the size of memory, otherwise the app will crash. From Java 7 String Pool was moved in the old memory and therefore string can be garbage collected. From Java 8 MetaSpace replaced PermGen as separeted memory allocated and which is not part of the heap anymore and is the total available memory
+
+### Tuning
+
+```bash
+# set the maximum heap size to 512 MB
+-Xmx512m
+# set the starting heap size to 150 MB
+-Xms150m
+# set the size of the PermGen to 256 MB (PermGen was removed in Java 8)
+-XX:MaxPermSize=256M
+# set the size of the young generation to 256 MB
+# young generation by default is 1/3 of the max heap size (suggestion between 1/2-1/4)
+-Xmn256m
+```
+
+Oracle JVM has 3 types of garbage collector, it doesn't matter how many threads, the application will be paused anyway:
+```bash
+# serial uses a single thread to perform gc
+-XX:+UseSerailGC
+# parallel performs gc on young generation in parallel
+-XX:+UseParallelGC
+# mostly concurrent, closest to real time gc pausing only when marking
+# try to minimize the "stop of the world"
+-XX:+UseConcMarkSweepGC
+-XX:+UseG1GC
+```
+
+Debugging
+```bash
+# print to console when a garbage collection takes place
+-verbose:gc
+# creates a heap dump file if app crash
+-XX:HeapDumpOnOutOfMemory
+# to find default garbage collector on the machine
+-XX:+PrintCommandLineFlags
+```
+
+Parameters are case sensitive
+
+### Weak and Soft references
+
+References from the Stack to the Heap
+
+* **Strong** default, marked as alive
+* **Soft** eligible for garbage collection only if run out of memory
+* **Weak** eligible for garbage collection, it depends form the jvm if retain it or not
+
+`WeakReference<T>` and `SoftReference<T>` are useful for caching scenario, when a reference in the heap is gc then the variable in the stack became `null`. In a WeakHashMap, the reference from the stack to the map in the Heap is strong, while the references between key/value are eligible for gc, in that case both keys and values are removed
 
 <br>
 
