@@ -1,5 +1,14 @@
 # JVM
 
+Documentation
+
+* [The Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/jvms/se8/jvms8.pdf)
+* [JVM Architecture 101](https://blog.takipi.com/jvm-architecture-101-get-to-know-your-virtual-machine)
+* [JVM Internals](http://blog.jamesdbloom.com/JVMInternals.html)
+* [Java Code to Byte Code](http://blog.jamesdbloom.com/JavaCodeToByteCode_PartOne.html)
+
+![jvm-architecture](img/jvm-architecture.png)
+
 ## Java Memory Management
 
 ### Stack
@@ -55,17 +64,24 @@ c.setName("b")
 
 ### String
 
-As a general rule of thumb, all objects are stored in the heap and only references are stored in the stack. In reality the jvm for optimization maybe store some objects also in the stack, but this is not visibile.
+As a general rule of thumb, all objects are stored in the heap and only references are stored in the stack. In reality the jvm for optimization maybe store some objects also in the stack, but this is not visibile. Strings are immutable and if "short" are stored in a pool in the heap to be reused.
 
-Strings are immutable and if "short" are stored in a pool in the heap to be reused, you can verify the refernce with `==`.
-Note that this are `true`, `intern()` force to look for object in the pool.
+When you create a new string with quotes `"hello"`, the JVM creates and retrieve the string from a constant pool. To create a new object every time use the `new String("hello")`. To force a lookup in the pool use `intern()`. Use `==` to compare the reference (address in memory)
 
 ```java
-// true
-"hello" == "hello"
-new Integer(42).toString().intern() == "42"
-// false: this instead are different
-new Integer(42).toString() == "42"
+String s1 = "hello";
+String s2 = "hello";
+String s3 = new String("hello");
+String s4 = new String("hello").intern();
+
+// true - 2 strings created using quotes refer to the same object
+System.out.println(s1 == s2);
+// false - if you create a string using new operator
+// it's not a part of the constant pool, so objects are different
+System.out.println(s1 == s3);
+// true - if you call intern() method Java adds current string to the string pool
+// and 2 string become the same object
+System.out.println(s1 == s4);
 ```
 
 ### Garbage collection
