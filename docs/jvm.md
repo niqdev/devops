@@ -11,6 +11,7 @@ Resources
 * [JVM Internals](http://blog.jamesdbloom.com/JVMInternals.html)
 * [Java Code to Byte Code](http://blog.jamesdbloom.com/JavaCodeToByteCode_PartOne.html)
 * [Understanding Java Garbage Collection](https://www.cubrid.org/blog/understanding-java-garbage-collection)
+* [Java Decompiler](http://jd.benow.ca)
 
 ![jvm-architecture](img/jvm-architecture.png)
 

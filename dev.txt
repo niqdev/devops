@@ -2,19 +2,22 @@ DEV info
 
 ---
 
+TODO
+* >>> add spreadsheets notes: java, scala, data structures, algorithms, design patterns?
+* review https://conorfennell.github.io/scala-zen
+* sla, percentile, jmx, mbeans, jconsole, jolokia, jstat, javap
+* add notes from JVM memory course, jps
+java -XX:+PrintFlagsFinal -version
+
 * review kubernetes + minikube
 
 * aws: emr + s3
-* EMR docs, boto3, zeppelin
+* EMR docs, boto3
 
 # emr info on master node
 cat /mnt/var/lib/info/job-flow.json | jq
 
 * add in linux: monit, nohup, screen, mc
-
-* sla, percentile, jmx, mbeans, jconsole, jolokia
-* add notes from JVM memory course, jps
-java -XX:+PrintFlagsFinal -version
 
 * awesome links, best practices, bash/vim keyboard shortcuts
 
@@ -84,4 +87,4 @@ https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 
 # course
-https://developers.google.com/machine-learning/crash-course/
+https://developers.google.com/machine-learning/crash-course

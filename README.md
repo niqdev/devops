@@ -14,5 +14,6 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
   * [Zeppelin](https://niqdev.github.io/devops/hadoop/#zeppelin)
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
+* [JVM](https://niqdev.github.io/devops/jvm)
 * [Readings](https://niqdev.github.io/devops/readings)
 * [Other](https://niqdev.github.io/devops/other)
