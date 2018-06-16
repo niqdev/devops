@@ -1,11 +1,15 @@
 # JVM
 
-Documentation
+Resources
 
-* [The Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/jvms/se8/jvms8.pdf)
+* [Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)
+* [The Java HotSpot Performance Engine Architecture](http://www.oracle.com/technetwork/java/whitepaper-135217.html)
+* [Memory Management in the Java HotSpot Virtual Machine](http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
 * [JVM Architecture 101](https://blog.takipi.com/jvm-architecture-101-get-to-know-your-virtual-machine)
 * [JVM Internals](http://blog.jamesdbloom.com/JVMInternals.html)
 * [Java Code to Byte Code](http://blog.jamesdbloom.com/JavaCodeToByteCode_PartOne.html)
+* [Understanding Java Garbage Collection](https://www.cubrid.org/blog/understanding-java-garbage-collection)
+* [JMH](http://openjdk.java.net/projects/code-tools/jmh)
 
 ![jvm-architecture](img/jvm-architecture.png)
 
@@ -124,7 +128,7 @@ Permanent Generation (heap memory) since Java 6 contains objects that will never
 * string pool is in PermGen
 * class metadata are stored in PermGen
 
-If the PermGen run out of space the only solution is to increase the size of memory, otherwise the app will crash. From Java 7 String Pool was moved in the old memory and therefore string can be garbage collected. From Java 8 MetaSpace replaced PermGen as separeted memory allocated and which is not part of the heap anymore and is the total available memory
+If the PermGen run out of space the only solution is to increase the size of memory, otherwise the app will crash. From Java 7 String Pool was moved in the old memory and therefore string can be garbage collected. From Java 8 MetaSpace replaced PermGen as separeted memory allocated which is not part of the heap anymore and is the total available memory
 
 ### Tuning
 
@@ -162,7 +166,7 @@ Debugging
 -XX:+PrintCommandLineFlags
 ```
 
-Parameters are case sensitive
+*Parameters are case sensitive*
 
 ### Weak and Soft references
 
@@ -178,7 +182,7 @@ References from the Stack to the Heap
 
 ## Perfomance
 
-Documentation
+Resources
 
 * [HdrHistogram](http://hdrhistogram.org)
 * [Understanding JIT compiler](https://aboullaite.me/understanding-jit-compiler-just-in-time-compiler)
