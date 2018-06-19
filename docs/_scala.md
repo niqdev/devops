@@ -45,6 +45,32 @@ val lessThan2 = new Function2[Int, Int, Boolean] {
 }
 ```
 
+A **variadic** function accepts zero or more arguments. It provides a little syntactic sugar for creating and passing a Seq of elements explicitly. The special `_*` type annotation allows us to pass a Seq to a variadic method
+```scala
+sealed trait MyList[+A]
+case object MyNil extends MyList[Nothing]
+case class MyCons[+A](head: A, tail: MyList[A]) extends MyList[A]
+
+object MyList {
+  def apply[A](list: A*): MyList[A] =
+    if (list.isEmpty) MyNil
+    else MyCons(list.head, apply(list.tail: _*))
+}
+
+// usage
+MyList(1, 2, 3, 4, 5)
+```
+
+An **algebraic data type** (ADT) is just a data type defined by one or more data constructors, each of which may contain zero or more arguments.
+We say that the data type is the sum or union of its data constructors, and each data constructor is the product of its arguments, hence the name algebraic data type
+```scala
+sealed trait Tree[+A]
+case class Leaf[A](value: A) extends Tree[A]
+case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
+```
+
+---
+
 The [AnyVal](https://docs.scala-lang.org/overviews/core/value-classes.html) class can be used to define a **value class**, which is optimized at compile time to avoid the allocation of an instance
 ```scala
 case class Price(value: BigDecimal) extends AnyVal {
@@ -61,6 +87,16 @@ In scenarios involving simple pattern match statements that directly match a val
 ---
 
 TODO
+
+```scala
+// to remember: foldLeft start from left (acc op xFirst) ==> (B, A)
+// to remember: foldRight start from right (xLast op acc) ==> (A, B)
+```
+
+In Scala, all methods whose names end in : are right-associative. That is, the expression x :: xs is actually
+the method call xs.::(x) , which in turn calls the data constructor ::(x,xs)
+
+* curry function used to assist type inference when passing anonymous functions
 
 * companion object
 * a **variadic function** accepts zero or more arguments
