@@ -87,4 +87,9 @@ https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 
 # course
+
 https://developers.google.com/machine-learning/crash-course
+
+# TODO
+https://docs.scala-lang.org/overviews/collections/performance-characteristics.html
+https://docs.scala-lang.org/overviews/collections/introduction.html
