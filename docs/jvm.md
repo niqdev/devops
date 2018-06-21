@@ -17,26 +17,26 @@ Resources
 
 ### Stack
 
-The stack is a First In Last Out data structure managed by the JVM i.e. push to the top, pull or pop from the top. Every thread has its own stack and data can be seen only by that thread
+The Stack is a First-In-Last-Out data structure managed by the JVM i.e. push to the top, pull or pop from the top. Every thread has its own Stack and data can be seen only by that thread
 
-Each time you call a function, Java pushes the local variables for that function onto the stack. A copy of the value is passed to the methods. When the method returns, all the data are popped or pulled from the stack
+Each time you call a function, Java pushes the local variables for that function onto the Stack. A copy of the value is passed to the methods. When the method returns, all the data are popped or pulled from the Stack
 
-When you reach a closing curly bracket (not only after a return) any local variables declared inside the block you are leaving is popped from the stack and destroyed, this is how scope works
+When you reach a closing curly bracket (not only after a return) any local variables declared inside the block you are leaving is popped from the Stack and destroyed, this is how scope works
 
 ### Heap
 
 The Heap allows to store data that has a longer lifetime than a single code block or function e.g. objects that need to be shared across multiple methods
 
-All the memory in the JVM is mainly heap, is massive compared with the stack and there is only one heap shared across all the threads and a number of stacks (each thread has its own stack)
+All the memory in the JVM is mainly Heap, is massive compared with the Stack and there is only one Heap shared across all the threads and a number of Stacks (each thread has its own Stack)
 
 ### Variables
 
-How variable are store in Java
+How variable are store in Java:
 
-* objects are stored physically on the heap
-* variables are a reference to the object
-* local variables are stored on the stack
-* primitive variables resides entirely in the stack
+* objects are stored physically on the Heap
+* variables are reference to objects
+* local variables are stored on the Stack
+* primitive variables resides entirely on the Stack
 
 ```
 int age = 30
@@ -47,7 +47,7 @@ Stack          Heap
 [  age   ]
 ```
 
-In Java variable can *only* be passed by values i.e. a new variable is added in the stack
+In Java, variable can *only* be passed by values i.e. a new variable is added on the Stack
 
 Passing by reference is *not* possible, but don't confuse that when objects are passed into methods, *the **reference** of the object is passed **by value***
 
@@ -68,9 +68,9 @@ c.setName("b")
 
 ### String
 
-As a general rule of thumb, all objects are stored in the heap and only references are stored in the stack. In reality the jvm for optimization maybe store some objects also in the stack, but this is not visibile. Strings are immutable and if "short" are stored in a pool in the heap to be reused.
+As a general rule of thumb, all objects are stored on the Heap and only references are stored in the Stack. In reality the JVM for optimization maybe store some objects also in the Stack, but this is not visibile. Strings are immutable and if "short" are stored in a pool on the Heap to be reused.
 
-When you create a new string with quotes `"hello"`, the JVM creates and retrieve the string from a constant pool. To create a new object every time use the `new String("hello")`. To force a lookup in the pool use `intern()`. Use `==` to compare the reference (address in memory)
+When you create a new string with quotes e.g. `"hello"`, the JVM creates and retrieve the string from a constant pool. To create a new object every time use the `new String("hello")`. To force a lookup in the pool use `intern()`. Use `==` to compare the reference (address in memory)
 
 ```java
 String s1 = "hello";
@@ -90,45 +90,45 @@ System.out.println(s1 == s4);
 
 ### Garbage collection
 
-**Garbage collection** removes object no more referenced in the heap from the stack. Most of the objects don't live for long, if an object survives it is likely to live forever. **Mark and sweep** is the algorithm used:
+**Garbage collection** (invented in lisp around 1959) removes object no more referenced on the Heap from the Stack. Most of the objects don't live for long, if an object survives it is likely to live forever. **Mark and sweep** is the algorithm used:
 
 * instead of look for all the objects that must be removed, it looks for the object that need to be retained
 * all the threads in the application are paused (stop the world event)
-* follow all the references from the stack and mark it as alive
-* full scan on all the heap and wipe unmarked reference
+* follow all the references from the Stack and mark it as alive
+* full scan on all the Heap and wipe unmarked references
 * reorder contiguos memory in order to avoid fragmentation
-* more stuff there is to clean, more is faster cos it looks only for what to retain
+* it's faster if more objects need to be cleaned because it looks only for what need to be retained
 
-**Generational garbage collection** is a way to organize the heap into 2 sections to try to avoid freeze the application while garbage collecting the whole heap:
+**Generational garbage collection** is a way to organize the Heap into 2 sections to try to avoid freeze the application while garbage collecting the whole Heap:
 
-* **young generation** is small, so gc is quick, after gc reference are moved in old generation heap (few fraction of seconds to scan)
-* **old generation** no gc scan usually, only if needed i.e. when is full (few seconds to scan)
-* young generation is divided in Eden, Survivor0 and Survivor1
+* **young generation** is small, so it requires only few fraction of seconds to be scanned
+* **old generation** also called *Tenured*, isn't scanned usually, only if needed i.e. when it's full and requires few seconds
+* young generation is divided in *Eden*, *Survivor0* and *Survivor1*
 * new objects are created in the Eden
 * when Eden gets full, objects are moved in the Survivor space and moved amongs the two alternatively to be compacted
-* memory is reserved in the heap for S0 and S1 even if not used
-* after an object survived 8 generations (movement and compacting between Survivor collection) then is stored in the old generation
-* VM can change the number of generations (default is 8) based on the amount of memory available
-* old generation is also called Tenured
-* class variables (static variables) are stored as part of the class object associated with that class and stored in the permanent generation (PermGen) prior Java 8 or in the MetaSpace
+* memory is reserved in the Heap for S0 and S1 even if not used
+* after an object survived 8 generations (default), movement and compaction between Survivor GC, then is stored in the old generation
+* VM can change the number of generations based on the amount of memory available
+
+* class variables (static variables) are stored as part of the class object associated with that class and stored in the Permanent Generation (PermGen) prior Java 8 or in the MetaSpace
 
 ![jvm-gc](img/jvm-gc.png)
 
 Run `jvisualvm` and add `Visual GC` plugin
 
-Any object on the heap which cannot be reached through a reference from the stack is *eligible for garbage collection*. **Memory leak** are objects that are not free on the heap and continue to consume memory after a program finish. Memory leaks are difficult to find and the JVM try to avoid them running the garbage collector (invented in lisp around 1959). **Soft leak** happens when an object is referenced on the stack even thought it will never be used again
+Any object on the Heap which cannot be reached through a reference from the Stack is *eligible for garbage collection*. **Memory leak** are objects that are not free on the Heap and continue to consume memory after a program finish. Memory leaks are difficult to find and the JVM try to avoid them running the garbage collector. **Soft leak** happens when an object is referenced on the Stack even thought it will never be used again
 
-You can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can only suggest JVM to run garbage collection, but there is no guarentee. In genrally, you should never invoke `gc()` directly. While it is running the application is temporarily suspended and it will pause all the threads. `finalize()` is invoked when andobject is garbage collected, but there is absolutely no guarentee if and when it will happen.
+You can not clear memory, with `Runtime.getRuntime().gc()` or `System.gc()` you can only suggest JVM to run garbage collection, but there is no guarentee. In general, you should never invoke `gc()` directly. While it is running the application is temporarily suspended and it will pause all the threads. `finalize()` is invoked when an object is garbage collected, but there is absolutely no guarentee if and when it will happen.
 Is useful to check for example memory leak, as warning, if some resources were not closed properly
 
 ### PermGen and Metaspace
 
-Permanent Generation (heap memory) since Java 6 contains objects that will never garbage collected:
+Permanent Generation (Heap memory) since Java 6 contains objects that will never garbage collected:
 
 * string pool is in PermGen
 * class metadata are stored in PermGen
 
-If the PermGen run out of space the only solution is to increase the size of memory, otherwise the app will crash. From Java 7 String Pool was moved in the old memory and therefore string can be garbage collected. From Java 8 MetaSpace replaced PermGen as separeted memory allocated which is not part of the heap anymore and is the total available memory
+If the PermGen run out of space the only solution is to increase the size of memory, otherwise the app will crash. In Java 7 String Pool was moved in the old memory and therefore string can be garbage collected now. In Java 8 MetaSpace replaced PermGen as separeted memory allocated, which is not part of the Heap anymore and is the total available memory
 
 ### Tuning
 
@@ -172,11 +172,11 @@ Debugging
 
 References from the Stack to the Heap
 
-* **Strong** default, marked as alive
-* **Soft** eligible for garbage collection only if run out of memory
-* **Weak** eligible for garbage collection, it depends form the jvm if retain it or not
+* **Strong** references are always marked as alive (default)
+* **Soft** references are eligible for garbage collection only if the JVM run out of memory
+* **Weak** references are always eligible for garbage collection and is up to the JVM to retain it or not
 
-`WeakReference<T>` and `SoftReference<T>` are useful for caching scenario, when a reference in the heap is gc then the variable in the stack became `null`. In a WeakHashMap, the reference from the stack to the map in the Heap is strong, while the references between key/value are eligible for gc, in that case both keys and values are removed
+`WeakReference<T>` and `SoftReference<T>` are useful for caching scenario, when a reference on the Heap is GC, then the variable in the stack became `null`. In a WeakHashMap for example, the reference from the stack to the map in the Heap is strong, but the references to key/value pair are eligible for GC, in that case both key and value are removed
 
 <br>
 
@@ -192,6 +192,7 @@ Resources
 * [Safepoints in HotSpot JVM](http://blog.ragozin.info/2012/10/safepoints-in-hotspot-jvm.html)
 * [Java Mission Control (JMC) and Flight Recorder (JFR)](https://www.hascode.com/2017/10/java-mission-control-jmc-and-flight-recorder-jfr)
 * [JMH](http://openjdk.java.net/projects/code-tools/jmh) and [sbt-jmh](https://github.com/ktoso/sbt-jmh)
+* [What is JMX?](https://www.journaldev.com/1352/what-is-jmx-mbean-jconsole-tutorial) and [Jolokia](https://jolokia.org)
 
 **Latency** describes the amount of time that it takes for an observed process to be completed
 
