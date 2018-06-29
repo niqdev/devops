@@ -1,21 +1,89 @@
 # Scala
 
-Resources
+> TODO question-answer style
 
-* [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
+## Fundamentals
+
+* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) 2016/3rd by Martin Odersky, Lex Spoon, and Bill Venners (Book)
+* [Akka in Action](https://www.manning.com/books/akka-in-action) 2016 by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
 * [Tour of Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)
 * [Twitter Scala School](https://twitter.github.io/scala_school)
 * [Scala Puzzlers](http://scalapuzzlers.com)
 * [S-99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99)
 * [Scala Exercises](https://www.scala-exercises.org)
+
+> TODO
+
+## Collections
+
+* [Documentation](https://docs.scala-lang.org/overviews/collections/introduction.html)
+
+> TODO
+
+## Functional Programming
+
+* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) 2014 by Paul Chiusano and Runar Bjarnason (Book)
+* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) 2016 by Vincent Theron, Michael Diamant (Book)
+* [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
+* [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
+* [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (paper)
+* [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (paper)
+* [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (paper)
+* [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (paper)
+* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+
+> TODO
+
+### Typeclass
+
+* [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
+* [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
+* [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
-Books
+> TODO
 
-* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners
-* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason
-* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant
-* [Akka in Action](https://www.manning.com/books/akka-in-action) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams
+http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101
+https://markhneedham.com/blog/2012/05/22/scalahaskell-a-simple-example-of-type-classes/
+http://www.casualmiracles.com/2012/05/03/a-small-example-of-the-typeclass-pattern-in-scala/
+
+### Semigroup, Functor, Applicative and Monad
+
+> TODO
+
+https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
+https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
+http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html
+
+TODO
+```
+algebraic data type
+a monad is a typeclass with a unit and flatMap method
+Scala enables the typeclass pattern using traits and implicits - ad-hoc (by function) polymorphism ? alternative to inheritance ?
+
+Type classes are a powerful tool used in functional programming to enable ad-hoc polymorphism, more commonly known as overloading. Where many object-oriented languages leverage subtyping for polymorphic code, functional programming tends towards a combination of parametric polymorphism (think type parameters, like Java generics) and ad-hoc polymorphism.
+```
+
+## Best practices and tips
+
+> TODO
+
+---
+
+```
+# best practices
+https://stackoverflow.com/questions/5827510/how-to-override-apply-in-a-case-class-companion
+
+# type projector
+https://typelevel.org/blog/2015/07/13/type-members-parameters.html
+
+# jvm stack
+https://www.artima.com/insidejvm/ed2/jvm8.html
+https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames
+```
+
+---
 
 ![scala-hierarchy](img/scala-hierarchy.png)
 
