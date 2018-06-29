@@ -2,10 +2,14 @@
 
 The following guide explains how to provision a Multi Node Hadoop Cluster locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/hadoop/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
 
-Documentation
+Resources
 
 * [Hadoop](https://hadoop.apache.org)
+
+* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) 2015/4th by Tom White (Book)
+
 * [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
+
 * [Hadoop Internals](https://ercoppa.github.io/HadoopInternals)
 
 ### Setup
@@ -288,13 +292,22 @@ hadoop fs -cat sorted-data/part-r-00000
 
 > **Spark** is an open-source cluster-computing framework
 
-Documentation
+Resources
 
 * [Spark](https://spark.apache.org/docs/latest)
+
+* [Spark in Action](https://www.manning.com/books/spark-in-action) 2016 by Petar Zečević and Marko Bonaći (Book)
+
+* [Big Data Analysis with Scala and Spark](https://www.coursera.org/learn/scala-spark-big-data) (Course)
+
 * [How-to: Tune Your Apache Spark Jobs](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1) series
+
 * [Understanding Resource Allocation configurations for a Spark application](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application)
+
 * [Apache Spark: Config Cheatsheet](http://c2fo.io/c2fo/spark/aws/emr/2016/07/06/apache-spark-config-cheatsheet)
+
 * [Mastering Apache Spark](https://legacy.gitbook.com/book/jaceklaskowski/mastering-apache-spark)
+
 * [Managing Spark Partitions with Coalesce and Repartition](https://hackernoon.com/managing-spark-partitions-with-coalesce-and-repartition-4050c57ad5c4)
 
 ![spark-architecture](img/spark-architecture.png)

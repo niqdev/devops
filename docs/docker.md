@@ -2,9 +2,11 @@
 
 > **Docker** is an open platform for developers and sysadmins to build, ship, and run distributed applications
 
-Documentation
+Resources
 
 * [Docker](https://docs.docker.com)
+
+* [Docker in Action](https://www.manning.com/books/docker-in-action) 2016 by Jeff Nickoloff (Book)
 
 ## How-To
 
