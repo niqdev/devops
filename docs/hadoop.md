@@ -4,9 +4,9 @@ The following guide explains how to provision a Multi Node Hadoop Cluster locall
 
 Resources
 
-* [Hadoop](https://hadoop.apache.org)
+* [Documentation](https://hadoop.apache.org)
 
-* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) 2015/4th by Tom White (Book)
+* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (2015)(4th) by Tom White (Book)
 
 * [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
 
@@ -294,9 +294,9 @@ hadoop fs -cat sorted-data/part-r-00000
 
 Resources
 
-* [Spark](https://spark.apache.org/docs/latest)
+* [Documentation](https://spark.apache.org/docs/latest)
 
-* [Spark in Action](https://www.manning.com/books/spark-in-action) 2016 by Petar Zečević and Marko Bonaći (Book)
+* [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći (Book)
 
 * [Big Data Analysis with Scala and Spark](https://www.coursera.org/learn/scala-spark-big-data) (Course)
 
@@ -398,9 +398,9 @@ spark-submit \
 
 > **Zeppelin** is a web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more
 
-Documentation
+Resources
 
-* [Zeppelin](https://zeppelin.apache.org)
+* [Documentation](https://zeppelin.apache.org)
 
 ### Setup
 
@@ -441,9 +441,9 @@ Cluster issue: verify to have enough memory with `free -m` e.g. *Error: Cannot a
 
 > **Oozie** is a workflow scheduler system to manage Hadoop jobs
 
-Documentation
+Resources
 
-* [Oozie](https://oozie.apache.org)
+* [Documentation](https://oozie.apache.org)
 
 ### Setup
 

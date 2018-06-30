@@ -4,8 +4,8 @@
 
 ## Fundamentals
 
-* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) 2016/3rd by Martin Odersky, Lex Spoon, and Bill Venners (Book)
-* [Akka in Action](https://www.manning.com/books/akka-in-action) 2016 by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
+* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners (Book)
+* [Akka in Action](https://www.manning.com/books/akka-in-action) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
 * [Tour of Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)
 * [Twitter Scala School](https://twitter.github.io/scala_school)
 * [Scala Puzzlers](http://scalapuzzlers.com)
@@ -22,8 +22,8 @@
 
 ## Functional Programming
 
-* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) 2014 by Paul Chiusano and Runar Bjarnason (Book)
-* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) 2016 by Vincent Theron, Michael Diamant (Book)
+* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
+* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
 * [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (paper)

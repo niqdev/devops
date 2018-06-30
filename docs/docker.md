@@ -4,9 +4,9 @@
 
 Resources
 
-* [Docker](https://docs.docker.com)
+* [Documentation](https://docs.docker.com)
 
-* [Docker in Action](https://www.manning.com/books/docker-in-action) 2016 by Jeff Nickoloff (Book)
+* [Docker in Action](https://www.manning.com/books/docker-in-action) (2016) by Jeff Nickoloff (Book)
 
 ## How-To
 

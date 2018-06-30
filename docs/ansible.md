@@ -2,9 +2,9 @@
 
 > **Ansible** is an open source automation platform that can help with config management, deployment and task automation
 
-Documentation
+Resources
 
-* [Ansible](http://docs.ansible.com/ansible/latest/index.html)
+* [Documentation](http://docs.ansible.com/ansible/latest/index.html)
 * [Tutorial](https://serversforhackers.com/c/an-ansible2-tutorial)
 * [Playbook example](https://gist.github.com/marktheunissen/2979474)
 

@@ -2,9 +2,9 @@
 
 > **Kubernetes** is a system for automating deployment, scaling, and management of containerized applications
 
-Documentation
+Resources
 
-* [Kubernetes](https://kubernetes.io/docs/home/?path=browse)
+* [Documentation](https://kubernetes.io/docs/home)
 * [Kubernetes by Example](http://kubernetesbyexample.com)
 * [Running akka-cluster on Kubernetes](https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951)
 

@@ -2,9 +2,9 @@
 
 > **ZooKeeper** is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services
 
-Documentation
+Resources
 
-* [ZooKeeper](https://zookeeper.apache.org)
+* [Documentation](https://zookeeper.apache.org)
 
 * [Curator](https://curator.apache.org)
 

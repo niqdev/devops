@@ -14,9 +14,9 @@
 
 > **Vagrant** is a tool for building and managing virtual machine environments in a single workflow
 
-Documentation
+Resources
 
-* [Vagrant](https://www.vagrantup.com/docs)
+* [Documentation](https://www.vagrantup.com/docs)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 Setup project creating a Vagrantfile
@@ -53,9 +53,9 @@ vagrant destory -f
 
 > **MkDocs** is a static site generator
 
-Documentation
+Resources
 
-* [MkDocs](http://www.mkdocs.org)
+* [Documentation](http://www.mkdocs.org)
 
 Install
 ```bash
@@ -84,9 +84,9 @@ mkdocs gh-deploy
 
 > **SDKMAN!** is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems
 
-Documentation
+Resources
 
-* [SDKMAN!](http://sdkman.io)
+* [Documentation](http://sdkman.io)
 
 Setup
 ```
@@ -132,9 +132,9 @@ sbt new sbt/scala-seed.g8
 
 > **Giter8** is a command line tool to generate files and directories from templates published on GitHub or any other git repository
 
-Documentation
+Resources
 
-* [Giter8](http://www.foundweekends.org/giter8)
+* [Documentation](http://www.foundweekends.org/giter8)
 * [Templates](https://github.com/foundweekends/giter8/wiki/giter8-templates)
 
 Setup
@@ -159,9 +159,9 @@ g8 sbt/scala-seed.g8 --name=my-new-website
 
 ## Snap
 
-Documentation
+Resources
 
-* [Snap](https://docs.snapcraft.io)
+* [Documentation](https://docs.snapcraft.io)
 
 Useful commands
 ```bash
@@ -182,7 +182,7 @@ snap list
 
 ## Python
 
-Documentation
+Resources
 
 * [pip](https://pip.pypa.io/en/stable/user_guide)
 * [virtualenv](https://virtualenv.pypa.io/en/stable/userguide)
@@ -256,7 +256,7 @@ touch app/{__init__,main}.py
 
 ## Git
 
-Documentation
+Resources
 
 * [git - the simple guide](https://rogerdudler.github.io/git-guide)
 * [git notes (1)](https://github.com/niqdev/git-notes/blob/master/git-real-1.md)
@@ -266,7 +266,7 @@ Documentation
 
 ## Mercurial
 
-Documentation
+Resources
 
 * [A Guide to Branching in Mercurial](http://stevelosh.com/blog/2009/08/a-guide-to-branching-in-mercurial)
 
