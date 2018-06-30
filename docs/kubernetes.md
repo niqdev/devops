@@ -5,7 +5,11 @@
 Resources
 
 * [Documentation](https://kubernetes.io/docs/home)
+
+* [Kubernetes in Action](https://amzn.to/2yXEGWx) (2017) by Marko Lukša (Book)
+
 * [Kubernetes by Example](http://kubernetesbyexample.com)
+
 * [Running akka-cluster on Kubernetes](https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951)
 
 ## Setup

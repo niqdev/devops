@@ -65,9 +65,7 @@
 
 ## Books
 
-* [How Linux Works](https://nostarch.com/howlinuxworks2) (2014)(2nd) by Brian Ward
-
-* [Designing Data-Intensive Applications](http://dataintensive.net) (2017) by Martin Kleppmann
+* [Designing Data-Intensive Applications](https://amzn.to/2lKJMvU) (2017) by Martin Kleppmann
 
 * [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
 

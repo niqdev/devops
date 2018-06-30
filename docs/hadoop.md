@@ -6,7 +6,7 @@ Resources
 
 * [Documentation](https://hadoop.apache.org)
 
-* [Hadoop: The Definitive Guide](http://shop.oreilly.com/product/0636920033448.do) (2015)(4th) by Tom White (Book)
+* [Hadoop: The Definitive Guide](https://amzn.to/2Kxc8bg) (2015)(4th) by Tom White (Book)
 
 * [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
 
@@ -296,7 +296,7 @@ Resources
 
 * [Documentation](https://spark.apache.org/docs/latest)
 
-* [Spark in Action](https://www.manning.com/books/spark-in-action) (2016) by Petar Zečević and Marko Bonaći (Book)
+* [Spark in Action](https://amzn.to/2MzgHio) (2016) by Petar Zečević and Marko Bonaći (Book)
 
 * [Big Data Analysis with Scala and Spark](https://www.coursera.org/learn/scala-spark-big-data) (Course)
 

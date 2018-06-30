@@ -5,7 +5,11 @@
 Resources
 
 * [Documentation](http://docs.ansible.com/ansible/latest/index.html)
+
+* [Ansible - Up and Running](https://amzn.to/2IDtDSd) (2017) by Lorin Hochstein and Rene Moser (Book)
+
 * [Tutorial](https://serversforhackers.com/c/an-ansible2-tutorial)
+
 * [Playbook example](https://gist.github.com/marktheunissen/2979474)
 
 The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.

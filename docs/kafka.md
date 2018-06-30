@@ -6,7 +6,7 @@ Resources
 
 * [Documentation](https://kafka.apache.org)
 
-* [Kafka: The Definitive Guide](http://shop.oreilly.com/product/0636920044123.do) (2017) by Gwen Shapira, Neha Narkhede, Todd Palino (Book)
+* [Kafka: The Definitive Guide](https://amzn.to/2tQCryv) (2017) by Gwen Shapira, Neha Narkhede, Todd Palino (Book)
 
 * [Kafka: a Distributed Messaging System for Log Processing](http://notes.stephenholiday.com/Kafka.pdf) (Paper)
 

@@ -6,7 +6,7 @@ Resources
 
 * [Documentation](https://cassandra.apache.org)
 
-* [Cassandra: The Definitive Guide](http://shop.oreilly.com/product/0636920043041.do) (2016)(4th) by Eben Hewitt, Jeff Carpenter (Book)
+* [Cassandra: The Definitive Guide](https://amzn.to/2KvnEjY) (2016)(4th) by Eben Hewitt, Jeff Carpenter (Book)
 
 * [A Decentralized Structured Storage System](https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf) (Paper)
 
