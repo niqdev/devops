@@ -47,9 +47,15 @@
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
+TODO
+* Semigroup: compose
+* Monoid: compose + identity
+* Functor
+* Monad
+
 What is a Monoid? Is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
 
-* associative a + (b + c) == (a + b) + c
+* associative e.g `a + (b + c) == (a + b) + c`
 * identity e.g. sum is 1
 
 ```scala
@@ -69,7 +75,7 @@ val stringMonoid = new Monoid[String] {
 }
 ```
 
-Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold
+Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold, hence this allows parallel computation. The real power of monoids comes from the fact that they compose, this means, for example, that if types A and B are monoids, then the tuple type (A, B) is also a monoid (called their product)
 
 ```scala
 scala> List("first", "second", "third").foldLeft(stringMonoid.zero)(stringMonoid.op)
@@ -78,6 +84,66 @@ res: String = firstsecondthird
 ```
 
 * A function having the same argument and return type is sometimes called an endofunction
+
+TODO Functor and Monad
+
+* associative e.g. `x.flatMap(f).flatMap(g) == x.flatMap(a => f(a).flatMap(g))`
+* monadic functions of types like `A => F[B]` are called Kleisli arrows
+
+A Monad is an implementation of one of the minimal sets of monadic combinators, satisfying the laws of associativity and identity
+
+* unit and flatMap
+* unit and compose
+* unit, map and join
+
+```scala
+// F is a higher-order type constructor or a higher-kinded type
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+
+// all Monads are Functors but the opposite is not true
+trait Monad[F[_]] extends Functor[F] {
+  def unit[A](a: => A): F[A]
+  def flatMap[A, B](ma: F[A])(f: A => F[B]): F[B]
+  def compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C]
+  def join[A](mma: F[F[A]]): F[A]
+
+  def map[A, B](ma: F[A])(f: A => B): F[B] =
+    flatMap(ma)(a => unit(f(a)))
+  def map2[A, B, C](ma: F[A], mb: F[B])(f: (A, B) => C): F[C] =
+    flatMap(ma)(a => map(mb)(b => f(a, b)))
+}
+```
+
+A Monad provide a context for introducing and binding variables, and performing variable substitution
+
+```scala
+object Monad {
+  case class Id[A](value: A) {
+    def map[B](f: A => B): Id[B] =
+      Id(f(value))
+    def flatMap[B](f: A => Id[B]): Id[B] =
+      f(value)
+  }
+
+  val idMonad: Monad[Id] = new Monad[Id] {
+    override def unit[A](a: => A): Id[A] = Id(a)
+
+    override def flatMap[A, B](ma: Id[A])(f: A => Id[B]): Id[B] =
+      ma.flatMap(f)
+  }
+}
+
+Monad.Id("hello ").flatMap(a => Monad.Id("world").flatMap(b => Monad.Id(a + b)))
+
+for {
+  a <- Monad.Id("hello ")
+  b <- Monad.Id("world")
+} yield a + b
+
+res: Monad.Id[String] = Id(hello world)
+```
 
 > TODO
 
