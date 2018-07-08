@@ -47,6 +47,38 @@
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
+What is a Monoid? Is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
+
+* associative a + (b + c) == (a + b) + c
+* identity e.g. sum is 1
+
+```scala
+trait Monoid[A] {
+  // associativity
+  // op(op(x, y), z) == op(x, op(y, z))
+  def op(x: A, y: A): A
+
+  // identity
+  // op(x, zero) == op(zero, x) == x
+  def zero: A
+}
+
+val stringMonoid = new Monoid[String] {
+  override def op(x: String, y: String): String = x + y
+  override def zero: String = ""
+}
+```
+
+Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold
+
+```scala
+scala> List("first", "second", "third").foldLeft(stringMonoid.zero)(stringMonoid.op)
+scala> List("first", "second", "third").foldRight(stringMonoid.zero)(stringMonoid.op)
+res: String = firstsecondthird
+```
+
+* A function having the same argument and return type is sometimes called an endofunction
+
 > TODO
 
 http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101
@@ -182,6 +214,9 @@ the method call xs.::(x) , which in turn calls the data constructor ::(x,xs)
 * companion object
 * a **variadic function** accepts zero or more arguments
 * algebraic data type (ADT)
+
+an API should form an algebra — that is, a collection of data types, functions over these data types, and importantly, laws or properties that express relationships between these functions
+
 * volatile
 * compare and swap
 * javap

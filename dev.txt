@@ -9,6 +9,9 @@ TODO
 * add notes from JVM memory course, jps
 java -XX:+PrintFlagsFinal -version
 
+>>> example: jmh + scalacheck
+https://www.scalacheck.org/documentation.html
+
 * review kubernetes + minikube
 
 * aws: emr + s3
