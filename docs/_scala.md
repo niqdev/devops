@@ -48,10 +48,12 @@
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
 TODO
-* Semigroup: compose
-* Monoid: compose + identity
-* Functor
-* Monad
+* Semigroup: associativity
+* Monoid: associativity + identity
+* Functor: map
+* Monad: any of 3 monadic laws (e.g. unit + flatMap) + associativity and identity (extends Functor)
+* Applicative functor
+* Traversable functor
 
 What is a Monoid? Is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
 
@@ -114,6 +116,19 @@ trait Monad[F[_]] extends Functor[F] {
   def map2[A, B, C](ma: F[A], mb: F[B])(f: (A, B) => C): F[C] =
     flatMap(ma)(a => map(mb)(b => f(a, b)))
 }
+
+trait Monad[F[_]] extends Applicative[F] {
+  def flatMap[A, B](fa: F[A])(f: A => F[B]): F[B] =
+    join(map(fa)(f))
+  def join[A](ffa: F[F[A]]): F[A] =
+    flatMap(ffa)(fa => fa)
+  def compose[A,B,C](f: A => F[B], g: B => F[C]): A => F[C] =
+    a => flatMap(f(a))(g)
+  def map[B](fa: F[A])(f: A => B): F[B] =
+    flatMap(fa)((a: A) => unit(f(a)))
+  def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C] =
+    flatMap(fa)(a => map(fb)(b => f(a,b)))
+}
 ```
 
 A Monad provide a context for introducing and binding variables, and performing variable substitution
@@ -144,6 +159,30 @@ for {
 
 res: Monad.Id[String] = Id(hello world)
 ```
+
+* TODO Applicative
+
+- all applicatives are functors
+- all monads are applicative functors, viceversa is not true
+
+```scala
+trait Applicative[F[_]] extends Functor[F] {
+  // primitive combinators
+  def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C]
+  def unit[A](a: => A): F[A]
+
+  // derived combinators
+  def map[A, B](fa: F[A])(f: A => B): F[B] =
+    map2(fa, unit(()))((a, _) => f(a))
+  def traverse[A, B](as: List[A])(f: A => F[B]): F[List[B]] =
+    as.foldRight(unit(List[B]()))((a, fbs) => map2(f(a), fbs)(_ :: _))
+}
+```
+
+Laws
+* Left and right identity
+* Associativity
+* Naturality of product
 
 > TODO
 
