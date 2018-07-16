@@ -22,6 +22,10 @@
 
 ## Functional Programming
 
+* [Functional Programming Basics](https://pragprog.com/magazines/2013-01/functional-programming-basics)
+* [Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
+* [The Downfall of Imperative Programming](https://www.fpcomplete.com/blog/2012/04/the-downfall-of-imperative-programming)
+* [Parallelism and concurrency need different tools](http://yosefk.com/blog/parallelism-and-concurrency-need-different-tools.html)
 * [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
@@ -31,6 +35,8 @@
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (paper)
 * [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+* [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
+* [OCaml taste](https://ocaml.org/learn/taste.html)
 
 > TODO
 
