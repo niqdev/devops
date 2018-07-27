@@ -310,6 +310,8 @@ Resources
 
 * [Managing Spark Partitions with Coalesce and Repartition](https://hackernoon.com/managing-spark-partitions-with-coalesce-and-repartition-4050c57ad5c4)
 
+* [Understanding Apache Spark on YARN](http://sujithjay.com/2018/07/24/Understanding-Apache-Spark-on-YARN/)
+
 ![spark-architecture](img/spark-architecture.png)
 
 Spark application on YARN
