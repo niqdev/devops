@@ -1,5 +1,7 @@
 # Scala
 
+> TODO amazon links
+
 > TODO question-answer style
 
 ## Fundamentals
@@ -28,7 +30,10 @@
 * [Parallelism and concurrency need different tools](http://yosefk.com/blog/parallelism-and-concurrency-need-different-tools.html)
 * [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
+* [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book) (book)
+* [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
+* [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
 * [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (paper)
 * [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (paper)
@@ -46,6 +51,8 @@
 * [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
+
+A Type Class is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code
 
 TODO
 * Semigroup: associativity
@@ -279,12 +286,23 @@ object MyList {
 MyList(1, 2, 3, 4, 5)
 ```
 
+*What's an Algebraic Data Type?*
+
+In type theory, regular data structures can be described in terms of sums, products and recursive types. This leads to an algebra for describing data structures (and so-called algebraic data types). Such data types are common in statically typed functional languages
+
 An **algebraic data type** (ADT) is just a data type defined by one or more data constructors, each of which may contain zero or more arguments.
 We say that the data type is the sum or union of its data constructors, and each data constructor is the product of its arguments, hence the name algebraic data type
 ```scala
 sealed trait Tree[+A]
 case class Leaf[A](value: A) extends Tree[A]
 case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
+```
+
+These types represent a SUM type because Shape is a Circle OR a Rectangle; Circle is a PRODUCT type because it has a radius; and Rectangle is also PRODUCT type because it has a width AND a height.
+```scala
+sealed trait Shape
+final case class Circle(radius: Double) extends Shape
+final case class Rectangle(width: Double, height: Double) extends Shape
 ```
 
 ---
