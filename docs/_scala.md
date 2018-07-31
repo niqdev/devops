@@ -31,7 +31,6 @@
 * [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
 * [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book) (book)
-* [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
@@ -42,6 +41,12 @@
 * [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
 * [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
 * [OCaml taste](https://ocaml.org/learn/taste.html)
+
+* [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
+* [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
+* [Scala's Types of Types](https://ktoso.github.io/scala-types-of-types)
+* [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
+* [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 
 > TODO
 
