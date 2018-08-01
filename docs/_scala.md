@@ -4,62 +4,69 @@
 
 > TODO question-answer style
 
-## Fundamentals
+## Resources
+
+**Fundamentals**
 
 * [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners (Book)
+* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
 * [Akka in Action](https://www.manning.com/books/akka-in-action) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
+
 * [Tour of Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)
 * [Twitter Scala School](https://twitter.github.io/scala_school)
 * [Scala Puzzlers](http://scalapuzzlers.com)
 * [S-99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99)
 * [Scala Exercises](https://www.scala-exercises.org)
+* [Scala Collections](https://docs.scala-lang.org/overviews/collections/introduction.html)
 
-> TODO
+**Functional Programming**
 
-## Collections
+* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
+* [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book) (2017) by Alvin Alexander (Book)
 
-* [Documentation](https://docs.scala-lang.org/overviews/collections/introduction.html)
+* [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (Paper)
+* [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (Paper)
+* [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (Paper)
+* [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
+* [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 
-> TODO
-
-## Functional Programming
+**FP intro**
 
 * [Functional Programming Basics](https://pragprog.com/magazines/2013-01/functional-programming-basics)
 * [Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
 * [The Downfall of Imperative Programming](https://www.fpcomplete.com/blog/2012/04/the-downfall-of-imperative-programming)
 * [Parallelism and concurrency need different tools](http://yosefk.com/blog/parallelism-and-concurrency-need-different-tools.html)
-* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
-* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
-* [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book) (book)
-* [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
-* [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
-* [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (paper)
-* [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (paper)
-* [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (paper)
-* [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (paper)
-* [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (paper)
-* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
-* [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
-* [OCaml taste](https://ocaml.org/learn/taste.html)
 
-* [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
-* [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
 * [Scala's Types of Types](https://ktoso.github.io/scala-types-of-types)
 * [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
-* [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
+* [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
+* [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
+
+**FP libraries**
+
+* [Typelevel projects](https://typelevel.org)
+* [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
 * [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
 * [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
+* [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
+* [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
 
-> TODO
+**FP languages**
 
-### Typeclass
+* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+* [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
+* [OCaml taste](https://ocaml.org/learn/taste.html)
+
+**Typeclass**
 
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
 * [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
+
+## Q&A
 
 A Type Class is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code
 
