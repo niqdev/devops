@@ -47,6 +47,7 @@
 * [Scala's Types of Types](https://ktoso.github.io/scala-types-of-types)
 * [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
+* [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
 
 > TODO
 
