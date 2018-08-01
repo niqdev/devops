@@ -1,16 +1,12 @@
 # Scala
 
-> TODO amazon links
-
-> TODO question-answer style
-
 ## Resources
 
 **Fundamentals**
 
-* [Programming in Scala](https://www.artima.com/shop/programming_in_scala) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners (Book)
-* [Scala High Performance Programming](https://www.packtpub.com/application-development/scala-high-performance-programming) (2016) by Vincent Theron, Michael Diamant (Book)
-* [Akka in Action](https://www.manning.com/books/akka-in-action) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
+* [Programming in Scala](https://amzn.to/2OAAgc3) (2016)(3rd) by Martin Odersky, Lex Spoon, and Bill Venners (Book)
+* [Scala High Performance Programming](https://amzn.to/2Oy7QiS) (2016) by Vincent Theron, Michael Diamant (Book)
+* [Akka in Action](https://amzn.to/2vsTesn) (2016) by Raymond Roestenburg, Rob Bakker, and Rob Williams (Book)
 
 * [Tour of Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)
 * [Twitter Scala School](https://twitter.github.io/scala_school)
@@ -21,8 +17,8 @@
 
 **Functional Programming**
 
-* [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala) (2014) by Paul Chiusano and Runar Bjarnason (Book)
-* [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book) (2017) by Alvin Alexander (Book)
+* [Functional Programming in Scala](https://amzn.to/2OCFpQG) (2014) by Paul Chiusano and Runar Bjarnason (Book)
+* [Functional Programming, Simplified](https://amzn.to/2OCFROS) (2017) by Alvin Alexander (Book)
 
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (Paper)
 * [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (Paper)
@@ -48,6 +44,7 @@
 
 * [Typelevel projects](https://typelevel.org)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
+* [The Type Astronaut's Guide to Shapeless](https://underscore.io/books/shapeless-guide) (Book)
 * [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
 * [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
@@ -67,6 +64,8 @@
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
 ## Q&A
+
+> TODO amazon links
 
 A Type Class is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code
 
