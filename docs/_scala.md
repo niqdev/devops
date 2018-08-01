@@ -48,6 +48,9 @@
 * [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
+* [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
+* [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
+* [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
 
 > TODO
 
