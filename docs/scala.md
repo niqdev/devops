@@ -63,9 +63,9 @@
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
-## Q&A
+<!--
 
-> TODO amazon links
+## Q&A
 
 A Type Class is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code
 
@@ -370,5 +370,7 @@ sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
 ```
+
+-->
 
 <br>
