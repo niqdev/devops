@@ -52,6 +52,8 @@
 
 * [Jepsen](https://aphyr.com/tags/Jepsen)
 
+* [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read)
+
 **CAP Theorem**
 
 * [Brewer's CAP Theorem](http://www.julianbrowne.com/article/brewers-cap-theorem)
