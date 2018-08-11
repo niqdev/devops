@@ -47,10 +47,12 @@
 * [The Type Astronaut's Guide to Shapeless](https://underscore.io/books/shapeless-guide) (Book)
 * [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
 * [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
+* [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
+* [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
 * [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
 
-**FP languages**
+**Other FP languages**
 
 * [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
 * [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
@@ -59,11 +61,19 @@
 **Typeclass**
 
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
+* [Type classes in Scala](https://blog.scalac.io/2017/04/19/typeclasses-in-scala.html)
 * [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
 <!--
+
+blogs + twitter
+
+https://typelevel.org/blog
+https://blog.scalac.io
+https://www.signifytechnology.com/blog
+https://scalatimes.com
 
 ## Q&A
 
