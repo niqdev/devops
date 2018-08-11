@@ -52,6 +52,8 @@
 
 * [Jepsen](https://aphyr.com/tags/Jepsen)
 
+* [The world beyond batch: Streaming 101](https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101)
+
 * [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read)
 
 **CAP Theorem**
