@@ -12,6 +12,10 @@ Resources
 
 * [Schema Registry](https://docs.confluent.io/current/schema-registry/docs/index.html)
 
+* [KafkaProducer javadocs](https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html)
+
+* [KafkaConsumer javadocs](https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html)
+
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
