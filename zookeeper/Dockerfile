@@ -1,7 +1,7 @@
 FROM devops/base:latest
 #FROM niqdev/phusion-base:latest
 
-ARG VERSION=3.4.12
+ARG VERSION=3.4.13
 
 ENV ZOOKEEPER_HOME "/opt/zookeeper"
 ENV PATH "$ZOOKEEPER_HOME/bin:$PATH"
