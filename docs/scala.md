@@ -66,6 +66,11 @@
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
+**Other patterns**
+
+* [Cake pattern](https://medium.com/@itseranga/scala-cake-pattern-e0cd894dae4e)
+* [Magnet pattern](http://spray.io/blog/2012-12-13-the-magnet-pattern)
+
 <!--
 
 blogs + twitter
