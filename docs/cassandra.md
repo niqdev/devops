@@ -10,7 +10,7 @@ Resources
 
 * [A Decentralized Structured Storage System](https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf) (Paper)
 
-* [A Big Data Modeling Methodology for Apache Cassandra](https://pdfs.semanticscholar.org/22c6/740341ef13d3c5ee52044a4fbaad911f7322.pdf) (Paper)
+* [A Big Data Modeling Methodology for Apache Cassandra](http://www.cs.wayne.edu/andrey/papers/TR-BIGDATA-05-2015-CKL.pdf) (Paper)
 
 * [Facebook’s Cassandra paper](https://docs.datastax.com/en/articles/cassandra/cassandrathenandnow.html)
 
