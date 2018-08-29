@@ -10,6 +10,8 @@ Resources
 
 * [Kubernetes by Example](http://kubernetesbyexample.com)
 
+* [Kubernetes comic](https://cloud.google.com/kubernetes-engine/kubernetes-comic)
+
 * [Running akka-cluster on Kubernetes](https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951)
 
 ## Setup
