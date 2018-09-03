@@ -1,5 +1,7 @@
 DEV info
 
+* rename + domain: to not-only-devops ?
+
 ---
 
 TODO
