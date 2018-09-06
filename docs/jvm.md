@@ -8,6 +8,7 @@ Resources
 * [The Java HotSpot Performance Engine Architecture](http://www.oracle.com/technetwork/java/whitepaper-135217.html)
 * [Memory Management in the Java HotSpot Virtual Machine](http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
 * [JVM Architecture 101](https://blog.takipi.com/jvm-architecture-101-get-to-know-your-virtual-machine)
+* [Inside the Java Virtual Machine](https://www.artima.com/insidejvm/ed2/index.html)
 * [JVM Internals](http://blog.jamesdbloom.com/JVMInternals.html)
 * [Java Code to Byte Code](http://blog.jamesdbloom.com/JavaCodeToByteCode_PartOne.html)
 * [Understanding Java Garbage Collection](https://www.cubrid.org/blog/understanding-java-garbage-collection)
