@@ -97,3 +97,11 @@ https://github.com/martinprobson/vagrant-hadoop-hive-spark
 # course
 https://www.coursera.org/learn/machine-learning
 https://developers.google.com/machine-learning/crash-course
+
+# scala tests
+https://orrsella.com/2014/09/24/integration-and-end-to-end-test-configurations-in-sbt-for-scala-java-projects
+http://www.unstablebuild.com/2017/04/13/scala-projects-and-integration-tests.html
+https://alexromanov.github.io/2016/07/15/cucumber-scala-sbt
+https://github.com/lewismj/cucumber
+https://github.com/jecklgamis/cucumber-jvm-scala-example
+https://localstack.cloud
