@@ -56,6 +56,8 @@
 
 * [The world beyond batch: Streaming 101](https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101)
 
+* [Exploring CQRS and Event Sourcing](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10))
+
 * [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read)
 
 **CAP Theorem**
