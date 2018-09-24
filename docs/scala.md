@@ -39,6 +39,7 @@
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
 * [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
 * [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
+* [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala/)
 
 **FP libraries**
 
