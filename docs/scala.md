@@ -1,4 +1,4 @@
-# Scala
+# Scala [WIP]
 
 ## Resources
 
@@ -15,7 +15,7 @@
 * [Scala Exercises](https://www.scala-exercises.org)
 * [Scala Collections](https://docs.scala-lang.org/overviews/collections/introduction.html)
 
-**Functional Programming**
+**FP resources**
 
 * [Functional Programming in Scala](https://amzn.to/2OCFpQG) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Functional Programming, Simplified](https://amzn.to/2OCFROS) (2017) by Alvin Alexander (Book)
@@ -26,7 +26,7 @@
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 
-**FP resources**
+**FP basic**
 
 * [Functional Programming Basics](https://pragprog.com/magazines/2013-01/functional-programming-basics)
 * [Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
@@ -40,7 +40,13 @@
 * [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
 * [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala/)
 
-* [Typelevel projects](https://typelevel.org)
+**FP advanced**
+
+* [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+* [Demystifying the Monad in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534)
+* [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
+* [Stackless Scala](http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html)
+
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
 * [The Type Astronaut's Guide to Shapeless](https://underscore.io/books/shapeless-guide) (Book)
 * [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
@@ -57,6 +63,9 @@
 * [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
+* [Typeclasses 101](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
+* [Scala/Haskell: A simple example of type classes](https://markhneedham.com/blog/2012/05/22/scalahaskell-a-simple-example-of-type-classes)
+* [A Small Example of the Typeclass Pattern in Scala](http://www.casualmiracles.com/2012/05/03/a-small-example-of-the-typeclass-pattern-in-scala)
 
 **Patterns**
 
@@ -70,50 +79,48 @@
 * [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
 * [OCaml taste](https://ocaml.org/learn/taste.html)
 
-<!--
+**Blogs**
 
-for (i <- List(1, 2, 3)) println(i)
-
-TODO
-// (1) works because `foreach` is defined
-for (p <- peeps) println(p)
-// (2) `yield` works because `map` is defined
-val res: Sequence[Int] = for {
-i <- ints
-} yield i * 2
-res.foreach(println)
-// (3) `if` works because `withFilter` is defined
-val res = for {
-i <- ints
-if i > 2
-} yield i*2
-// (4) works because `flatMap` is defined
-val mutualFriends = for {
-myFriend <- myFriends // generator
-adamsFriend <- adamsFriends // generator
-if (myFriend.name == adamsFriend.name)
-} yield myFriend
-
-blogs + twitter
-
-https://typelevel.org/blog
-https://blog.scalac.io
-https://www.signifytechnology.com/blog
-https://scalatimes.com
+* [Typelevel](https://typelevel.org/blog)
+* [Scalac](https://blog.scalac.io)
+* [Signify](https://www.signifytechnology.com/blog)
+* [Scala Times](https://scalatimes.com)
 
 ## Q&A
 
-A Type Class is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code
+> How `for-comprehensions` is desugared? ([docs](https://docs.scala-lang.org/tour/for-comprehensions.html))
 
-TODO
-* Semigroup: associativity
-* Monoid: associativity + identity
-* Functor: map
-* Monad: any of 3 monadic laws (e.g. unit + flatMap) + associativity and identity (extends Functor)
-* Applicative functor
-* Traversable functor
+```scala
+// (1) works because "foreach" is defined
+scala> for (i <- List(1, 2, 3)) println(i)
+1
+2
+3
 
-What is a Monoid? Is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
+// (2) "yield" works because "map" is defined
+scala> for (i <- List(1, 2, 3)) yield i*2
+res2: List[Int] = List(2, 4, 6)
+
+// (3) "if" works because "withFilter" is defined
+scala> for (i <- List(1, 2, 3, 4); if i%2 == 0) yield i*2
+res3: List[Int] = List(4, 8)
+
+// (4) works because "flatMap" is defined
+scala> for (i <- List(1, 2, 3, 4); j <- List(3, 4, 5, 6); if i == j) yield i
+res4: List[Int] = List(3, 4)
+```
+
+> What is a Typeclass?
+
+A Typeclass is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code using a combination of ad-hoc polymorphism, parametric polymorphism (type parameters) and implicits
+
+> What is a Semigroup?
+
+???
+
+> What is a Monoid?
+
+A Monoid is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
 
 * associative e.g `a + (b + c) == (a + b) + c`
 * identity e.g. sum is 1
@@ -129,13 +136,16 @@ trait Monoid[A] {
   def zero: A
 }
 
+// example
 val stringMonoid = new Monoid[String] {
   override def op(x: String, y: String): String = x + y
   override def zero: String = ""
 }
 ```
 
-Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold, hence this allows parallel computation. The real power of monoids comes from the fact that they compose, this means, for example, that if types A and B are monoids, then the tuple type (A, B) is also a monoid (called their product)
+Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold, hence this allows parallel computation.
+
+The real power of monoids comes from the fact that they compose, this means, for example, that if types A and B are monoids, then the tuple type (A, B) is also a monoid (called their product)
 
 ```scala
 scala> List("first", "second", "third").foldLeft(stringMonoid.zero)(stringMonoid.op)
@@ -143,12 +153,18 @@ scala> List("first", "second", "third").foldRight(stringMonoid.zero)(stringMonoi
 res: String = firstsecondthird
 ```
 
-* A function having the same argument and return type is sometimes called an endofunction
+> What is a Functor?
 
-TODO Functor and Monad
+???
 
-* associative e.g. `x.flatMap(f).flatMap(g) == x.flatMap(a => f(a).flatMap(g))`
-* monadic functions of types like `A => F[B]` are called Kleisli arrows
+```scala
+// F is a higher-order type constructor or a higher-kinded type
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+```
+
+> What is a Monad?
 
 A Monad is an implementation of one of the minimal sets of monadic combinators, satisfying the laws of associativity and identity
 
@@ -156,12 +172,21 @@ A Monad is an implementation of one of the minimal sets of monadic combinators, 
 * unit and compose
 * unit, map and join
 
-```scala
-// F is a higher-order type constructor or a higher-kinded type
-trait Functor[F[_]] {
-  def map[A, B](fa: F[A])(f: A => B): F[B]
-}
+where the above are defined
 
+```scala
+def unit[A](a: => A): F[A]
+def map[A, B](ma: F[A])(f: A => B): F[B]
+def flatMap[A, B](ma: F[A])(f: A => F[B]): F[B]
+def compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C]
+def join[A](mma: F[F[A]]): F[A]
+
+// Identity: compose(unit, f) = f = compose(f, unit)
+// Associativity: compose(compose(f, g), h) = compose(f, compose(g, h))
+```
+
+TODO
+```scala
 // all Monads are Functors but the opposite is not true
 trait Monad[F[_]] extends Functor[F] {
   def unit[A](a: => A): F[A]
@@ -189,7 +214,7 @@ trait Monad[F[_]] extends Applicative[F] {
 }
 ```
 
-A Monad provide a context for introducing and binding variables, and performing variable substitution
+A Monad provide a context for introducing and binding variables and performing variable substitution
 
 ```scala
 object Monad {
@@ -218,10 +243,12 @@ for {
 res: Monad.Id[String] = Id(hello world)
 ```
 
-* TODO Applicative
+> What is an Applicative?
 
-- all applicatives are functors
-- all monads are applicative functors, viceversa is not true
+???
+
+* all applicatives are functors
+* all monads are applicative functors, viceversa is not true
 
 ```scala
 trait Applicative[F[_]] extends Functor[F] {
@@ -237,40 +264,34 @@ trait Applicative[F[_]] extends Functor[F] {
 }
 ```
 
+<!--
+
+Summary
+
+* Semigroup: associativity
+* Monoid: associativity + identity
+* Functor: map
+* Monad: any of 3 monadic laws (e.g. unit + flatMap) + associativity and identity (extends Functor)
+* Applicative functor
+* Traversable functor
+
+blogs + twitter
+
+
+
+* A function having the same argument and return type is sometimes called an endofunction
+
+TODO Functor and Monad
+
+* associative e.g. `x.flatMap(f).flatMap(g) == x.flatMap(a => f(a).flatMap(g))`
+* monadic functions of types like `A => F[B]` are called Kleisli arrows
+
 Laws
 * Left and right identity
 * Associativity
 * Naturality of product
 
-> TODO
-
-http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101
-https://markhneedham.com/blog/2012/05/22/scalahaskell-a-simple-example-of-type-classes/
-http://www.casualmiracles.com/2012/05/03/a-small-example-of-the-typeclass-pattern-in-scala/
-
-### Semigroup, Functor, Applicative and Monad
-
-> TODO
-
-https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
-https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
-http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
-http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html
-
-TODO
-```
-algebraic data type
-a monad is a typeclass with a unit and flatMap method
-Scala enables the typeclass pattern using traits and implicits - ad-hoc (by function) polymorphism ? alternative to inheritance ?
-
-Type classes are a powerful tool used in functional programming to enable ad-hoc polymorphism, more commonly known as overloading. Where many object-oriented languages leverage subtyping for polymorphic code, functional programming tends towards a combination of parametric polymorphism (think type parameters, like Java generics) and ad-hoc polymorphism.
-```
-
 ## Best practices and tips
-
-> TODO
-
----
 
 ```
 # best practices
