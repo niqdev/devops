@@ -15,40 +15,34 @@
 * [Scala Exercises](https://www.scala-exercises.org)
 * [Scala Collections](https://docs.scala-lang.org/overviews/collections/introduction.html)
 
-**FP resources**
+**FP readings**
 
 * [Functional Programming in Scala](https://amzn.to/2OCFpQG) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Functional Programming, Simplified](https://amzn.to/2OCFROS) (2017) by Alvin Alexander (Book)
-
+* [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
+* [The Type Astronaut's Guide to Shapeless](https://underscore.io/books/shapeless-guide) (Book)
 * [Why Functional Programming Matters](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf) (Paper)
 * [The Essence of the Iterator Pattern](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf) (Paper)
 * [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (Paper)
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 
-**FP basic**
+**FP resources**
 
 * [Functional Programming Basics](https://pragprog.com/magazines/2013-01/functional-programming-basics)
 * [Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
 * [The Downfall of Imperative Programming](https://www.fpcomplete.com/blog/2012/04/the-downfall-of-imperative-programming)
 * [Parallelism and concurrency need different tools](http://yosefk.com/blog/parallelism-and-concurrency-need-different-tools.html)
-
 * [Scala's Types of Types](https://ktoso.github.io/scala-types-of-types)
 * [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
 * [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
 * [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala/)
-
-**FP advanced**
-
 * [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 * [Demystifying the Monad in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534)
 * [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
 * [Stackless Scala](http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html)
-
-* [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
-* [The Type Astronaut's Guide to Shapeless](https://underscore.io/books/shapeless-guide) (Book)
 * [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
 * [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
 * [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
@@ -87,6 +81,116 @@
 * [Scala Times](https://scalatimes.com)
 
 ## Q&A
+
+> What is the Scala hierarchy?
+
+![scala-hierarchy](img/scala-hierarchy.png)
+
+> What referentially transparent means?
+
+An expression `e` is **referentially transparent** if, for all programs `p`, all occurrences of `e` in `p` can be replaced by the result of evaluating `e` without affecting the meaning of `p`
+
+> What is a pure function?
+
+A function `f` is **pure** if the expression `f(x)` is referentially transparent for all referentially transparent `x`. Hence a pure function is **modular** and **composable**
+
+> What is a higher-order function?
+
+A **higher-order function** is a function that takes other functions as arguments or returns a function as result
+
+> What is recursive function?
+
+A **recursive function** is a function which calls itself. With **head recursion**, the recursive call is not the last instruction in the function.
+
+A **tail recursive function** is a special case of recursion in which the last instruction executed in the method is the recursive call. As long as the recursive call is in tail position, Scala detects and compiles it to the same sort of bytecode as would be emitted for a while loop
+
+```scala
+def factorial(n: Int): Int = {
+  @tailrec
+  def loop(index: Int, result: Int): Int = index match {
+    case i if i == 0 => loop(1, 1 * result)
+    case i if i < n => loop(i + 1, i * result)
+    case i => i * result
+  }
+  loop(0, 1)
+}
+```
+
+> What is a function literal?
+
+**Function literal** is a synonyms for **anonymous function**. Because functions are just ordinary Scala objects, we say that they are **first-class values**. A function literal is syntactic sugar for an object with a method called apply
+
+```scala
+val lessThan0 = (a: Int, b: Int) => a < b
+val lessThan1 = (a, b) => a < b
+val lessThan2 = new Function2[Int, Int, Boolean] {
+  override def apply(a: Int, b: Int): Boolean = a < b
+}
+```
+
+> What is a variadic function?
+
+A **variadic function** accepts zero or more arguments. It provides a little syntactic sugar for creating and passing a Seq of elements explicitly. The special `_*` type annotation allows to pass a Seq to a variadic method
+
+```scala
+sealed trait MyList[+A]
+case object MyNil extends MyList[Nothing]
+case class MyCons[+A](head: A, tail: MyList[A]) extends MyList[A]
+
+object MyList {
+  def apply[A](list: A*): MyList[A] =
+    if (list.isEmpty) MyNil
+    else MyCons(list.head, apply(list.tail: _*))
+}
+
+// usage
+MyList(1, 2, 3, 4, 5)
+```
+
+> What is a value class?
+
+The [AnyVal](https://docs.scala-lang.org/overviews/core/value-classes.html) class can be used to define a **value class**, which is optimized at compile time to avoid the allocation of an instance
+
+```scala
+final case class Price(value: BigDecimal) extends AnyVal {
+  def lowerThan(p: Price): Boolean = this.value < p.value
+}
+```
+
+> What is autoboxing?
+
+The JVM defines primitive types (`boolean`, `byte`, `char`, `float`, `int`, `long`, `short` and `double`) that are *stack-allocated* rather than *heap-allocated*. When a generic type is introduced, for example, `scala.collection.immutable.List`, the JVM references an object equivalent, instead of a primitive type. For example, an instantiated list of integers would be heap-allocated objects rather than integer primitives. The process of converting a primitive to its object equivalent is called *boxing*, and the reverse process is called *unboxing*. Boxing is a relevant concern for performance-sensitive programming because boxing involves heap allocation. In performance-sensitive code that performs numerical computations, the cost of [boxing and unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) can can create significant performance slowdowns
+
+> What is the specialized annotation?
+
+**Specialization** with `@specialized` annotation, refers to the compile-time process of generating duplicate versions of a generic trait or class that refer directly to a primitive type instead of the associated object wrapper. At runtime, the compiler-generated version of the generic class (or, as it is commonly referred to, the specialized version of the class) is instantiated. This process eliminates the runtime cost of boxing primitives, which means that you can define generic abstractions while retaining the performance of a handwritten, specialized implementation although it has some [quirks](http://aleksandar-prokopec.com/2013/11/03/specialization-quirks.html)
+
+> What is the switch annotation?
+
+In scenarios involving simple pattern match statements that directly match a value, using `@switch` annotation provides a warning at compile time if the switch can't be compiled to a tableswitch or lookupswitch which procides better performance, because it results in a branch table rather than a decision tree
+
+> What is an Algebraic Data Type?
+
+In type theory, regular data structures can be described in terms of sums, products and recursive types. This leads to an algebra for describing data structures (and so-called algebraic data types). Such data types are common in statically typed functional languages
+
+An **algebraic data type** (ADT) is just a data type defined by one or more data constructors, each of which may contain zero or more arguments. We say that the data type is the sum or union of its data constructors, and each data constructor is the product of its arguments, hence the name algebraic data type
+
+Example
+```scala
+sealed trait Tree[+A]
+case class Leaf[A](value: A) extends Tree[A]
+case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
+```
+
+* these types represent a SUM type because Shape is a Circle OR a Rectangle
+* Circle is a PRODUCT type because it has a radius
+* Rectangle is a PRODUCT type because it has a width AND a height
+
+```scala
+sealed trait Shape
+final case class Circle(radius: Double) extends Shape
+final case class Rectangle(width: Double, height: Double) extends Shape
+```
 
 > How `for-comprehensions` is desugared? ([docs](https://docs.scala-lang.org/tour/for-comprehensions.html))
 
@@ -275,10 +379,6 @@ Summary
 * Applicative functor
 * Traversable functor
 
-blogs + twitter
-
-
-
 * A function having the same argument and return type is sometimes called an endofunction
 
 TODO Functor and Monad
@@ -304,97 +404,6 @@ https://typelevel.org/blog/2015/07/13/type-members-parameters.html
 https://www.artima.com/insidejvm/ed2/jvm8.html
 https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames
 ```
-
----
-
-![scala-hierarchy](img/scala-hierarchy.png)
-
-An expression `e` is **referentially transparent** if, for all programs `p`,
-all occurrences of `e` in `p` can be replaced by the result of evaluating `e` without affecting the meaning of `p`.
-A function `f` is **pure** if the expression `f(x)` is referentially transparent for all referentially transparent `x`.
-Hence a pure function is **modular** and **composable**
-
-A **higher-order function** is a function that takes other functions as arguments or returns a function as result
-
-A **recursive function** is a function which calls itself. With **head recursion**, the recursive call is not the last instruction in the function.
-A **tail recursive function** is a special case of recursion in which the last instruction executed in the method is the recursive call.
-As long as the recursive call is in tail position, Scala detects compiles it to the same sort of bytecode as would be emitted for a while loop
-```scala
-def factorial(n: Int): Int = {
-  @tailrec
-  def loop(index: Int, result: Int): Int = index match {
-    case i if i == 0 => loop(1, 1 * result)
-    case i if i < n => loop(i + 1, i * result)
-    case i => i * result
-  }
-  loop(0, 1)
-}
-```
-
-**Function literal** is a synonyms for **anonymous function**.
-Because functions are just ordinary Scala objects, we say that they are **first-class values**.
-A function literal is syntactic sugar for an object with a method called apply
-```scala
-val lessThan0 = (a: Int, b: Int) => a < b
-val lessThan1 = (a, b) => a < b
-val lessThan2 = new Function2[Int, Int, Boolean] {
-  override def apply(a: Int, b: Int): Boolean = a < b
-}
-```
-
-A **variadic** function accepts zero or more arguments. It provides a little syntactic sugar for creating and passing a Seq of elements explicitly. The special `_*` type annotation allows us to pass a Seq to a variadic method
-```scala
-sealed trait MyList[+A]
-case object MyNil extends MyList[Nothing]
-case class MyCons[+A](head: A, tail: MyList[A]) extends MyList[A]
-
-object MyList {
-  def apply[A](list: A*): MyList[A] =
-    if (list.isEmpty) MyNil
-    else MyCons(list.head, apply(list.tail: _*))
-}
-
-// usage
-MyList(1, 2, 3, 4, 5)
-```
-
-*What's an Algebraic Data Type?*
-
-In type theory, regular data structures can be described in terms of sums, products and recursive types. This leads to an algebra for describing data structures (and so-called algebraic data types). Such data types are common in statically typed functional languages
-
-An **algebraic data type** (ADT) is just a data type defined by one or more data constructors, each of which may contain zero or more arguments.
-We say that the data type is the sum or union of its data constructors, and each data constructor is the product of its arguments, hence the name algebraic data type
-```scala
-sealed trait Tree[+A]
-case class Leaf[A](value: A) extends Tree[A]
-case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
-```
-
-These types represent a SUM type because Shape is a Circle OR a Rectangle; Circle is a PRODUCT type because it has a radius; and Rectangle is also PRODUCT type because it has a width AND a height.
-```scala
-sealed trait Shape
-final case class Circle(radius: Double) extends Shape
-final case class Rectangle(width: Double, height: Double) extends Shape
-```
-
----
-
-The [AnyVal](https://docs.scala-lang.org/overviews/core/value-classes.html) class can be used to define a **value class**, which is optimized at compile time to avoid the allocation of an instance
-```scala
-case class Price(value: BigDecimal) extends AnyVal {
-  def lowerThan(p: Price): Boolean = this.value < p.value
-}
-```
-
-**Specialization** with `@specialized` annotation, refers to the compile-time process of generating duplicate versions of a generic trait or class that refer directly to a primitive type instead of the associated object wrapper. At runtime, the compiler-generated version of the generic class (or, as it is commonly referred to, the specialized version of the class) is instantiated. This process eliminates the runtime cost of boxing primitives, which means that you can define generic abstractions while retaining the performance of a handwritten, specialized implementation although it has some [quirks](http://aleksandar-prokopec.com/2013/11/03/specialization-quirks.html)
-
-The JVM defines primitive types (`boolean`, `byte`, `char`, `float`, `int`, `long`, `short` and `double`) that are *stack-allocated rather than heap-allocated*. When a generic type is introduced, for example, `scala.collection.immutable.List`, the JVM references an object equivalent, instead of a primitive type. For example, an instantiated list of integers would be heap-allocated objects rather than integer primitives. The process of converting a primitive to its object equivalent is called boxing, and the reverse process is called unboxing. Boxing is a relevant concern for performance-sensitive programming because boxing involves heap allocation. In performance-sensitive code that performs numerical computations, the cost of [boxing and unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) can can create significant performance slowdowns
-
-In scenarios involving simple pattern match statements that directly match a value, using `@switch` annotation provides a warning at compile time if the switch can't be compiled to a tableswitch or lookupswitch which procides better performance, because it results in a branch table rather than a decision tree
-
----
-
-TODO
 
 ```scala
 // to remember: foldLeft start from left (acc op xFirst) ==> (B, A)
