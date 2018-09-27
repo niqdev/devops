@@ -26,7 +26,7 @@
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 
-**FP intro**
+**FP resources**
 
 * [Functional Programming Basics](https://pragprog.com/magazines/2013-01/functional-programming-basics)
 * [Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
@@ -38,10 +38,7 @@
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
 * [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
-* [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
 * [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala/)
-
-**FP libraries**
 
 * [Typelevel projects](https://typelevel.org)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
@@ -53,12 +50,6 @@
 * [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
 * [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
 
-**Other FP languages**
-
-* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
-* [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
-* [OCaml taste](https://ocaml.org/learn/taste.html)
-
 **Typeclass**
 
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
@@ -67,12 +58,41 @@
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
 * [All you don't need to know about Typeclasses](http://workday.github.io/assets/scala-exchange-type-classes)
 
-**Other patterns**
+**Patterns**
 
+* [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
 * [Cake pattern](https://medium.com/@itseranga/scala-cake-pattern-e0cd894dae4e)
 * [Magnet pattern](http://spray.io/blog/2012-12-13-the-magnet-pattern)
 
+**Other FP languages**
+
+* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+* [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
+* [OCaml taste](https://ocaml.org/learn/taste.html)
+
 <!--
+
+for (i <- List(1, 2, 3)) println(i)
+
+TODO
+// (1) works because `foreach` is defined
+for (p <- peeps) println(p)
+// (2) `yield` works because `map` is defined
+val res: Sequence[Int] = for {
+i <- ints
+} yield i * 2
+res.foreach(println)
+// (3) `if` works because `withFilter` is defined
+val res = for {
+i <- ints
+if i > 2
+} yield i*2
+// (4) works because `flatMap` is defined
+val mutualFriends = for {
+myFriend <- myFriends // generator
+adamsFriend <- adamsFriends // generator
+if (myFriend.name == adamsFriend.name)
+} yield myFriend
 
 blogs + twitter
 
