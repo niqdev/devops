@@ -26,6 +26,7 @@
 * [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (Paper)
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
+* [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
 
 **FP resources**
 
@@ -52,7 +53,6 @@
 
 **Typeclass**
 
-* [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
 * [Type classes in Scala](https://blog.scalac.io/2017/04/19/typeclasses-in-scala.html)
 * [Returning the "Current" Type in Scala](http://tpolecat.github.io/2015/04/29/f-bounds.html)
 * [Typeclass 101: ad hoc polymorphism in scala](https://julien-truffaut.github.io/Typeclass)
@@ -369,6 +369,8 @@ trait Applicative[F[_]] extends Functor[F] {
 ```
 
 <!--
+
+http://blog.originate.com/blog/2016/08/10/cheat-codes-for-contravariance-and-covariance/
 
 Summary
 
