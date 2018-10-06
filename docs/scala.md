@@ -1,4 +1,4 @@
-# Scala [WIP]
+# Scala
 
 ## Resources
 
@@ -27,6 +27,7 @@
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
+* [Cats Infographic](https://github.com/tpolecat/cats-infographic)
 
 **FP resources**
 
@@ -82,23 +83,23 @@
 
 ## Q&A
 
-> What is the Scala hierarchy?
+*What is the Scala hierarchy?*
 
 ![scala-hierarchy](img/scala-hierarchy.png)
 
-> What referentially transparent means?
+*What referentially transparent means?*
 
 An expression `e` is **referentially transparent** if, for all programs `p`, all occurrences of `e` in `p` can be replaced by the result of evaluating `e` without affecting the meaning of `p`
 
-> What is a pure function?
+*What is a pure function?*
 
 A function `f` is **pure** if the expression `f(x)` is referentially transparent for all referentially transparent `x`. Hence a pure function is **modular** and **composable**
 
-> What is a higher-order function?
+*What is a higher-order function?*
 
 A **higher-order function** is a function that takes other functions as arguments or returns a function as result
 
-> What is recursive function?
+*What is recursive function?*
 
 A **recursive function** is a function which calls itself. With **head recursion**, the recursive call is not the last instruction in the function.
 
@@ -116,7 +117,7 @@ def factorial(n: Int): Int = {
 }
 ```
 
-> What is a function literal?
+*What is a function literal?*
 
 **Function literal** is a synonyms for **anonymous function**. Because functions are just ordinary Scala objects, we say that they are **first-class values**. A function literal is syntactic sugar for an object with a method called apply
 
@@ -128,7 +129,7 @@ val lessThan2 = new Function2[Int, Int, Boolean] {
 }
 ```
 
-> What is a variadic function?
+*What is a variadic function?*
 
 A **variadic function** accepts zero or more arguments. It provides a little syntactic sugar for creating and passing a Seq of elements explicitly. The special `_*` type annotation allows to pass a Seq to a variadic method
 
@@ -147,7 +148,7 @@ object MyList {
 MyList(1, 2, 3, 4, 5)
 ```
 
-> What is a value class?
+*What is a value class?*
 
 The [AnyVal](https://docs.scala-lang.org/overviews/core/value-classes.html) class can be used to define a **value class**, which is optimized at compile time to avoid the allocation of an instance
 
@@ -157,30 +158,25 @@ final case class Price(value: BigDecimal) extends AnyVal {
 }
 ```
 
-> What is autoboxing?
+*What is autoboxing?*
 
 The JVM defines primitive types (`boolean`, `byte`, `char`, `float`, `int`, `long`, `short` and `double`) that are *stack-allocated* rather than *heap-allocated*. When a generic type is introduced, for example, `scala.collection.immutable.List`, the JVM references an object equivalent, instead of a primitive type. For example, an instantiated list of integers would be heap-allocated objects rather than integer primitives. The process of converting a primitive to its object equivalent is called *boxing*, and the reverse process is called *unboxing*. Boxing is a relevant concern for performance-sensitive programming because boxing involves heap allocation. In performance-sensitive code that performs numerical computations, the cost of [boxing and unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) can can create significant performance slowdowns
 
-> What is the specialized annotation?
+*What is the specialized annotation?*
 
 **Specialization** with `@specialized` annotation, refers to the compile-time process of generating duplicate versions of a generic trait or class that refer directly to a primitive type instead of the associated object wrapper. At runtime, the compiler-generated version of the generic class (or, as it is commonly referred to, the specialized version of the class) is instantiated. This process eliminates the runtime cost of boxing primitives, which means that you can define generic abstractions while retaining the performance of a handwritten, specialized implementation although it has some [quirks](http://aleksandar-prokopec.com/2013/11/03/specialization-quirks.html)
 
-> What is the switch annotation?
+*What is the switch annotation?*
 
 In scenarios involving simple pattern match statements that directly match a value, using `@switch` annotation provides a warning at compile time if the switch can't be compiled to a tableswitch or lookupswitch which procides better performance, because it results in a branch table rather than a decision tree
 
-> What is an Algebraic Data Type?
+*What is an Algebraic Data Type?*
 
 In type theory, regular data structures can be described in terms of sums, products and recursive types. This leads to an algebra for describing data structures (and so-called algebraic data types). Such data types are common in statically typed functional languages
 
 An **algebraic data type** (ADT) is just a data type defined by one or more data constructors, each of which may contain zero or more arguments. We say that the data type is the sum or union of its data constructors, and each data constructor is the product of its arguments, hence the name algebraic data type
 
 Example
-```scala
-sealed trait Tree[+A]
-case class Leaf[A](value: A) extends Tree[A]
-case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
-```
 
 * these types represent a SUM type because Shape is a Circle OR a Rectangle
 * Circle is a PRODUCT type because it has a radius
@@ -192,7 +188,7 @@ final case class Circle(radius: Double) extends Shape
 final case class Rectangle(width: Double, height: Double) extends Shape
 ```
 
-> How `for-comprehensions` is desugared? ([docs](https://docs.scala-lang.org/tour/for-comprehensions.html))
+*How for-comprehensions is desugared? ([docs](https://docs.scala-lang.org/tour/for-comprehensions.html))*
 
 ```scala
 // (1) works because "foreach" is defined
@@ -214,20 +210,16 @@ scala> for (i <- List(1, 2, 3, 4); j <- List(3, 4, 5, 6); if i == j) yield i
 res4: List[Int] = List(3, 4)
 ```
 
-> What is a Typeclass?
+*What is a Typeclass?*
 
 A Typeclass is a programming pattern that allow to extend existing libraries with new functionality, without using traditional inheritance and without altering the original library source code using a combination of ad-hoc polymorphism, parametric polymorphism (type parameters) and implicits
 
-> What is a Semigroup?
+*What is a Monoid?*
 
-???
-
-> What is a Monoid?
-
-A Monoid is an algebraic type with 2 laws, a binary operation over that type, satisfying associativity and an identity element
+A Monoid is an algebraic type with 2 laws, a binary operation over that type, satisfying *associativity* and an *identity* element
 
 * associative e.g `a + (b + c) == (a + b) + c`
-* identity e.g. sum is 1
+* identity e.g. for sum is 0, for product is 1, for string is ""
 
 ```scala
 trait Monoid[A] {
@@ -247,7 +239,7 @@ val stringMonoid = new Monoid[String] {
 }
 ```
 
-Monoids have an intimate connection with lists with arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold, hence this allows parallel computation.
+Monoids have an intimate connection with lists and arguments of the same type, it doesn't matter if we choose `foldLeft` or `foldRight` when folding with a monoid because the laws of associativity and identity hold, hence this allows parallel computation
 
 The real power of monoids comes from the fact that they compose, this means, for example, that if types A and B are monoids, then the tuple type (A, B) is also a monoid (called their product)
 
@@ -257,9 +249,25 @@ scala> List("first", "second", "third").foldRight(stringMonoid.zero)(stringMonoi
 res: String = firstsecondthird
 ```
 
-> What is a Functor?
+*What is a Semigroup?*
 
-???
+A Semigroup is just the `combine` part of a Monoid. While many semigroups are also monoids, there are some data types for which we cannot define an empty element e.g. non-empty sequences and positive integers
+
+```scala
+trait Semigroup[A] {
+  // or op
+  def combine(x: A, y: A): A
+}
+
+trait Monoid[A] extends Semigroup[A] {
+  // or zero
+  def empty: A
+}
+```
+
+*What is a Functor?*
+
+Informally, a Functor is anything with a `map` method
 
 ```scala
 // F is a higher-order type constructor or a higher-kinded type
@@ -268,7 +276,9 @@ trait Functor[F[_]] {
 }
 ```
 
-> What is a Monad?
+*What is a Monad?*
+
+Informally, a Monad is anything with a constructor and a flatMap method. A Monad is a mechanism for *sequencing computations*, all monads are functors but the opposite is not true.
 
 A Monad is an implementation of one of the minimal sets of monadic combinators, satisfying the laws of associativity and identity
 
@@ -289,35 +299,6 @@ def join[A](mma: F[F[A]]): F[A]
 // Associativity: compose(compose(f, g), h) = compose(f, compose(g, h))
 ```
 
-TODO
-```scala
-// all Monads are Functors but the opposite is not true
-trait Monad[F[_]] extends Functor[F] {
-  def unit[A](a: => A): F[A]
-  def flatMap[A, B](ma: F[A])(f: A => F[B]): F[B]
-  def compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C]
-  def join[A](mma: F[F[A]]): F[A]
-
-  def map[A, B](ma: F[A])(f: A => B): F[B] =
-    flatMap(ma)(a => unit(f(a)))
-  def map2[A, B, C](ma: F[A], mb: F[B])(f: (A, B) => C): F[C] =
-    flatMap(ma)(a => map(mb)(b => f(a, b)))
-}
-
-trait Monad[F[_]] extends Applicative[F] {
-  def flatMap[A, B](fa: F[A])(f: A => F[B]): F[B] =
-    join(map(fa)(f))
-  def join[A](ffa: F[F[A]]): F[A] =
-    flatMap(ffa)(fa => fa)
-  def compose[A,B,C](f: A => F[B], g: B => F[C]): A => F[C] =
-    a => flatMap(f(a))(g)
-  def map[B](fa: F[A])(f: A => B): F[B] =
-    flatMap(fa)((a: A) => unit(f(a)))
-  def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C] =
-    flatMap(fa)(a => map(fb)(b => f(a,b)))
-}
-```
-
 A Monad provide a context for introducing and binding variables and performing variable substitution
 
 ```scala
@@ -330,7 +311,8 @@ object Monad {
   }
 
   val idMonad: Monad[Id] = new Monad[Id] {
-    override def unit[A](a: => A): Id[A] = Id(a)
+    override def unit[A](a: => A): Id[A] =
+      Id(a)
 
     override def flatMap[A, B](ma: Id[A])(f: A => Id[B]): Id[B] =
       ma.flatMap(f)
@@ -347,14 +329,35 @@ for {
 res: Monad.Id[String] = Id(hello world)
 ```
 
-> What is an Applicative?
+*What is a Semigroupal?*
 
-???
+A Semigroupal is a type class that allows to combine contexts. In contrast to flatMap, which imposes a strict order, Semigroupal parameters are independent of one another, which gives more freedom with respect to monads
+
+```scala
+trait Semigroupal[F[_]] {
+  def product[A, B](fa: F[A], fb: F[B]): F[(A, B)]
+}
+```
+
+*What is an Applicative?*
 
 * all applicatives are functors
+* all applicatives are a semigroupal
 * all monads are applicative functors, viceversa is not true
 
 ```scala
+// cats definition
+trait Apply[F[_]] extends Semigroupal[F] with Functor[F] {
+  def ap[A, B](ff: F[A => B])(fa: F[A]): F[B]
+  def product[A, B](fa: F[A], fb: F[B]): F[(A, B)] =
+    ap(map(fa)(a => (b: B) => (a, b)))(fb)
+}
+
+trait Applicative[F[_]] extends Apply[F] {
+  def pure[A](a: A): F[A]
+}
+
+// red book definition
 trait Applicative[F[_]] extends Functor[F] {
   // primitive combinators
   def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C]
