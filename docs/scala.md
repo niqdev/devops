@@ -13,7 +13,12 @@
 * [Scala Puzzlers](http://scalapuzzlers.com)
 * [S-99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99)
 * [Scala Exercises](https://www.scala-exercises.org)
+* [Scala for Project Euler](https://pavelfatin.com/scala-for-project-euler)
 * [Scala Collections](https://docs.scala-lang.org/overviews/collections/introduction.html)
+* [Scala Collections performance characteristics](https://docs.scala-lang.org/overviews/collections/performance-characteristics.html)
+* [The Neophyte's Guide to Scala](https://danielwestheide.com/scala/neophytes.html)
+* [Cheat Codes for Contravariance and Covariance](http://blog.originate.com/blog/2016/08/10/cheat-codes-for-contravariance-and-covariance)
+* [The Scala Type System: Parameterized Types and Variances](https://blog.codecentric.de/en/2015/03/scala-type-system-parameterized-types-variances-part-1)
 
 **FP readings**
 
@@ -51,6 +56,8 @@
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
 * [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
+* [Free monads - what? and why?](https://softwaremill.com/free-monads)
+* [Free Monad examples](https://github.com/kenbot/free)
 
 **Typeclass**
 
@@ -70,6 +77,7 @@
 
 **Other FP languages**
 
+* [A practical introduction to functional programming](https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming)
 * [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
 * [A Quick Tour of Haskell Syntax](http://prajitr.github.io/quick-haskell-syntax)
 * [OCaml taste](https://ocaml.org/learn/taste.html)
@@ -80,12 +88,39 @@
 * [Scalac](https://blog.scalac.io)
 * [Signify](https://www.signifytechnology.com/blog)
 * [Scala Times](https://scalatimes.com)
+* [SoftwareMill](https://softwaremill.com/blog)
 
-## Q&A
+## FAQs
+
+* [Scala FAQs](https://docs.scala-lang.org/tutorials/FAQ)
 
 *What is the Scala hierarchy?*
 
 ![scala-hierarchy](img/scala-hierarchy.png)
+
+*What is the difference between by-name and by-value parameters?*
+
+A **by-value** parameter is evaluated before the method is invoked e.g. `(x: Int)` while a **by-name** parameter is not evaluated before the method is invoked, but each time the parameter is referenced inside the method e.g. `(x: => Int)`
+
+*What are the differences between def val var lazy?*
+
+* `def` defines a method
+* `val` defines a fixed value, it is immmutable and eagerly initialized
+* `var` defines a variable reference, it is mutable and it should be avoided
+* `lazy` only initialised when required and as late as possible, default is strict and is not recomputed like by-name parameters
+
+*What are Nothing Nil None Empty Null null Unit?*
+
+* `Nothing` is a trait that is the bottom subtype of every subtype of `Any`
+* `Nil` is an empty list that is defined as a `List[Nothing]`
+* `None` is an empty option that is defined as a `Option[Nothing]`
+* `Null` is a trait and is the bottom type similiar to `Nothing` but only for `AnyRef` not `AnyVal`
+* `null` is an instance of the `Null` trait
+* `Unit` is a subtype of `AnyVal`, it's only value is `()` and it is not represented by any object in the underlying runtime system. A method with return type `Unit` is analogous to a Java method which is declared `void`
+
+*What is the uniform access principal?*
+
+The uniform access principle states that variables, precomputed properties and parameterless functions should be accessed using the same syntax. Therefore not betraying whether they are implemented through storage or through computation. Scala supports this principle by not allowing parentheses to be placed at call sites of parameterless functions. A parameterless function definition `def` can be changed to a `val` or vice versa, without affecting client code
 
 *What referentially transparent means?*
 
@@ -373,7 +408,7 @@ trait Applicative[F[_]] extends Functor[F] {
 
 <!--
 
-http://blog.originate.com/blog/2016/08/10/cheat-codes-for-contravariance-and-covariance/
+
 
 Summary
 
