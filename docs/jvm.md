@@ -14,6 +14,7 @@ Resources
 * [Understanding JVM Internals](https://www.cubrid.org/blog/understanding-jvm-internals)
 * [Understanding Java Garbage Collection](https://www.cubrid.org/blog/understanding-java-garbage-collection)
 * [Java Decompiler](http://jd.benow.ca)
+* [Java Concurrency in Practice](http://jcip.net) (Book)
 
 ![jvm-architecture](img/jvm-architecture.png)
 
@@ -221,5 +222,24 @@ The **Just-In-Time (JIT)** compiler is a component of the Java Runtime Environme
 At run time, the JVM loads the class files, determines the semantics of each individual bytecode, and performs the appropriate computation.
 The additional processor and memory usage during interpretation means that a Java application performs more slowly than a native application.
 The JIT compiler helps improve the performance of Java programs by compiling bytecode into native machine code at run time
+
+## Scala
+
+```
+# compiles
+scalac miscellaneous/scala-example.scala -d miscellaneous/
+
+# lists compiler phases
+scalac -Xshow-phases
+
+# prints for-comprehensions desugared
+scalac -Xprint:parse miscellaneous/scala-example.scala -d miscellaneous/
+
+# prints all phases
+scalac -Xprint:all miscellaneous/scala-example.scala -d miscellaneous/
+
+# shows bytecode
+javap -v miscellaneous/Example$.class
+```
 
 <br>

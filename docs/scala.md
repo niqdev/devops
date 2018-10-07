@@ -107,7 +107,7 @@ A **by-value** parameter is evaluated before the method is invoked e.g. `(x: Int
 * `def` defines a method
 * `val` defines a fixed value, it is immmutable and eagerly initialized
 * `var` defines a variable reference, it is mutable and it should be avoided
-* `lazy` only initialised when required and as late as possible, default is strict and is not recomputed like by-name parameters
+* `lazy` only initialised when required and as late as possible (deferred evaluation), default is strict and is not recomputed like by-name parameters
 
 *What are Nothing Nil None Empty Null null Unit?*
 

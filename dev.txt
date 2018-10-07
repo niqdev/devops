@@ -26,6 +26,8 @@ cat /mnt/var/lib/info/job-flow.json | jq
 
 * awesome links, best practices, bash/vim keyboard shortcuts
 
+* command vs event api - use paste tense to name event
+
 ---
 
 * Avro **Avro** is a data serialization system
@@ -107,3 +109,6 @@ https://alexromanov.github.io/2016/07/15/cucumber-scala-sbt
 https://github.com/lewismj/cucumber
 https://github.com/jecklgamis/cucumber-jvm-scala-example
 https://localstack.cloud
+
+# back pressure
+https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html
