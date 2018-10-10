@@ -22,6 +22,8 @@ Resources
 
 * [Should you put several event types in the same Kafka topic?](http://martin.kleppmann.com/2018/01/18/event-types-in-kafka-topic.html)
 
+* [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
+
 ## Architecture
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*

@@ -112,3 +112,6 @@ https://localstack.cloud
 
 # back pressure
 https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html
+
+# IAC infrastructure-as-code
+https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
