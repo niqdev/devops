@@ -72,6 +72,14 @@ http://cloudurable.com/blog/kafka-avro-schema-registry/index.html
 https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
 https://dzone.com/articles/kafka-avro-scala-example
 https://groups.google.com/forum/#!topic/akka-user/42SHwSIM1Xw
+# avro TODO
+https://msayag.github.io/Kafka
+http://subprotocol.com/system/apache-spark-ec2-avro.html
+http://rick-hightower.blogspot.com/2017/05/apache-avro-tutorial.html
+https://medium.com/@mykidong/howto-implement-avro-schema-inheritance-757d2897c1ad
+http://bytepadding.com/big-data/spark/avro/avro-serialization-de-serialization-using-confluent-schema-registry
+https://gist.github.com/cmilfont/2466a4272adcf0d5d20a309002df6799
+http://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html
 
 # api
 https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
