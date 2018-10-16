@@ -23,6 +23,7 @@
 
 **FP readings**
 
+* [Functional Programming for Mortals with Scalaz](https://leanpub.com/fpmortals) (2018) by Sam Halliday
 * [Functional Programming in Scala](https://amzn.to/2OCFpQG) (2014) by Paul Chiusano and Runar Bjarnason (Book)
 * [Functional Programming, Simplified](https://amzn.to/2OCFROS) (2017) by Alvin Alexander (Book)
 * [Scala with Cats](https://underscore.io/books/scala-with-cats) (Book)
@@ -56,7 +57,7 @@
 * [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
-* [Shapeless for Mortals](https://github.com/ikhoon/shapeless-for-mortals)
+* [Shapeless for Mortals](http://fommil.com/scalax15/) talk (2015) by Sam Halliday
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
 
