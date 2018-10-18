@@ -57,6 +57,7 @@ ansible/
 │   │       └── tasks
 │   │           └── main.yml
 │   └── site.yml
+├── destroy_ansible.sh
 ├── setup_ansible.sh
 └── setup_share.sh
 ```
@@ -97,6 +98,11 @@ The following paths are shared with the boxes
 * `/local` host $HOME
 * `/ansible` data *(ansible only)*
 * `/data` .share *(node only)*
+
+Cleanup
+```bash
+./destroy_ansible.sh
+```
 
 ## Ad-Hoc Commands
 
