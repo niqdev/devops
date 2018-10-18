@@ -18,8 +18,8 @@ The following guide explains how to provision Ansible locally and play with it. 
 
 Requirements
 
-* [Vagrant](https://www.vagrantup.com)
-* [VirtualBox](https://www.virtualbox.org)
+* [Vagrant 2](https://www.vagrantup.com)
+* [VirtualBox 5](https://www.virtualbox.org)
 
 Directory structure
 ```bash

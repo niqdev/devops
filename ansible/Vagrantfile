@@ -46,8 +46,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     # update
     apt-get update
-    # python
-    apt-get install -y python2.7 python3 python-pip python3-pip
+    # required python2 missing on ubuntu-18
+    apt-get install -y python2.7 python-pip
     # dns
     apt-get install -y avahi-daemon libnss-mdns 
   SHELL
