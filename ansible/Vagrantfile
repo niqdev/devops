@@ -43,8 +43,12 @@ Vagrant.configure("2") do |config|
     rm /tmp/ansible_rsa.pub
   SHELL
 
-  # config dns
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get install -y avahi-daemon libnss-mdns
+    # update
+    apt-get update
+    # python
+    apt-get install -y python2.7 python3 python-pip python3-pip
+    # dns
+    apt-get install -y avahi-daemon libnss-mdns 
   SHELL
 end
