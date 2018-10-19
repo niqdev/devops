@@ -1,0 +1,5 @@
+---
+schema:
+  registry:
+    user: confluent
+    group: confluent

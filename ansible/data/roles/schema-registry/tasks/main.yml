@@ -1,0 +1,78 @@
+---
+
+# https://docs.confluent.io/current/installation/installing_cp/deb-ubuntu.html
+# https://docs.confluent.io/current/schema-registry/docs/index.html
+
+- name: create group
+  become: yes
+  group:
+    name: "{{ schema.registry.group }}"
+
+- name: create user
+  become: yes
+  user:
+    name: "{{ schema.registry.user }}"
+    comment: "Schema Registry User"
+    system: yes
+    group: "{{ schema.registry.group }}"
+
+- name: create and update directories
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ schema.registry.user }}"
+    group: "{{ schema.registry.group }}"
+    recurse: yes
+  with_items:
+    - "/home/{{ schema.registry.user }}"
+    - "/home/{{ schema.registry.user }}/logs"
+    - /var/log/confluent
+
+- name: install confluent public key
+  become: yes
+  apt_key:
+    url: https://packages.confluent.io/deb/5.0/archive.key
+    state: present
+
+- name: add confluent repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.confluent.io/deb/5.0 stable main'
+    state: present
+
+- name: install confluent schema registry
+  become: yes
+  apt:
+    name: confluent-schema-registry
+    update_cache: yes
+
+- name: symlink /var/log/confluent to /home/{{ schema.registry.user }}/logs
+  become: yes
+  file:
+    src: /var/log/confluent
+    dest: /home/{{ schema.registry.user }}/logs
+    state: link
+    force: yes
+    owner: "{{ schema.registry.user }}"
+    group: "{{ schema.registry.group }}"
+
+- name: copy configs
+  become: yes
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/schema-registry/{{ item }}"
+    owner: "{{ schema.registry.user }}"
+    group: "{{ schema.registry.group }}"
+    mode: u=rwx,g=r,o=r
+  with_items:
+    - log4j.properties
+    - schema-registry.properties
+#  notify:
+#    - restart schema-registry
+
+- name: start confluent schema registry
+  become_user: "{{ schema.registry.user }}"
+  systemd:
+    state: started
+    name: confluent-schema-registry

@@ -21,3 +21,10 @@
     - docker
   tags:
     - docker
+
+- name: schema registry setup
+  hosts: schema-registry
+  roles:
+    - schema-registry
+  tags:
+    - schema-registry
