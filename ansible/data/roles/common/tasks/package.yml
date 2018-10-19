@@ -17,25 +17,14 @@
   with_items:
     - jq
     - tree
+    - httpie
 
-- name: add java repository
+- import_tasks: oracle-jdk.yml
   tags:
-    - java
-  become: yes
-  apt_repository:
-    repo: 'ppa:webupd8team/java'
-    state: present
+    - oracle-jdk
 
-- name: accept oracle license
-  tags:
-    - java
-  become: yes
-  debconf: name='oracle-java9-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
-
-- name: install java
-  tags:
-    - java
+- name: cleanup
   become: yes
   apt:
-    name: oracle-java9-installer
-    state: latest
+    autoclean: yes
+    autoremove: yes

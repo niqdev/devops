@@ -1,0 +1,27 @@
+---
+
+- name: add java repository
+  tags:
+    - oracle-jdk
+  become: yes
+  apt_repository:
+    repo: 'ppa:linuxuprising/java'
+    state: present
+
+- name: accept oracle license
+  tags:
+    - oracle-jdk
+  become: yes
+  debconf: name='oracle-java11-installer' question='shared/accepted-oracle-license-v1-2' value='true' vtype='select'
+
+- name: install java
+  tags:
+    - oracle-jdk
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - oracle-java11-installer
+      - oracle-java11-set-default

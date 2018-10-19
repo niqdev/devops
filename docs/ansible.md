@@ -162,10 +162,13 @@ Below a list of examples
 # test uptime on all node
 ansible-playbook /ansible/site.yml --tags=test --verbose
 
-# update & upgrade only cluster nodes
-ansible-playbook /ansible/site.yml -t package --skip-tags=java --verbose
+# update & upgrade only on cluster nodes
+ansible-playbook /ansible/site.yml -t package --skip-tags=oracle-jdk --verbose
 
-# install packages on cluster nodes
+# install oracle-jdk only on cluster nodes
+ansible-playbook /ansible/site.yml -t oracle-jdk
+
+# install all packages on cluster nodes
 ansible-playbook /ansible/site.yml -t package --verbose
 
 # run common task on cluster node
