@@ -27,7 +27,7 @@
   with_items:
     - "/home/{{ schema.registry.user }}"
     - "/home/{{ schema.registry.user }}/logs"
-    - /var/log/confluent
+    - /var/log/confluent/schema-registry
 
 - name: install confluent public key
   become: yes
@@ -47,10 +47,11 @@
     name: confluent-schema-registry
     update_cache: yes
 
-- name: symlink /var/log/confluent to /home/{{ schema.registry.user }}/logs
+- name: symlink /var/log/confluent/schema-registry to /home/{{ schema.registry.user }}/logs
   become: yes
+  #become_user: "{{ schema.registry.user }}"
   file:
-    src: /var/log/confluent
+    src: /var/log/confluent/schema-registry
     dest: /home/{{ schema.registry.user }}/logs
     state: link
     force: yes
@@ -72,7 +73,8 @@
 #    - restart schema-registry
 
 - name: start confluent schema registry
-  become_user: "{{ schema.registry.user }}"
+  become: yes
+  #become_user: "{{ schema.registry.user }}"
   systemd:
     state: started
     name: confluent-schema-registry

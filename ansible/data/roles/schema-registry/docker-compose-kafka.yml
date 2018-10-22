@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  zookeeper:
+    container_name: my-local-zookeeper
+    image: niqdev/zookeeper:3.4.13
+    ports:
+      - 2181:2181
+    hostname: zookeeper
+    networks:
+      - my_local_network
+
+  kafka:
+    container_name: my-local-kafka
+    image: niqdev/kafka:2.0.0
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 8083:8083
+    hostname: kafka
+    networks:
+      - my_local_network
+    environment:
+      - ZOOKEEPER_HOSTS="zookeeper:2181"
+
+networks:
+  my_local_network:

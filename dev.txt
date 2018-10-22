@@ -53,6 +53,7 @@ cat /mnt/var/lib/info/job-flow.json | jq
 
 # kafka
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
+https://medium.com/@stephane.maarek/how-to-use-apache-kafka-to-transform-a-batch-pipeline-into-a-real-time-one-831b48a6ad85
 
 # keytool
 https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
