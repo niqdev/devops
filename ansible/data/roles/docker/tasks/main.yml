@@ -18,3 +18,28 @@
   become: yes
   #become_user: docker
   command: 'bash -c "curl -fsSL https://get.docker.com/ | sh"'
+
+- name: internal variable uname_s
+  command: uname -s
+  register: uname_s
+
+- name: internal variable uname_m
+  command: uname -m
+  register: uname_m
+
+- name: internal variable docker_compose_url
+  command: "echo https://github.com/docker/compose/releases/download/1.22.0/docker-compose-{{ uname_s.stdout }}-{{ uname_m.stdout }}"
+  register: docker_compose_url
+  with_items:
+    - uname_s: uname_s.stdout
+    - uname_m: uname_m.stdout
+
+- name: install docker-compose
+  become: yes
+  become_user: docker
+  get_url:
+    url: "{{ docker_compose_url }}"
+    dest: /usr/local/bin/docker-compose
+    mode: +x
+  with_items:
+    - docker_compose_url: docker_compose_url.stdout
