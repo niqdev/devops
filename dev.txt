@@ -65,7 +65,8 @@ https://github.com/akka/alpakka-kafka/issues/342
 https://avro.apache.org/docs/current/gettingstartedjava.html
 https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
 # avro + schema registry
-https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry/
+https://www.madewithtea.com/kafka-streams-in-scala-with-schema-registry.html
+https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry
 https://aseigneurin.github.io/2016/03/04/kafka-spark-avro-producing-and-consuming-avro-messages.html
 https://github.com/lagom/lagom/issues/668
 https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
@@ -73,7 +74,6 @@ http://cloudurable.com/blog/kafka-avro-schema-registry/index.html
 https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
 https://dzone.com/articles/kafka-avro-scala-example
 https://groups.google.com/forum/#!topic/akka-user/42SHwSIM1Xw
-# avro TODO
 https://msayag.github.io/Kafka
 http://subprotocol.com/system/apache-spark-ec2-avro.html
 http://rick-hightower.blogspot.com/2017/05/apache-avro-tutorial.html

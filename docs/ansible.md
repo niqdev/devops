@@ -46,6 +46,7 @@ ansible/
 │   │   │   ├── tasks
 │   │   │   │   ├── main.yml
 │   │   │   │   ├── motd.yml
+│   │   │   │   ├── oracle-jdk.yml
 │   │   │   │   └── package.yml
 │   │   │   ├── templates
 │   │   │   │   └── motd
@@ -183,9 +184,6 @@ docker ps -a
 
 # custom banner
 ansible-playbook /ansible/site.yml -t motd
-
-# confluent schema registry
-ansible-playbook /ansible/site.yml -t schema-registry
 
 # setup all infrastructure at once
 ansible-playbook /ansible/site.yml

@@ -15,7 +15,7 @@ vagrant ssh node-1
 sudo -i -u docker
 docker-compose -f /data/docker-compose-kafka.yml up
 # update hosts
-echo -e "\n# docker images\n127.0.1.1 zookeeper\n127.0.1.1 kafka\n" | sudo tee -a /etc/hosts
+echo -e "# docker images\n127.0.1.1 zookeeper\n127.0.1.1 kafka\n" | sudo tee -a /etc/hosts
 
 # setup schema registry
 vagrant ssh ansible
@@ -32,7 +32,7 @@ ll /var/log/confluent/schema-registry/
 ll /home/confluent/logs/schema-registry/
 less +G /var/log/confluent/schema-registry/schema-registry.log
 tail -F /var/log/confluent/schema-registry/schema-registry.log
-http :8081
+http 192.168.100.11:8081
 
 # check running services
 sudo netstat -ltp
