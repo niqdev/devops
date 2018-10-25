@@ -3,6 +3,10 @@
 ```bash
 cd ansible
 
+# setup
+./setup_share.sh
+vagrant up
+
 # setup docker
 vagrant ssh ansible
 ansible-playbook /ansible/site.yml -t docker
