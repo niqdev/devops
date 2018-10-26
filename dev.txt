@@ -60,10 +60,8 @@ https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working
 https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
 # avro
->>> https://abhsrivastava.github.io/2017/10/02/Stream-Avro-Records-into-Kafka/
 https://github.com/akka/alpakka-kafka/issues/342
-https://avro.apache.org/docs/current/gettingstartedjava.html
-https://aseigneurin.github.io/2016/03/02/kafka-spark-avro-kafka-101.html
+
 # avro + schema registry
 https://www.madewithtea.com/kafka-streams-in-scala-with-schema-registry.html
 https://www.sderosiaux.com/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry
