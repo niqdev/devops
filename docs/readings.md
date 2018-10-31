@@ -60,6 +60,8 @@
 
 * [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read)
 
+* [AWS diagrams & notes](https://www.awsgeek.com)
+
 **CAP Theorem**
 
 * [Brewer's CAP Theorem](http://www.julianbrowne.com/article/brewers-cap-theorem)
