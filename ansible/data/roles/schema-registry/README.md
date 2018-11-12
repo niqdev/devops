@@ -33,7 +33,7 @@ sudo journalctl -u confluent-schema-registry -b
 sudo journalctl -ru confluent-schema-registry --no-pager
 ll /etc/schema-registry/
 ll /var/log/confluent/schema-registry/
-ll /home/confluent/logs/schema-registry/
+ll /home/cp-schema-registry/logs/
 less +G /var/log/confluent/schema-registry/schema-registry.log
 tail -F /var/log/confluent/schema-registry/schema-registry.log
 http 192.168.100.11:8081
