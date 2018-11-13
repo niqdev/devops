@@ -11,15 +11,15 @@ vagrant up
 vagrant ssh ansible
 ansible-playbook /ansible/site.yml -t docker
 
-# copy docker compose manually
-cp data/roles/schema-registry/docker-compose-kafka.yml .share/node-1/docker-compose-kafka.yml
+# (local) copy docker compose manually
+cp data/roles/schema-registry/docker-compose-local.yml .share/node-1/docker-compose-local.yml
 
-# start docker
 vagrant ssh node-1
-sudo -i -u docker
-docker-compose -f /data/docker-compose-kafka.yml up
 # update hosts
 echo -e "# docker images\n127.0.1.1 zookeeper\n127.0.1.1 kafka\n" | sudo tee -a /etc/hosts
+# start docker
+sudo -i -u docker
+docker-compose -f /data/docker-compose-local.yml up
 
 # setup schema registry
 vagrant ssh ansible
@@ -36,7 +36,9 @@ ll /var/log/confluent/schema-registry/
 ll /home/cp-schema-registry/logs/
 less +G /var/log/confluent/schema-registry/schema-registry.log
 tail -F /var/log/confluent/schema-registry/schema-registry.log
-http 192.168.100.11:8081
+
+# (local) examples
+http -v 192.168.100.11:8081/subjects
 
 # check running services
 sudo netstat -ltp
