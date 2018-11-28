@@ -6,6 +6,8 @@ Resources
 
 * [Documentation](https://kubernetes.io/docs/home)
 
+* [Offical Blog](https://kubernetes.io/blog)
+
 * [Kubernetes in Action](https://amzn.to/2yXEGWx) (2017) by Marko Lukša (Book)
 
 * [Kubernetes by Example](http://kubernetesbyexample.com)
@@ -17,6 +19,30 @@ Resources
 * [Kubernetes: The Surprisingly Affordable Platform for Personal Projects](http://www.doxsey.net/blog/kubernetes--the-surprisingly-affordable-platform-for-personal-projects)
 
 * [Kubernetes from scratch to AWS with Terraform and Ansible](https://opencredo.com/kubernetes-aws-terraform-ansible-1)
+
+* YouTube channels: [Kubernetes](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) and [Cloud Native Computing Foundation](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
+
+## Architecture
+
+At the hardware level, a Kubernetes cluster node can be
+
+* a *master* node, which hosts the **Kubernetes Control Plane** that manages the state of the cluster
+    - The **Kubernetes API Server** to communicate with the cluster
+    - The **Scheduler**, which schedules apps (assigns a worker node to each deployable component)
+    - The **Controller Manager**, which performs cluster-level functions, such as replicating components, keeping track of worker nodes handling node failures, and so on
+    - **etcd**, a reliable distributed data store that persistently stores the cluster configuration
+* a *worker* nodes that run containerized applications
+    - Docker, rkt, or another **container runtime**, which runs containers
+    - The **Kubelet**, which talks to the API server and manages containers on its node
+    - The **Kubernetes Service Proxy (kube-proxy)**, which load-balances network traffic between application components
+
+![kubernetes-architecture](img/kubernetes-architecture.png)
+
+* To run an application in Kubernetes, it needs to be packaged into one or more container images, those images need to be pushed to an image registry, and then a description of the app posted to the Kubernetes API Server
+* When the API server processes the app's description, the Scheduler schedules the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment
+* The Kubelet on those nodes then instructs the Container Runtime (Docker, for example) to pull the required container images and run the containers
+* Once the application is running, Kubernetes continuously makes sure that the deployed state of the application always matches the description you provided
+* To allow clients to easily find containers that provide a specific service, it's possible to tell Kubernetes which containers provide the same service and Kubernetes will expose all of them at a single static IP address and expose that address to all applications running in the cluster
 
 ## Setup
 
