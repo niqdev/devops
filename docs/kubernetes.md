@@ -39,10 +39,17 @@ At the hardware level, a Kubernetes cluster node can be
 ![kubernetes-architecture](img/kubernetes-architecture.png)
 
 * To run an application in Kubernetes, it needs to be packaged into one or more container images, those images need to be pushed to an image registry, and then a description of the app posted to the Kubernetes API Server
-* When the API server processes the app's description, the Scheduler schedules the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment
+* When the API server processes the app's description, the Scheduler schedules (pods are run immediately) the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment
 * The Kubelet on those nodes then instructs the Container Runtime (Docker, for example) to pull the required container images and run the containers
 * Once the application is running, Kubernetes continuously makes sure that the deployed state of the application always matches the description you provided
 * To allow clients to easily find containers that provide a specific service, it's possible to tell Kubernetes which containers provide the same service and Kubernetes will expose all of them at a single static IP address and expose that address to all applications running in the cluster
+* User interacts with the cluster through the `kubectl` command line client, which issues REST requests to the Kubernetes API server running on the master node
+
+![kubernetes-run](img/kubernetes-run.png)
+
+* One of the most fundamental Kubernetes principles is that instead of telling Kubernetes exactly what actions it should perform, you're only *declaratively changing the desired state* of the system and letting Kubernetes examine the current actual state and *reconcile* it with the desired state
+* A **pod** is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application
+* **Services** represent a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded to the IP and port of one of the pods belonging to the service at that moment
 
 ## Setup
 
@@ -119,6 +126,9 @@ kubectl describe pods
 
 # list pods
 kubectl get pods
+
+# list pods and nodes
+kubectl get pods -o wide
 
 # filter with equality-based labels
 kubectl get pods -l app=kubernetes-bootcamp
