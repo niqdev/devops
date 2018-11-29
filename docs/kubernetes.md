@@ -53,6 +53,12 @@ At the hardware level, a Kubernetes cluster node can be
 * Using multiple **namespaces** allows to split complex systems with numerous components into smaller distinct groups and resource names only need to be unique within a namespace
 * A **pod** is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application
 * **Services** represent a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded to the IP and port of one of the pods belonging to the service at that moment
+* A **ReplicationController** is a resource that ensures its pods are always kept running and an exact number of pods always matches its label selector, even if a node disappears. It's made by
+    - a *label selector*, which determines what pods are in the ReplicationController's scope
+    - a *replica count*, which specifies the desired number of pods that should be running
+    - a *pod template*, which is used when creating new pod replicas
+* A **ReplicaSet** behaves exactly like a ReplicationController (old), but it has more expressive pod selectors
+* A **DaemonSet** is mostly for specific case like infrastructure-related pods that perform system-level operations in which a pod must run on each and every node in the cluster and each node needs to run exactly one instance of the pod, for example log collector and resource monitor
 * *Resource* definition example
 
 ```
@@ -72,6 +78,9 @@ spec:
 status:
   ...
 ```
+
+* The Kubelet on the node hosting the pod can check if a container is still alive through **liveness probes** using *httpGet*, *tcpSocket* or *exec*. Exit code is a sum of `128 + N` e.g. `137 = 128 + 9` (SIGKILL) or `143 = 128 + 15` (SIGTERM). Always remember to set an initial delay *initialDelaySeconds*
+* TODO **readiness probes**
 
 ## Setup
 
@@ -131,6 +140,9 @@ kubectl create -f <FILE_NAME>.yaml
 # explain fields
 kubectl explain pod
 kubectl explain service.spec
+
+# edit resource (vim)
+kubectl edit pod <POD_NAME>
 ```
 
 Simple deployment
@@ -172,6 +184,7 @@ http :8001/api/v1/proxy/namespaces/default/pods/$POD_NAME/
 # view logs
 kubectl logs $POD_NAME
 kubectl logs <POD_NAME> -c <CONTAINER_NAME>
+kubectl logs <POD_NAME> --previous
 
 # execute command on container
 kubectl exec $POD_NAME printenv
@@ -267,6 +280,17 @@ kubectl delete deployment,service kubernetes-bootcamp
 # all (means all resource types)
 # --all (means all resource instances)
 kubectl delete all --all
+```
+
+Other
+```bash
+# replication controller
+kubectl get rc
+kubectl get replicationcontroller
+
+# replica set
+kubectl get rs
+kubectl get replicaset
 ```
 
 <br>
