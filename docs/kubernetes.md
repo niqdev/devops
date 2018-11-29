@@ -48,8 +48,30 @@ At the hardware level, a Kubernetes cluster node can be
 ![kubernetes-run](img/kubernetes-run.png)
 
 * One of the most fundamental Kubernetes principles is that instead of telling Kubernetes exactly what actions it should perform, you're only *declaratively changing the desired state* of the system and letting Kubernetes examine the current actual state and *reconcile* it with the desired state
+* A **label** is an arbitrary key-value pair you attach to a resource, which is then utilized when selecting resources using *label selectors* and a resource can have more than one label
+* **Annotations** are key-value pairs like labels, but they aren't meant to hold identifying information and can hold up to 256 KB
+* Using multiple **namespaces** allows to split complex systems with numerous components into smaller distinct groups and resource names only need to be unique within a namespace
 * A **pod** is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application
 * **Services** represent a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded to the IP and port of one of the pods belonging to the service at that moment
+* *Resource* definition example
+
+```
+apiVersion: v1
+# type of resource
+kind: Pod
+# includes the name, namespace, labels, and other information about the pod
+metadata:
+  ...
+# contains the actual description of the pod's contents,
+# such as the pod's containers, volumes, and other data
+spec:
+  ...
+# contains the current information about the running pod,
+# such as what condition the pod is in, the description and status of each container,
+# and the pod's internal IP and other basic info
+status:
+  ...
+```
 
 ## Setup
 
@@ -92,11 +114,23 @@ kubectl describe nodes
 kubectl config view
 
 # namespace
-kubectl create namespace local
+kubectl create namespace <NAMESPACE_NAME>
 kubectl get namespaces
-kubectl config set-context $(kubectl config current-context) --namespace=local
 kubectl config view | grep namespace
-kubectl delete namespace local
+kubectl delete namespace <NAMESPACE_NAME>
+
+# current namespace
+kubectl config current-context
+
+# switch namespace
+kubectl config set-context $(kubectl config current-context) --namespace=<NAMESPACE_NAME>
+
+# create resources from file
+kubectl create -f <FILE_NAME>.yaml
+
+# explain fields
+kubectl explain pod
+kubectl explain service.spec
 ```
 
 Simple deployment
@@ -120,21 +154,6 @@ kubectl rollout undo deployments/kubernetes-bootcamp
 
 # list deployments
 kubectl get deployments
-
-# list containers inside pods
-kubectl describe pods
-
-# list pods
-kubectl get pods
-
-# list pods and nodes
-kubectl get pods -o wide
-
-# filter with equality-based labels
-kubectl get pods -l app=kubernetes-bootcamp
-
-# filter with set-based labels
-kubectl get pods -l 'app in (kubernetes-bootcamp)'
 ```
 
 Pod and Container
@@ -152,6 +171,7 @@ http :8001/api/v1/proxy/namespaces/default/pods/$POD_NAME/
 
 # view logs
 kubectl logs $POD_NAME
+kubectl logs <POD_NAME> -c <CONTAINER_NAME>
 
 # execute command on container
 kubectl exec $POD_NAME printenv
@@ -162,6 +182,56 @@ kubectl exec -it $POD_NAME bash
 
 # verify label
 kubectl describe pods $POD_NAME
+
+# list containers inside pods
+kubectl describe pods
+
+# list pods
+kubectl get pods
+
+# list pods and nodes
+kubectl get pods -o wide
+
+# list pods with labels
+kubectl get po --show-labels
+kubectl get pods -L <LABEL_KEY>
+
+# filter with equality-based labels
+kubectl get pods -l app=kubernetes-bootcamp
+kubectl get pods -l app
+kubectl get pods -l '!app'
+
+# filter with set-based labels
+kubectl get pods -l 'app in (kubernetes-bootcamp)'
+
+# add/update labels manually
+kubectl label po <POD_NAME> <LABEL_KEY>=<LABEL_VALUE>
+kubectl label po <POD_NAME> <LABEL_KEY>=<LABEL_VALUE> --overwrite
+
+# annotate
+kubectl annotate pod <POD_NAME> <LABEL_KEY>=<LABEL_VALUE>
+
+# print definition
+kubectl get pod <POD_NAME> -o json
+kubectl get pod <POD_NAME> -o yaml
+# output json
+kubectl get pod <POD_NAME> -o json | jq '.metadata'
+# output json
+kubectl get pod <POD_NAME> -o yaml | yq '.metadata.annotations'
+# output yaml
+kubectl get pod <POD_NAME> -o yaml | yq -y '.metadata.annotations'
+
+# specify namespace
+kubectl get ns
+kubectl get pod --namespace kube-system
+
+# (debug) forward a local network port to a port in the pod (without service)
+kubectl port-forward <POD_NAME> <LOCAL_PORT>:<POD_PORT>
+
+# delete (sends SIGTERM to containers and waits 30 seconds, otherwise sends SIGKILL)
+kubectl delete po <POD_NAME>
+kubectl delete pod -l <LABEL_KEY>=<LABEL_VALUE>
+kubectl delete po --all
 ```
 
 Service
@@ -194,6 +264,9 @@ kubectl describe deployments/kubernetes-bootcamp
 
 # cleanup
 kubectl delete deployment,service kubernetes-bootcamp
+# all (means all resource types)
+# --all (means all resource instances)
+kubectl delete all --all
 ```
 
 <br>
