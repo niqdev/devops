@@ -48,17 +48,7 @@ At the hardware level, a Kubernetes cluster node can be
 ![kubernetes-run](img/kubernetes-run.png)
 
 * One of the most fundamental Kubernetes principles is that instead of telling Kubernetes exactly what actions it should perform, you're only *declaratively changing the desired state* of the system and letting Kubernetes examine the current actual state and *reconcile* it with the desired state
-* A **label** is an arbitrary key-value pair you attach to a resource, which is then utilized when selecting resources using *label selectors* and a resource can have more than one label
-* **Annotations** are key-value pairs like labels, but they aren't meant to hold identifying information and can hold up to 256 KB
-* Using multiple **namespaces** allows to split complex systems with numerous components into smaller distinct groups and resource names only need to be unique within a namespace
-* A **pod** is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application
-* **Services** represent a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded to the IP and port of one of the pods belonging to the service at that moment
-* A **ReplicationController** is a resource that ensures its pods are always kept running and an exact number of pods always matches its label selector, even if a node disappears. It's made by
-    - a *label selector*, which determines what pods are in the ReplicationController's scope
-    - a *replica count*, which specifies the desired number of pods that should be running
-    - a *pod template*, which is used when creating new pod replicas
-* A **ReplicaSet** behaves exactly like a ReplicationController (old), but it has more expressive pod selectors
-* A **DaemonSet** is mostly for specific case like infrastructure-related pods that perform system-level operations in which a pod must run on each and every node in the cluster and each node needs to run exactly one instance of the pod, for example log collector and resource monitor
+
 * *Resource* definition example
 
 ```
@@ -79,8 +69,26 @@ status:
   ...
 ```
 
+* A **label** is an arbitrary key-value pair you attach to a resource, which is then utilized when selecting resources using *label selectors* and a resource can have more than one label
+* **Annotations** are key-value pairs like labels, but they aren't meant to hold identifying information and can hold up to 256 KB
+* Using multiple **namespaces** allows to split complex systems with numerous components into smaller distinct groups and resource names only need to be unique within a namespace
+* A **pod** is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application
+* A **ReplicationController** is a resource that ensures its pods are always kept running and an exact number of pods always matches its label selector, even if a node disappears. It's made by
+    - a *label selector*, which determines what pods are in the ReplicationController's scope
+    - a *replica count*, which specifies the desired number of pods that should be running
+    - a *pod template*, which is used when creating new pod replicas
+* A **ReplicaSet** behaves exactly like a ReplicationController (old), but it has more expressive pod selectors
+* A **DaemonSet** is mostly for specific case like infrastructure-related pods that perform system-level operations in which a pod must run on each and every node in the cluster and each node needs to run exactly one instance of the pod, for example log collector and resource monitor
+* A **Job** resource allows to run a pod whose container isn't restarted when the process running inside finishes successfully. A cron job in Kubernetes is configured by creating a **CronJob** resource
+* A **Service** represents a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded/load-balanced to the IP and port of one of the pods belonging to the service at that moment
+    - *ExternalName* type, a service that serves as an alias for an external service
+    - *NodePort* type, each cluster node opens a port on the node itself and redirects traffic received on that port to the underlying service
+    - *LoadBalancer* type (extension of NodePort), makes the service accessible through a dedicated load balancer which usually is  supported and automatically provisioned by the cloud infrastructure
+* A *headless service* still provides load balancing across pods, but through the DNS round-robin mechanism instead of through the service proxy, because DNS returns the pods' IPs, clients connect directly to the pods, instead of through the service proxy. Setting the *clusterIP* field in a service spec to *None* makes the service headless
+* An **Endpoints** resource is a list of IP addresses and ports exposing a service. The Endpoints object needs to have the same name as the service and contain the list of target IP addresses and ports for the service
+* An **Ingress** operates at the application layer of the network stack (HTTP) and can provide features such as cookie-based session affinity. LoadBalancer service requires its own load balancer with its own public IP address, whereas an Ingress only requires one
 * The Kubelet on the node hosting the pod can check if a container is still alive through **liveness probes** using *httpGet*, *tcpSocket* or *exec*. Exit code is a sum of `128 + N` e.g. `137 = 128 + 9` (SIGKILL) or `143 = 128 + 15` (SIGTERM). Always remember to set an initial delay *initialDelaySeconds*
-* TODO **readiness probes**
+* The **readiness probes** is invoked periodically and determines whether the specific pod should receive client requests or not. Liveness probes keep pods healthy by killing off unhealthy containers and replacing them with new, healthy ones, whereas readiness probes make sure that only pods that are ready to serve requests receive them and this is mostly necessary during container start up
 
 ## Setup
 
@@ -109,6 +117,15 @@ docker ps -a
 
 # reuse the minikube's built-in docker daemon
 eval $(minikube docker-env)
+
+# access NodePort services
+minikube service <SERVICE_NAME> [-n <NAMESPACE>]
+
+# list addons
+minikube addons list
+
+# enable addon
+minikube addons enable <ADDON_NAME>
 ```
 
 Basic
@@ -134,8 +151,9 @@ kubectl config current-context
 # switch namespace
 kubectl config set-context $(kubectl config current-context) --namespace=<NAMESPACE_NAME>
 
-# create resources from file
+# create/update resources from file
 kubectl create -f <FILE_NAME>.yaml
+kubectl apply -f <FILE_NAME>.yaml
 
 # explain fields
 kubectl explain pod
@@ -234,9 +252,10 @@ kubectl get pod <POD_NAME> -o yaml | yq '.metadata.annotations'
 # output yaml
 kubectl get pod <POD_NAME> -o yaml | yq -y '.metadata.annotations'
 
-# specify namespace
+# by namespace
 kubectl get ns
 kubectl get pod --namespace kube-system
+kubectl get po --all-namespaces
 
 # (debug) forward a local network port to a port in the pod (without service)
 kubectl port-forward <POD_NAME> <LOCAL_PORT>:<POD_PORT>
@@ -250,6 +269,7 @@ kubectl delete po --all
 Service
 ```bash
 # list services
+kubectl get svc
 kubectl get services
 
 # create service
@@ -291,6 +311,15 @@ kubectl get replicationcontroller
 # replica set
 kubectl get rs
 kubectl get replicaset
+
+# jobs
+kubectl get jobs
+
+# ingress
+kubectl get ingress
+
+# jsonpath example
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
 ```
 
 <br>
