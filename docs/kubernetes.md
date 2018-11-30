@@ -89,6 +89,17 @@ status:
 * An **Ingress** operates at the application layer of the network stack (HTTP) and can provide features such as cookie-based session affinity. LoadBalancer service requires its own load balancer with its own public IP address, whereas an Ingress only requires one
 * The Kubelet on the node hosting the pod can check if a container is still alive through **liveness probes** using *httpGet*, *tcpSocket* or *exec*. Exit code is a sum of `128 + N` e.g. `137 = 128 + 9` (SIGKILL) or `143 = 128 + 15` (SIGTERM). Always remember to set an initial delay *initialDelaySeconds*
 * The **readiness probes** is invoked periodically and determines whether the specific pod should receive client requests or not. Liveness probes keep pods healthy by killing off unhealthy containers and replacing them with new, healthy ones, whereas readiness probes make sure that only pods that are ready to serve requests receive them and this is mostly necessary during container start up
+* A **volume** is a component of a pod and not a standalone object, it cannot be created or deleted on its own. A volume is available to all containers in the pod, but it must be mounted in each container that needs to access it
+    - *emptyDir*, a simple empty directory used for storing transient data
+    - *hostPath*, used for mounting directories from the worker node's filesystem into the pod
+    - *gitRepo*, a volume initialized by checking out the contents of a Git repository
+    - *nfs*, an NFS share mounted into the pod
+    - *gcePersistentDisk* (Google Compute Engine Persistent Disk), *awsElasticBlockStore* (Amazon Web Services Elastic Block Store Volume), *azureDisk* (Microsoft Azure Disk Volume), used for mounting cloud provider-specific storage
+    - *cinder, cephfs, iscsi, flocker, glusterfs, quobyte, rbd, flexVolume, vsphereVolume, photonPersistentDisk, scaleIO*, used for mounting other types of network storage
+    - *configMap, secret, downwardAPI*, a special types of volumes used to expose certain Kubernetes resources and cluster information to the pod
+    - *persistentVolumeClaim*, a way to use a pre- or dynamically provisioned persistent storage
+
+![kubernetes-volume](img/kubernetes-volume.png)
 
 ## Setup
 
@@ -317,6 +328,11 @@ kubectl get jobs
 
 # ingress
 kubectl get ingress
+
+# persistent volume, claim and storage class
+kubectl get pv
+kubectl get pvc
+kubectl get sc
 
 # jsonpath example
 kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
