@@ -101,6 +101,12 @@ status:
 
 ![kubernetes-volume](img/kubernetes-volume.png)
 
+* An app can be configured by
+    - passing command-line arguments to containers with `command` and `args`
+    - setting custom environment variables for each container of a pod
+    - mounting configuration files into containers through a special type of volume
+* The contents of a **ConfigMap** are passed to containers as either environment variables or as files in a volume while on the nodes **Secrets** are always stored in memory and never written to physical storage (maximum size of a Secret is limited to 1MB)
+
 ## Setup
 
 Requirements
@@ -336,6 +342,28 @@ kubectl get sc
 
 # jsonpath example
 kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+
+# create config map
+kubectl create configmap my-config \
+  --from-literal=my-key-1=my-value-1 \
+  --from-literal=my-key-2=my-value-2
+
+# print config-map
+kubectl get configmap my-config -o yaml
+
+# secrets
+kubectl get secrets
+kubectl describe secrets
+kubectl exec <POD_NAME> ls /var/run/secrets/kubernetes.io/serviceaccount/
+
+# create secrets (generic|tls|docker-registry)
+echo bar > foo.secure
+kubectl create secret generic my-secret --from-file=foo.secure
+
+# contents are shown as Base64-encoded strings
+kubectl get secret my-secret -o yaml
+# prints "bar"
+echo YmFyCg== | base64 -D
 ```
 
 <br>
