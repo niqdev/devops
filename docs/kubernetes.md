@@ -105,7 +105,11 @@ status:
     - passing command-line arguments to containers with `command` and `args`
     - setting custom environment variables for each container of a pod
     - mounting configuration files into containers through a special type of volume
-* The contents of a **ConfigMap** are passed to containers as either environment variables or as files in a volume while on the nodes **Secrets** are always stored in memory and never written to physical storage (maximum size of a Secret is limited to 1MB)
+* The contents of a **ConfigMap** are passed to containers as either environment variables or as files in a volume while on the nodes
+* **Secrets** are always stored in memory and never written to physical storage (maximum size of a Secret is limited to 1MB)
+* The **Downward API** enables you to expose the pod's own metadata to the processes running inside that pod (it isn't a REST endpoint)
+
+![kubernetes-container-api](img/kubernetes-container-api.png)
 
 ## Setup
 
@@ -143,6 +147,11 @@ minikube addons list
 
 # enable addon
 minikube addons enable <ADDON_NAME>
+
+# (?) swagger
+minikube start --extra-config=apiserver.Features.EnableSwaggerUI=true
+kubectl proxy
+open http://localhost:8080/swagger-ui
 ```
 
 Basic
@@ -364,6 +373,35 @@ kubectl create secret generic my-secret --from-file=foo.secure
 kubectl get secret my-secret -o yaml
 # prints "bar"
 echo YmFyCg== | base64 -D
+
+# access api server from local machine
+kubectl proxy
+http :8001
+http :8001/api/v1/pods
+
+# access api server from a container
+# (create)
+kubectl run hello-curl \
+  --image=tutum/curl \
+  --command -- "sleep" "9999999"
+# (exec)
+kubectl exec -it hello-curl-XXX bash
+# (verify envs)
+printenv
+# (missing certificate)
+curl -k  https://kubernetes
+# (list secrets)
+ls -laht /var/run/secrets/kubernetes.io/serviceaccount/
+# (specify certificate)
+curl --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes
+# (specify token, namespace and default certificate) or "https://kubernetes.default/api/v1"
+export KUBE_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+export KUBE_NS=$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)
+export CURL_CA_BUNDLE=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+curl -v \
+  -H "Authorization: Bearer $KUBE_TOKEN" \
+  https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT/api/v1/namespaces/$KUBE_NS/pods
+# @see also ambassador container pattern based on kubectl-proxy
 ```
 
 <br>
