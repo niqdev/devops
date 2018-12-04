@@ -111,6 +111,9 @@ status:
 
 ![kubernetes-container-api](img/kubernetes-container-api.png)
 
+* Rolling update means replace pods step by step slowly scaling down the previous version and scaling up the new one
+* A **Deployment** is a higher-level resource meant for deploying applications and updating them declaratively, instead of doing it through a ReplicationController or a ReplicaSet, which are both considered lower-level concepts. A Deployment doesn't manage pods directly, instead it creates a new ReplicaSet which is scaled up slowly, while the previous ReplicaSet is scaled down to zero. See also `minReadySeconds`, `maxSurge` and `maxUnavailable` properties
+
 ## Setup
 
 Requirements
@@ -187,6 +190,9 @@ kubectl explain service.spec
 
 # edit resource (vim)
 kubectl edit pod <POD_NAME>
+
+# verbosity
+kubectl get pods --v 6
 ```
 
 Simple deployment
@@ -208,8 +214,22 @@ kubectl rollout history deployments/kubernetes-bootcamp
 # undo latest deployment
 kubectl rollout undo deployments/kubernetes-bootcamp
 
+# undo deployment to revision N
+kubectl rollout undo deployment <DEPLOYMENT_NAME> --to-revision=N
+
+# pause/resume deployment
+kubectl rollout pause deployment <DEPLOYMENT_NAME>
+kubectl rollout resume deployment <DEPLOYMENT_NAME>
+
 # list deployments
 kubectl get deployments
+kubectl describe deployment
+
+# create deployment from file (records the command in the revision history)
+kubectl create -f <FILE_NAME>.yaml --record
+
+# manually slowdown a rolling update
+kubectl patch deployment <DEPLOYMENT_NAME> -p '{"spec": {"minReadySeconds": 10}}'
 ```
 
 Pod and Container
@@ -402,6 +422,22 @@ curl -v \
   -H "Authorization: Bearer $KUBE_TOKEN" \
   https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT/api/v1/namespaces/$KUBE_NS/pods
 # @see also ambassador container pattern based on kubectl-proxy
+```
+
+Alternative ways of modify resources
+```bash
+# opens the object's manifest in default editor
+kubectl edit
+# modifies individual properties of an object
+kubectl patch
+# creates or modifies the object by applying property values from a full YAML or JSON file
+kubectl apply
+# same as apply but only if not exists
+kubectl create
+# same as apply but only if exists
+kubectl replace
+# changes the container image
+kubectl set image
 ```
 
 <br>
