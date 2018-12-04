@@ -113,6 +113,8 @@ status:
 
 * Rolling update means replace pods step by step slowly scaling down the previous version and scaling up the new one
 * A **Deployment** is a higher-level resource meant for deploying applications and updating them declaratively, instead of doing it through a ReplicationController or a ReplicaSet, which are both considered lower-level concepts. A Deployment doesn't manage pods directly, instead it creates a new ReplicaSet which is scaled up slowly, while the previous ReplicaSet is scaled down to zero. See also `minReadySeconds`, `maxSurge` and `maxUnavailable` properties
+* A **StatefulSet** makes sure pods are rescheduled in such a way that they retain their identity and state. StatefulSets were initially called PetSets, that name comes from the [pets vs. cattle analogy](https://news.ycombinator.com/item?id=7311704). Each pod created by a StatefulSet is assigned an ordinal index (zero-based), which is then used to derive the pod's name and hostname, and to attach stable storage to the pod.
+* A StatefulSet requires to create a corresponding governing headless Service (`clusterIP=None`) that's used to provide the actual network identity to each pod, in this wat each pod gets its own DNS entry. The new pod isn't necessarily scheduled to the same node. Scaling the StatefulSet creates a new pod instance with the next unused ordinal index. Scaling down a StatefulSet always removes the instances with the highest ordinal index first. StatefulSets don't delete PersistentVolumeClaims when scaling down and they reattach them when scaling back up
 
 ## Setup
 
@@ -422,6 +424,26 @@ curl -v \
   -H "Authorization: Bearer $KUBE_TOKEN" \
   https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT/api/v1/namespaces/$KUBE_NS/pods
 # @see also ambassador container pattern based on kubectl-proxy
+
+# api server proxy to invoke endpoint on resource
+kubectl proxy
+curl localhost:8001/api/v1/namespaces/<NAMESPACE_NAME>/<pods|services|...>/<RESOURCE_NAME>/proxy/<PATH>
+
+# temporary command
+kubectl run \
+  -it srvlookup \
+  --image=tutum/dnsutils \
+  --rm \
+  --restart=Never \
+  -- dig <SERVICE_NAME> kubia.default.svc.cluster.local
+
+# temporary container
+kubectl run \
+  -it phusion \
+  --image=phusion/baseimage:latest \
+  --rm \
+  --restart=Never \
+  bash
 ```
 
 Alternative ways of modify resources
