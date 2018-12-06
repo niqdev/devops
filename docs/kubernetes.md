@@ -27,16 +27,24 @@ Resources
 At the hardware level, a Kubernetes cluster node can be
 
 * a *master* node, which hosts the **Kubernetes Control Plane** that manages the state of the cluster
-    - The **Kubernetes API Server** to communicate with the cluster
+    - The **Kubernetes API Server** to communicate with the cluster and the only component that talks to etcd directly
     - The **Scheduler**, which schedules apps (assigns a worker node to each deployable component)
     - The **Controller Manager**, which performs cluster-level functions, such as replicating components, keeping track of worker nodes handling node failures, and so on
-    - **etcd**, a reliable distributed data store that persistently stores the cluster configuration
+    - **etcd**, a fast, distributed, and consistent key-value store which is the only place where cluster state and metadata are stored
 * a *worker* nodes that run containerized applications
     - Docker, rkt, or another **container runtime**, which runs containers
     - The **Kubelet**, which talks to the API server and manages containers on its node
     - The **Kubernetes Service Proxy (kube-proxy)**, which load-balances network traffic between application components
+*  some of the add-on components are
+    - Kubernetes DNS server
+    - Dashboard
+    - Ingress controller
+    - Heapster
+    - Container Network Interface network plugin
 
 ![kubernetes-architecture](img/kubernetes-architecture.png)
+
+![kubernetes-cluster](img/kubernetes-cluster.png)
 
 * To run an application in Kubernetes, it needs to be packaged into one or more container images, those images need to be pushed to an image registry, and then a description of the app posted to the Kubernetes API Server
 * When the API server processes the app's description, the Scheduler schedules (pods are run immediately) the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment
@@ -115,6 +123,27 @@ status:
 * A **Deployment** is a higher-level resource meant for deploying applications and updating them declaratively, instead of doing it through a ReplicationController or a ReplicaSet, which are both considered lower-level concepts. A Deployment doesn't manage pods directly, instead it creates a new ReplicaSet which is scaled up slowly, while the previous ReplicaSet is scaled down to zero. See also `minReadySeconds`, `maxSurge` and `maxUnavailable` properties
 * A **StatefulSet** makes sure pods are rescheduled in such a way that they retain their identity and state. StatefulSets were initially called PetSets, that name comes from the [pets vs. cattle analogy](https://news.ycombinator.com/item?id=7311704). Each pod created by a StatefulSet is assigned an ordinal index (zero-based), which is then used to derive the pod's name and hostname, and to attach stable storage to the pod.
 * A StatefulSet requires to create a corresponding governing headless Service (`clusterIP=None`) that's used to provide the actual network identity to each pod, in this wat each pod gets its own DNS entry. The new pod isn't necessarily scheduled to the same node. Scaling the StatefulSet creates a new pod instance with the next unused ordinal index. Scaling down a StatefulSet always removes the instances with the highest ordinal index first. StatefulSets don't delete PersistentVolumeClaims when scaling down and they reattach them when scaling back up
+* Clients watch for changes by opening an HTTP connection to the API server. Through this connection, the client will then receive a stream of modifications to the watched objects
+
+![kubernetes-client](img/kubernetes-client.png)
+
+* The **Scheduler** waits for newly created pods through the API server's watch mechanism and assign a node to each new pod that doesn't already have the node set. The Scheduler doesn't instruct the selected node (or the Kubelet running on that node) to run the pod. All the Scheduler does is update the pod definition through the API server. The API server then notifies the Kubelet that the pod has been scheduled. As soon as the Kubelet on the target node sees the pod has been scheduled to its node, it creates and runs the pod's containers
+* The single **Controller Manager** process currently combines a multitude of controllers performing various reconciliation tasks
+    - Replication Manager (a controller for ReplicationController resources)
+    - ReplicaSet, DaemonSet, and Job controllers
+    - Deployment controller
+    - StatefulSet controller
+    - Node controller
+    - Service controller
+    - Endpoints controller
+    - Namespace controller
+    - PersistentVolume controller
+    - Others
+* Controllers do many different things, but they all watch the API server for changes to resources and perform operations for each change. In general, controllers run a reconciliation loop, which reconciles the actual state with the desired state (specified in the resource's `spec` section) and writes the new actual state to the resource's `status` section
+* The **Kubelet** is the component responsible for everything running on a worker node. Its initial job is to register the node it's running on by creating a Node resource in the API server. Then it needs to continuously monitor the API server for Pods that have been scheduled to the node, and start the pod's containers. It does this by telling the configured container runtime (i.e. Docker) to run a container from a specific container image. The Kubelet then constantly monitors running containers and reports their status, events, and resource consumption to the API server. The Kubelet is also the component that runs the container liveness probes, restarting containers when the probes fail. Lastly, it terminates containers when their Pod is deleted from the API server and notifies the server that the pod has terminated
+* Every worker node also runs the **kube-proxy** (Service Proxy), whose purpose is to make sure clients can connect to the services you define through the Kubernetes API and performs load balancing across those pods. The current, implementation only uses *iptables* rules to redirect packets to a randomly selected backend pod without passing them through an actual proxy server
+
+![kubernetes-deployment](img/kubernetes-deployment.png)
 
 ## Setup
 
@@ -170,6 +199,9 @@ kubectl get nodes
 kubectl describe nodes
 kubectl config view
 
+# health status of each control plane component
+kubectl get componentstatuses
+
 # namespace
 kubectl create namespace <NAMESPACE_NAME>
 kubectl get namespaces
@@ -195,6 +227,31 @@ kubectl edit pod <POD_NAME>
 
 # verbosity
 kubectl get pods --v 6
+
+# access etcd on minikube
+minikube ssh
+docker run \
+  --rm \
+  -p 12379:2379 \
+  -p 12380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-v3.3.10 \
+  gcr.io/etcd-development/etcd:v3.3.10 \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:12379 \
+  --advertise-client-urls http://0.0.0.0:12379 \
+  --listen-peer-urls http://0.0.0.0:12380 \
+  --initial-advertise-peer-urls http://0.0.0.0:12380 \
+  --initial-cluster s1=http://0.0.0.0:12380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new
+docker exec etcd-gcr-v3.3.10 /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl version"
+docker exec etcd-gcr-v3.3.10 /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl get /registry --endpoints=127.0.0.1:12379"
+
+# watch cluster events
+kubectl get events --watch
 ```
 
 Simple deployment
@@ -304,6 +361,10 @@ kubectl get pod <POD_NAME> -o yaml | yq -y '.metadata.annotations'
 kubectl get ns
 kubectl get pod --namespace kube-system
 kubectl get po --all-namespaces
+
+# watch for changes
+kubectl get pods --watch
+kubectl get pods -o yaml --watch
 
 # (debug) forward a local network port to a port in the pod (without service)
 kubectl port-forward <POD_NAME> <LOCAL_PORT>:<POD_PORT>
