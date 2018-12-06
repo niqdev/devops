@@ -524,3 +524,63 @@ kubectl set image
 ```
 
 <br>
+
+## Helm
+
+> **Helm** installs *charts* into Kubernetes, creating a new *release* for each installation. And to find new charts, you can search Helm chart *repositories*
+
+* A **Chart** is a Helm package. It contains all of the resource definitions necessary to run an application, tool, or service inside of a Kubernetes cluster. Think of it like the Kubernetes equivalent of a Homebrew formula, an Apt dpkg, or a Yum RPM file
+* A **Repository** is the place where charts can be collected and shared
+* A **Release** is an instance of a chart running in a Kubernetes cluster
+
+Resources
+
+* [Documentation](https://docs.helm.sh)
+* [The missing CI/CD Kubernetes component: Helm package manager](https://medium.com/@gajus/the-missing-ci-cd-kubernetes-component-helm-package-manager-1fe002aac680)
+
+Commands
+```bash
+# linux
+sudo snap install helm --classic
+# mac
+brew install kubernetes-helm
+
+# setup client only
+helm init --client-only
+
+# search
+helm search <CHART>
+helm search postgresql
+
+# info
+helm inspect <CHART>
+helm inspect stable/postgresql
+helm inspect values stable/postgresql
+helm get values <KEY>
+helm status <CHART>
+helm list
+helm list --all
+
+# install public chart [install|upgrade|rollback|delete]
+helm install <CHART>
+helm install -f <CONFIG_OVERRIDE>.yaml <CHART>
+helm delete <CHART>
+
+# repository
+helm repo list
+helm repo add <NAME https://<DOMAIN>/<PATH>
+helm repo update
+
+# custom chart
+helm create my-chart
+helm lint my-chart
+helm package my-chart
+helm install ./my-chart
+helm install . --dry-run --debug
+
+# plugin
+$(helm home)/plugins
+helm plugin install <PATH|URL>
+```
+
+<br>
