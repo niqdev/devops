@@ -568,7 +568,7 @@ helm delete <CHART>
 
 # repository
 helm repo list
-helm repo add <NAME https://<DOMAIN>/<PATH>
+helm repo add <NAME> https://<DOMAIN>/<PATH>
 helm repo update
 
 # custom chart
@@ -576,11 +576,19 @@ helm create my-chart
 helm lint my-chart
 helm package my-chart
 helm install ./my-chart
-helm install . --dry-run --debug
+helm install --dry-run --debug ./my-chart
 
 # plugin
 $(helm home)/plugins
 helm plugin install <PATH|URL>
 ```
+
+<br>
+
+## Others
+
+* [Argo](https://argoproj.github.io) - Open source Kubernetes native workflows, events, CI and CD
+* [eksctl](https://eksctl.io) - A CLI for Amazon EKS
+* [kubectx](https://ahmet.im/blog/kubectx) - A tool to switch between Kubernetes contexts
 
 <br>
