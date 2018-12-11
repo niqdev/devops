@@ -10,6 +10,8 @@ Resources
 
 * [Kubernetes in Action](https://amzn.to/2yXEGWx) (2017) by Marko Lukša (Book)
 
+* YouTube channels: [Kubernetes](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) and [Cloud Native Computing Foundation](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
+
 * [Kubernetes by Example](http://kubernetesbyexample.com)
 
 * [Kubernetes comic](https://cloud.google.com/kubernetes-engine/kubernetes-comic)
@@ -20,7 +22,7 @@ Resources
 
 * [Kubernetes from scratch to AWS with Terraform and Ansible](https://opencredo.com/kubernetes-aws-terraform-ansible-1)
 
-* YouTube channels: [Kubernetes](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) and [Cloud Native Computing Foundation](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
+* [Prometheus and Kubernetes: A Perfect Match](https://www.weave.works/blog/prometheus-kubernetes-perfect-match)
 
 ## Architecture
 
