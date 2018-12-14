@@ -592,5 +592,6 @@ helm plugin install <PATH|URL>
 * [Argo](https://argoproj.github.io) - Open source Kubernetes native workflows, events, CI and CD
 * [eksctl](https://eksctl.io) - A CLI for Amazon EKS
 * [kubectx](https://ahmet.im/blog/kubectx) - A tool to switch between Kubernetes contexts
+* [kube-ps1](https://github.com/jonmosco/kube-ps1) - Kubernetes prompt
 
 <br>
