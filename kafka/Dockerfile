@@ -2,7 +2,7 @@ FROM devops/base:latest
 #FROM niqdev/phusion-base:latest
 
 ARG SCALA_VERSION=2.12
-ARG KAFKA_VERSION=2.0.0
+ARG KAFKA_VERSION=2.1.0
 
 ENV ZOOKEEPER_HOSTS="localhost:2181"
 ENV KAFKA_HOME "/opt/kafka"

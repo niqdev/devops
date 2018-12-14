@@ -129,3 +129,6 @@ https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overlo
 
 # IAC infrastructure-as-code
 https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
+
+# java agent
+https://stackoverflow.com/questions/11898566/tutorials-about-javaagents
