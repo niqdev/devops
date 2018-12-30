@@ -20,6 +20,8 @@ Resources
 
 * [Kubernetes: The Surprisingly Affordable Platform for Personal Projects](http://www.doxsey.net/blog/kubernetes--the-surprisingly-affordable-platform-for-personal-projects)
 
+* [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+
 * [Kubernetes from scratch to AWS with Terraform and Ansible](https://opencredo.com/kubernetes-aws-terraform-ansible-1)
 
 * [Prometheus and Kubernetes: A Perfect Match](https://www.weave.works/blog/prometheus-kubernetes-perfect-match)
