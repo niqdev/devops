@@ -61,6 +61,7 @@
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
 * Incremental Purity [[slide](https://git.io/fp017)|[code](https://git.io/fp01d)] (Meetup)
+* [Functional Composition](https://benmosheron.gitlab.io/blog/2018/12/24/functional-composition.html)
 
 **Typeclass**
 
