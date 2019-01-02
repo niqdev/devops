@@ -149,6 +149,11 @@ status:
 
 ![kubernetes-deployment](img/kubernetes-deployment.png)
 
+* Every pod is associated with a `ServiceAccount`, which represents the identity of the app running in the pod. The token file `/var/run/secrets/kubernetes.io/serviceaccount/token`, which is mounted into each container's filesystem through a secret volume, holds the ServiceAccount's authentication token used to connect to the API server
+* RBAC (role-based access control) plugin prevents unauthorized users from viewing or modifying the cluster state. Roles are managed by `Roles`, `ClusterRoles`, `RoleBindings` and `ClusterRoleBindings` resources. Cluster level resources are not namespaced. *Roles* define what can be done, while *bindings* define who can do it
+
+![kubernetes-rbac](img/kubernetes-rbac.png)
+
 ## Setup
 
 Requirements
@@ -460,6 +465,12 @@ kubectl create secret generic my-secret --from-file=foo.secure
 kubectl get secret my-secret -o yaml
 # prints "bar"
 echo YmFyCg== | base64 -D
+
+# rbac
+kubectl get clusterroles
+kubectl get clusterrolebindings
+kubectl get roles
+kubectl get rolebindings
 
 # access api server from local machine
 kubectl proxy
