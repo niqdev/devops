@@ -1,20 +1,17 @@
 DEV info
 
-* rename + domain: to not-only-devops ?
+* rename + buy domain: to not-only-devops ?
 
 ---
 
 TODO
 * >>> add spreadsheets notes: java, scala, data structures, algorithms, design patterns?
-* review https://conorfennell.github.io/scala-zen
 * sla, percentile, jmx, mbeans, jconsole, jolokia, jstat, javap
 * add notes from JVM memory course, jps
 java -XX:+PrintFlagsFinal -version
 
 >>> example: jmh + scalacheck
 https://www.scalacheck.org/documentation.html
-
-* review kubernetes + minikube
 
 * aws: emr + s3
 * EMR docs, boto3
@@ -106,13 +103,13 @@ vagrant box remove manning/spark-in-action
 
 # hadoop
 https://dwbi.org/etl/bigdata/183-setup-hadoop-cluster
-https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/
-https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
+https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster
+https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster
 
 # vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 
-# course
+# courses
 https://www.coursera.org/learn/machine-learning
 https://developers.google.com/machine-learning/crash-course
 
@@ -132,3 +129,22 @@ https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-salts
 
 # java agent
 https://stackoverflow.com/questions/11898566/tutorials-about-javaagents
+
+# kunernetes raspberry
+https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
+https://chrisshort.net/my-raspberry-pi-kubernetes-cluster
+https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
+https://www.howtogeek.com/66438/how-to-easily-access-your-home-network-from-anywhere-with-ddns
+https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
+
+# kubernetes logging
+https://platform9.com/blog/logging-monitoring-of-kubernetes-applications-requirements-recommended-toolset
+https://platform9.com/blog/kubernetes-logging-and-monitoring-the-elasticsearch-fluentd-and-kibana-efk-stack-part-1-fluentd-architecture-and-configuration
+https://platform9.com/blog/kubernetes-logging-and-monitoring-the-elasticsearch-fluentd-and-kibana-efk-stack-part-2-elasticsearch-configuration
+https://logz.io/blog/kubernetes-log-analysis
+https://itnext.io/logging-best-practices-for-kubernetes-using-elasticsearch-fluent-bit-and-kibana-be9b7398dfee
+# tools
+http://fluentbit.org
+https://github.com/giantswarm/curator
+# cerebro
+http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
