@@ -62,6 +62,8 @@
 
 * [AWS diagrams & notes](https://www.awsgeek.com)
 
+* [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
+
 **CAP Theorem**
 
 * [Brewer's CAP Theorem](http://www.julianbrowne.com/article/brewers-cap-theorem)
