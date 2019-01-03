@@ -606,5 +606,6 @@ helm plugin install <PATH|URL>
 * [eksctl](https://eksctl.io) - A CLI for Amazon EKS
 * [kubectx](https://ahmet.im/blog/kubectx) - A tool to switch between Kubernetes contexts
 * [kube-ps1](https://github.com/jonmosco/kube-ps1) - Kubernetes prompt
+* [kubefwd](https://github.com/txn2/kubefwd) - Kubernetes port forwarding for local development
 
 <br>
