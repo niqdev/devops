@@ -148,3 +148,10 @@ http://fluentbit.org
 https://github.com/giantswarm/curator
 # cerebro
 http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
+# prometheus initContainer/JMX
+https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
+
+https://www.robustperception.io/which-are-my-biggest-metrics
+https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
+https://blog.serverdensity.com/how-to-monitor-kafka
+https://fabxc.org/tsdb

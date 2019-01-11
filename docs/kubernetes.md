@@ -126,7 +126,7 @@ status:
 * Rolling update means replace pods step by step slowly scaling down the previous version and scaling up the new one
 * A **Deployment** is a higher-level resource meant for deploying applications and updating them declaratively, instead of doing it through a ReplicationController or a ReplicaSet, which are both considered lower-level concepts. A Deployment doesn't manage pods directly, instead it creates a new ReplicaSet which is scaled up slowly, while the previous ReplicaSet is scaled down to zero. See also `minReadySeconds`, `maxSurge` and `maxUnavailable` properties
 * A **StatefulSet** makes sure pods are rescheduled in such a way that they retain their identity and state. StatefulSets were initially called PetSets, that name comes from the [pets vs. cattle analogy](https://news.ycombinator.com/item?id=7311704). Each pod created by a StatefulSet is assigned an ordinal index (zero-based), which is then used to derive the pod's name and hostname, and to attach stable storage to the pod.
-* A StatefulSet requires to create a corresponding governing headless Service (`clusterIP=None`) that's used to provide the actual network identity to each pod, in this wat each pod gets its own DNS entry. The new pod isn't necessarily scheduled to the same node. Scaling the StatefulSet creates a new pod instance with the next unused ordinal index. Scaling down a StatefulSet always removes the instances with the highest ordinal index first. StatefulSets don't delete PersistentVolumeClaims when scaling down and they reattach them when scaling back up
+* A StatefulSet requires to create a corresponding governing headless Service (`clusterIP=None`) that's used to provide the actual network identity to each pod, in this case each pod gets its own DNS entry. The new pod isn't necessarily scheduled to the same node. Scaling the StatefulSet creates a new pod instance with the next unused ordinal index. Scaling down a StatefulSet always removes the instances with the highest ordinal index first. StatefulSets don't delete PersistentVolumeClaims when scaling down and they reattach them when scaling back up
 * Clients watch for changes by opening an HTTP connection to the API server. Through this connection, the client will then receive a stream of modifications to the watched objects
 
 ![kubernetes-client](img/kubernetes-client.png)
@@ -607,5 +607,6 @@ helm plugin install <PATH|URL>
 * [kubectx](https://ahmet.im/blog/kubectx) - A tool to switch between Kubernetes contexts
 * [kube-ps1](https://github.com/jonmosco/kube-ps1) - Kubernetes prompt
 * [kubefwd](https://github.com/txn2/kubefwd) - Kubernetes port forwarding for local development
+* [stern](https://github.com/wercker/stern) - Multi pod and container log tailing for Kubernetes
 
 <br>
