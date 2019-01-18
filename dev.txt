@@ -148,6 +148,10 @@ http://fluentbit.org
 https://github.com/giantswarm/curator
 # cerebro
 http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
+# istio
+https://medium.com/namely-labs/a-crash-course-for-running-istio-1c6125930715
+# costs
+https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0
 # prometheus initContainer/JMX
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
 
