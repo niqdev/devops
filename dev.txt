@@ -137,6 +137,9 @@ https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
 https://www.howtogeek.com/66438/how-to-easily-access-your-home-network-from-anywhere-with-ddns
 https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
 
+# grafana logs
+https://github.com/grafana/loki
+
 # kubernetes logging
 https://platform9.com/blog/logging-monitoring-of-kubernetes-applications-requirements-recommended-toolset
 https://platform9.com/blog/kubernetes-logging-and-monitoring-the-elasticsearch-fluentd-and-kibana-efk-stack-part-1-fluentd-architecture-and-configuration
@@ -152,6 +155,8 @@ http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
 https://medium.com/namely-labs/a-crash-course-for-running-istio-1c6125930715
 # costs
 https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0
+# qos
+https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6
 # prometheus initContainer/JMX
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
 
