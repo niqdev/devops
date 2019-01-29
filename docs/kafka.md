@@ -8,6 +8,8 @@ Resources
 
 * [Kafka: The Definitive Guide](https://amzn.to/2tQCryv) (2017) by Gwen Shapira, Neha Narkhede, Todd Palino (Book)
 
+* [Kafka Streams in Action](https://www.manning.com/books/kafka-streams-in-action) (2018) by William P. Bejeck Jr. (Book)
+
 * [Kafka: a Distributed Messaging System for Log Processing](http://notes.stephenholiday.com/Kafka.pdf) (Paper)
 
 * [Schema Registry](https://docs.confluent.io/current/schema-registry/docs/index.html)
@@ -18,11 +20,13 @@ Resources
 
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
 
-* [kafkacat](https://github.com/edenhill/kafkacat)
-
 * [Should you put several event types in the same Kafka topic?](http://martin.kleppmann.com/2018/01/18/event-types-in-kafka-topic.html)
 
 * [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
+
+* [kafkacat](https://github.com/edenhill/kafkacat)
+
+* [Kafka-Utils](https://github.com/Yelp/kafka-utils)
 
 ## Architecture
 
@@ -75,6 +79,10 @@ increases. Each message in a given partition has a unique offset stored either i
 * A key feature is that of **retention**. Brokers are configured with a default retention setting for topics, either retaining messages for some period of *time* or until the topic reaches a certain *size* in bytes. Once these limits are reached, messages are expired and deleted
 
 * **MirrorMaker** is a tool to coordinates multiple clusters or datacenters and replicate data
+
+## Kafka Streams
+
+TODO
 
 ## Setup
 

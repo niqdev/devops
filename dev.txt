@@ -155,6 +155,7 @@ http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
 https://medium.com/namely-labs/a-crash-course-for-running-istio-1c6125930715
 # costs
 https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0
+https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
 # qos
 https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6
 # prometheus initContainer/JMX
