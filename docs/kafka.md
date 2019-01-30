@@ -22,13 +22,15 @@ Resources
 
 * [Should you put several event types in the same Kafka topic?](http://martin.kleppmann.com/2018/01/18/event-types-in-kafka-topic.html)
 
+* [How to choose the number of topics/partitions in a Kafka cluster?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster)
+
 * [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
 
 * [Kafka-Utils](https://github.com/Yelp/kafka-utils)
 
-## Architecture
+## Kafka Architecture
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*
 
@@ -80,9 +82,23 @@ increases. Each message in a given partition has a unique offset stored either i
 
 * **MirrorMaker** is a tool to coordinates multiple clusters or datacenters and replicate data
 
-## Kafka Streams
+## Kafka Streams Architecture
 
-TODO
+### Intro
+
+* Kafka Streams is a library that allows to perform per-event processing of records, without grouping data in microbatches
+
+* Kafka Streams is a graph (or **topology** or Directed Acyclic Graph) of processing nodes or **processors** that combine to provide powerful and complex stream processing. Each processing node performs its assigned **task** and then forwards the record to each of its child node. Records (a key/value pair) flow through the graph in a depth-first manner, which implies that there is no need to have backpressure
+
+* The underlying technology of a Kafka topic is a **log**, which is a file, an append-only, totally ordered sequence of records ordered by time. Topics in Kafka are logs that are segregated by topic name
+
+* The configuration settings `log.dir` specifies where Kafka stores log data and each topic maps to a subdirectory. There will be as many subdirectories as there are topic partitions, with a format of `partition-name_partition-number`. Once the log files reach a certain size (either a number of records or size on disk), or when a configured time difference between message timestamps is reached, the log file is **rolled** and Kafka appends incoming messages to a new log
+
+* **Partitions** guarantee that data with the same keys will be sent to the same consumer and in order. Partitioning a topic essentially splits the data forwarded to a topic across parallel streams, and it's key for performances and high throughput. Each message has an **offset** number assigned to it. The order of messages across partitions isn't guaranteed, but the order of messages within each partition is guaranteed
+
+* Kafka works with data in key/value pairs. If the keys are `null`, the Kafka producer will write records to partitions chosen in a round-robin fashion, otherwise Kafka uses the formula `partition = hashCode(key) % numberOfPartitions` to determine which partition to send the key/value pair to. By using a deterministic approach to select a partition, records with the same key will always be sent to the same partition and in order
+
+* To determe the correct number of partitions, one of the key considerations is the amount of data flowing into a given topic. More data implies more partitions for higher throughput. On the other hand, increasing the number of partitions increases the number of TCP connections and open file handles. Additionally, how long it takes to process an incoming record in a consumer will also determine throughput. If there is heavyweight processing in a consumer, adding more partitions may help, but ultimately the slower processing will hinder performance
 
 ## Setup
 
