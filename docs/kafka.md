@@ -20,6 +20,8 @@ Resources
 
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
 
+Articles
+
 * [What is the actual role of Zookeeper in Kafka?](https://www.quora.com/What-is-the-actual-role-of-Zookeeper-in-Kafka-What-benefits-will-I-miss-out-on-if-I-don%E2%80%99t-use-Zookeeper-and-Kafka-together/answer/Gwen-Shapira)
 
 * [Should you put several event types in the same Kafka topic?](http://martin.kleppmann.com/2018/01/18/event-types-in-kafka-topic.html)
@@ -28,11 +30,13 @@ Resources
 
 * [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
 
+Tools
+
 * [kafkacat](https://github.com/edenhill/kafkacat)
 
 * [Kafka-Utils](https://github.com/Yelp/kafka-utils)
 
-## Kafka Architecture
+## Architecture
 
 * Kafka is a publish/subscribe messaging system often described as a *distributed commit log* or *distributing streaming platform*
 
@@ -84,13 +88,7 @@ increases. Each message in a given partition has a unique offset stored either i
 
 * **MirrorMaker** is a tool to coordinates multiple clusters or datacenters and replicate data
 
-## Kafka Streams Architecture
-
-### Intro
-
-* Kafka Streams is a library that allows to perform per-event processing of records, without grouping data in microbatches
-
-* Kafka Streams is a graph (or **topology** or Directed Acyclic Graph) of processing nodes or **processors** that combine to provide powerful and complex stream processing. Each processing node performs its assigned **task** and then forwards the record to each of its child node. Records (a key/value pair) flow through the graph in a depth-first manner, which implies that there is no need to have backpressure
+## Details
 
 * The underlying technology of a Kafka topic is a **log**, which is a file, an append-only, totally ordered sequence of records ordered by time. Topics in Kafka are logs that are segregated by topic name
 
@@ -109,6 +107,10 @@ increases. Each message in a given partition has a unique offset stored either i
 * Kafka has the notion of **leader** and **follower** brokers. In Kafka, for each topic partition, one broker is chosen as the leader for the other brokers (the followers). One of the chief duties of the leader is to assign [replication](http://kafka.apache.org/documentation/#design_replicatedlog) of topic partitions to the follower brokers. When producing messages, Kafka sends the record to the broker that is the leader for the record's partition. Brokers that follow a topic partition consume messages from the topic-partition leader and append those records to their log
 
 * Kafka uses *ZooKeeper* to **elect** the **controller** broker of the cluster. If the controlling broker fails or becomes unavailable for any reason, ZooKeeper elects a new controller from a set of brokers that are considered to be caught up with the leader (an in-sync replica **ISR**). The brokers that make up this set are dynamic, and ZooKeeper recognizes only brokers in this set for election as leader. If a Kafka node dies or is unresponsive (to ZooKeeper heartbeats), all of its assigned partitions (both leader and follower) are reassigned by the controller broker
+
+* Kafka Streams is a library that allows to perform per-event processing of records, without grouping data in microbatches
+
+* Kafka Streams is a graph (or **topology** or Directed Acyclic Graph) of processing nodes or **processors** that combine to provide powerful and complex stream processing. Each processing node performs its assigned **task** and then forwards the record to each of its child node. Records (a key/value pair) flow through the graph in a depth-first manner, which implies that there is no need to have backpressure
 
 ## Setup
 
