@@ -30,6 +30,10 @@ Articles
 
 * [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
 
+* [The Log: What every software engineer should know about real-time data's unifying abstraction](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying)
+
+* [Introducing Kafka Streams: Stream Processing Made Simple](https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
@@ -111,6 +115,8 @@ increases. Each message in a given partition has a unique offset stored either i
 * Kafka Streams is a library that allows to perform per-event processing of records, without grouping data in microbatches
 
 * Kafka Streams is a graph (or **topology** or Directed Acyclic Graph) of processing nodes or **processors** that combine to provide powerful and complex stream processing. Each processing node performs its assigned **task** and then forwards the record to each of its child node. Records (a key/value pair) flow through the graph in a depth-first manner, which implies that there is no need to have backpressure
+
+* Treating an event stream as inserts, and events with keys as updates, is how to defined the relationship between **streams** and **tables**. If a stream of events is as a log, a stream of updates is as a changelog. Both a log and a changelog represent incoming records appended to the end of a file. In a log there are all the records; but in a changelog, there are only the latest record for any given key
 
 ## Setup
 
