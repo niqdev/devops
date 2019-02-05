@@ -124,7 +124,7 @@ increases. Each message in a given partition has a unique offset stored either i
 
 * Treating an event stream as inserts, and events with keys as updates, is how to defined the relationship between **streams** and **tables**. If a stream of events is as a log, a stream of updates is as a changelog. Both a log and a changelog represent incoming records appended to the end of a file. In a log there are all the records; but in a changelog, there are only the latest record for any given key
 
-* `KTable`s are often also described as being a materialized view of a `KStream`. A view of a stream is nothing but an **per-key aggregation** in this context
+* A `KTable` is often described as being a materialized view of a `KStream`, a view of a stream is nothing but a **per-key aggregation**
 
 ## Setup
 
