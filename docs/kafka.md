@@ -40,6 +40,8 @@ Articles
 
 * [Of Streams and Tables in Kafka and Stream Processing](https://www.michael-noll.com/blog/2018/04/05/of-stream-and-tables-in-kafka-and-stream-processing-part1)
 
+* [Enabling Exactly-Once in Kafka Streams](https://www.confluent.io/blog/enabling-exactly-kafka-streams)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
