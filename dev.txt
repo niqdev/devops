@@ -53,10 +53,18 @@ withSources() withJavadoc()
 
 ---
 
+# sbt complex alias
+https://github.com/pauldijou/jwt-scala/blob/master/build.sbt#L15
+
 # kafka
 https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 https://medium.com/@stephane.maarek/how-to-use-apache-kafka-to-transform-a-batch-pipeline-into-a-real-time-one-831b48a6ad85
 https://medium.com/bakdata/queryable-kafka-topics-with-kafka-streams-8d2cca9de33f
+
+# kafka streams
+https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple
+https://www.confluent.io/blog/hello-world-kafka-connect-kafka-streams
+https://www.confluent.io/blog/distributed-real-time-joins-and-aggregations-on-user-activity-events-using-kafka-streams
 
 # keytool
 https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
@@ -158,6 +166,7 @@ https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-res
 https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
 # qos
 https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6
+https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
 # prometheus initContainer/JMX
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
 
@@ -165,3 +174,11 @@ https://www.robustperception.io/which-are-my-biggest-metrics
 https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
+
+# scala
+https://github.com/barambani/http4s-extend
+https://stackoverflow.com/questions/4593710/when-should-i-and-should-i-not-use-scalas-inline-annotation
+https://stackoverflow.com/questions/2709095/does-the-inline-annotation-in-scala-really-help-performance
+https://stackoverflow.com/questions/27855714/type-selection-type-projection-what-is-st-in-scala-scala-language-specifica
+https://stackoverflow.com/questions/2693067/what-is-meant-by-scalas-path-dependent-types
+https://github.com/estatico/scala-newtype

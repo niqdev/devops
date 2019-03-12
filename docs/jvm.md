@@ -15,6 +15,8 @@ Resources
 * [Understanding Java Garbage Collection](https://www.cubrid.org/blog/understanding-java-garbage-collection)
 * [Java Decompiler](http://jd.benow.ca)
 * [Java Concurrency in Practice](http://jcip.net) (Book)
+* [Most Important JVM Parameters](https://www.baeldung.com/jvm-parameters)
+* [JVM Garbage Collectors](https://www.baeldung.com/jvm-garbage-collectors)
 
 ![jvm-architecture](img/jvm-architecture.png)
 
