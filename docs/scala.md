@@ -59,6 +59,7 @@
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
 * [Shapeless for Mortals](http://fommil.com/scalax15/) (2015) by Sam Halliday (Talk)
+* [Cooking with Monads](https://www.becompany.ch/en/blog/2016/11/08/cooking-with-monads)
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
 * Incremental Purity [[slide](https://git.io/fp017)|[code](https://git.io/fp01d)] (Meetup)
@@ -66,6 +67,9 @@
 * [Exploring Tagless Final pattern for extensive and readable Scala code](https://blog.scalac.io/exploring-tagless-final.html)
 * [Structuring Functional Programs with Tagless Final](https://www.becompany.ch/en/blog/2018/06/21/tagless-final)
 * [Free and tagless compared](https://softwaremill.com/free-tagless-compared-how-not-to-commit-to-monad-too-early)
+* [Scala Tagged types](http://www.vlachjosef.com/tagged-types-introduction)
+* Modern Functional Programming [[part-1](http://degoes.net/articles/modern-fp)|[part-2](http://degoes.net/articles/modern-fp-part-2)]
+* [Functional Web Services with Final Encoding](https://speakerdeck.com/markus1189/functional-web-services-with-final-encoding)
 
 **Typeclass**
 
@@ -80,6 +84,7 @@
 **Patterns**
 
 * [The Aux Pattern](https://gigiigig.github.io/posts/2015/09/13/aux-pattern.html)
+* [Aux Pattern Evolution](http://www.vlachjosef.com/aux-pattern-evolution/)
 * [Cake pattern](https://medium.com/@itseranga/scala-cake-pattern-e0cd894dae4e)
 * [Magnet pattern](http://spray.io/blog/2012-12-13-the-magnet-pattern)
 
