@@ -3,6 +3,7 @@
 Resources
 
 * [How Linux Works](https://amzn.to/2lHW1cB) (2014)(2nd) by Brian Ward (Book)
+* [Kernel documentation](https://www.kernel.org/doc/Documentation/)
 
 ### Useful commands
 
