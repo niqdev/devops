@@ -34,6 +34,7 @@
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
+* [Finally Tagless, Partially Evaluated](http://okmij.org/ftp/tagless-final/JFP.pdf)
 * [Cats Infographic](https://github.com/tpolecat/cats-infographic)
 
 **FP resources**
@@ -62,6 +63,9 @@
 * [Free Monad examples](https://github.com/kenbot/free)
 * Incremental Purity [[slide](https://git.io/fp017)|[code](https://git.io/fp01d)] (Meetup)
 * [Functional Composition](https://benmosheron.gitlab.io/blog/2018/12/24/functional-composition.html)
+* [Exploring Tagless Final pattern for extensive and readable Scala code](https://blog.scalac.io/exploring-tagless-final.html)
+* [Structuring Functional Programs with Tagless Final](https://www.becompany.ch/en/blog/2018/06/21/tagless-final)
+* [Free and tagless compared](https://softwaremill.com/free-tagless-compared-how-not-to-commit-to-monad-too-early)
 
 **Typeclass**
 
@@ -93,6 +97,7 @@
 * [Signify](https://www.signifytechnology.com/blog)
 * [Scala Times](https://scalatimes.com)
 * [SoftwareMill](https://softwaremill.com/blog)
+* [okmij](http://okmij.org/ftp/README.html)
 
 ## FAQs
 
