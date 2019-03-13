@@ -33,8 +33,8 @@
 * [Applicative programming with effects](http://www.staff.city.ac.uk/~ross/papers/Applicative.pdf) (Paper)
 * [Stack Safety for Free](http://functorial.com/stack-safety-for-free/index.pdf) (Paper)
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
-* [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (paper)
-* [Finally Tagless, Partially Evaluated](http://okmij.org/ftp/tagless-final/JFP.pdf)
+* [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (Paper)
+* [Finally Tagless, Partially Evaluated](http://okmij.org/ftp/tagless-final/JFP.pdf) (Paper)
 * [Cats Infographic](https://github.com/tpolecat/cats-infographic)
 
 **FP resources**
