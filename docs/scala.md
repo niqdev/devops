@@ -44,25 +44,18 @@
 * [The Downfall of Imperative Programming](https://www.fpcomplete.com/blog/2012/04/the-downfall-of-imperative-programming)
 * [Parallelism and concurrency need different tools](http://yosefk.com/blog/parallelism-and-concurrency-need-different-tools.html)
 * [Scala's Types of Types](https://ktoso.github.io/scala-types-of-types)
+* Incremental Purity [[slide](https://git.io/fp017)|[code](https://git.io/fp01d)] (Meetup)
+
 * [Algebraic Data Types in Scala](https://alvinalexander.com/scala/fp-book/algebraic-data-types-adts-in-scala)
 * [What the Heck are Algebraic Data Types?](https://merrigrove.blogspot.com/2011/12/another-introduction-to-algebraic-data.html)
 * [More on Sealed Traits in Scala](https://underscore.io/blog/posts/2015/06/04/more-on-sealed.html)
 * [Generalized type constraints in Scala (without a PhD)](http://blog.bruchez.name/2015/11/generalized-type-constraints-in-scala.html)
-* [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala/)
-* [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+
+* [First steps with monads in Scala](https://darrenjw.wordpress.com/2016/04/15/first-steps-with-monads-in-scala)
 * [Demystifying the Monad in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534)
-* [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
-* [Stackless Scala](http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html)
-* [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
-* [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
-* [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
-* [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
-* [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
-* [Shapeless for Mortals](http://fommil.com/scalax15/) (2015) by Sam Halliday (Talk)
 * [Cooking with Monads](https://www.becompany.ch/en/blog/2016/11/08/cooking-with-monads)
-* [Free monads - what? and why?](https://softwaremill.com/free-monads)
-* [Free Monad examples](https://github.com/kenbot/free)
-* Incremental Purity [[slide](https://git.io/fp017)|[code](https://git.io/fp01d)] (Meetup)
+* [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+
 * [Functional Composition](https://benmosheron.gitlab.io/blog/2018/12/24/functional-composition.html)
 * [Exploring Tagless Final pattern for extensive and readable Scala code](https://blog.scalac.io/exploring-tagless-final.html)
 * [Structuring Functional Programs with Tagless Final](https://www.becompany.ch/en/blog/2018/06/21/tagless-final)
@@ -70,6 +63,21 @@
 * [Scala Tagged types](http://www.vlachjosef.com/tagged-types-introduction)
 * Modern Functional Programming [[part-1](http://degoes.net/articles/modern-fp)|[part-2](http://degoes.net/articles/modern-fp-part-2)]
 * [Functional Web Services with Final Encoding](https://speakerdeck.com/markus1189/functional-web-services-with-final-encoding)
+* [MTL-style program composition](https://www.reddit.com/r/scala/comments/90jk2u/mtlstyle_programming/e2qze0c)
+* [Monadic IO: Laziness Makes You Free](https://underscore.io/blog/posts/2015/04/28/monadic-io-laziness-makes-you-free.html)
+* [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
+
+* [Free monads - what? and why?](https://softwaremill.com/free-monads)
+* [Free Monad examples](https://github.com/kenbot/free)
+* [Overview of free monad in cats](https://blog.scalac.io/2016/06/02/overview-of-free-monad-in-cats.html)
+* [Rethinking MonadError](https://typelevel.org/blog/2018/04/13/rethinking-monaderror.html)
+* [Stackless Scala](http://www.marcoyuen.com/articles/2016/09/08/stackless-scala-1-the-problem.html)
+
+* [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
+* [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
+
+* [Shapeless for Mortals](http://fommil.com/scalax15) (2015) by Sam Halliday (Talk)
+* [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
 
 **Typeclass**
 
@@ -103,6 +111,58 @@
 * [Scala Times](https://scalatimes.com)
 * [SoftwareMill](https://softwaremill.com/blog)
 * [okmij](http://okmij.org/ftp/README.html)
+
+**Videos**
+
+* [FP to the Max](https://youtu.be/sxudIMiOo68)
+* [Functional Structures in Scala](https://www.youtube.com/playlist?list=PLFrwDVdSrYE6dy14XCmUtRAJuhCxuzJp0)
+* [Functional Programming with Effects](https://www.youtube.com/watch?v=po3wmq4S15A)
+* [The Death of Final Tagless](https://skillsmatter.com/skillscasts/13247-scala-matters)
+
+<!--
+
+Algebra = Operations + Types
+
+e.g.
+* create is an operation
+* A and String is a type
+* Db is a piece of Algebra that can be composed or extended
+
+trait Db[F[_]] {
+  def create[A]: F[String]
+  def delete(id: String): F[Boolean]
+}
+
+Interpreter = "Implementation" of an Algebra
+
+i.e. Materialization for specific type
+
+---
+they are alternatives:
+
+(tagless) final encoding: typeclass
+* ignore tagless
+* final encoding: means that you can describe operations with functions
+
+initial encoding: free monad
+* you can describe operations with case classes
+
+trait Db {
+  case class Create[F[_], A](a: A)
+  case class Delete[F[_]](id: String)
+}
+
+---
+
+Tagless Final Encoding == MTL-style program composition
+
+mtl is now is a final tagless encoding of common effects
+
+The `mtl` (Monad Transformer library) library in haskell used to provide the concrete monad transformers types, which are now in `transformers`
+
+Option, Either, IO are all effect/context/wrapper
+
+-->
 
 ## FAQs
 
