@@ -185,3 +185,6 @@ https://github.com/estatico/scala-newtype
 
 # bot
 http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
+https://github.com/vpavkin/telegram-bot-fs2
+https://github.com/nikdon/telepooz
+https://github.com/bot4s/telegram

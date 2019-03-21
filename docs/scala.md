@@ -63,9 +63,11 @@
 * [Scala Tagged types](http://www.vlachjosef.com/tagged-types-introduction)
 * Modern Functional Programming [[part-1](http://degoes.net/articles/modern-fp)|[part-2](http://degoes.net/articles/modern-fp-part-2)]
 * [Functional Web Services with Final Encoding](https://speakerdeck.com/markus1189/functional-web-services-with-final-encoding)
+* [Tagless Final algebras and Streaming](https://typelevel.org/blog/2018/05/09/tagless-final-streaming.html)
 * [MTL-style program composition](https://www.reddit.com/r/scala/comments/90jk2u/mtlstyle_programming/e2qze0c)
 * [Monadic IO: Laziness Makes You Free](https://underscore.io/blog/posts/2015/04/28/monadic-io-laziness-makes-you-free.html)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
+* [Intro to Functional Game Programming](https://github.com/jdegoes/lambdaconf-2014-introgame)
 
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
@@ -480,9 +482,16 @@ trait Applicative[F[_]] extends Functor[F] {
 }
 ```
 
+*What is an IO Monad?*
+
+```scala
+
+```
+
 <!--
 
-
+TODO
+https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala
 
 Summary
 
