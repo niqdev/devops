@@ -2,9 +2,7 @@ package com.github.niqdev
 package internal
 
 trait ConsoleOut[F[_]] {
-
   def println[A: Show](a: A): F[Unit]
-
 }
 
 object ConsoleOut {
@@ -16,5 +14,4 @@ object ConsoleOut {
       override def println[A: Show](a: A): IO[Unit] =
         IO(scala.Console.println(a))
     }
-
 }
