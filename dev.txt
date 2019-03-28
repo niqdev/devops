@@ -61,6 +61,9 @@ https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
 https://medium.com/@stephane.maarek/how-to-use-apache-kafka-to-transform-a-batch-pipeline-into-a-real-time-one-831b48a6ad85
 https://medium.com/bakdata/queryable-kafka-topics-with-kafka-streams-8d2cca9de33f
 
+# mirror maker
+https://engineering.salesforce.com/mirrormaker-performance-tuning-63afaed12c21
+
 # kafka streams
 https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple
 https://www.confluent.io/blog/hello-world-kafka-connect-kafka-streams

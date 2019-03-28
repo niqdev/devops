@@ -120,6 +120,8 @@
 * [Functional Structures in Scala](https://www.youtube.com/playlist?list=PLFrwDVdSrYE6dy14XCmUtRAJuhCxuzJp0)
 * [Functional Programming with Effects](https://www.youtube.com/watch?v=po3wmq4S15A)
 * [The Death of Final Tagless](https://skillsmatter.com/skillscasts/13247-scala-matters)
+* [The Making of an IO](https://www.youtube.com/watch?reload=9&v=g_jP47HFpWA)
+* [SCALAZ 8 VS AKKA ACTORS](https://www.youtube.com/watch?v=Eihz7kqn6mU&t=833s)
 
 <!--
 
