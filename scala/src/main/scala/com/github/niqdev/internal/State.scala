@@ -1,6 +1,8 @@
 package com.github.niqdev
 package internal
 
+// TODO pag 652
+
 // https://github.com/jdegoes/lambdaconf-2014-introgame#the-state-monad
 // https://github.com/alvinj/StateMonadExample/blob/master/src/main/scala/state_monad/State.scala
 case class State[S, A](run: S => (S, A)) {
