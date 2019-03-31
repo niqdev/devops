@@ -147,6 +147,9 @@ https://chrisshort.net/my-raspberry-pi-kubernetes-cluster
 https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
 https://www.howtogeek.com/66438/how-to-easily-access-your-home-network-from-anywhere-with-ddns
 https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
+https://github.com/lahsivjar/kube-arm
+https://docs.traefik.io
+https://ngrok.com
 
 # grafana logs
 https://github.com/grafana/loki
