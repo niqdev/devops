@@ -81,6 +81,34 @@ mkdocs gh-deploy
 
 <br>
 
+## Hugo
+
+> **Hugo** is a static site generator
+
+* [Documentation](https://gohugo.io/documentation)
+
+Useful commands
+```bash
+# install
+snap install hugo
+# switch to extended Sass/SCSS version
+snap refresh hugo --channel=extended
+
+# create skeleton
+hugo new site docs
+# create skeleton in current non-empty folder
+hugo new site . --force
+
+# setup theme
+git submodule add https://github.com/alex-shpak/hugo-book themes/book
+echo 'theme = "book"' >> config.toml
+
+# start dev server
+hugo server -D
+```
+
+<br>
+
 ## SDKMAN!
 
 > **SDKMAN!** is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems
