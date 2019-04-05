@@ -55,6 +55,7 @@
 * [Demystifying the Monad in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534)
 * [Cooking with Monads](https://www.becompany.ch/en/blog/2016/11/08/cooking-with-monads)
 * [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+* [Hands-on category theory](https://earldouglas.com/talks/scala-cats/tutorial.html)
 
 * [Functional Composition](https://benmosheron.gitlab.io/blog/2018/12/24/functional-composition.html)
 * [Exploring Tagless Final pattern for extensive and readable Scala code](https://blog.scalac.io/exploring-tagless-final.html)
@@ -68,6 +69,7 @@
 * [Monadic IO: Laziness Makes You Free](https://underscore.io/blog/posts/2015/04/28/monadic-io-laziness-makes-you-free.html)
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Intro to Functional Game Programming](https://github.com/jdegoes/lambdaconf-2014-introgame)
+* [Advanced Tagless Final - Saying Farewell to Free](https://www.slideshare.net/LukaJacobowitz/advanced-tagless-final-saying-farewell-to-free)
 
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
