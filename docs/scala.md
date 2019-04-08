@@ -80,6 +80,7 @@
 * [ScalaFP: Firsthand With Scala-Cats](https://www.signifytechnology.com/blog/2018/07/scalafp-firsthand-with-scala-cats-monads-number-1-by-harmeet-singh)
 * [Scala Cats library for dummies](https://medium.com/@abu_nadhr/scala-cats-library-for-dummies-part-1-8ec47af7a144)
 
+* [Type lambdas and kind projector](https://underscore.io/blog/posts/2016/12/05/type-lambdas.html)
 * [Shapeless for Mortals](http://fommil.com/scalax15) (2015) by Sam Halliday (Talk)
 * [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
 
