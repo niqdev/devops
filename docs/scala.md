@@ -83,6 +83,7 @@
 * [Type lambdas and kind projector](https://underscore.io/blog/posts/2016/12/05/type-lambdas.html)
 * [Shapeless for Mortals](http://fommil.com/scalax15) (2015) by Sam Halliday (Talk)
 * [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface)
+* [Scala's Modular Roots](http://lambdafoo.com/scala-syd-2015-modules)
 
 **Typeclass**
 
@@ -564,6 +565,10 @@ sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
 ```
+
+object PizzaService extends PizzaService
+
+You can’t call functions on a trait, so you need to create a concrete instance of that trait before you do anything else. This technique is common with the modular pro- gramming approach, and it’s known as “reifying” the trait. (The word reify is defined as, “Taking an abstract concept and making it concrete.”)
 
 -->
 
