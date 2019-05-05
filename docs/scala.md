@@ -35,6 +35,7 @@
 * [Stackless Scala With Free Monads](http://blog.higher-order.com/assets/trampolines.pdf) (Paper)
 * [Type Classes as Objects and Implicits](http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf) (Paper)
 * [Finally Tagless, Partially Evaluated](http://okmij.org/ftp/tagless-final/JFP.pdf) (Paper)
+* [Typed Tagless Final Interpreters](http://okmij.org/ftp/tagless-final/course/lecture.pdf) (Paper)
 * [Cats Infographic](https://github.com/tpolecat/cats-infographic)
 
 **FP resources**
@@ -70,6 +71,8 @@
 * [An IO monad for cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)
 * [Intro to Functional Game Programming](https://github.com/jdegoes/lambdaconf-2014-introgame)
 * [Advanced Tagless Final - Saying Farewell to Free](https://www.slideshare.net/LukaJacobowitz/advanced-tagless-final-saying-farewell-to-free)
+* [Introduction to Tagless final](http://www.beyondthelines.net/programming/introduction-to-tagless-final)
+* [From Object Algebras to Finally Tagless Interpreters](https://oleksandrmanzyuk.wordpress.com/2014/06/18/from-object-algebras-to-finally-tagless-interpreters-2/)
 
 * [Free monads - what? and why?](https://softwaremill.com/free-monads)
 * [Free Monad examples](https://github.com/kenbot/free)
