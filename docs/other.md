@@ -205,6 +205,12 @@ snap install gimp
 
 # list installed app
 snap list
+
+# update all packages
+snap refresh
+
+# remove
+snap remove gimp
 ```
 
 <br>
