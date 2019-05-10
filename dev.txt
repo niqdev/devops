@@ -154,22 +154,6 @@ https://github.com/lahsivjar/kube-arm
 https://docs.traefik.io
 https://ngrok.com
 
-# grafana logs
-https://github.com/grafana/loki
-
-# kubernetes logging
-https://platform9.com/blog/logging-monitoring-of-kubernetes-applications-requirements-recommended-toolset
-https://platform9.com/blog/kubernetes-logging-and-monitoring-the-elasticsearch-fluentd-and-kibana-efk-stack-part-1-fluentd-architecture-and-configuration
-https://platform9.com/blog/kubernetes-logging-and-monitoring-the-elasticsearch-fluentd-and-kibana-efk-stack-part-2-elasticsearch-configuration
-https://logz.io/blog/kubernetes-log-analysis
-https://itnext.io/logging-best-practices-for-kubernetes-using-elasticsearch-fluent-bit-and-kibana-be9b7398dfee
-# tools
-http://fluentbit.org
-https://github.com/giantswarm/curator
-# cerebro
-http://www.atechref.com/blog/elk-stack/elk-stack-monitor-elastic-nodes
-# istio
-https://medium.com/namely-labs/a-crash-course-for-running-istio-1c6125930715
 # costs
 https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0
 https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
@@ -191,3 +175,14 @@ https://stackoverflow.com/questions/2709095/does-the-inline-annotation-in-scala-
 https://stackoverflow.com/questions/27855714/type-selection-type-projection-what-is-st-in-scala-scala-language-specifica
 https://stackoverflow.com/questions/2693067/what-is-meant-by-scalas-path-dependent-types
 https://github.com/estatico/scala-newtype
+
+# bot
+http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
+https://github.com/vpavkin/telegram-bot-fs2
+https://github.com/nikdon/telepooz
+https://github.com/bot4s/telegram
+
+>>> TODO add to others
+
+https://support.typora.io/Draw-Diagrams-With-Markdown
+https://www.webpagetest.org
