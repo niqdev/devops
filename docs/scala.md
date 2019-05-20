@@ -130,6 +130,7 @@
 * [The Death of Final Tagless](https://skillsmatter.com/skillscasts/13247-scala-matters)
 * [The Making of an IO](https://www.youtube.com/watch?reload=9&v=g_jP47HFpWA)
 * [Scalaz 8 VS Akka actors](https://www.youtube.com/watch?v=Eihz7kqn6mU&t=833s)
+* [Move Over Free Monads: Make Way for Free Applicatives!](https://youtu.be/H28QqxO7Ihc)
 
 <!--
 
