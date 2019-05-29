@@ -1,5 +1,10 @@
 # DevOps
 
+[![Build Status][travis-image]][travis-url]
+
+[travis-image]: https://travis-ci.org/niqdev/devops.svg?branch=master
+[travis-url]: https://travis-ci.org/niqdev/devops
+
 A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
 * [Linux](https://niqdev.github.io/devops/linux)
