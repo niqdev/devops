@@ -1,3 +1,12 @@
+## Random resources
+
+* [AWS diagrams & notes](https://www.awsgeek.com)
+* [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
+* [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
+* [Autopilot Pattern Applications](http://autopilotpattern.io)
+
+<br>
+
 ## Online tools
 
 * [Regular Expressions](https://regexr.com)

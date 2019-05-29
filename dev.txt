@@ -2,6 +2,9 @@ DEV info
 
 * rename + buy domain: to not-only-devops ?
 
+# Writing An Interpreter And Compiler In Go
+>>> https://gumroad.com/l/waiig_wacig_bundle
+
 ---
 
 TODO

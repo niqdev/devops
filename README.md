@@ -16,5 +16,5 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [JVM](https://niqdev.github.io/devops/jvm)
 * [Scala](https://niqdev.github.io/devops/scala)
-* [Readings](https://niqdev.github.io/devops/readings)
+* [System Design](https://niqdev.github.io/devops/system_design)
 * [Other](https://niqdev.github.io/devops/other)

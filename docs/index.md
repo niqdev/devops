@@ -12,5 +12,5 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Kubernetes](kubernetes.md)
 * [JVM](jvm.md)
 * [Scala](scala.md)
-* [Readings](readings.md)
+* [System Design](system_design.md)
 * [Other](other.md)
