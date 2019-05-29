@@ -2,15 +2,18 @@
 # http://derekweitzel.com/2017/02/08/deploying-docs-on-github-with-travisci
 # https://stackoverflow.com/questions/50892018/auto-build-an-mkdocs-documentation-in-travis-ci
 
-language: python
-install:
-  - pip install mkdocs
-script:
-  - mkdocs build --verbose --clean #--strict
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: master
+# FIXME: corrupted branch, missing site, is gitignore?
+# mkdocs gh-deploy
+
+# language: python
+# install:
+#   - pip install mkdocs
+# script:
+#   - mkdocs build --verbose --clean #--strict
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   keep_history: true
+#   on:
+#     branch: master
