@@ -1,13 +1,13 @@
 # System Design
 
-**Resources**
+## Resources
 
 * [Designing Data-Intensive Applications](https://amzn.to/2lKJMvU) (2017) by Martin Kleppmann (Book)
 * [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/2VTvGYS) (2003) by Eric Evans (Book)
 * [Functional and Reactive Domain Modeling](https://www.manning.com/books/functional-and-reactive-domain-modeling) (2016) by Debasish Ghosh (Book)
 * [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read) (Book)
 * [Exploring CQRS and Event Sourcing](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10)) (Book)
-* [CQRS](https://www.martinfowler.com/bliki/CQRS.html)
+* [CQRS](https://www.martinfowler.com/bliki/CQRS.html) by Martin Fowler
 * [Clarified CQRS](http://udidahan.com/2009/12/09/clarified-cqrs)
 * [1 Year of Event Sourcing and CQRS](https://hackernoon.com/1-year-of-event-sourcing-and-cqrs-fb9033ccd1c6)
 * [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
@@ -50,31 +50,14 @@
 * [Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data](http://ceur-ws.org/Vol-1366/paper13.pdf)
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
 
----
+## Notes
 
-
-TODO acronyms
-* OLEP online event processing
-* OLTP online transaction processing
-* OLAP online analytical processing
-* DDD
-* CQRS
-* Event Source
-* Eventual Consistency
-* CRDT
-* CAP theorem
-* two-phase commit
-* circuit breaker pattern
-* SAGA
-* SLA service-level agreement
-
-* *Domain-driven design (DDD)* is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts. Domain-driven design is not a technology or a methodology. DDD provides a structure of practices and terminology for making design decisions that focus and accelerate software projects dealing with complicated domains. Its premise is:
+* [*Domain-driven design (DDD)*](http://dddcommunity.org/learning-ddd/what_is_ddd) is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts. Domain-driven design is not a technology or a methodology. DDD provides a structure of practices and terminology for making design decisions that focus and accelerate software projects dealing with complicated domains. Its premise is:
     * Place the project's primary focus on the core domain and domain logic
     * Base complex designs on a model
     * Initiate a creative collaboration between technical and domain experts to iteratively cut ever closer to the conceptual heart of the problem
 
-* Any domain model of nontrivial complexity is a collection of smaller models, each with its own data and domain vocabulary
-In the world of *domain-driven design*, the term **bounded context** denotes one such smaller model within the whole. So the complete domain model is really a collection of bounded contexts
+* Any domain model of nontrivial complexity is a collection of smaller models, each with its own data and domain vocabulary. In the world of *domain-driven design*, the term **bounded context** denotes one such smaller model within the whole. So the complete domain model is really a collection of bounded contexts
 
 * Types of domain elements
     * An **entity** it's uniquely identifiable, has an identity and might change attributes in the course of its entire life-time within the system - an entity has an identity that can't change
@@ -97,7 +80,7 @@ In the world of *domain-driven design*, the term **bounded context** denotes one
 
 * *Latency* is defined as the time period that elapses between a request and a response. If is possible to bind the latency to an acceptable limit to users, you achieve *responsiveness*. And being responsive is the primary criterion of a model being *reactive*
 
-* Characteristics of a reactive model:
+* Characteristics of a reactive model
     * Responsive to user interaction
     * Resilient i.e. responsive to failures
     * Elastic i.e. responsive to varying load
@@ -106,3 +89,21 @@ In the world of *domain-driven design*, the term **bounded context** denotes one
 * *Design for failure*. This is a core concept when developing large services that are comprised of many cooperating components. Those components will fail and they will fail frequently
 
 * One of the ways to make a system elastic is by reducing the coupling between the components of the model. Reactive models encourage loosely connected architectures that use asynchronous message boundaries as the means of nonblocking communications and components that interact using immutable messages without any sharing of mutable state to promote transparency of location, concurrency models and other paradigms which are cornerstone of functional programming
+
+---
+
+TODO acronyms
+
+* OLEP online event processing
+* OLTP online transaction processing
+* OLAP online analytical processing
+* DDD
+* CQRS
+* Event Source
+* Eventual Consistency
+* CRDT
+* CAP theorem
+* two-phase commit
+* circuit breaker pattern
+* SAGA
+* SLA service-level agreement
