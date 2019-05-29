@@ -17,6 +17,7 @@ Resources
 * [Java Concurrency in Practice](http://jcip.net) (Book)
 * [Most Important JVM Parameters](https://www.baeldung.com/jvm-parameters)
 * [JVM Garbage Collectors](https://www.baeldung.com/jvm-garbage-collectors)
+* [Statistically Rigorous Java Performance Evaluation](https://dri.es/files/oopsla07-georges.pdf) (Paper)
 
 ![jvm-architecture](img/jvm-architecture.png)
 
