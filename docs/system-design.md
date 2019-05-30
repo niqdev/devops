@@ -49,6 +49,7 @@
 * [Hashed and Hierarchical Timing Wheels](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf)
 * [Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data](http://ceur-ws.org/Vol-1366/paper13.pdf)
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
+* [Fallacies of Distributed Computing Explained](http://www.rgoarchitects.com/Files/fallacies.pdf)
 
 ## Notes
 
@@ -90,6 +91,13 @@
 
 * One of the ways to make a system elastic is by reducing the coupling between the components of the model. Reactive models encourage loosely connected architectures that use asynchronous message boundaries as the means of nonblocking communications and components that interact using immutable messages without any sharing of mutable state to promote transparency of location, concurrency models and other paradigms which are cornerstone of functional programming
 
+* An event is a form of notification. *Domain events* are based on the action that they perform within the domain model and are immutable. Such domain models are called *self-tracing* models, because domain event logs make our models traceable at any point in time
+    * *Uniquely identifiable as a type* - for each event, you have a type in your model
+    * *Self-contained as a behavior* — Every domain event contains all information relevant to the change that just occurred in the system
+    * *Observable by consumers* - Events are meant to be consumed for further action by downstream components of your model
+    * *Time relevant* — A monotonicity of time is built into the stream of events
+
+commands vs eventds
 ---
 
 TODO acronyms
