@@ -115,3 +115,8 @@ TODO acronyms
 * circuit breaker pattern
 * SAGA
 * SLA service-level agreement
+* ACID
+* ACID 2.0
+    * **Associative** grouping doesn't matter `a+(b+c)=(a+b)+c`
+    * **Commutative** order doesn't matter `a+b=b+a`
+    * **Idempotent** duplication doesn't matter `a+a=a`
