@@ -310,6 +310,8 @@ final case class Circle(radius: Double) extends Shape
 final case class Rectangle(width: Double, height: Double) extends Shape
 ```
 
+Sum types and product types provide the necessary abstraction for structuring various data of a domain model. Whereas sum types let model the variations within a particular data type, product types help cluster related data into a larger abstraction.
+
 *How for-comprehensions is desugared? ([docs](https://docs.scala-lang.org/tour/for-comprehensions.html))*
 
 ```scala
@@ -493,13 +495,43 @@ trait Applicative[F[_]] extends Functor[F] {
 }
 ```
 
+*What are some of the benefits of Functional Programming?*
+
+* Pure functions are easier to reason about
+* Function signatures are more meaningful
+* Parallel/Concurrent programming is easier
+* Testing is easier and pure functions lend themselves well to techniques like property-based testing
+* [Other benefits](https://alvinalexander.com/scala/fp-book/benefits-of-functional-programming)
+
+*What is an effectful computation?*
+
+In functional programming, an effect adds some capabilities to a computation. An effect is modeled usually in the form of a **type constructor** that constructs types with these additional capabilities
+* `List[A]` adds the effect of aggregation on A
+* `Option[A]` adds the capability of optionality for the type A
+* `Try[A]` models the effects of exceptions
+
+*What are inhabitants of a type?*
+
+Inhabitants of a type are values for that types. Algebraig Data Types can be thought of in terms of regular algebraic equations and its result gives the number of inhabitants
+* sum types: `Either A B` or `A or B` corresponds to the equation `A + B`
+* products types: `(A, B)` (Tuple2) or `A and B` corresponds to the equation `A * B`
+* exponentiation: `A -> B` (Function1) corresponds to the equation `B^A` e.g. `Boolean -> Boolean` is `2^2`
+* the `Unit` data type corresponds to the value 1
+* the `Void` data type corresponds to the value 0
+
+*What's the difference between monomorphic and polymorphic?*
+
+Only by knowing the types
+* Given a monomorphic signature `List[Int] -> List[Int]`, there are too many possible implementations to say what the function does
+* Given a polymorphic/parametrized type signature `List[A] -> List[A]` it's proven that all elements in the result appear in the input which restricts the possible implementations
+
+<!--
+
 *What is an IO Monad?*
 
 ```scala
 
 ```
-
-<!--
 
 TODO
 https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala
