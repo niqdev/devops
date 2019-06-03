@@ -10,7 +10,11 @@ install:
   - pip install mkdocs
 script:
   - mkdocs build --verbose --clean #--strict
-  - mkdocs gh-deploy --force
+deploy:
+  provider: script
+  script: mkdocs gh-deploy --clean --force --remote-name https://${GITHUB_TOKEN}@github.com/niqdev/devops.git
+  on:
+    branch: master
 # deploy:
 #   provider: pages
 #   skip_cleanup: true
