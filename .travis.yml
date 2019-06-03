@@ -1,24 +1,17 @@
 # https://docs.travis-ci.com/user/deployment/pages
 # http://derekweitzel.com/2017/02/08/deploying-docs-on-github-with-travisci
 # https://stackoverflow.com/questions/50892018/auto-build-an-mkdocs-documentation-in-travis-ci
-
-# FIXME: corrupted branch, missing site, is gitignore?
-# mkdocs gh-deploy
+# https://github.com/mkdocs/mkdocs/issues/632
 
 language: python
 install:
   - pip install mkdocs
 script:
-  - mkdocs build --verbose --clean #--strict
+  - mkdocs build --verbose #--strict
 deploy:
   provider: script
-  script: mkdocs gh-deploy --clean --force --remote-name https://${GITHUB_TOKEN}@github.com/niqdev/devops.git
+  script:
+    - git remote add gh-pages-travis https://${GITHUB_TOKEN}@github.com/niqdev/devops.git
+    - mkdocs gh-deploy --clean --force --remote-name gh-pages-travis
   on:
     branch: master
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   keep_history: true
-#   on:
-#     branch: master
