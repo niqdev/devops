@@ -515,7 +515,7 @@ In functional programming, an effect adds some capabilities to a computation. An
 
 Inhabitants of a type are values for that types. Algebraig Data Types can be thought of in terms of regular algebraic equations and its result gives the number of inhabitants
 
-* sum types: `Either A B` or `A or B` corresponds to the equation `A + B`
+* sum types: `Either[A, B]` or `A or B` corresponds to the equation `A + B`
 * products types: `(A, B)` (Tuple2) or `A and B` corresponds to the equation `A * B`
 * exponentiation: `A -> B` (Function1) corresponds to the equation `B^A` e.g. `Boolean -> Boolean` is `2^2`
 * the `Unit` data type corresponds to the value 1
@@ -524,6 +524,7 @@ Inhabitants of a type are values for that types. Algebraig Data Types can be tho
 *What's the difference between monomorphic and polymorphic?*
 
 Only by knowing the types
+
 * Given a monomorphic signature `List[Int] -> List[Int]`, there are too many possible implementations to say what the function does
 * Given a polymorphic/parametrized type signature `List[A] -> List[A]` it's proven that all elements in the result appear in the input which restricts the possible implementations
 
