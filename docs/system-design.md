@@ -97,11 +97,11 @@
     * *Observable by consumers* - Events are meant to be consumed for further action by downstream components of your model
     * *Time relevant* — A monotonicity of time is built into the stream of events
 
-commands vs eventds
 ---
 
-TODO acronyms
+> TODO acronyms
 
+* commands vs events
 * OLEP online event processing
 * OLTP online transaction processing
 * OLAP online analytical processing
