@@ -10,10 +10,11 @@ install:
   - pip install mkdocs
 script:
   - mkdocs build --verbose --clean #--strict
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: master
+  - mkdocs gh-deploy --force
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   keep_history: true
+#   on:
+#     branch: master
