@@ -4,7 +4,7 @@ repo_url: https://github.com/niqdev/devops
 theme: readthedocs
 google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 
-pages:
+nav:
     - Home: index.md
     - Linux: linux.md
     - Docker: docker.md

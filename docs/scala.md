@@ -506,6 +506,7 @@ trait Applicative[F[_]] extends Functor[F] {
 *What is an effectful computation?*
 
 In functional programming, an effect adds some capabilities to a computation. An effect is modeled usually in the form of a **type constructor** that constructs types with these additional capabilities
+
 * `List[A]` adds the effect of aggregation on A
 * `Option[A]` adds the capability of optionality for the type A
 * `Try[A]` models the effects of exceptions
@@ -513,6 +514,7 @@ In functional programming, an effect adds some capabilities to a computation. An
 *What are inhabitants of a type?*
 
 Inhabitants of a type are values for that types. Algebraig Data Types can be thought of in terms of regular algebraic equations and its result gives the number of inhabitants
+
 * sum types: `Either A B` or `A or B` corresponds to the equation `A + B`
 * products types: `(A, B)` (Tuple2) or `A and B` corresponds to the equation `A * B`
 * exponentiation: `A -> B` (Function1) corresponds to the equation `B^A` e.g. `Boolean -> Boolean` is `2^2`
