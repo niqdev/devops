@@ -15,6 +15,7 @@
 * [There is No Now](https://queue.acm.org/detail.cfm?id=2745385)
 * [Online Event Processing](https://queue.acm.org/detail.cfm?id=3321612)
 * [The world beyond batch: Streaming 101](https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101)
+* [Questioning the Lambda Architecture](https://www.oreilly.com/ideas/questioning-the-lambda-architecture)
 * [Jepsen](https://aphyr.com/tags/Jepsen) (Blog)
 * [The Paper Trail](https://www.the-paper-trail.org) (Blog)
 
