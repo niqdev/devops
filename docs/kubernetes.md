@@ -608,5 +608,6 @@ helm plugin install <PATH|URL>
 * [kube-ps1](https://github.com/jonmosco/kube-ps1) - Kubernetes prompt
 * [kubefwd](https://github.com/txn2/kubefwd) - Kubernetes port forwarding for local development
 * [stern](https://github.com/wercker/stern) - Multi pod and container log tailing for Kubernetes
+* [Kustomize](https://kustomize.io) - Customization of Kubernetes YAML configurations
 
 <br>
