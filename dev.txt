@@ -178,8 +178,10 @@ https://stackoverflow.com/questions/2709095/does-the-inline-annotation-in-scala-
 https://stackoverflow.com/questions/27855714/type-selection-type-projection-what-is-st-in-scala-scala-language-specifica
 https://stackoverflow.com/questions/2693067/what-is-meant-by-scalas-path-dependent-types
 https://github.com/estatico/scala-newtype
+https://medium.com/@mattroberts297/automatic-type-class-derivation-with-shapeless-part-one-a1251c5f9e16
 
 # bot
+https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
 http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
 https://github.com/vpavkin/telegram-bot-fs2
 https://github.com/nikdon/telepooz

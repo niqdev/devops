@@ -20,6 +20,7 @@
 * [Cheat Codes for Contravariance and Covariance](http://blog.originate.com/blog/2016/08/10/cheat-codes-for-contravariance-and-covariance)
 * [Covariance and contravariance in Scala](http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala)
 * [The Scala Type System: Parameterized Types and Variances](https://blog.codecentric.de/en/2015/03/scala-type-system-parameterized-types-variances-part-1)
+* [Scala Compiler Phases with Pictures](https://www.iteratorshq.com/blog/scala-compiler-phases-with-pictures)
 
 **FP readings**
 
@@ -131,6 +132,7 @@
 * [The Making of an IO](https://www.youtube.com/watch?reload=9&v=g_jP47HFpWA)
 * [Scalaz 8 VS Akka actors](https://www.youtube.com/watch?v=Eihz7kqn6mU&t=833s)
 * [Move Over Free Monads: Make Way for Free Applicatives!](https://youtu.be/H28QqxO7Ihc)
+* [Faculty of Khan](https://www.youtube.com/channel/UCGDanWUzNMbIV11lcNi-yBg/videos)
 
 <!--
 
