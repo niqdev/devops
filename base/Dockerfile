@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:latest-amd64
 
 RUN apt-get update && apt-get upgrade -y
 RUN add-apt-repository ppa:openjdk-r/ppa -y

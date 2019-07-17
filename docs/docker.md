@@ -154,9 +154,9 @@ docker login
 # phusion-base
 # https://github.com/phusion/baseimage-docker
 docker build -t devops/base:latest ./base
-docker tag devops/base niqdev/phusion-base:0.11
+docker tag devops/base niqdev/phusion-base:latest-amd64
 docker tag devops/base niqdev/phusion-base:latest
-docker push niqdev/phusion-base:0.11
+docker push niqdev/phusion-base:latest-amd64
 docker push niqdev/phusion-base:latest
 
 # zookeeper
