@@ -168,9 +168,9 @@ docker push niqdev/zookeeper:latest
 
 # kafka
 docker build -t devops/kafka:latest ./kafka
-docker tag devops/kafka niqdev/kafka:2.1.0
+docker tag devops/kafka niqdev/kafka:2.3.0
 docker tag devops/kafka niqdev/kafka
-docker push niqdev/kafka:2.1.0
+docker push niqdev/kafka:2.3.0
 docker push niqdev/kafka:latest
 
 docker-compose -f kafka/docker-compose-hub.yml up
