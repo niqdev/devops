@@ -161,9 +161,9 @@ docker push niqdev/phusion-base:latest
 
 # zookeeper
 docker build -t devops/zookeeper:latest ./zookeeper
-docker tag devops/zookeeper niqdev/zookeeper:3.4.13
+docker tag devops/zookeeper niqdev/zookeeper:3.5.5
 docker tag devops/zookeeper niqdev/zookeeper
-docker push niqdev/zookeeper:3.4.13
+docker push niqdev/zookeeper:3.5.5
 docker push niqdev/zookeeper:latest
 
 # kafka
