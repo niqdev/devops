@@ -11,7 +11,8 @@ RUN apt-get install -y \
   netcat && \
   apt-get clean
 
-RUN curl https://www-eu.apache.org/dist/zookeeper/zookeeper-${VERSION}/apache-zookeeper-${VERSION}.tar.gz | tar -xzf - -C /opt && \
+RUN curl https://www-eu.apache.org/dist/zookeeper/zookeeper-${VERSION}/apache-zookeeper-${VERSION}-bin.tar.gz | tar -xzf - -C /opt && \
+  mv /opt/apache-zookeeper-${VERSION}-bin /opt/zookeeper-${VERSION} && \
   ln -s /opt/zookeeper-${VERSION} /opt/zookeeper && \
   mkdir -p /var/log/zookeeper /var/lib/zookeeper/data
 
