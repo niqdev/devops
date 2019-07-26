@@ -20,6 +20,8 @@ Resources
 
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
 
+* [The Internals of Kafka Streams](https://jaceklaskowski.gitbooks.io/mastering-kafka-streams)
+
 Articles
 
 * [What is the actual role of Zookeeper in Kafka?](https://www.quora.com/What-is-the-actual-role-of-Zookeeper-in-Kafka-What-benefits-will-I-miss-out-on-if-I-don%E2%80%99t-use-Zookeeper-and-Kafka-together/answer/Gwen-Shapira)

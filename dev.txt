@@ -191,3 +191,6 @@ https://github.com/bot4s/telegram
 
 https://support.typora.io/Draw-Diagrams-With-Markdown
 https://www.webpagetest.org
+
+# Introduction to Natural Language Processing (NLP)
+https://blog.algorithmia.com/introduction-natural-language-processing-nlp/
