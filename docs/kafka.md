@@ -22,6 +22,8 @@ Resources
 
 * [The Internals of Kafka Streams](https://jaceklaskowski.gitbooks.io/mastering-kafka-streams)
 
+* [Kafka Streams Topology Visualizer](https://zz85.github.io/kafka-streams-viz)
+
 Articles
 
 * [What is the actual role of Zookeeper in Kafka?](https://www.quora.com/What-is-the-actual-role-of-Zookeeper-in-Kafka-What-benefits-will-I-miss-out-on-if-I-don%E2%80%99t-use-Zookeeper-and-Kafka-together/answer/Gwen-Shapira)
