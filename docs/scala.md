@@ -136,6 +136,7 @@
 * [Scalaz 8 VS Akka actors](https://www.youtube.com/watch?v=Eihz7kqn6mU&t=833s)
 * [Move Over Free Monads: Make Way for Free Applicatives!](https://youtu.be/H28QqxO7Ihc)
 * [Faculty of Khan](https://www.youtube.com/channel/UCGDanWUzNMbIV11lcNi-yBg/videos)
+* [SystemFw - Talks](http://systemfw.org/talks.html)
 
 <!--
 

@@ -179,6 +179,7 @@ https://stackoverflow.com/questions/27855714/type-selection-type-projection-what
 https://stackoverflow.com/questions/2693067/what-is-meant-by-scalas-path-dependent-types
 https://github.com/estatico/scala-newtype
 https://medium.com/@mattroberts297/automatic-type-class-derivation-with-shapeless-part-one-a1251c5f9e16
+https://appddeevvmeanderings.blogspot.com/2019/08/functional-web-client-made-easy-dotty.html
 
 # bot
 https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
