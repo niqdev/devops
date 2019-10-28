@@ -7,6 +7,7 @@
 * [Functional and Reactive Domain Modeling](https://www.manning.com/books/functional-and-reactive-domain-modeling) (2016) by Debasish Ghosh (Book)
 * [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read) (Book)
 * [Exploring CQRS and Event Sourcing](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10)) (Book)
+* [Database Internals - A Deep Dive into How Distributed Data Systems Work](https://www.databass.dev)
 * [CQRS](https://www.martinfowler.com/bliki/CQRS.html) by Martin Fowler
 * [Clarified CQRS](http://udidahan.com/2009/12/09/clarified-cqrs)
 * [1 Year of Event Sourcing and CQRS](https://hackernoon.com/1-year-of-event-sourcing-and-cqrs-fb9033ccd1c6)

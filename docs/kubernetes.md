@@ -26,6 +26,8 @@ Resources
 
 * [Prometheus and Kubernetes: A Perfect Match](https://www.weave.works/blog/prometheus-kubernetes-perfect-match)
 
+* [Inside of Kubernetes Controller](https://speakerdeck.com/govargo/inside-of-kubernetes-controller)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be
