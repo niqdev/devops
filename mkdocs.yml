@@ -17,3 +17,6 @@ nav:
     - JVM: jvm.md
     - System Design: system-design.md
     - Other: other.md
+
+# disable search plugin
+#plugins: []
