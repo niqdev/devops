@@ -20,6 +20,5 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [JVM](https://niqdev.github.io/devops/jvm)
-* [Scala](https://niqdev.github.io/devops/scala)
 * [System Design](https://niqdev.github.io/devops/system-design)
 * [Other](https://niqdev.github.io/devops/other)
