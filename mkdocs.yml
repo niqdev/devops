@@ -15,6 +15,7 @@ nav:
     - Hadoop: hadoop.md
     - Kubernetes: kubernetes.md
     - JVM: jvm.md
+    - Scala (OLD): scala.md
     - System Design: system-design.md
     - Other: other.md
 
