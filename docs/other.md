@@ -15,6 +15,8 @@
 * [JSFiddle](https://jsfiddle.net)
 * [ScalaFiddle](https://scalafiddle.io)
 * [JSON Formatter](https://jsonformatter.curiousconcept.com)
+* [JSON Generator](https://next.json-generator.com)
+* [JSON store](http://myjson.com)
 * [Beautify JavaScript or HTML](http://jsbeautifier.org)
 * [devdocs](https://devdocs.io)
 
