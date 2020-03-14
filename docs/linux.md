@@ -3,7 +3,11 @@
 Resources
 
 * [How Linux Works](https://amzn.to/2lHW1cB) (2014)(2nd) by Brian Ward (Book)
-* [Kernel documentation](https://www.kernel.org/doc/Documentation/)
+* [Attacking Network Protocols](https://nostarch.com/networkprotocols) (2018) by James Forshaw (Book)
+* [Practical Packet Analysis](https://nostarch.com/packetanalysis3) (2017)(3rd) by Chris Sanders (Book)
+* [The TCP/IP Guide](https://nostarch.com/tcpip.htm) (2005) by Charles M. Kozierok
+* [Kernel documentation](https://www.kernel.org/doc/Documentation)
+* [Linux Performance](http://www.brendangregg.com/linuxperf.html)
 
 ### Useful commands
 
@@ -292,8 +296,12 @@ lsof /dev
 # print all the system calls that a process makes
 strace cat /dev/null
 strace uptime
+strace -e trace=network,read,write bc
 # track shared library calls
 ltrace ls /
+
+# allows to set system-wide probes on special trace providers e.g. system calls
+dtrace
 
 # CPU usage
 /usr/bin/time ls
@@ -328,6 +336,10 @@ iostat -mt 2
 # system resource statistics
 dstat
 ```
+
+Resources
+
+* [Dynamic Tracing with DTrace & SystemTap](http://myaut.github.io/dtrace-stap-book)
 
 ### Network
 
@@ -375,6 +387,9 @@ cat /etc/nsswitch.conf
 # static IP
 /etc/network/interfaces
 
+# list of assigned port numbers
+/etc/services
+
 # -t Prints TCP port information
 # -u Prints UDP port information
 # -l Prints listening ports
@@ -413,6 +428,9 @@ http ipv6.icanhazip.com
 
 # Linux kernel does not automatically move packets from one subnet to another
 # enable temporary IP forwarding in the router's kernel
+sysctl net.ipv4.conf.all.forwarding=1
+sysctl net.ipv6.conf.all.forwarding=1
+# on macOS
 sysctl -w net.ipv4.ip_forward
 # change permanent configs upon reboot
 vim /etc/sysctl.conf
@@ -442,6 +460,14 @@ iptables -I INPUT -s ALLOWED_IP -j ACCEPT
 iptables -I INPUT RULE_NUMBER -s ALLOWED_IP -j ACCEPT
 # delete rule #number in chain
 iptables -D INPUT RULE_NUMBER
+# flush any existing NAT rules
+iptables -t nat -F
+# source NAT (SNAT) or masquerading: changes the IP source address information
+iptables -t nat -A POSTROUTING -o INTNAME -j SNAT --to INTIP
+iptables -t nat -A POSTROUTING -o INTNAME -j MASQUERADE
+# destination NAT (DNAT): changes the destination address
+iptables -t nat -A PREROUTING -d ORIGIP -j DNAT --to-destination NEWIP
+iptables -t nat -A PREROUTING -p PROTO -d ORIGIP --dport ORIGPORT -j DNAT --to-destination NEWIP:NEWPORT
 
 # show ARP kernel cache
 arp -n
@@ -454,6 +480,27 @@ iw dev NETWORK_INTERFACE link
 # manage both authentication and encryption for a wireless network interface
 wpa_supplicant
 ```
+
+Active network traffic capture
+
+* Port-Forwarding proxy
+* SOCKS proxy (preferred)
+```bash
+# specify a SOCKS proxy for any TCP connection
+java –DsocksProxyHost=localhost –DsocksProxyPort=1080 XXX
+```
+* HTTP forwarding proxy (client side)
+* HTTP reverse proxy (server side)
+
+Resources
+
+* [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
+* [dsniff](https://www.monkey.org/~dugsong/dsniff)
+* [Netfilter](https://netfilter.org/index.html)
+* [Dante - A free SOCKS server](https://www.inet.no/dante)
+* [Secure Socket Funneling](https://securesocketfunneling.github.io/ssf)
+* [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+* [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
 
 ### Applications
 
@@ -499,24 +546,38 @@ nmap -Pn IP_ADDRESS
 # system calls
 man recv
 man send
+
+# DHCP is designed to run on IP networks to distribute network configuration
+#   information to nodes automatically:
+#   IP address, default gateway, routing tables, default DNS servers, etc...
+# ARP finds the Ethernet address for a given IP address
+# * DHCP Spoofing
+# * ARP Poisoning
+ettercap -G
 ```
 
-### Useful links
+Resources
 
-* [Subnetting](https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47)
+* [Wireshark](https://www.wireshark.org)
+* [tcpdump](https://www.tcpdump.org)
+* [tshark](https://hackertarget.com/tshark-tutorial-and-filter-examples)
+* [Nmap](https://nmap.org)
+* [Ettercap](https://www.ettercap-project.org)
+* [Service Name and Transport Protocol Port Number Registry](http://www.iana.org/assignments/port-numbers)
+* TODO add more [examples](https://1modm.github.io/documentation/tcpdump.html)
+
+### Other resources
+
 * [OpenWrt](https://openwrt.org)
 * [BusyBox](https://www.busybox.net)
-* [Netfilter](https://netfilter.org/index.html)
-* [Iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
-* [iptables vs nftables](https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables)
+* [X.509 RFC](https://tools.ietf.org/html/rfc5280)
+* [OpenSSL Command-Line HOWTO](https://www.madboa.com/geek/openssl)
+* [Program Library HOWTO](https://www.dwheeler.com/program-library)
 * [Shorewall](http://www.shorewall.net)
-* [Nmap](https://nmap.org)
-* [tshark](https://hackertarget.com/tshark-tutorial-and-filter-examples)
 * [Postfix](http://www.postfix.org)
 * [HTTPie](https://httpie.org)
 * [jq](https://stedolan.github.io/jq)
-* [Linux Performance](http://www.brendangregg.com/linuxperf.html)
+* [Lynx](https://lynx.browser.org)
 * [Samba](https://www.samba.org)
-* [Program Library HOWTO](https://www.dwheeler.com/program-library)
 
 <br>

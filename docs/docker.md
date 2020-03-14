@@ -16,7 +16,7 @@ Setup
 curl -fsSL get.docker.com -o get-docker.sh && \
   chmod u+x $_ && \
   ./$_ && \
-  sudo usermod -aG docker hadoop
+  sudo usermod -aG docker docker
 
 docker --version
 
