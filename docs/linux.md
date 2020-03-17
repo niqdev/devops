@@ -151,6 +151,19 @@ dbus-monitor --session
 cc -o hello hello.c
 # list shared library (so)
 ldd /bin/bash
+
+# create hex dump
+xxd /usr/bin/bc
+
+# open binary
+vim /usr/bin/bc
+# (start) edit hex dump
+:%!xxd
+# (finish) edit hex dump
+:%!xxd -r
+
+# disassemble binary
+objdump -d /usr/bin/bc
 ```
 
 Script templates
