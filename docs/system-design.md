@@ -20,6 +20,7 @@
 * [The Difference between SLI, SLO, and SLA](https://enqueuezero.com/the-difference-between-sli-slo-and-sla.html)
 * [Jepsen](https://aphyr.com/tags/Jepsen) (Blog)
 * [The Paper Trail](https://www.the-paper-trail.org) (Blog)
+* [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
 
 **CAP Theorem**
 
