@@ -549,6 +549,9 @@ netcat -l -p 6996 -e /bin/bash
 # run client
 cat <(echo ls -la) - | netcat IP_ADDRESS 6996
 
+# simplest fuzz test
+cat /dev/urandom | nc IP_ADDRESS PORT_NUMBER
+
 # scan open ports
 nmap -Pn IP_ADDRESS
 
@@ -567,6 +570,9 @@ man send
 # * DHCP Spoofing
 # * ARP Poisoning
 ettercap -G
+
+# cli debuggers
+# CDB on Windows, GDB on Linux, and LLDB on macOS
 ```
 
 Resources
