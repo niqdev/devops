@@ -21,3 +21,37 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [System Design](https://niqdev.github.io/devops/system-design)
 * [Other](https://niqdev.github.io/devops/other)
+
+## Development
+
+Ubuntu
+
+```bash
+# install pip3
+sudo apt install -y python3-pip
+
+# install virtualenv globally 
+sudo pip3 install virtualenv
+
+# create virtualenv
+virtualenv -p $(which python3) venv
+
+# how-to activate virtualenv
+source venv/bin/activate
+
+# verify virtualenv
+which python
+python --version
+
+# how-to deactivate virtualenv
+deactivate
+
+# install new package
+pip install mkdocs
+
+# update requirements
+pip freeze > requirements.txt
+
+# run locally on port 8000
+mkdocs serve
+```
