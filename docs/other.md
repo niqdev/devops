@@ -1,3 +1,5 @@
+# Other
+
 ## Random resources
 
 * [AWS diagrams & notes](https://www.awsgeek.com)
