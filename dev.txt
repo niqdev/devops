@@ -171,6 +171,10 @@ https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingesti
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
 
+# k8s performance-tuning
+https://github.com/hjacobs/kubernetes-failure-stories
+https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s
+
 # scala
 https://github.com/barambani/http4s-extend
 https://stackoverflow.com/questions/4593710/when-should-i-and-should-i-not-use-scalas-inline-annotation
