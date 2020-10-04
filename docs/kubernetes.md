@@ -30,9 +30,15 @@ Resources
 
 * [Kubernetes Failure Stories](https://k8s.af)
 
+* [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
+
 * [Kubernetes: Make your services faster by removing CPU limits](https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits)
 
-* [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
+* [Optimizing Kubernetes Resource Requests/Limits for Cost-Efficiency and Latency](https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload)
+
+* [What are Quality of Service (QoS) Classes in Kubernetes](https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6)
+
+* [How to detect Kubernetes overspending by measuring idle costs](https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0)
 
 ## Architecture
 

@@ -1,31 +1,14 @@
-DEV info
+# not-only-devops ?
 
-* rename + buy domain: to not-only-devops ?
-
----
-
-TODO
-* >>> add spreadsheets notes: java, scala, data structures, algorithms, design patterns?
-* sla, percentile, jmx, mbeans, jconsole, jolokia, jstat, javap
-* add notes from JVM memory course, jps
-java -XX:+PrintFlagsFinal -version
-
->>> example: jmh + scalacheck
-https://www.scalacheck.org/documentation.html
-
-* aws: emr + s3
-* EMR docs, boto3
+--- OLD
 
 # emr info on master node
 cat /mnt/var/lib/info/job-flow.json | jq
 
-* add in linux: monit, nohup, screen, mc
-
-* awesome links, best practices, bash/vim keyboard shortcuts
-
+* add in linux: monit, nohup, screen, mc, vim keyboard shortcuts
 * command vs event api - use paste tense to name event
 
----
+--- OLD
 
 * Avro **Avro** is a data serialization system
 * Parquet **Parquet** is a columnar storage format that can efficiently store nested data
@@ -93,41 +76,16 @@ https://github.com/lahsivjar/kube-arm
 https://docs.traefik.io
 https://ngrok.com
 
-# costs
-https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0
-https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
-# qos
-https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6
-https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload
-# prometheus initContainer/JMX
+# prometheus
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
-
 https://www.robustperception.io/which-are-my-biggest-metrics
 https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
 
-# bot
+# telegram-bot
 https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
 http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
 https://github.com/vpavkin/telegram-bot-fs2
 https://github.com/nikdon/telepooz
 https://github.com/bot4s/telegram
-
->>> TODO add to others
-
-https://support.typora.io/Draw-Diagrams-With-Markdown
-https://www.webpagetest.org
-
-# compilers
-http://www.craftinginterpreters.com
-https://the-super-tiny-compiler.glitch.me
-https://godbolt.org
-https://gumroad.com/l/waiig_wacig_bundle
-https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd-dp-0321486811/dp/0321486811
-https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871
-https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506
-https://github.com/rui314/chibicc
-
-* [Build OS in Rust](https://tc.gts3.org/cs3210/2020/spring/lab.html) and run it on Raspberry Pi 3 or [QEMU](https://www.qemu.org)
-https://github.com/dariubs/GoBooks

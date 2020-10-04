@@ -14,6 +14,8 @@
 * [TextDB](https://textdb.dev) - A simple way to share small amounts of data
 * [Beautify JavaScript or HTML](http://jsbeautifier.org)
 * [devdocs](https://devdocs.io)
+* [WebPagetest](https://www.webpagetest.org) - Test a website's performance
+* [BrowserGap](https://browsergap.dosyago.com) - A secure browser embedded in a webapp
 
 <br>
 
