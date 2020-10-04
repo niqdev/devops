@@ -311,6 +311,14 @@ Resources
 * [git notes (1)](https://github.com/niqdev/git-notes/blob/master/git-real-1.md)
 * [git notes (2)](https://github.com/niqdev/git-notes/blob/master/git-real-2.md)
 
+Other
+
+* [Oh Shit, Git!?!](https://ohshitgit.com)
+* [Using Askgit](https://willschenk.com/articles/2020/using_askgit)
+* [`git filter-repo` is a versatile tool for rewriting history](https://github.com/newren/git-filter-repo)
+* [Merkle Tree](https://brilliant.org/wiki/merkle-tree)
+* [The Myers diff algorithm](https://blog.jcoglan.com/2017/02/12/the-myers-diff-algorithm-part-1)
+
 <br>
 
 ## Mercurial

@@ -28,6 +28,12 @@ Resources
 
 * [Inside of Kubernetes Controller](https://speakerdeck.com/govargo/inside-of-kubernetes-controller)
 
+* [Kubernetes Failure Stories](https://k8s.af)
+
+* [Kubernetes: Make your services faster by removing CPU limits](https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits)
+
+* [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be

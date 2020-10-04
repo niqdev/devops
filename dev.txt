@@ -2,9 +2,6 @@ DEV info
 
 * rename + buy domain: to not-only-devops ?
 
-# Writing An Interpreter And Compiler In Go
->>> https://gumroad.com/l/waiig_wacig_bundle
-
 ---
 
 TODO
@@ -56,50 +53,9 @@ withSources() withJavadoc()
 
 ---
 
-# sbt complex alias
-https://github.com/pauldijou/jwt-scala/blob/master/build.sbt#L15
-
-# kafka
-https://hevodata.com/blog/how-to-set-up-kafka-on-ubuntu-16-04/
-https://medium.com/@stephane.maarek/how-to-use-apache-kafka-to-transform-a-batch-pipeline-into-a-real-time-one-831b48a6ad85
-https://medium.com/bakdata/queryable-kafka-topics-with-kafka-streams-8d2cca9de33f
-
-# mirror maker
-https://engineering.salesforce.com/mirrormaker-performance-tuning-63afaed12c21
-https://community.hortonworks.com/articles/79891/kafka-mirror-maker-best-practices.html
-https://www.instaclustr.com/support/documentation/kafka/kafka-cluster-management/setting-up-mirror-maker
-https://blog.newrelic.com/engineering/kafka-best-practices/
-
-# kafka streams
-https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple
-https://www.confluent.io/blog/hello-world-kafka-connect-kafka-streams
-https://www.confluent.io/blog/distributed-real-time-joins-and-aggregations-on-user-activity-events-using-kafka-streams
-
 # keytool
 https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores#viewing-keystore-entries
 https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
-
-# avro
-https://github.com/akka/alpakka-kafka/issues/342
-http://rick-hightower.blogspot.com/2017/05/apache-avro-tutorial.html
-https://medium.com/@mykidong/howto-implement-avro-schema-inheritance-757d2897c1ad
-https://gist.github.com/cmilfont/2466a4272adcf0d5d20a309002df6799
-https://dzone.com/articles/kafka-avro-scala-example
-
-# avro + schema registry
-https://docs.confluent.io/current/schema-registry/docs/index.html
-https://www.sderosiaux.com/articles/2017/03/02/serializing-data-efficiently-with-apache-avro-and-dealing-with-a-schema-registry
-https://web.archive.org/web/20180321112249/https://cloudurable.com/blog/kafka-avro-schema-registry/index.html
-https://msayag.github.io/Kafka
-http://bytepadding.com/big-data/spark/avro/avro-serialization-de-serialization-using-confluent-schema-registry
-https://github.com/sachabarber/KafkaAvroExamples
-
-https://www.madewithtea.com/kafka-streams-in-scala-with-schema-registry.html
-https://github.com/lagom/lagom/issues/668
-https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
-https://gist.github.com/avpatel257/0a88d20200661b31ab5f5df7adc42e6f
-https://groups.google.com/forum/#!topic/akka-user/42SHwSIM1Xw
-http://subprotocol.com/system/apache-spark-ec2-avro.html
 
 # api
 https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
@@ -126,26 +82,19 @@ https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-
 # vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 
-# courses
+# Machine Learning
 https://www.coursera.org/learn/machine-learning
 https://developers.google.com/machine-learning/crash-course
-
-# scala tests
-https://orrsella.com/2014/09/24/integration-and-end-to-end-test-configurations-in-sbt-for-scala-java-projects
-http://www.unstablebuild.com/2017/04/13/scala-projects-and-integration-tests.html
-https://alexromanov.github.io/2016/07/15/cucumber-scala-sbt
-https://github.com/lewismj/cucumber
-https://github.com/jecklgamis/cucumber-jvm-scala-example
-https://localstack.cloud
+# Introduction to Natural Language Processing (NLP)
+https://blog.algorithmia.com/introduction-natural-language-processing-nlp
+# Machine Learning University
+https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university
 
 # back pressure
 https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html
 
 # IAC infrastructure-as-code
 https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
-
-# java agent
-https://stackoverflow.com/questions/11898566/tutorials-about-javaagents
 
 # kunernetes raspberry
 https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
@@ -171,21 +120,6 @@ https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingesti
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
 
-# k8s performance-tuning
-https://github.com/hjacobs/kubernetes-failure-stories
-https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s
-https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits
-
-# scala
-https://github.com/barambani/http4s-extend
-https://stackoverflow.com/questions/4593710/when-should-i-and-should-i-not-use-scalas-inline-annotation
-https://stackoverflow.com/questions/2709095/does-the-inline-annotation-in-scala-really-help-performance
-https://stackoverflow.com/questions/27855714/type-selection-type-projection-what-is-st-in-scala-scala-language-specifica
-https://stackoverflow.com/questions/2693067/what-is-meant-by-scalas-path-dependent-types
-https://github.com/estatico/scala-newtype
-https://medium.com/@mattroberts297/automatic-type-class-derivation-with-shapeless-part-one-a1251c5f9e16
-https://appddeevvmeanderings.blogspot.com/2019/08/functional-web-client-made-easy-dotty.html
-
 # bot
 https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
 http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
@@ -198,9 +132,12 @@ https://github.com/bot4s/telegram
 https://support.typora.io/Draw-Diagrams-With-Markdown
 https://www.webpagetest.org
 
-# Introduction to Natural Language Processing (NLP)
-https://blog.algorithmia.com/introduction-natural-language-processing-nlp
-
-# git
-https://brilliant.org/wiki/merkle-tree
-https://blog.jcoglan.com/2017/02/12/the-myers-diff-algorithm-part-1
+# compilers
+http://www.craftinginterpreters.com
+https://the-super-tiny-compiler.glitch.me
+https://godbolt.org
+https://gumroad.com/l/waiig_wacig_bundle
+https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd-dp-0321486811/dp/0321486811
+https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871
+https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506
+https://github.com/rui314/chibicc
