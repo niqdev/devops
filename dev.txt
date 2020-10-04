@@ -25,11 +25,6 @@ cat /mnt/var/lib/info/job-flow.json | jq
 
 * command vs event api - use paste tense to name event
 
-# download sources and javadocs
-sbt updateClassifiers
-# or add
-withSources() withJavadoc()
-
 ---
 
 * Avro **Avro** is a data serialization system
@@ -82,14 +77,6 @@ https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-
 # vagrant images
 https://github.com/martinprobson/vagrant-hadoop-hive-spark
 
-# Machine Learning
-https://www.coursera.org/learn/machine-learning
-https://developers.google.com/machine-learning/crash-course
-# Introduction to Natural Language Processing (NLP)
-https://blog.algorithmia.com/introduction-natural-language-processing-nlp
-# Machine Learning University
-https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university
-
 # back pressure
 https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html
 
@@ -141,3 +128,6 @@ https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd-dp-0321486811/d
 https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871
 https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506
 https://github.com/rui314/chibicc
+
+* [Build OS in Rust](https://tc.gts3.org/cs3210/2020/spring/lab.html) and run it on Raspberry Pi 3 or [QEMU](https://www.qemu.org)
+https://github.com/dariubs/GoBooks

@@ -5,7 +5,7 @@
 [travis-image]: https://travis-ci.org/niqdev/devops.svg?branch=master
 [travis-url]: https://travis-ci.org/niqdev/devops
 
-A collection of Docker and Vagrant images, scripts and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
+A collection of resources, scripts, docker images, tools and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
 * [Linux](https://niqdev.github.io/devops/linux)
 * [Docker](https://niqdev.github.io/devops/docker) 
@@ -20,7 +20,8 @@ A collection of Docker and Vagrant images, scripts and documentation mainly rela
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [System Design](https://niqdev.github.io/devops/system-design)
-* [Other](https://niqdev.github.io/devops/other)
+* [Other Resources](https://niqdev.github.io/devops/other-resources)
+* [Toolbox](https://niqdev.github.io/devops/toolbox)
 
 ## Development
 

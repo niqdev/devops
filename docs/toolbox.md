@@ -1,13 +1,4 @@
-# Other
-
-## Random resources
-
-* [AWS diagrams & notes](https://www.awsgeek.com)
-* [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
-* [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
-* [Autopilot Pattern Applications](http://autopilotpattern.io)
-
-<br>
+# Toolbox
 
 ## Online tools
 
@@ -20,6 +11,7 @@
 * [JSON Generator](https://next.json-generator.com)
 * [Mockaroo](https://www.mockaroo.com) - Realistic data generator
 * [JSON store](http://myjson.com)
+* [TextDB](https://textdb.dev) - A simple way to share small amounts of data
 * [Beautify JavaScript or HTML](http://jsbeautifier.org)
 * [devdocs](https://devdocs.io)
 
