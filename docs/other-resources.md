@@ -60,6 +60,8 @@
 * [Tinyproxy](https://tinyproxy.github.io)
 * [tinc](http://tinc-vpn.org)
 * [Containers from first principles](https://fzakaria.com/2020/05/31/containers-from-first-principles.html)
+* [FastCGI](http://www.nongnu.org/fastcgi)
+* [Dissecting the GZIP format](http://www.infinitepartitions.com/cgi-bin/showarticle.cgi?article=art001)
 
 ### Books (free)
 

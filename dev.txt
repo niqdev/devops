@@ -105,6 +105,8 @@ https://blog.libtorrent.org/2020/09/bittorrent-v2
 
 # cli tools
 https://switowski.com/blog/favorite-cli-tools
+# load testing
+https://github.com/nakabonne/ali
 
 # makefile
 https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
