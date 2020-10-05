@@ -7,6 +7,7 @@ Resources
 * [Practical Packet Analysis](https://nostarch.com/packetanalysis3) (2017)(3rd) by Chris Sanders (Book)
 * [The TCP/IP Guide](https://nostarch.com/tcpip.htm) (2005) by Charles M. Kozierok
 * [Kernel documentation](https://www.kernel.org/doc/Documentation)
+* [Interactive map of Linux kernel](https://makelinux.github.io/kernel/map)
 * [Linux Performance](http://www.brendangregg.com/linuxperf.html)
 
 ### Useful commands

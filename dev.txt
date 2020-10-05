@@ -5,6 +5,7 @@
 # emr info on master node
 cat /mnt/var/lib/info/job-flow.json | jq
 
+* sla, percentile
 * add in linux: monit, nohup, screen, mc, vim keyboard shortcuts
 * command vs event api - use paste tense to name event
 
@@ -75,6 +76,8 @@ https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
 https://github.com/lahsivjar/kube-arm
 https://docs.traefik.io
 https://ngrok.com
+# kunernetes SSL
+https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
 
 # prometheus
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
@@ -89,3 +92,29 @@ http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
 https://github.com/vpavkin/telegram-bot-fs2
 https://github.com/nikdon/telepooz
 https://github.com/bot4s/telegram
+
+---
+
+https://monokh.com/posts/bitcoin-from-scratch-part-1
+
+# torrent
+https://en.m.wikibooks.org/wiki/The_World_of_Peer-to-Peer_(P2P)/Networks_and_Protocols/BitTorrent
+https://github.com/arvidn/libtorrent
+https://github.com/johang/btfs
+https://blog.libtorrent.org/2020/09/bittorrent-v2
+
+# cli tools
+https://switowski.com/blog/favorite-cli-tools
+
+# makefile
+https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
+`make -pRrq`, that is a very useful command to debug your makefiles, especially in a big project. The option `-p` prints the make data-base, -R and -r removes the implicit rules and variables, and -q indicates only asking make a question about current state, avoid executing anything
+
+# password manager
+https://www.passwordstore.org
+https://www.keepassx.org
+https://www.passbolt.com
+
+# github actions
+https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+https://actionsflow.github.io

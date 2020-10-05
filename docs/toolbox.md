@@ -16,6 +16,9 @@
 * [devdocs](https://devdocs.io)
 * [WebPagetest](https://www.webpagetest.org) - Test a website's performance
 * [BrowserGap](https://browsergap.dosyago.com) - A secure browser embedded in a webapp
+* [Kubernetes YAML Generator](https://k8syaml.com)
+* [Database of Databases](https://dbdb.io)
+* [CloudSkew](https://www.cloudskew.com) - Draw cloud architecture diagrams
 
 <br>
 
