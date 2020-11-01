@@ -12,7 +12,7 @@ Resources
 
 * [Playbook example](https://gist.github.com/marktheunissen/2979474)
 
-The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](other/#vagrant) for more details.
+The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](toolbox/#vagrant) for more details.
 
 ### Setup
 
