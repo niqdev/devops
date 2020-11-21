@@ -46,6 +46,8 @@ Articles
 
 * [Enabling Exactly-Once in Kafka Streams](https://www.confluent.io/blog/enabling-exactly-kafka-streams)
 
+* [Apache Kafka: 8 things to check before going live](https://ariskk.com/kafka-8-things)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)

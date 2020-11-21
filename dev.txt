@@ -1,3 +1,5 @@
+https://cloudsecdocs.com
+
 # not-only-devops ?
 
 --- OLD
@@ -78,6 +80,7 @@ https://docs.traefik.io
 https://ngrok.com
 # kunernetes SSL
 https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
+https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
 
 # prometheus
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
@@ -102,6 +105,22 @@ https://en.m.wikibooks.org/wiki/The_World_of_Peer-to-Peer_(P2P)/Networks_and_Pro
 https://github.com/arvidn/libtorrent
 https://github.com/johang/btfs
 https://blog.libtorrent.org/2020/09/bittorrent-v2
+# Kademlia: A Design Specification
+http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html
+
+# A review of consensus protocols
+https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols
+
+# How you could have come up with Paxos yourself
+https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html
+
+# An Introduction to Computer Networks
+http://intronetworks.cs.luc.edu/current/html/intro.html
+
+# Network Programming TCP/IP Fundamentals
+https://lowlvl.org
+
+---
 
 # cli tools
 https://switowski.com/blog/favorite-cli-tools
@@ -120,3 +139,43 @@ https://www.passbolt.com
 # github actions
 https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 https://actionsflow.github.io
+
+# free deploy
+https://fly.io/docs/about/pricing/#free-for-side-projects
+
+# Turn your Google Sheets data into a website
+https://siteoly.com
+
+# Tools and Services I Use to Run My SaaS
+https://jake.nyc/words/tools-and-services-i-use-to-run-my-saas
+
+# An Introduction to ZFS A Place to Start
+https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
+
+---
+
+# Operating System Concepts (10th)
+https://www.os-book.com/OS10/index.html
+https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html
+
+# Compilers: Principles, Techniques, and Tools (2nd)
+https://suif.stanford.edu/dragonbook
+
+https://www.manning.com/books/core-kubernetes
+https://www.manning.com/books/istio-in-action
+
+# CS 377 Spring '14: Operating Systems
+https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k
+# Operating System
+https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O
+
+# MIT 6.824 Distributed Systems (Spring 2020)
+https://m.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB
+# Distributed Systems lecture series
+https://www.youtube.com/playlist?app=desktop&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB
+
+---
+
+# rust
+https://thefuntastic.com
+https://arzg.github.io/lang

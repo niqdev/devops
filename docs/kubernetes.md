@@ -40,6 +40,8 @@ Resources
 
 * [How to detect Kubernetes overspending by measuring idle costs](https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0)
 
+* [Kubernetes: Curated List of Tools and Resources](https://devopsunlocked.com/kubernetes-curated-list-of-tools-and-resources)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be
