@@ -176,6 +176,13 @@ https://www.youtube.com/playlist?app=desktop&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RI
 
 ---
 
+# kafka tools
+https://github.com/andrea-vinci/Insulator
+https://github.com/cloudhut/kowl
+https://github.com/corunet/kloadgen
+
+---
+
 # rust
 https://thefuntastic.com
 https://arzg.github.io/lang
