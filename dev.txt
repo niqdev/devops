@@ -186,3 +186,6 @@ https://github.com/corunet/kloadgen
 # rust
 https://thefuntastic.com
 https://arzg.github.io/lang
+
+# tracing
+https://opentracing.io/specification
