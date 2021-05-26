@@ -189,3 +189,7 @@ https://arzg.github.io/lang
 
 # tracing
 https://opentracing.io/specification
+
+# DynamoDB
+https://github.com/aws-samples/amazon-dynamodb-labs
+https://aws.amazon.com/blogs/database/how-to-determine-if-amazon-dynamodb-is-appropriate-for-your-needs-and-then-plan-your-migration/
