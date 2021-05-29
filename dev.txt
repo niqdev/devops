@@ -178,8 +178,11 @@ https://www.youtube.com/playlist?app=desktop&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RI
 
 # kafka tools
 https://github.com/andrea-vinci/Insulator
-https://github.com/cloudhut/kowl
 https://github.com/corunet/kloadgen
+# monitor
+https://github.com/cloudhut/kowl
+https://github.com/linkedin/cruise-control
+https://github.com/yahoo/CMAK
 
 ---
 
@@ -190,6 +193,12 @@ https://arzg.github.io/lang
 # tracing
 https://opentracing.io/specification
 
-# DynamoDB
+# aws dynamodb
 https://github.com/aws-samples/amazon-dynamodb-labs
-https://aws.amazon.com/blogs/database/how-to-determine-if-amazon-dynamodb-is-appropriate-for-your-needs-and-then-plan-your-migration/
+http://rh-web-bucket.s3.amazonaws.com/index.html
+https://aws.amazon.com/blogs/database/how-to-determine-if-amazon-dynamodb-is-appropriate-for-your-needs-and-then-plan-your-migration
+https://aws.amazon.com/blogs/database/amazon-dynamodb-auto-scaling-performance-and-cost-optimization-at-any-scale
+https://tech.nextroll.com/blog/dev/2019/02/05/dynamodb-managed-autoscaling.html
+
+# aws batch
+https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper-with-aws-654feb9fdad7
