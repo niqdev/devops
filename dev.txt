@@ -2,6 +2,12 @@ https://cloudsecdocs.com
 
 # not-only-devops ?
 
+---
+
+# must read
+https://mattgemmell.com/what-have-you-tried
+https://www.nohello.com
+
 --- OLD
 
 # emr info on master node
