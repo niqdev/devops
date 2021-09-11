@@ -2,11 +2,14 @@ https://cloudsecdocs.com
 
 # not-only-devops ?
 
----
+--- must read
 
-# must read
+# What have you tried?
 https://mattgemmell.com/what-have-you-tried
+# No Hello
 https://www.nohello.com
+# What Every Computer Scientist Should Know About Floating-Point Arithmetic
+https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
 
 --- OLD
 
