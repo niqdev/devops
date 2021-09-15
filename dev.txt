@@ -211,3 +211,6 @@ https://tech.nextroll.com/blog/dev/2019/02/05/dynamodb-managed-autoscaling.html
 
 # aws batch
 https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper-with-aws-654feb9fdad7
+
+# podman
+https://www.redhat.com/sysadmin/replace-docker-podman-macos
