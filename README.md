@@ -1,9 +1,6 @@
 # DevOps
 
-[![Build Status][travis-image]][travis-url]
-
-[travis-image]: https://travis-ci.org/niqdev/devops.svg?branch=master
-[travis-url]: https://travis-ci.org/niqdev/devops
+[![github-pages](https://github.com/niqdev/devops/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/niqdev/devops/actions/workflows/gh-pages.yml)
 
 A collection of resources, scripts, docker images, tools and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
