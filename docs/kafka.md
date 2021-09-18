@@ -51,8 +51,12 @@ Articles
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
-
 * [Kafka-Utils](https://github.com/Yelp/kafka-utils)
+* [Insulator](https://andrewinci.github.io/Insulator) (GUI)
+* [KLoadGen](https://github.com/corunet/kloadgen)
+* [Kowl](https://github.com/cloudhut/kowl)
+* [Cruise Control](https://github.com/linkedin/cruise-control)
+* [CMAK](https://github.com/yahoo/CMAK)
 
 ## Architecture
 

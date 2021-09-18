@@ -21,6 +21,8 @@
 * [Jepsen](https://aphyr.com/tags/Jepsen) (Blog)
 * [The Paper Trail](https://www.the-paper-trail.org) (Blog)
 * [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+* [A review of consensus protocols](https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols)
+* [How you could have come up with Paxos yourself](https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html)
 
 **CAP Theorem**
 

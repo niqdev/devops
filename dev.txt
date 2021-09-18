@@ -79,6 +79,7 @@ https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overlo
 https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
 
 # kunernetes raspberry
+https://github.com/alexellis/k3sup
 https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
 https://chrisshort.net/my-raspberry-pi-kubernetes-cluster
 https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
@@ -87,9 +88,13 @@ https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
 https://github.com/lahsivjar/kube-arm
 https://docs.traefik.io
 https://ngrok.com
+https://inlets.dev
+https://github.com/alexellis/arkade
 # kunernetes SSL
 https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
 https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
+# serverless
+https://www.openfaas.com
 
 # prometheus
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
@@ -117,12 +122,6 @@ https://blog.libtorrent.org/2020/09/bittorrent-v2
 # Kademlia: A Design Specification
 http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html
 
-# A review of consensus protocols
-https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols
-
-# How you could have come up with Paxos yourself
-https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html
-
 # An Introduction to Computer Networks
 http://intronetworks.cs.luc.edu/current/html/intro.html
 
@@ -131,8 +130,6 @@ https://lowlvl.org
 
 ---
 
-# cli tools
-https://switowski.com/blog/favorite-cli-tools
 # load testing
 https://github.com/nakabonne/ali
 
@@ -163,41 +160,10 @@ https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
 
 ---
 
-# Operating System Concepts (10th)
-https://www.os-book.com/OS10/index.html
-https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html
-
-# Compilers: Principles, Techniques, and Tools (2nd)
-https://suif.stanford.edu/dragonbook
-
 https://www.manning.com/books/core-kubernetes
 https://www.manning.com/books/istio-in-action
 
-# CS 377 Spring '14: Operating Systems
-https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k
-# Operating System
-https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O
-
-# MIT 6.824 Distributed Systems (Spring 2020)
-https://m.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB
-# Distributed Systems lecture series
-https://www.youtube.com/playlist?app=desktop&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB
-
 ---
-
-# kafka tools
-https://github.com/andrea-vinci/Insulator
-https://github.com/corunet/kloadgen
-# monitor
-https://github.com/cloudhut/kowl
-https://github.com/linkedin/cruise-control
-https://github.com/yahoo/CMAK
-
----
-
-# rust
-https://thefuntastic.com
-https://arzg.github.io/lang
 
 # tracing
 https://opentracing.io/specification
@@ -214,3 +180,19 @@ https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper
 
 # podman
 https://www.redhat.com/sysadmin/replace-docker-podman-macos
+
+# privacy
+https://nextdns.io
+https://pi-hole.net
+# vpn access point
+https://pimylifeup.com/raspberry-pi-vpn-access-point
+https://caveofcode.com/how-to-setup-a-vpn-connection-from-inside-a-pod-in-kubernetes
+# dream machine
+https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/unifi-dream-machine
+
+# interesting crypto
+https://www.anchorage.com
+# mininig
+https://cardano.org
+https://nano.org
+https://www.chia.net

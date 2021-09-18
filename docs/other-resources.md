@@ -9,7 +9,7 @@
 * [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
 * [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
 
-## OS/VM/Compiler
+## Interpreter/Compiler/VM
 
 * [Crafting Interpreters](http://www.craftinginterpreters.com)
 * [The Super Tiny Compiler!](git.io/compiler)
@@ -17,26 +17,15 @@
 * [Compiler Explorer](https://godbolt.org)
 * [Tiny C Compiler](https://bellard.org/tcc)
 * [A small C compiler](https://github.com/rui314/chibicc)
+* [Oak: An infinitely more portable alternative to the C programming language](http://github.com/adam-mcdaniel/oakc)
 * [Write your own Virtual Machine](https://justinmeiners.github.io/lc3-vm)
+
+## OS
+
+* [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (youtube)
+* [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O)
 * [Xv6: A simple Unix-like teaching operating system](https://pdos.csail.mit.edu/6.828/2020/xv6.html)
 * [Biscuit: An OS kernel in a high-level language](https://pdos.csail.mit.edu/projects/biscuit.html)
-* [Oak: An infinitely more portable alternative to the C programming language](http://github.com/adam-mcdaniel/oakc)
-
-### Rust
-
-* [Build OS in Rust](https://tc.gts3.org/cs3210/2020/spring/lab.html) and run it on Raspberry Pi 3 or [QEMU](https://www.qemu.org)
-* [Redox is a Unix-like Operating System written in Rust](https://www.redox-os.org)
-* [Writing an x86 bootloader in Rust that can launch vmlinux](https://vmm.dev/en/rust/krabs.md)
-* [Writing a file system from scratch in Rust](https://blog.carlosgaldino.com/writing-a-file-system-from-scratch-in-rust.html)
-* [A gentle intro to assembly with Rust](https://lfn3.net/2020/08/03/a-gentle-intro-to-assembly-with-rust)
-* [Building a DNS server in Rust](https://github.com/EmilHernvall/dnsguide)
-
-### Books
-
-* [Compilers: Principles, Techniques, and Tools](https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd-dp-0321486811/dp/0321486811)
-* [Writing An Interpreter And Compiler In Go](https://gumroad.com/l/waiig_wacig_bundle)
-* [Structure and Interpretation of Computer Programs](https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871)
-* [Recursive Programming Techniques](https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506) (?)
 
 ## Uncategorized/Unordered resources
 
@@ -63,6 +52,14 @@
 * [FastCGI](http://www.nongnu.org/fastcgi)
 * [Dissecting the GZIP format](http://www.infinitepartitions.com/cgi-bin/showarticle.cgi?article=art001)
 
+### Books
+
+* [Compilers: Principles, Techniques, and Tools](https://suif.stanford.edu/dragonbook)
+* [Writing An Interpreter And Compiler In Go](https://gumroad.com/l/waiig_wacig_bundle)
+* [Structure and Interpretation of Computer Programs](https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871)
+* [Recursive Programming Techniques](https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506) (?)
+* Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
+
 ### Books (free)
 
 * [C Programming Boot Camp](https://gribblelab.org/CBootCamp/index.html)
@@ -76,6 +73,7 @@
 * [Introduction to Computer Graphics](http://math.hws.edu/graphicsbook/index.html)
 * [Mathematics for programmers](https://yurichev.com/writings/Math-for-programmers.pdf)
 * [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os)
+* [Crafting Interpreters](https://craftinginterpreters.com)
 
 ### Book's collection (free)
 
