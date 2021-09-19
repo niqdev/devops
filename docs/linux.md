@@ -586,6 +586,16 @@ Resources
 * [Service Name and Transport Protocol Port Number Registry](http://www.iana.org/assignments/port-numbers)
 * TODO add more [examples](https://1modm.github.io/documentation/tcpdump.html)
 
+### Shell/Terminal
+
+* [Fish](https://fishshell.com)
+* [Oil](http://www.oilshell.org)
+* [Zellij](https://zellij.dev)
+
+### Blogs
+
+* [Highly useful Linux commands & configurations](https://www.dedoimedo.com/computers/linux_commands.html)
+
 ### Other resources
 
 * [OpenWrt](https://openwrt.org)

@@ -48,6 +48,8 @@ Articles
 
 * [Apache Kafka: 8 things to check before going live](https://ariskk.com/kafka-8-things)
 
+* [Gently down the stream](https://www.gentlydownthe.stream)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)

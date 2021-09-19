@@ -80,6 +80,7 @@ https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-salts
 
 # kunernetes raspberry
 https://github.com/alexellis/k3sup
+https://github.com/onedr0p/home-cluster
 https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
 https://chrisshort.net/my-raspberry-pi-kubernetes-cluster
 https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
@@ -96,6 +97,15 @@ https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
 # serverless
 https://www.openfaas.com
 
+# Container Networking Is Simple!
+https://iximiuz.com/en/posts/container-networking-is-simple
+
+# crd
+http://technosophos.com/2019/08/07/writing-a-kubernetes-controller-in-rust.html
+
+# certificates
+https://scotthelme.co.uk/introducing-another-free-ca-as-an-alternative-to-lets-encrypt
+
 # prometheus
 https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
 https://www.robustperception.io/which-are-my-biggest-metrics
@@ -109,6 +119,9 @@ http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
 https://github.com/vpavkin/telegram-bot-fs2
 https://github.com/nikdon/telepooz
 https://github.com/bot4s/telegram
+
+# copy cd-dvd
+https://unix.stackexchange.com/questions/224277/is-it-better-to-use-cat-dd-pv-or-another-procedure-to-copy-a-cd-dvd/224314#224314
 
 ---
 
@@ -137,11 +150,6 @@ https://github.com/nakabonne/ali
 https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
 `make -pRrq`, that is a very useful command to debug your makefiles, especially in a big project. The option `-p` prints the make data-base, -R and -r removes the implicit rules and variables, and -q indicates only asking make a question about current state, avoid executing anything
 
-# password manager
-https://www.passwordstore.org
-https://www.keepassx.org
-https://www.passbolt.com
-
 # github actions
 https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 https://actionsflow.github.io
@@ -157,6 +165,18 @@ https://jake.nyc/words/tools-and-services-i-use-to-run-my-saas
 
 # An Introduction to ZFS A Place to Start
 https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
+
+# Remote access screen and file sharing to your desktop
+https://remmina.org
+
+# SQLite graphdb
+https://github.com/dpapathanasiou/simple-graph
+
+# SQLite distributed
+https://github.com/rqlite/rqlite
+
+# graphdb
+https://github.com/krotik/eliasdb
 
 ---
 
@@ -181,18 +201,21 @@ https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper
 # podman
 https://www.redhat.com/sysadmin/replace-docker-podman-macos
 
-# privacy
-https://nextdns.io
-https://pi-hole.net
-# vpn access point
-https://pimylifeup.com/raspberry-pi-vpn-access-point
-https://caveofcode.com/how-to-setup-a-vpn-connection-from-inside-a-pod-in-kubernetes
-# dream machine
-https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/unifi-dream-machine
-
 # interesting crypto
 https://www.anchorage.com
 # mininig
 https://cardano.org
 https://nano.org
 https://www.chia.net
+
+# discord exporter
+https://github.com/Tyrrrz/DiscordChatExporter
+
+# DIY Dynamic DNS Using Netlify API
+https://blog.skylerlewis.io/2020/12/diy-dynamic-dns-using-netlify-api.html
+
+# windows
+https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simplify-classic-ms-dos-gaming
+
+# cloud sql
+https://steampipe.io

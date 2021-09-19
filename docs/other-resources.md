@@ -8,39 +8,35 @@
 * [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
 * [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
 * [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
+* [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 
-## Interpreter/Compiler/VM
+## Interpreter/Compiler
 
-* [Crafting Interpreters](http://www.craftinginterpreters.com)
+* [Esolang](https://esolangs.org)
 * [The Super Tiny Compiler!](git.io/compiler)
 * [An Intro to Compilers](https://nicoleorchard.com/blog/compilers)
 * [Compiler Explorer](https://godbolt.org)
 * [Tiny C Compiler](https://bellard.org/tcc)
 * [A small C compiler](https://github.com/rui314/chibicc)
 * [Oak: An infinitely more portable alternative to the C programming language](http://github.com/adam-mcdaniel/oakc)
+* [ocean](https://github.com/riicchhaarrd/ocean)
+* [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
+* [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
+
+# JVM
+
 * [Write your own Virtual Machine](https://justinmeiners.github.io/lc3-vm)
+* [How to write a toy JVM](https://zserge.com/posts/jvm)
 
 ## OS
 
-* [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (youtube)
-* [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O)
+* [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
+* [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
+* [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O) (course)
 * [Xv6: A simple Unix-like teaching operating system](https://pdos.csail.mit.edu/6.828/2020/xv6.html)
 * [Biscuit: An OS kernel in a high-level language](https://pdos.csail.mit.edu/projects/biscuit.html)
-
-## Uncategorized/Unordered resources
-
-* [AWS diagrams & notes](https://www.awsgeek.com)
-* [Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown)
-* [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
-* [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
-* [Autopilot Pattern Applications](http://autopilotpattern.io)
-* [Creating a QR Code step by step](https://www.nayuki.io/page/creating-a-qr-code-step-by-step)
-* [Turbocharging MinIO Data Lakes with Apache Arrow](https://blog.min.io/turbocharging-minio-datalakes-with-arrowrdd)
-* [suckless](http://suckless.org)
-* [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing)
-* [Understanding and Decoding a JPEG Image using Python](https://yasoob.me/posts/understanding-and-writing-jpeg-decoder-in-python)
-* [Biohacking Lite](https://karpathy.github.io/2020/06/11/biohacking-lite)
-* [How do you create a video chat application?](https://blog.phuaxueyong.com/post/2020-06-15-how-to-make-a-video-chat-app)
+* [HermiTux: A binary-compatible unikernel](https://ssrg-vt.github.io/hermitux)
+* [The Linux Kernel Archives](https://www.kernel.org/lore.html)
 
 ### Unix
 
@@ -74,6 +70,8 @@
 * [Mathematics for programmers](https://yurichev.com/writings/Math-for-programmers.pdf)
 * [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os)
 * [Crafting Interpreters](https://craftinginterpreters.com)
+* [Math's books](https://klkuttler.com)
+* [Mark Watson: author of 20+ books](https://markwatson.com/#books)
 
 ### Book's collection (free)
 
@@ -86,5 +84,21 @@
 * [NSQ](https://nsq.io) - A realtime distributed messaging platform
 * [DuckDB](https://duckdb.org) - An embeddable SQL OLAP database management system
 * [QuestDB](https://questdb.io) - The fastest open source time series database
+
+
+## Uncategorized/Unordered resources
+
+* [AWS diagrams & notes](https://www.awsgeek.com)
+* [Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown)
+* [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
+* [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
+* [Autopilot Pattern Applications](http://autopilotpattern.io)
+* [Creating a QR Code step by step](https://www.nayuki.io/page/creating-a-qr-code-step-by-step)
+* [Turbocharging MinIO Data Lakes with Apache Arrow](https://blog.min.io/turbocharging-minio-datalakes-with-arrowrdd)
+* [suckless](http://suckless.org)
+* [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing)
+* [Understanding and Decoding a JPEG Image using Python](https://yasoob.me/posts/understanding-and-writing-jpeg-decoder-in-python)
+* [Biohacking Lite](https://karpathy.github.io/2020/06/11/biohacking-lite)
+* [How do you create a video chat application?](https://blog.phuaxueyong.com/post/2020-06-15-how-to-make-a-video-chat-app)
 
 <br>

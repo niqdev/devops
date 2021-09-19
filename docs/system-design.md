@@ -23,6 +23,7 @@
 * [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
 * [A review of consensus protocols](https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols)
 * [How you could have come up with Paxos yourself](https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html)
+* [Implementing Raft's Leader Election in Rust](https://blog.laurocaetano.com/programming/2021/01/23/raft-leader-election-rust)
 
 **CAP Theorem**
 
@@ -59,6 +60,7 @@
 * [Fallacies of Distributed Computing Explained](http://www.rgoarchitects.com/Files/fallacies.pdf)
 * [The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing](https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf)
 * [A Dataset of Dockerfiles](https://arxiv.org/pdf/2003.12912.pdf)
+* [Ask HN: Recommended books and papers on distributed systems?](https://news.ycombinator.com/item?id=25987664)
 
 ## Notes
 
