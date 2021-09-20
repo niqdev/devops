@@ -42,6 +42,10 @@ Resources
 
 * [Kubernetes: Curated List of Tools and Resources](https://devopsunlocked.com/kubernetes-curated-list-of-tools-and-resources)
 
+* [Kubernetes Best Practices 101](https://github.com/diegolnasc/kubernetes-best-practices)
+
+* [Exploring Kubernetes Operator Pattern](https://iximiuz.com/en/posts/kubernetes-operator-pattern)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be

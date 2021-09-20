@@ -17,6 +17,7 @@
 * [An Intro to Compilers](https://nicoleorchard.com/blog/compilers)
 * [Compiler Explorer](https://godbolt.org)
 * [Tiny C Compiler](https://bellard.org/tcc)
+* [Obfuscated Tiny C Compiler](https://bellard.org/otcc)
 * [A small C compiler](https://github.com/rui314/chibicc)
 * [Oak: An infinitely more portable alternative to the C programming language](http://github.com/adam-mcdaniel/oakc)
 * [ocean](https://github.com/riicchhaarrd/ocean)
@@ -30,6 +31,7 @@
 
 ## OS
 
+* [Linux From Scratch](https://www.linuxfromscratch.org)
 * [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
 * [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
 * [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O) (course)
@@ -47,6 +49,8 @@
 * [Containers from first principles](https://fzakaria.com/2020/05/31/containers-from-first-principles.html)
 * [FastCGI](http://www.nongnu.org/fastcgi)
 * [Dissecting the GZIP format](http://www.infinitepartitions.com/cgi-bin/showarticle.cgi?article=art001)
+* [Cockpit](https://cockpit-project.org) - web-based graphical interface for servers
+* [Remmina](https://remmina.org) - Remote access screen and file sharing to your desktop
 
 ### Books
 
@@ -78,16 +82,21 @@
 * [The Online Books Page](https://onlinebooks.library.upenn.edu)
 * [A collection of free books from Springer](https://hnarayanan.github.io/springer-books)
 * [E-Books Directory](http://www.e-booksdirectory.com)
+* [OpenStax](https://openstax.org/subjects)
 
-### Tech
+### Random
 
 * [NSQ](https://nsq.io) - A realtime distributed messaging platform
 * [DuckDB](https://duckdb.org) - An embeddable SQL OLAP database management system
 * [QuestDB](https://questdb.io) - The fastest open source time series database
-
+* [Steampipe](https://steampipe.io) - `select * from cloud;`
+* [Infracost](https://www.infracost.io) - Cloud cost estimates for Terraform in pull requests
+* [Textpattern](https://textpattern.com) - The small content management system that can handle big ideas
+* [Siteoly](https://siteoly.com) - Build websites from Google sheets without writing code
 
 ## Uncategorized/Unordered resources
 
+* [CNCF cloud native landscape](https://landscape.cncf.io)
 * [AWS diagrams & notes](https://www.awsgeek.com)
 * [Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown)
 * [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)

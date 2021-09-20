@@ -79,6 +79,7 @@ https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overlo
 https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
 
 # kunernetes raspberry
+https://github.com/k8s-at-home
 https://github.com/alexellis/k3sup
 https://github.com/onedr0p/home-cluster
 https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
@@ -154,11 +155,8 @@ https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
 https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 https://actionsflow.github.io
 
-# free deploy
-https://fly.io/docs/about/pricing/#free-for-side-projects
-
-# Turn your Google Sheets data into a website
-https://siteoly.com
+# The Top 100+ Developer Tools 2020
+https://stackshare.io/posts/top-developer-tools-2020
 
 # Tools and Services I Use to Run My SaaS
 https://jake.nyc/words/tools-and-services-i-use-to-run-my-saas
@@ -166,17 +164,34 @@ https://jake.nyc/words/tools-and-services-i-use-to-run-my-saas
 # An Introduction to ZFS A Place to Start
 https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
 
-# Remote access screen and file sharing to your desktop
-https://remmina.org
+# Serving up zero-knowledge proofs
+https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs
 
-# SQLite graphdb
+# SQLite
 https://github.com/dpapathanasiou/simple-graph
-
-# SQLite distributed
 https://github.com/rqlite/rqlite
+https://github.com/joaoh82/rust_sqlite
 
 # graphdb
 https://github.com/krotik/eliasdb
+
+# free deploy
+https://fly.io/docs/about/pricing/#free-for-side-projects
+
+# podman
+https://www.redhat.com/sysadmin/replace-docker-podman-macos
+
+# python internals
+http://ykarroum.com/2020/11/07/subprocess
+
+# DIY Dynamic DNS Using Netlify API
+https://blog.skylerlewis.io/2020/12/diy-dynamic-dns-using-netlify-api.html
+
+# windows
+https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simplify-classic-ms-dos-gaming
+
+# discord exporter
+https://github.com/Tyrrrz/DiscordChatExporter
 
 ---
 
@@ -198,24 +213,9 @@ https://tech.nextroll.com/blog/dev/2019/02/05/dynamodb-managed-autoscaling.html
 # aws batch
 https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper-with-aws-654feb9fdad7
 
-# podman
-https://www.redhat.com/sysadmin/replace-docker-podman-macos
-
 # interesting crypto
 https://www.anchorage.com
 # mininig
 https://cardano.org
 https://nano.org
 https://www.chia.net
-
-# discord exporter
-https://github.com/Tyrrrz/DiscordChatExporter
-
-# DIY Dynamic DNS Using Netlify API
-https://blog.skylerlewis.io/2020/12/diy-dynamic-dns-using-netlify-api.html
-
-# windows
-https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simplify-classic-ms-dos-gaming
-
-# cloud sql
-https://steampipe.io

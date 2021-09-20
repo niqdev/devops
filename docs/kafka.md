@@ -50,6 +50,8 @@ Articles
 
 * [Gently down the stream](https://www.gentlydownthe.stream)
 
+* [Apache Kafka vs Apache Pulsar](https://digitalis.io/blog/kafka/apache-kafka-vs-apache-pulsar)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
