@@ -1,17 +1,8 @@
 # Other resources
 
-## Machine Learning
-
-* [Machine Learning](https://www.coursera.org/learn/machine-learning) (Course)
-* [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) (Course)
-* [Amazon's Machine Learning University](https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university) (Course)
-* [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
-* [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
-* [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
-* [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
-
 ## Interpreter/Compiler
 
+* [History of Programming Languages](https://felleisen.org/matthias/7480-s21/index.html)
 * [Esolang](https://esolangs.org)
 * [The Super Tiny Compiler!](git.io/compiler)
 * [An Intro to Compilers](https://nicoleorchard.com/blog/compilers)
@@ -23,6 +14,7 @@
 * [ocean](https://github.com/riicchhaarrd/ocean)
 * [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
 * [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
+* [Designing a programming language](http://ducklang.org/designing-a-programming-language-i)
 
 # JVM
 
@@ -39,6 +31,7 @@
 * [Biscuit: An OS kernel in a high-level language](https://pdos.csail.mit.edu/projects/biscuit.html)
 * [HermiTux: A binary-compatible unikernel](https://ssrg-vt.github.io/hermitux)
 * [The Linux Kernel Archives](https://www.kernel.org/lore.html)
+* [Writing Your First Kernel Module](https://scottc130.medium.com/writing-your-first-kernel-module-98ae68edf0e)
 
 ### Unix
 
@@ -51,6 +44,16 @@
 * [Dissecting the GZIP format](http://www.infinitepartitions.com/cgi-bin/showarticle.cgi?article=art001)
 * [Cockpit](https://cockpit-project.org) - web-based graphical interface for servers
 * [Remmina](https://remmina.org) - Remote access screen and file sharing to your desktop
+
+## Machine Learning
+
+* [Machine Learning](https://www.coursera.org/learn/machine-learning) (Course)
+* [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) (Course)
+* [Amazon's Machine Learning University](https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university) (Course)
+* [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
+* [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
+* [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
+* [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 
 ### Books
 

@@ -97,9 +97,12 @@ https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-usi
 https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
 # serverless
 https://www.openfaas.com
+# Wireless-to-Ethernet island for homelab cluster: IPv6, NDP proxy and mDNS reflector
+https://vladimir.varank.in/notes/2021/04/wireless-to-ethernet-island-for-homelab-cluster-ipv6-ndp-proxy-and-mdns-reflector/
 
-# Container Networking Is Simple!
+# docker
 https://iximiuz.com/en/posts/container-networking-is-simple
+https://fly.io/blog/docker-without-docker
 
 # crd
 http://technosophos.com/2019/08/07/writing-a-kubernetes-controller-in-rust.html
@@ -113,6 +116,9 @@ https://www.robustperception.io/which-are-my-biggest-metrics
 https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
+
+# service mesh
+https://linkerd.io
 
 # telegram-bot
 https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
@@ -161,8 +167,14 @@ https://stackshare.io/posts/top-developer-tools-2020
 # Tools and Services I Use to Run My SaaS
 https://jake.nyc/words/tools-and-services-i-use-to-run-my-saas
 
+# NearlyFreeSpeech.NET (cheap hosting)
+https://www.nearlyfreespeech.net
+
 # An Introduction to ZFS A Place to Start
 https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
+
+# Floppinux
+https://bits.p1x.in/floppinux-an-embedded-linux-on-a-single-floppy
 
 # Serving up zero-knowledge proofs
 https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs
@@ -192,6 +204,9 @@ https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simpli
 
 # discord exporter
 https://github.com/Tyrrrz/DiscordChatExporter
+
+# HackerNews book recommendations
+https://hacker-recommended-books.vercel.app
 
 ---
 
