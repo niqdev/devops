@@ -142,12 +142,6 @@ https://blog.libtorrent.org/2020/09/bittorrent-v2
 # Kademlia: A Design Specification
 http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html
 
-# An Introduction to Computer Networks
-http://intronetworks.cs.luc.edu/current/html/intro.html
-
-# Network Programming TCP/IP Fundamentals
-https://lowlvl.org
-
 ---
 
 # load testing

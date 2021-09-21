@@ -2,6 +2,13 @@
 
 ## Interpreter/Compiler
 
+* [Compilers: Principles, Techniques, and Tools](https://suif.stanford.edu/dragonbook) (book)
+* [Writing An Interpreter And Compiler In Go](https://gumroad.com/l/waiig_wacig_bundle) (book)
+* Structure and Interpretation of Computer Programs [ [book](https://mitpress.mit.edu/sites/default/files/sicp/index.html) | [course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005) ]
+* [Crafting Interpreters](https://craftinginterpreters.com) (book - free)
+* [awesome-compilers](https://github.com/aalhour/awesome-compilers)
+* [Let's Build a Compiler](https://xmonader.github.io/letsbuildacompiler-pretty/about.html)
+* [Build Your Own Lisp](https://buildyourownlisp.com)
 * [History of Programming Languages](https://felleisen.org/matthias/7480-s21/index.html)
 * [Esolang](https://esolangs.org)
 * [The Super Tiny Compiler!](git.io/compiler)
@@ -16,14 +23,16 @@
 * [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
 * [Designing a programming language](http://ducklang.org/designing-a-programming-language-i)
 
-# JVM
+## JVM
 
 * [Write your own Virtual Machine](https://justinmeiners.github.io/lc3-vm)
 * [How to write a toy JVM](https://zserge.com/posts/jvm)
 
 ## OS
 
-* [Linux From Scratch](https://www.linuxfromscratch.org)
+* Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
+* [Linux From Scratch](https://www.linuxfromscratch.org) (book - free)
+* [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os) (book - free)
 * [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
 * [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
 * [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O) (course)
@@ -33,8 +42,10 @@
 * [The Linux Kernel Archives](https://www.kernel.org/lore.html)
 * [Writing Your First Kernel Module](https://scottc130.medium.com/writing-your-first-kernel-module-98ae68edf0e)
 
-### Unix
+## Unix
 
+* [UNIX Internals: The New Frontiers](https://www.amazon.co.uk/UNIX-Internals-Frontiers-Uresh-Vahalia/dp/013021034X) (book)
+* [Lions' Commentary on UNIX with Source Code](https://www.amazon.co.uk/Lions-Commentary-UNIX-Source-Code/dp/1573980137) (book)
 * [How Debian packaging works](https://www.joyfulbikeshedding.com/blog/2020-08-03-how-debian-packaging-works.html)
 * [Setting up an email server in 2020 with OpenSMTPD and Dovecot](https://prefetch.eu/blog/2020/email-server)
 * [Tinyproxy](https://tinyproxy.github.io)
@@ -55,39 +66,28 @@
 * [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
 * [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 
-### Books
-
-* [Compilers: Principles, Techniques, and Tools](https://suif.stanford.edu/dragonbook)
-* [Writing An Interpreter And Compiler In Go](https://gumroad.com/l/waiig_wacig_bundle)
-* [Structure and Interpretation of Computer Programs](https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871)
-* [Recursive Programming Techniques](https://www.amazon.com/Recursive-Programming-Techniques-Systems-programming/dp/0201144506) (?)
-* Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
-
-### Books (free)
+## Books (free)
 
 * [C Programming Boot Camp](https://gribblelab.org/CBootCamp/index.html)
 * [Essential C](http://cslibrary.stanford.edu/101/EssentialC.pdf)
 * [The Debian Administrator's Handbook](https://debian-handbook.info/get/now)
 * [Google Chrome](http://www.google.com/googlebooks/chrome/big_00.html)
-* [Linux From Scratch](http://www.linuxfromscratch.org/index.html)
 * [Writing Shell Scripts](http://linuxcommand.org/lc3_writing_shell_scripts.php)
 * [Inside The Python Virtual Machine](https://leanpub.com/insidethepythonvirtualmachine/read)
 * [Readings in Database Systems](http://www.redbook.io)
 * [Introduction to Computer Graphics](http://math.hws.edu/graphicsbook/index.html)
 * [Mathematics for programmers](https://yurichev.com/writings/Math-for-programmers.pdf)
-* [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os)
-* [Crafting Interpreters](https://craftinginterpreters.com)
-* [Math's books](https://klkuttler.com)
-* [Mark Watson: author of 20+ books](https://markwatson.com/#books)
 
-### Book's collection (free)
+## Books collection (free)
 
 * [The Online Books Page](https://onlinebooks.library.upenn.edu)
 * [A collection of free books from Springer](https://hnarayanan.github.io/springer-books)
 * [E-Books Directory](http://www.e-booksdirectory.com)
 * [OpenStax](https://openstax.org/subjects)
+* [Mark Watson: author of 20+ books](https://markwatson.com/#books)
+* [Math's books](https://klkuttler.com)
 
-### Random
+## Random
 
 * [NSQ](https://nsq.io) - A realtime distributed messaging platform
 * [DuckDB](https://duckdb.org) - An embeddable SQL OLAP database management system
