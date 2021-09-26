@@ -116,6 +116,7 @@ https://www.robustperception.io/which-are-my-biggest-metrics
 https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
 https://blog.serverdensity.com/how-to-monitor-kafka
 https://fabxc.org/tsdb
+https://dev.to/ninii72387534/prometheus-definitive-guide-part-iii-prometheus-operator-5338
 
 # service mesh
 https://linkerd.io
