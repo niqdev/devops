@@ -52,6 +52,8 @@ Articles
 
 * [Apache Kafka vs Apache Pulsar](https://digitalis.io/blog/kafka/apache-kafka-vs-apache-pulsar)
 
+* [Kafka Connect Fundamentals](https://www.confluent.io/blog/kafka-connect-tutorial)
+
 Tools
 
 * [kafkacat](https://github.com/edenhill/kafkacat)
