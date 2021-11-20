@@ -22,6 +22,7 @@
 * [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
 * [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
 * [Designing a programming language](http://ducklang.org/designing-a-programming-language-i)
+* [How to learn compilers: LLVM edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition)
 
 ## JVM
 
@@ -33,6 +34,7 @@
 * Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
 * [Linux From Scratch](https://www.linuxfromscratch.org) (book - free)
 * [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os) (book - free)
+* [Writing a "bare metal" operating system for Raspberry Pi 4](https://github.com/isometimes/rpi4-osdev)
 * [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
 * [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
 * [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O) (course)
@@ -41,6 +43,12 @@
 * [HermiTux: A binary-compatible unikernel](https://ssrg-vt.github.io/hermitux)
 * [The Linux Kernel Archives](https://www.kernel.org/lore.html)
 * [Writing Your First Kernel Module](https://scottc130.medium.com/writing-your-first-kernel-module-98ae68edf0e)
+* [Hypervisor From Scratch](https://rayanfam.com/topics/hypervisor-from-scratch-part-1)
+* [Interactive x86 bootloader](https://blog.benjojo.co.uk/post/interactive-x86-bootloader-tutorial)
+* [OS01: Bootstrap yourself to write an OS from scratch](https://tuhdo.github.io/os01)
+* [ToaruOS](https://github.com/klange/toaruos)
+* [Linux x86 Program Start Up](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
+* [How To Write a Computer Emulator](https://fms.komkon.org/EMUL8/HOWTO.html)
 
 ## Unix
 
@@ -65,18 +73,20 @@
 * [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
 * [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
 * [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
+* [Neural Networks](https://aegeorge42.github.io)
+* [An Introduction to Tensor Calculus](https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus)
 
 ## Books (free)
 
 * [C Programming Boot Camp](https://gribblelab.org/CBootCamp/index.html)
-* [Essential C](http://cslibrary.stanford.edu/101/EssentialC.pdf)
+* [Stanford CS Education Library](http://cslibrary.stanford.edu)
 * [The Debian Administrator's Handbook](https://debian-handbook.info/get/now)
 * [Google Chrome](http://www.google.com/googlebooks/chrome/big_00.html)
 * [Writing Shell Scripts](http://linuxcommand.org/lc3_writing_shell_scripts.php)
 * [Inside The Python Virtual Machine](https://leanpub.com/insidethepythonvirtualmachine/read)
 * [Readings in Database Systems](http://www.redbook.io)
 * [Introduction to Computer Graphics](http://math.hws.edu/graphicsbook/index.html)
-* [Mathematics for programmers](https://yurichev.com/writings/Math-for-programmers.pdf)
+* [Web Browser Engineering](https://browser.engineering)
 
 ## Books collection (free)
 
@@ -85,7 +95,6 @@
 * [E-Books Directory](http://www.e-booksdirectory.com)
 * [OpenStax](https://openstax.org/subjects)
 * [Mark Watson: author of 20+ books](https://markwatson.com/#books)
-* [Math's books](https://klkuttler.com)
 
 ## Random
 

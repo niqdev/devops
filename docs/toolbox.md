@@ -19,6 +19,7 @@
 * [Kubernetes YAML Generator](https://k8syaml.com)
 * [Database of Databases](https://dbdb.io)
 * [CloudSkew](https://www.cloudskew.com) - Draw cloud architecture diagrams
+* [DB Fiddle](https://www.db-fiddle.com)
 
 <br>
 

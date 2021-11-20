@@ -24,6 +24,7 @@
 * [A review of consensus protocols](https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols)
 * [How you could have come up with Paxos yourself](https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html)
 * [Implementing Raft's Leader Election in Rust](https://blog.laurocaetano.com/programming/2021/01/23/raft-leader-election-rust)
+* [Consensus Protocol](https://www.consul.io/docs/architecture/consensus)
 
 **CAP Theorem**
 

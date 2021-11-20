@@ -210,6 +210,20 @@ https://www.manning.com/books/istio-in-action
 
 ---
 
+# perf ui
+https://www.markhansen.co.nz/profiler-uis
+
+# terraform ui
+https://github.com/im2nguyen/rover
+
+# cloudformation ui
+https://github.com/mhlabs/cfn-diagram
+
+# automated diagrams for CDK infrastructure
+https://github.com/pistazie/cdk-dia
+
+---
+
 # tracing
 https://opentracing.io/specification
 
@@ -222,6 +236,9 @@ https://tech.nextroll.com/blog/dev/2019/02/05/dynamodb-managed-autoscaling.html
 
 # aws batch
 https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper-with-aws-654feb9fdad7
+
+# serverless
+https://www.serverless.com
 
 # interesting crypto
 https://www.anchorage.com
