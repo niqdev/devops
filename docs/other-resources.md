@@ -23,17 +23,24 @@
 * [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
 * [Designing a programming language](http://ducklang.org/designing-a-programming-language-i)
 * [How to learn compilers: LLVM edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition)
+* [The Force](https://github.com/mirdaki/theforce)
+* [How to write a JIT compiler](https://github.com/spencertipping/jit-tutorial)
 
 ## JVM
 
 * [Write your own Virtual Machine](https://justinmeiners.github.io/lc3-vm)
 * [How to write a toy JVM](https://zserge.com/posts/jvm)
+* [JVM Anatomy Quarks](https://shipilev.net/jvm/anatomy-quarks)
+* [Cliff Click @ VMSS16: Bits of Advice For the VM Writer](https://www.youtube.com/watch?v=Hqw57GJSrac) (video)
+* [Best Books on the JVM?](https://news.ycombinator.com/item?id=29309902) (hn)
 
 ## OS
 
 * Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
 * [Linux From Scratch](https://www.linuxfromscratch.org) (book - free)
+* [The little book about OS development](https://littleosbook.github.io)
 * [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os) (book - free)
+* [Writing a simple 16 bit VM in less than 125 lines of C](https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c)
 * [Writing a "bare metal" operating system for Raspberry Pi 4](https://github.com/isometimes/rpi4-osdev)
 * [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
 * [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
@@ -49,6 +56,7 @@
 * [ToaruOS](https://github.com/klange/toaruos)
 * [Linux x86 Program Start Up](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
 * [How To Write a Computer Emulator](https://fms.komkon.org/EMUL8/HOWTO.html)
+* [SCAMP CPU](https://github.com/jes/scamp-cpu)
 
 ## Unix
 
@@ -75,6 +83,7 @@
 * [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 * [Neural Networks](https://aegeorge42.github.io)
 * [An Introduction to Tensor Calculus](https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus)
+* [Neural Network From Scratch](https://sirupsen.com/napkin/neural-net)
 
 ## Books (free)
 
@@ -87,6 +96,7 @@
 * [Readings in Database Systems](http://www.redbook.io)
 * [Introduction to Computer Graphics](http://math.hws.edu/graphicsbook/index.html)
 * [Web Browser Engineering](https://browser.engineering)
+* [SRE Book](https://sre.google/sre-book/table-of-contents)
 
 ## Books collection (free)
 
@@ -95,6 +105,7 @@
 * [E-Books Directory](http://www.e-booksdirectory.com)
 * [OpenStax](https://openstax.org/subjects)
 * [Mark Watson: author of 20+ books](https://markwatson.com/#books)
+* [LibriVox](https://librivox.org) (audiobook)
 
 ## Random
 
