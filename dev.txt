@@ -8,6 +8,7 @@ https://cloudsecdocs.com
 https://mattgemmell.com/what-have-you-tried
 # No Hello
 https://www.nohello.com
+https://nohello.net
 # What Every Computer Scientist Should Know About Floating-Point Arithmetic
 https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
 
@@ -92,17 +93,36 @@ https://docs.traefik.io
 https://ngrok.com
 https://inlets.dev
 https://github.com/alexellis/arkade
+
+# _HOMELAB
+https://eevans.co/blog/garage
+# _HOMELAB + #raspberry
+https://github.com/khuedoan/homelab
+https://homebridge.io
+https://vladimir.varank.in/notes/2021/04/wireless-to-ethernet-island-for-homelab-cluster-ipv6-ndp-proxy-and-mdns-reflector/
+# _game
+https://gbdev.io
+http://unibios.free.fr/index.html
+https://www.mathler.com
+https://fyrox.rs
+https://kilograham.github.io/rp2040-doom
+https://www.gamedeveloper.com/blogs/the-ai-of-doom-1993
+
+# ELECTRONIC
+https://bbenchoff.github.io
+https://wiki.odroid.com/start
+https://frigate.video
+https://github.com/ssloy/tinyrenderer/wiki
+https://nicole.express/2022/the-nes-as-an-artifact.html
+
+# github actions
+https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+https://actionsflow.github.io
+https://www.actionsbyexample.com
+
 # kunernetes SSL
 https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
 https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
-# serverless
-https://www.openfaas.com
-# Wireless-to-Ethernet island for homelab cluster: IPv6, NDP proxy and mDNS reflector
-https://vladimir.varank.in/notes/2021/04/wireless-to-ethernet-island-for-homelab-cluster-ipv6-ndp-proxy-and-mdns-reflector/
-
-# docker
-https://iximiuz.com/en/posts/container-networking-is-simple
-https://fly.io/blog/docker-without-docker
 
 # crd
 http://technosophos.com/2019/08/07/writing-a-kubernetes-controller-in-rust.html
@@ -133,6 +153,10 @@ https://unix.stackexchange.com/questions/224277/is-it-better-to-use-cat-dd-pv-or
 
 ---
 
+# VPN
+https://tailscale.com/kb/1151/what-is-tailscale
+https://www.wireguard.com
+
 https://monokh.com/posts/bitcoin-from-scratch-part-1
 
 # torrent
@@ -142,6 +166,7 @@ https://github.com/johang/btfs
 https://blog.libtorrent.org/2020/09/bittorrent-v2
 # Kademlia: A Design Specification
 http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html
+https://github.com/smmr-software/mabel
 
 ---
 
@@ -151,10 +176,6 @@ https://github.com/nakabonne/ali
 # makefile
 https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
 `make -pRrq`, that is a very useful command to debug your makefiles, especially in a big project. The option `-p` prints the make data-base, -R and -r removes the implicit rules and variables, and -q indicates only asking make a question about current state, avoid executing anything
-
-# github actions
-https://help.github.com/en/categories/automating-your-workflow-with-github-actions
-https://actionsflow.github.io
 
 # The Top 100+ Developer Tools 2020
 https://stackshare.io/posts/top-developer-tools-2020
@@ -174,22 +195,8 @@ https://bits.p1x.in/floppinux-an-embedded-linux-on-a-single-floppy
 # Serving up zero-knowledge proofs
 https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs
 
-# SQLite
-https://github.com/dpapathanasiou/simple-graph
-https://github.com/rqlite/rqlite
-https://github.com/joaoh82/rust_sqlite
-
-# graphdb
-https://github.com/krotik/eliasdb
-
 # free deploy
 https://fly.io/docs/about/pricing/#free-for-side-projects
-
-# podman
-https://www.redhat.com/sysadmin/replace-docker-podman-macos
-
-# python internals
-http://ykarroum.com/2020/11/07/subprocess
 
 # DIY Dynamic DNS Using Netlify API
 https://blog.skylerlewis.io/2020/12/diy-dynamic-dns-using-netlify-api.html
@@ -199,14 +206,6 @@ https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simpli
 
 # discord exporter
 https://github.com/Tyrrrz/DiscordChatExporter
-
-# HackerNews book recommendations
-https://hacker-recommended-books.vercel.app
-
----
-
-https://www.manning.com/books/core-kubernetes
-https://www.manning.com/books/istio-in-action
 
 ---
 
@@ -222,10 +221,14 @@ https://github.com/mhlabs/cfn-diagram
 # automated diagrams for CDK infrastructure
 https://github.com/pistazie/cdk-dia
 
+# build your own amazing illustrations
+https://iradesign.io
+
 ---
 
 # tracing
 https://opentracing.io/specification
+https://blog.techlanika.com/distributed-tracing-the-why-what-and-how-ab9ca9e40081
 
 # aws dynamodb
 https://github.com/aws-samples/amazon-dynamodb-labs
@@ -239,6 +242,10 @@ https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper
 
 # serverless
 https://www.serverless.com
+https://www.openfaas.com
+https://dev.to/kumo/we-tested-the-best-serverless-monitoring-solutions-so-you-dont-have-to-121m
+https://jvns.ca/blog/2021/01/23/firecracker--start-a-vm-in-less-than-a-second
+https://www.talhoffman.com/2021/07/18/firecracker-internals
 
 # interesting crypto
 https://www.anchorage.com
@@ -246,3 +253,10 @@ https://www.anchorage.com
 https://cardano.org
 https://nano.org
 https://www.chia.net
+https://github.com/smartcontracts/eth2-book
+
+# argo
+https://greenops.io/atlas/
+
+# vim
+https://spacevim.org

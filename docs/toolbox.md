@@ -1,28 +1,5 @@
 # Toolbox
 
-## Online tools
-
-* [Regular Expressions](https://regexr.com)
-* [Regular Expression Visualization Site](https://regexper.com)
-* [Current Millis](https://currentmillis.com)
-* [JSFiddle](https://jsfiddle.net)
-* [ScalaFiddle](https://scalafiddle.io)
-* [JSON Formatter](https://jsonformatter.curiousconcept.com)
-* [JSON Generator](https://next.json-generator.com)
-* [Mockaroo](https://www.mockaroo.com) - Realistic data generator
-* [JSON store](http://myjson.com)
-* [TextDB](https://textdb.dev) - A simple way to share small amounts of data
-* [Beautify JavaScript or HTML](http://jsbeautifier.org)
-* [devdocs](https://devdocs.io)
-* [WebPagetest](https://www.webpagetest.org) - Test a website's performance
-* [BrowserGap](https://browsergap.dosyago.com) - A secure browser embedded in a webapp
-* [Kubernetes YAML Generator](https://k8syaml.com)
-* [Database of Databases](https://dbdb.io)
-* [CloudSkew](https://www.cloudskew.com) - Draw cloud architecture diagrams
-* [DB Fiddle](https://www.db-fiddle.com)
-
-<br>
-
 ## Vagrant
 
 > **Vagrant** is a tool for building and managing virtual machine environments in a single workflow

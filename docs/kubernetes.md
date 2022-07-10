@@ -46,6 +46,8 @@ Resources
 
 * [Exploring Kubernetes Operator Pattern](https://iximiuz.com/en/posts/kubernetes-operator-pattern)
 
+* [Kubernetes History Visualization](https://github.com/salesforce/sloop)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be

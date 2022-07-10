@@ -50,6 +50,7 @@ pip install mkdocs
 # update requirements
 pip freeze > requirements.txt
 
-# run locally on port 8000
+# run locally
+# http://localhost:8000
 mkdocs serve
 ```

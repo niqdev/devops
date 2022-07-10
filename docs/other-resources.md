@@ -25,6 +25,7 @@
 * [How to learn compilers: LLVM edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition)
 * [The Force](https://github.com/mirdaki/theforce)
 * [How to write a JIT compiler](https://github.com/spencertipping/jit-tutorial)
+* [Parsing Text with Nom](https://blog.adamchalmers.com/nom-chars)
 
 ## JVM
 
@@ -33,6 +34,7 @@
 * [JVM Anatomy Quarks](https://shipilev.net/jvm/anatomy-quarks)
 * [Cliff Click @ VMSS16: Bits of Advice For the VM Writer](https://www.youtube.com/watch?v=Hqw57GJSrac) (video)
 * [Best Books on the JVM?](https://news.ycombinator.com/item?id=29309902) (hn)
+* [A JVM Assembler for the modern age](https://github.com/roscopeco/jasm)
 
 ## OS
 
@@ -43,8 +45,11 @@
 * [Writing a simple 16 bit VM in less than 125 lines of C](https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c)
 * [Writing a "bare metal" operating system for Raspberry Pi 4](https://github.com/isometimes/rpi4-osdev)
 * [Computer System Engineering](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-033-computer-system-engineering-spring-2018) (course)
+* [6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.S081/2021/schedule.html) (course)
 * [CS 377 Spring '14: Operating Systems](https://m.youtube.com/playlist?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) (course)
 * [Operating System](https://m.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O) (course)
+* [CS 422/522: Design and Implementation of Operating Systems](https://flint.cs.yale.edu/cs422/index.html) (course)
+* [TSC 3181 Introduction to Computer Architecture](https://passlab.github.io/ITSC3181)
 * [Xv6: A simple Unix-like teaching operating system](https://pdos.csail.mit.edu/6.828/2020/xv6.html)
 * [Biscuit: An OS kernel in a high-level language](https://pdos.csail.mit.edu/projects/biscuit.html)
 * [HermiTux: A binary-compatible unikernel](https://ssrg-vt.github.io/hermitux)
@@ -57,6 +62,11 @@
 * [Linux x86 Program Start Up](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
 * [How To Write a Computer Emulator](https://fms.komkon.org/EMUL8/HOWTO.html)
 * [SCAMP CPU](https://github.com/jes/scamp-cpu)
+* [Tiny Core Linux](https://tinycorelinux.net)
+* [SerenityOS](https://github.com/SerenityOS/serenity)
+* [Chicago95](https://github.com/grassmunk/Chicago95)
+* [MenuetOS](https://www.menuetos.net)
+* [oasis](https://github.com/oasislinux/oasis)
 
 ## Unix
 
@@ -88,6 +98,7 @@
 ## Books (free)
 
 * [C Programming Boot Camp](https://gribblelab.org/CBootCamp/index.html)
+* [Essential C](http://cslibrary.stanford.edu/101/EssentialC.pdf)
 * [Stanford CS Education Library](http://cslibrary.stanford.edu)
 * [The Debian Administrator's Handbook](https://debian-handbook.info/get/now)
 * [Google Chrome](http://www.google.com/googlebooks/chrome/big_00.html)
@@ -97,6 +108,13 @@
 * [Introduction to Computer Graphics](http://math.hws.edu/graphicsbook/index.html)
 * [Web Browser Engineering](https://browser.engineering)
 * [SRE Book](https://sre.google/sre-book/table-of-contents)
+* [Foundations of Computer Science](http://infolab.stanford.edu/~ullman/focs.html)
+* [The Internals of PostgreSQL](https://www.interdb.jp/pg)
+* [The Art of Assembly Language Programming](https://www.phatcode.net/res/223/files/html/toc.html)
+* [Markov Chains for programmers](https://czekster.github.io/markov)
+* [Computer Networks From Scratch](https://www.networksfromscratch.com)
+* [Programming Languages: Application and Interpretation](https://cs.brown.edu/courses/cs173/2012/book)
+* [Python for Data Analysis](https://wesmckinney.com/book)
 
 ## Books collection (free)
 
@@ -106,12 +124,38 @@
 * [OpenStax](https://openstax.org/subjects)
 * [Mark Watson: author of 20+ books](https://markwatson.com/#books)
 * [LibriVox](https://librivox.org) (audiobook)
+* [American Institute of Mathematics](https://aimath.org/textbooks)
+* [Textbooks](https://textbooks.cs.ksu.edu/)
+* [Global Grey](https://www.globalgreyebooks.com/index.html)
+* [Pirate Library Mirror](http://pilimi.org)
+* [freeread.org: For the human right to read](https://freeread.org)
+
+## Online tools
+
+* [Regular Expressions](https://regexr.com)
+* [Regular Expression Visualization Site](https://regexper.com)
+* [Current Millis](https://currentmillis.com)
+* [JSFiddle](https://jsfiddle.net)
+* [ScalaFiddle](https://scalafiddle.io)
+* [JSON Formatter](https://jsonformatter.curiousconcept.com)
+* [JSON Generator](https://next.json-generator.com)
+* [Mockaroo](https://www.mockaroo.com) - Realistic data generator
+* [JSON store](http://myjson.com)
+* [TextDB](https://textdb.dev) - A simple way to share small amounts of data
+* [Beautify JavaScript or HTML](http://jsbeautifier.org)
+* [devdocs](https://devdocs.io)
+* [WebPagetest](https://www.webpagetest.org) - Test a website's performance
+* [BrowserGap](https://browsergap.dosyago.com) - A secure browser embedded in a webapp
+* [Kubernetes YAML Generator](https://k8syaml.com)
+* [Database of Databases](https://dbdb.io)
+* [CloudSkew](https://www.cloudskew.com) - Draw cloud architecture diagrams
+* [DB Fiddle](https://www.db-fiddle.com)
+* [SQL Visualizer](https://animatesql.com)
+* [SQLite](https://sqlite.org/fiddle)
+* [CSVFiddle](https://csvfiddle.io)
 
 ## Random
 
-* [NSQ](https://nsq.io) - A realtime distributed messaging platform
-* [DuckDB](https://duckdb.org) - An embeddable SQL OLAP database management system
-* [QuestDB](https://questdb.io) - The fastest open source time series database
 * [Steampipe](https://steampipe.io) - `select * from cloud;`
 * [Infracost](https://www.infracost.io) - Cloud cost estimates for Terraform in pull requests
 * [Textpattern](https://textpattern.com) - The small content management system that can handle big ideas

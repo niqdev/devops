@@ -25,6 +25,8 @@
 * [How you could have come up with Paxos yourself](https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html)
 * [Implementing Raft's Leader Election in Rust](https://blog.laurocaetano.com/programming/2021/01/23/raft-leader-election-rust)
 * [Consensus Protocol](https://www.consul.io/docs/architecture/consensus)
+* [Implementing Raft for Browsers with Rust and WebRTC](https://eevans.co/blog/wraft)
+* [How do CRDTs solve distributed data consistency challenges?](https://ably.com/blog/crdts-distributed-data-consistency-challenges)
 
 **CAP Theorem**
 
@@ -36,6 +38,12 @@
 
 **Papers**
 
+* [Foundational distributed systems papers](https://muratbuffalo.blogspot.com/2021/02/foundational-distributed-systems-papers.html)
+* [Distributed Systems Reading List](https://dancres.github.io/Pages)
+* [Best Paper Awards in Computer Science](https://jeffhuang.com/best_paper_awards)
+* [MIT 6.824 Distributed Systems (Spring 2020)](https://m.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB) (course)
+* [Distributed Systems lecture series](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB) (course)
+* [Ask HN: Recommended books and papers on distributed systems?](https://news.ycombinator.com/item?id=25987664)
 * [The Google File System](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 * [MapReduce: Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf)
 * [Raft: In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)
@@ -61,8 +69,8 @@
 * [Fallacies of Distributed Computing Explained](http://www.rgoarchitects.com/Files/fallacies.pdf)
 * [The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing](https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf)
 * [A Dataset of Dockerfiles](https://arxiv.org/pdf/2003.12912.pdf)
-* [Ask HN: Recommended books and papers on distributed systems?](https://news.ycombinator.com/item?id=25987664)
 
+<!--
 ## Notes
 
 * [*Domain-driven design (DDD)*](http://dddcommunity.org/learning-ddd/what_is_ddd) is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts. Domain-driven design is not a technology or a methodology. DDD provides a structure of practices and terminology for making design decisions that focus and accelerate software projects dealing with complicated domains. Its premise is:
@@ -132,3 +140,5 @@
     * **Associative** grouping doesn't matter `a+(b+c)=(a+b)+c`
     * **Commutative** order doesn't matter `a+b=b+a`
     * **Idempotent** duplication doesn't matter `a+a=a`
+
+-->
