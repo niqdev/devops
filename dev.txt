@@ -115,11 +115,6 @@ https://frigate.video
 https://github.com/ssloy/tinyrenderer/wiki
 https://nicole.express/2022/the-nes-as-an-artifact.html
 
-# github actions
-https://help.github.com/en/categories/automating-your-workflow-with-github-actions
-https://actionsflow.github.io
-https://www.actionsbyexample.com
-
 # kunernetes SSL
 https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
 https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
@@ -246,6 +241,11 @@ https://www.openfaas.com
 https://dev.to/kumo/we-tested-the-best-serverless-monitoring-solutions-so-you-dont-have-to-121m
 https://jvns.ca/blog/2021/01/23/firecracker--start-a-vm-in-less-than-a-second
 https://www.talhoffman.com/2021/07/18/firecracker-internals
+# github actions
+https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+https://actionsflow.github.io
+https://www.actionsbyexample.com
+https://github.com/nektos/act
 
 # interesting crypto
 https://www.anchorage.com

@@ -6,8 +6,10 @@
 * [Writing An Interpreter And Compiler In Go](https://gumroad.com/l/waiig_wacig_bundle) (book)
 * Structure and Interpretation of Computer Programs [ [book](https://mitpress.mit.edu/sites/default/files/sicp/index.html) | [course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005) ]
 * [Crafting Interpreters](https://craftinginterpreters.com) (book - free)
+* [CS 6120: Advanced Compilers: The Self-Guided Online Course](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided)
 * [awesome-compilers](https://github.com/aalhour/awesome-compilers)
 * [Let's Build a Compiler](https://xmonader.github.io/letsbuildacompiler-pretty/about.html)
+* [A C version of the "Let's Build a Compiler"](https://github.com/lotabout/Let-s-build-a-compiler)
 * [Build Your Own Lisp](https://buildyourownlisp.com)
 * [History of Programming Languages](https://felleisen.org/matthias/7480-s21/index.html)
 * [Esolang](https://esolangs.org)
@@ -20,12 +22,15 @@
 * [Oak: An infinitely more portable alternative to the C programming language](http://github.com/adam-mcdaniel/oakc)
 * [ocean](https://github.com/riicchhaarrd/ocean)
 * [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
+* [Let's write a compiler](https://briancallahan.net/blog/20210814.html)
 * [LispE: Lisp Elémentaire](https://github.com/naver/lispe/wiki)
 * [Designing a programming language](http://ducklang.org/designing-a-programming-language-i)
 * [How to learn compilers: LLVM edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition)
 * [The Force](https://github.com/mirdaki/theforce)
 * [How to write a JIT compiler](https://github.com/spencertipping/jit-tutorial)
 * [Parsing Text with Nom](https://blog.adamchalmers.com/nom-chars)
+* [Compile code into silicon](https://www.siliconcompiler.com)
+* [A Complete Guide to LLVM for Programming Language Creators](https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial)
 
 ## JVM
 
@@ -67,6 +72,8 @@
 * [Chicago95](https://github.com/grassmunk/Chicago95)
 * [MenuetOS](https://www.menuetos.net)
 * [oasis](https://github.com/oasislinux/oasis)
+* [CS-3210, Spring 2020 - Build an operating system in Rust programming language](https://tc.gts3.org/cs3210/2020/spring/lab.html) (course)
+* [SnakeOS](https://github.com/trusch/snakeos)
 
 ## Unix
 
@@ -153,6 +160,7 @@
 * [SQL Visualizer](https://animatesql.com)
 * [SQLite](https://sqlite.org/fiddle)
 * [CSVFiddle](https://csvfiddle.io)
+* [jqplay](https://jqplay.org)
 
 ## Random
 
