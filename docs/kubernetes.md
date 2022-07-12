@@ -48,6 +48,8 @@ Resources
 
 * [Kubernetes History Visualization](https://github.com/salesforce/sloop)
 
+* [Kubelist Podcast](https://kubelist.com/podcast)
+
 ## Architecture
 
 At the hardware level, a Kubernetes cluster node can be

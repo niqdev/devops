@@ -31,6 +31,8 @@
 * [Parsing Text with Nom](https://blog.adamchalmers.com/nom-chars)
 * [Compile code into silicon](https://www.siliconcompiler.com)
 * [A Complete Guide to LLVM for Programming Language Creators](https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial)
+* [Creating the Golfcart Programming Language](https://healeycodes.com/creating-the-golfcart-programming-language)
+* [Make A Language](https://arzg.github.io/lang)
 
 ## JVM
 
@@ -101,6 +103,7 @@
 * [Neural Networks](https://aegeorge42.github.io)
 * [An Introduction to Tensor Calculus](https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus)
 * [Neural Network From Scratch](https://sirupsen.com/napkin/neural-net)
+* [The latest in Machine Learning](https://paperswithcode.com) (Papers)
 
 ## Books (free)
 

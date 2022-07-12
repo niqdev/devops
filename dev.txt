@@ -107,6 +107,7 @@ https://www.mathler.com
 https://fyrox.rs
 https://kilograham.github.io/rp2040-doom
 https://www.gamedeveloper.com/blogs/the-ai-of-doom-1993
+https://linoscope.github.io/writing-a-game-boy-emulator-in-ocaml
 
 # ELECTRONIC
 https://bbenchoff.github.io
