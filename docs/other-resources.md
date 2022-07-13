@@ -34,15 +34,6 @@
 * [Creating the Golfcart Programming Language](https://healeycodes.com/creating-the-golfcart-programming-language)
 * [Make A Language](https://arzg.github.io/lang)
 
-## JVM
-
-* [Write your own Virtual Machine](https://justinmeiners.github.io/lc3-vm)
-* [How to write a toy JVM](https://zserge.com/posts/jvm)
-* [JVM Anatomy Quarks](https://shipilev.net/jvm/anatomy-quarks)
-* [Cliff Click @ VMSS16: Bits of Advice For the VM Writer](https://www.youtube.com/watch?v=Hqw57GJSrac) (video)
-* [Best Books on the JVM?](https://news.ycombinator.com/item?id=29309902) (hn)
-* [A JVM Assembler for the modern age](https://github.com/roscopeco/jasm)
-
 ## OS
 
 * Operating System Concepts (10th) [ [book](https://www.os-book.com/OS10/index.html) | [slides](https://codex.cs.yale.edu/avi/courses/CS-423/slides/index.html) ]
@@ -98,7 +89,7 @@
 * [Amazon's Machine Learning University](https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university) (Course)
 * [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
 * [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
-* [A visual introduction to probability and statistics](https://seeing-theory.brown.edu/index.html)
+
 * [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 * [Neural Networks](https://aegeorge42.github.io)
 * [An Introduction to Tensor Calculus](https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus)
