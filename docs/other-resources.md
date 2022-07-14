@@ -67,18 +67,16 @@
 * [oasis](https://github.com/oasislinux/oasis)
 * [CS-3210, Spring 2020 - Build an operating system in Rust programming language](https://tc.gts3.org/cs3210/2020/spring/lab.html) (course)
 * [SnakeOS](https://github.com/trusch/snakeos)
+* [Qubes OS](https://www.qubes-os.org)
 
 ## Unix
 
 * [UNIX Internals: The New Frontiers](https://www.amazon.co.uk/UNIX-Internals-Frontiers-Uresh-Vahalia/dp/013021034X) (book)
 * [Lions' Commentary on UNIX with Source Code](https://www.amazon.co.uk/Lions-Commentary-UNIX-Source-Code/dp/1573980137) (book)
 * [How Debian packaging works](https://www.joyfulbikeshedding.com/blog/2020-08-03-how-debian-packaging-works.html)
-* [Setting up an email server in 2020 with OpenSMTPD and Dovecot](https://prefetch.eu/blog/2020/email-server)
 * [Tinyproxy](https://tinyproxy.github.io)
 * [tinc](http://tinc-vpn.org)
-* [Containers from first principles](https://fzakaria.com/2020/05/31/containers-from-first-principles.html)
 * [FastCGI](http://www.nongnu.org/fastcgi)
-* [Dissecting the GZIP format](http://www.infinitepartitions.com/cgi-bin/showarticle.cgi?article=art001)
 * [Cockpit](https://cockpit-project.org) - web-based graphical interface for servers
 * [Remmina](https://remmina.org) - Remote access screen and file sharing to your desktop
 
@@ -89,7 +87,6 @@
 * [Amazon's Machine Learning University](https://www.amazon.science/latest-news/machine-learning-course-free-online-from-amazon-machine-learning-university) (Course)
 * [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
 * [What is Natural Language Processing?](https://blog.algorithmia.com/introduction-natural-language-processing-nlp)
-
 * [Scipy Lecture Notes](http://scipy-lectures.org/index.html)
 * [Neural Networks](https://aegeorge42.github.io)
 * [An Introduction to Tensor Calculus](https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus)
@@ -131,37 +128,15 @@
 * [Pirate Library Mirror](http://pilimi.org)
 * [freeread.org: For the human right to read](https://freeread.org)
 
-## Online tools
+## Cloud
 
-* [Regular Expressions](https://regexr.com)
-* [Regular Expression Visualization Site](https://regexper.com)
-* [Current Millis](https://currentmillis.com)
-* [JSFiddle](https://jsfiddle.net)
-* [ScalaFiddle](https://scalafiddle.io)
-* [JSON Formatter](https://jsonformatter.curiousconcept.com)
-* [JSON Generator](https://next.json-generator.com)
-* [Mockaroo](https://www.mockaroo.com) - Realistic data generator
-* [JSON store](http://myjson.com)
-* [TextDB](https://textdb.dev) - A simple way to share small amounts of data
-* [Beautify JavaScript or HTML](http://jsbeautifier.org)
-* [devdocs](https://devdocs.io)
-* [WebPagetest](https://www.webpagetest.org) - Test a website's performance
-* [BrowserGap](https://browsergap.dosyago.com) - A secure browser embedded in a webapp
 * [Kubernetes YAML Generator](https://k8syaml.com)
-* [Database of Databases](https://dbdb.io)
 * [CloudSkew](https://www.cloudskew.com) - Draw cloud architecture diagrams
-* [DB Fiddle](https://www.db-fiddle.com)
-* [SQL Visualizer](https://animatesql.com)
-* [SQLite](https://sqlite.org/fiddle)
-* [CSVFiddle](https://csvfiddle.io)
-* [jqplay](https://jqplay.org)
-
-## Random
-
 * [Steampipe](https://steampipe.io) - `select * from cloud;`
 * [Infracost](https://www.infracost.io) - Cloud cost estimates for Terraform in pull requests
-* [Textpattern](https://textpattern.com) - The small content management system that can handle big ideas
-* [Siteoly](https://siteoly.com) - Build websites from Google sheets without writing code
+* [Rover - Terraform Visualizer](https://github.com/im2nguyen/rover)
+* [cfn-diagram](https://github.com/mhlabs/cfn-diagram) - Visualise CloudFormation/SAM/CDK templates as diagrams
+* [CDK-Dia](https://github.com/pistazie/cdk-dia) - Automated diagrams for CDK infrastructure
 
 ## Uncategorized/Unordered resources
 
@@ -171,11 +146,9 @@
 * [Which programs are faster?](https://benchmarksgame-team.pages.debian.net/benchmarksgame)
 * [Addison-Wesley Professional Computing Series](https://informit.com/series/professionalcomputing)
 * [Autopilot Pattern Applications](http://autopilotpattern.io)
-* [Creating a QR Code step by step](https://www.nayuki.io/page/creating-a-qr-code-step-by-step)
 * [Turbocharging MinIO Data Lakes with Apache Arrow](https://blog.min.io/turbocharging-minio-datalakes-with-arrowrdd)
 * [suckless](http://suckless.org)
 * [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing)
-* [Understanding and Decoding a JPEG Image using Python](https://yasoob.me/posts/understanding-and-writing-jpeg-decoder-in-python)
 * [Biohacking Lite](https://karpathy.github.io/2020/06/11/biohacking-lite)
 * [How do you create a video chat application?](https://blog.phuaxueyong.com/post/2020-06-15-how-to-make-a-video-chat-app)
 
