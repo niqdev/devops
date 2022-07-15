@@ -5,7 +5,6 @@ theme: readthedocs
 google_analytics: ['UA-68888222-4', 'niqdev.github.io']
 
 nav:
-    - Home: index.md
     - Linux: linux.md
     - Docker: docker.md
     - Ansible: ansible.md
@@ -15,6 +14,8 @@ nav:
     - Hadoop: hadoop.md
     - Kubernetes: kubernetes.md
     - System Design: system-design.md
+    - Operating System: operating-system.md
+    - Programming: programming.md
     - Other Resources: other-resources.md
     - Toolbox: toolbox.md
     - JVM (OLD): jvm.md

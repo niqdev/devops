@@ -2,7 +2,7 @@
 
 [![github-pages](https://github.com/niqdev/devops/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/niqdev/devops/actions/workflows/gh-pages.yml)
 
-A collection of resources, scripts, docker images, tools and documentation mainly related to distributed systems for local development, learning purposes and quick prototyping.
+A collection of notes, resources, documentation and POCs mainly related to distributed systems for local development, learning purposes and quick prototyping.
 
 * [Linux](https://niqdev.github.io/devops/linux)
 * [Docker](https://niqdev.github.io/devops/docker) 
@@ -17,6 +17,8 @@ A collection of resources, scripts, docker images, tools and documentation mainl
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [System Design](https://niqdev.github.io/devops/system-design)
+* [Operating System](https://niqdev.github.io/devops/operating-system)
+* [Programming](https://niqdev.github.io/devops/programming)
 * [Other Resources](https://niqdev.github.io/devops/other-resources)
 * [Toolbox](https://niqdev.github.io/devops/toolbox)
 
