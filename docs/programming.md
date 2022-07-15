@@ -2,8 +2,8 @@
 
 ## Courses
 
-* Structure and Interpretation of Computer Programs MIT [ [course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005) | [book](https://mitpress.mit.edu/sites/default/files/sicp/index.html) ]
-* [Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided)
+* 6.001: Structure and Interpretation of Computer Programs MIT [ [course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005) | [book](https://mitpress.mit.edu/sites/default/files/sicp/index.html) ]
+* [CS 6120: Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided)
 * [History of Programming Languages](https://felleisen.org/matthias/7480-s21/index.html)
 
 ## Books

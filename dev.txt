@@ -1,6 +1,5 @@
-https://cloudsecdocs.com
-
 # not-only-devops ?
+https://cloudsecdocs.com
 
 --- must read
 
@@ -20,8 +19,6 @@ cat /mnt/var/lib/info/job-flow.json | jq
 * sla, percentile
 * add in linux: monit, nohup, screen, mc, vim keyboard shortcuts
 * command vs event api - use paste tense to name event
-
---- OLD
 
 * Avro **Avro** is a data serialization system
 * Parquet **Parquet** is a columnar storage format that can efficiently store nested data
@@ -52,9 +49,6 @@ https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with
 https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
 https://github.com/WhiteHouse/api-standards
 https://geemus.gitbooks.io/http-api-design/content/en/
-
-# supervisor
-https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
 
 # spark-in-action
 curl -O https://raw.githubusercontent.com/spark-in-action/first-edition/master/spark-in-action-box.json
