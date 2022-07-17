@@ -27,6 +27,8 @@
 * [rui314/chibicc: A small C compiler](https://github.com/rui314/chibicc)
 * [The Super Tiny Compiler!](https://github.com/jamiebuilds/the-super-tiny-compiler)
 * [Obfuscated Tiny C Compiler](https://bellard.org/otcc)
+* [Tinylisp: Lisp in 99 lines of C and how to write one yourself](https://github.com/Robert-van-Engelen/tinylisp)
+* [Lessons from Writing a Compiler](https://borretti.me/article/lessons-writing-compiler)
 
 ## Parser
 
@@ -51,5 +53,6 @@
 * [Creating the Golfcart Programming Language](https://healeycodes.com/creating-the-golfcart-programming-language)
 * [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
 * [spencertipping/jit-tutorial: How to write a JIT compiler](https://github.com/spencertipping/jit-tutorial)
+* [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 <br>

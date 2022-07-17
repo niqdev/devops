@@ -74,5 +74,6 @@
 * [Virtual Hackintosh](https://github.com/kholia/OSX-KVM)
 * [How To Write a Computer Emulator](https://fms.komkon.org/EMUL8/HOWTO.html)
 * [Linux x86 Program Start Up](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
+* [Floppinux: An Embedded Linux on a Single Floppy](https://bits.p1x.in/floppinux-an-embedded-linux-on-a-single-floppy)
 
 <br>

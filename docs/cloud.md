@@ -50,6 +50,8 @@
 * [stern](https://github.com/wercker/stern) - Multi pod and container log tailing for Kubernetes (obsolete)
 * [kail](https://github.com/boz/kail) - kubernetes log viewer
 * [k9s](https://k9scli.io) - Kubernetes CLI To Manage Your Clusters In Style!
+* [KDash](https://github.com/kdash-rs/kdash) - A fast and simple dashboard for Kubernetes
+* [Skaffold](https://skaffold.dev) - Local Kubernetes Development
 
 ### Homelab
 
