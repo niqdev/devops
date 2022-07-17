@@ -12,7 +12,8 @@ nav:
     - ZooKeeper: zookeeper.md
     - Kafka: kafka.md
     - Hadoop: hadoop.md
-    - Kubernetes: kubernetes.md
+    - Cloud: cloud.md
+    - Kubernetes (OLD): kubernetes.md
     - System Design: system-design.md
     - Operating System: operating-system.md
     - Programming: programming.md

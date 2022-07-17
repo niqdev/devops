@@ -12,43 +12,18 @@ Resources
 
 * YouTube channels: [Kubernetes](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) and [Cloud Native Computing Foundation](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
 
-* [Kubernetes by Example](http://kubernetesbyexample.com)
-
-* [Kubernetes comic](https://cloud.google.com/kubernetes-engine/kubernetes-comic)
+Blogs
 
 * [Running akka-cluster on Kubernetes](https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951)
-
 * [Kubernetes: The Surprisingly Affordable Platform for Personal Projects](http://www.doxsey.net/blog/kubernetes--the-surprisingly-affordable-platform-for-personal-projects)
-
-* [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
-
 * [Kubernetes from scratch to AWS with Terraform and Ansible](https://opencredo.com/kubernetes-aws-terraform-ansible-1)
-
 * [Prometheus and Kubernetes: A Perfect Match](https://www.weave.works/blog/prometheus-kubernetes-perfect-match)
-
 * [Inside of Kubernetes Controller](https://speakerdeck.com/govargo/inside-of-kubernetes-controller)
-
-* [Kubernetes Failure Stories](https://k8s.af)
-
-* [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
-
-* [Kubernetes: Make your services faster by removing CPU limits](https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits)
-
-* [Optimizing Kubernetes Resource Requests/Limits for Cost-Efficiency and Latency](https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload)
-
-* [What are Quality of Service (QoS) Classes in Kubernetes](https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6)
-
-* [How to detect Kubernetes overspending by measuring idle costs](https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0)
-
-* [Kubernetes: Curated List of Tools and Resources](https://devopsunlocked.com/kubernetes-curated-list-of-tools-and-resources)
-
-* [Kubernetes Best Practices 101](https://github.com/diegolnasc/kubernetes-best-practices)
-
 * [Exploring Kubernetes Operator Pattern](https://iximiuz.com/en/posts/kubernetes-operator-pattern)
-
-* [Kubernetes History Visualization](https://github.com/salesforce/sloop)
-
-* [Kubelist Podcast](https://kubelist.com/podcast)
+* [Kubernetes: Make your services faster by removing CPU limits](https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits)
+* [Optimizing Kubernetes Resource Requests/Limits for Cost-Efficiency and Latency](https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload)
+* [What are Quality of Service (QoS) Classes in Kubernetes](https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6)
+* [How to detect Kubernetes overspending by measuring idle costs](https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0)
 
 ## Architecture
 
@@ -621,17 +596,5 @@ helm install --dry-run --debug ./my-chart
 $(helm home)/plugins
 helm plugin install <PATH|URL>
 ```
-
-<br>
-
-## Others
-
-* [Argo](https://argoproj.github.io) - Open source Kubernetes native workflows, events, CI and CD
-* [eksctl](https://eksctl.io) - A CLI for Amazon EKS
-* [kubectx](https://ahmet.im/blog/kubectx) - A tool to switch between Kubernetes contexts
-* [kube-ps1](https://github.com/jonmosco/kube-ps1) - Kubernetes prompt
-* [kubefwd](https://github.com/txn2/kubefwd) - Kubernetes port forwarding for local development
-* [stern](https://github.com/wercker/stern) - Multi pod and container log tailing for Kubernetes
-* [Kustomize](https://kustomize.io) - Customization of Kubernetes YAML configurations
 
 <br>

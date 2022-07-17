@@ -1,16 +1,3 @@
-# not-only-devops ?
-https://cloudsecdocs.com
-
---- must read
-
-# What have you tried?
-https://mattgemmell.com/what-have-you-tried
-# No Hello
-https://www.nohello.com
-https://nohello.net
-# What Every Computer Scientist Should Know About Floating-Point Arithmetic
-https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
-
 --- OLD
 
 # emr info on master node
@@ -73,56 +60,29 @@ https://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overlo
 # IAC infrastructure-as-code
 https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
 
-# kunernetes raspberry
-https://github.com/k8s-at-home
-https://github.com/khuedoan/homelab
-https://github.com/alexellis/k3sup
-https://github.com/onedr0p/home-cluster
-https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster
-https://chrisshort.net/my-raspberry-pi-kubernetes-cluster
-https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9
-https://www.howtogeek.com/66438/how-to-easily-access-your-home-network-from-anywhere-with-ddns
-https://serverfault.com/questions/840626/dynamic-dns-and-ssl-issue
-https://github.com/lahsivjar/kube-arm
-https://docs.traefik.io
-https://ngrok.com
-https://inlets.dev
-https://github.com/alexellis/arkade
-
-# kunernetes SSL
-https://www.techprowd.com/automatic-ssl-certificates-for-home-microk8s-setup-using-letsencrypt
-https://amithm.ca/2020/10/kubernetes-raspberrypi-homelab
-
-# crd
-http://technosophos.com/2019/08/07/writing-a-kubernetes-controller-in-rust.html
-
-# certificates
-https://scotthelme.co.uk/introducing-another-free-ca-as-an-alternative-to-lets-encrypt
-
-# prometheus
-https://crate.io/a/monitoring-cratedb-on-kubernetes-with-prometheus-and-grafana
-https://www.robustperception.io/which-are-my-biggest-metrics
-https://www.robustperception.io/how-much-ram-does-my-prometheus-need-for-ingestion
-https://blog.serverdensity.com/how-to-monitor-kafka
-https://fabxc.org/tsdb
-https://dev.to/ninii72387534/prometheus-definitive-guide-part-iii-prometheus-operator-5338
-
-# service mesh
-https://linkerd.io
-
-# telegram-bot
-https://hackernoon.com/how-to-create-and-deploy-a-telegram-bot-2addd8aec6b4
-http://vectos.net/posts/2017-05-16-telegram-bot-in-functional-scala.html
-https://github.com/vpavkin/telegram-bot-fs2
-https://github.com/nikdon/telepooz
-https://github.com/bot4s/telegram
+# makefile
+https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
+`make -pRrq`, that is a very useful command to debug your makefiles, especially in a big project. The option `-p` prints the make data-base, -R and -r removes the implicit rules and variables, and -q indicates only asking make a question about current state, avoid executing anything
 
 # copy cd-dvd
 https://unix.stackexchange.com/questions/224277/is-it-better-to-use-cat-dd-pv-or-another-procedure-to-copy-a-cd-dvd/224314#224314
 
----
+# Serving up zero-knowledge proofs
+https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs
 
-https://monokh.com/posts/bitcoin-from-scratch-part-1
+# windows
+https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simplify-classic-ms-dos-gaming
+
+# discord exporter
+https://github.com/Tyrrrz/DiscordChatExporter
+
+# build your own amazing illustrations
+https://iradesign.io
+
+# service mesh
+https://linkerd.io
+
+---
 
 # torrent
 https://en.m.wikibooks.org/wiki/The_World_of_Peer-to-Peer_(P2P)/Networks_and_Protocols/BitTorrent
@@ -133,42 +93,9 @@ https://blog.libtorrent.org/2020/09/bittorrent-v2
 http://xlattice.sourceforge.net/components/protocol/kademlia/specs.html
 https://github.com/smmr-software/mabel
 
----
-
-# load testing
+# testing
 https://github.com/nakabonne/ali
-
-# makefile
-https://diamantidis.github.io/tips/2020/07/01/list-makefile-targets
-`make -pRrq`, that is a very useful command to debug your makefiles, especially in a big project. The option `-p` prints the make data-base, -R and -r removes the implicit rules and variables, and -q indicates only asking make a question about current state, avoid executing anything
-
-# NearlyFreeSpeech.NET (cheap hosting)
-https://www.nearlyfreespeech.net
-
-# An Introduction to ZFS A Place to Start
-https://www.servethehome.com/an-introduction-to-zfs-a-place-to-start
-
-# Floppinux
-https://bits.p1x.in/floppinux-an-embedded-linux-on-a-single-floppy
-
-# Serving up zero-knowledge proofs
-https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs
-
-# free deploy
-https://fly.io/docs/about/pricing/#free-for-side-projects
-
-# windows
-https://arstechnica.com/gadgets/2021/01/dosbox-pure-for-retroarch-aims-to-simplify-classic-ms-dos-gaming
-
-# discord exporter
-https://github.com/Tyrrrz/DiscordChatExporter
-
----
-
-# build your own amazing illustrations
-https://iradesign.io
-
----
+https://playwright.dev
 
 # tracing
 https://opentracing.io/specification
@@ -184,25 +111,17 @@ https://tech.nextroll.com/blog/dev/2019/02/05/dynamodb-managed-autoscaling.html
 # aws batch
 https://towardsdatascience.com/get-your-own-data-building-a-scalable-web-scraper-with-aws-654feb9fdad7
 
-# serverless
+# crypto/mininig
+https://monokh.com/posts/bitcoin-from-scratch-part-1
+https://github.com/smartcontracts/eth2-book
+https://cardano.org
+https://nano.org
+https://www.chia.net
+https://www.anchorage.com
+
+# lambda
 https://www.serverless.com
 https://www.openfaas.com
 https://dev.to/kumo/we-tested-the-best-serverless-monitoring-solutions-so-you-dont-have-to-121m
 https://jvns.ca/blog/2021/01/23/firecracker--start-a-vm-in-less-than-a-second
 https://www.talhoffman.com/2021/07/18/firecracker-internals
-# github actions
-https://help.github.com/en/categories/automating-your-workflow-with-github-actions
-https://actionsflow.github.io
-https://www.actionsbyexample.com
-https://github.com/nektos/act
-
-# interesting crypto
-https://www.anchorage.com
-# mininig
-https://cardano.org
-https://nano.org
-https://www.chia.net
-https://github.com/smartcontracts/eth2-book
-
-# argo
-https://greenops.io/atlas/
