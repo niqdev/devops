@@ -12,6 +12,10 @@ Resources
 
 * [Kafka: a Distributed Messaging System for Log Processing](http://notes.stephenholiday.com/Kafka.pdf) (Paper)
 
+* [The Internals of Kafka Streams](https://jaceklaskowski.gitbooks.io/mastering-kafka-streams) (Book)
+
+* [Gently down the stream](https://www.gentlydownthe.stream) (Kid's Book)
+
 * [Schema Registry](https://docs.confluent.io/current/schema-registry/docs/index.html)
 
 * [KafkaProducer javadocs](https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html)
@@ -19,51 +23,6 @@ Resources
 * [KafkaConsumer javadocs](https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html)
 
 * [Reactive Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html)
-
-* [The Internals of Kafka Streams](https://jaceklaskowski.gitbooks.io/mastering-kafka-streams)
-
-* [Kafka Streams Topology Visualizer](https://zz85.github.io/kafka-streams-viz)
-
-Articles
-
-* [What is the actual role of Zookeeper in Kafka?](https://www.quora.com/What-is-the-actual-role-of-Zookeeper-in-Kafka-What-benefits-will-I-miss-out-on-if-I-don%E2%80%99t-use-Zookeeper-and-Kafka-together/answer/Gwen-Shapira)
-
-* [Should you put several event types in the same Kafka topic?](http://martin.kleppmann.com/2018/01/18/event-types-in-kafka-topic.html)
-
-* [How to choose the number of topics/partitions in a Kafka cluster?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster)
-
-* [Kafka Partitioning](https://simplydistributed.wordpress.com/2016/12/13/kafka-partitioning)
-
-* [The Log: What every software engineer should know about real-time data's unifying abstraction](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying)
-
-* [How to use Apache Kafka to transform a batch pipeline into a real-time one](https://medium.com/@stephane.maarek/how-to-use-apache-kafka-to-transform-a-batch-pipeline-into-a-real-time-one-831b48a6ad85)
-
-* [Introducing Kafka Streams: Stream Processing Made Simple](https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple)
-
-* [Unifying Stream Processing and Interactive Queries in Apache Kafka](https://www.confluent.io/blog/unifying-stream-processing-and-interactive-queries-in-apache-kafka)
-
-* [Of Streams and Tables in Kafka and Stream Processing](https://www.michael-noll.com/blog/2018/04/05/of-stream-and-tables-in-kafka-and-stream-processing-part1)
-
-* [Enabling Exactly-Once in Kafka Streams](https://www.confluent.io/blog/enabling-exactly-kafka-streams)
-
-* [Apache Kafka: 8 things to check before going live](https://ariskk.com/kafka-8-things)
-
-* [Gently down the stream](https://www.gentlydownthe.stream)
-
-* [Apache Kafka vs Apache Pulsar](https://digitalis.io/blog/kafka/apache-kafka-vs-apache-pulsar)
-
-* [Kafka Connect Fundamentals](https://www.confluent.io/blog/kafka-connect-tutorial)
-
-Tools
-
-* [kafkacat](https://github.com/edenhill/kafkacat)
-* [Kafka-Utils](https://github.com/Yelp/kafka-utils)
-* [Insulator](https://andrewinci.github.io/Insulator) (GUI)
-* [KLoadGen](https://github.com/corunet/kloadgen)
-* [Kowl](https://github.com/cloudhut/kowl)
-* [UI for Apache Kafka](https://github.com/provectus/kafka-ui)
-* [Cruise Control](https://github.com/linkedin/cruise-control)
-* [CMAK](https://github.com/yahoo/CMAK)
 
 ## Architecture
 
