@@ -1,34 +1,48 @@
 # System Design
 
+## Books
+
+* [Designing Data-Intensive Applications](https://amzn.to/2lKJMvU) (2017) by Martin Kleppmann
+* [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/2VTvGYS) (2003) by Eric Evans
+* [Functional and Reactive Domain Modeling](https://www.manning.com/books/functional-and-reactive-domain-modeling) (2016) by Debasish Ghosh
+* [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read)
+* [Exploring CQRS and Event Sourcing](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10))
+* [Database Internals - A Deep Dive into How Distributed Data Systems Work](https://www.databass.dev)
+* [The Architecture of Open Source Applications](http://aosabook.org/en/index.html) (free)
+
 ## Resources
 
-* [Designing Data-Intensive Applications](https://amzn.to/2lKJMvU) (2017) by Martin Kleppmann (Book)
-* [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/2VTvGYS) (2003) by Eric Evans (Book)
-* [Functional and Reactive Domain Modeling](https://www.manning.com/books/functional-and-reactive-domain-modeling) (2016) by Debasish Ghosh (Book)
-* [Versioning in an Event Sourced System](https://leanpub.com/esversioning/read) (Book)
-* [Exploring CQRS and Event Sourcing](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10)) (Book)
-* [Database Internals - A Deep Dive into How Distributed Data Systems Work](https://www.databass.dev)
+* [6.824 Distributed Systems MIT](https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB) (course)
+* [Distributed Systems lecture series](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB) by Martin Kleppmann (course)
+* [Software Architecture Monday](https://www.youtube.com/playlist?list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar) (videos)
 * [CQRS](https://www.martinfowler.com/bliki/CQRS.html) by Martin Fowler
 * [Clarified CQRS](http://udidahan.com/2009/12/09/clarified-cqrs)
 * [1 Year of Event Sourcing and CQRS](https://hackernoon.com/1-year-of-event-sourcing-and-cqrs-fb9033ccd1c6)
 * [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
+* [How do CRDTs solve distributed data consistency challenges?](https://ably.com/blog/crdts-distributed-data-consistency-challenges)
+* [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing)
 * [On Designing and Deploying Internet-Scale Services](https://www.usenix.org/legacy/events/lisa07/tech/full_papers/hamilton/hamilton_html)
 * [There is No Now](https://queue.acm.org/detail.cfm?id=2745385)
 * [Online Event Processing](https://queue.acm.org/detail.cfm?id=3321612)
 * [The world beyond batch: Streaming 101](https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101)
 * [Questioning the Lambda Architecture](https://www.oreilly.com/ideas/questioning-the-lambda-architecture)
 * [The Difference between SLI, SLO, and SLA](https://enqueuezero.com/the-difference-between-sli-slo-and-sla.html)
-* [Jepsen](https://aphyr.com/tags/Jepsen) (Blog)
-* [The Paper Trail](https://www.the-paper-trail.org) (Blog)
-* [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
 * [A review of consensus protocols](https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols)
 * [How you could have come up with Paxos yourself](https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html)
 * [Implementing Raft's Leader Election in Rust](https://blog.laurocaetano.com/programming/2021/01/23/raft-leader-election-rust)
 * [Consensus Protocol](https://www.consul.io/docs/architecture/consensus)
 * [Implementing Raft for Browsers with Rust and WebRTC](https://eevans.co/blog/wraft)
-* [How do CRDTs solve distributed data consistency challenges?](https://ably.com/blog/crdts-distributed-data-consistency-challenges)
+* [HTTP Feeds](https://www.http-feeds.org)
+* [Autopilot Pattern Applications](http://autopilotpattern.io)
 
-**CAP Theorem**
+## Blogs
+
+* [Jepsen](https://aphyr.com/tags/Jepsen)
+* [The Paper Trail](https://www.the-paper-trail.org)
+* [High Scalability](http://highscalability.com)
+* [InfoQ: Architecture & Design Content](https://www.infoq.com/architecture-design/presentations)
+
+## CAP
 
 * [Brewer's CAP Theorem](http://www.julianbrowne.com/article/brewers-cap-theorem)
 * [CAP Twelve Years Later: How the "Rules" Have Changed](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
@@ -36,14 +50,12 @@
 * [The CAP FAQ](https://www.the-paper-trail.org/page/cap-faq)
 * [You Can't Sacrifice Partition Tolerance](https://codahale.com/you-cant-sacrifice-partition-tolerance)
 
-**Papers**
+## Papers
 
-* [Foundational distributed systems papers](https://muratbuffalo.blogspot.com/2021/02/foundational-distributed-systems-papers.html)
-* [Distributed Systems Reading List](https://dancres.github.io/Pages)
-* [Best Paper Awards in Computer Science](https://jeffhuang.com/best_paper_awards)
-* [MIT 6.824 Distributed Systems (Spring 2020)](https://m.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB) (course)
-* [Distributed Systems lecture series](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB) (course)
-* [Ask HN: Recommended books and papers on distributed systems?](https://news.ycombinator.com/item?id=25987664)
+* [Foundational distributed systems papers](https://muratbuffalo.blogspot.com/2021/02/foundational-distributed-systems-papers.html) (collection)
+* [Distributed Systems Reading List](https://dancres.github.io/Pages) (collection)
+* [Best Paper Awards in Computer Science](https://jeffhuang.com/best_paper_awards) (collection)
+* [Ask HN: Recommended books and papers on distributed systems?](https://news.ycombinator.com/item?id=25987664) (collection)
 * [The Google File System](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 * [MapReduce: Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf)
 * [Raft: In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)
@@ -57,18 +69,20 @@
 * [Large-scale cluster management at Google with Borg](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf)
 * [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)
 * [Harvest, Yield, and Scalable Tolerant Systems](https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf)
-* [Life beyond Distributed Transactions](http://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf)
-* [The ϕ Accrual Failure Detector](https://web.archive.org/web/20170517022242/http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf)
+* [Life beyond Distributed Transactions](https://web.archive.org/web/20210303104924/https://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf) (webarchive)
+* [The ϕ Accrual Failure Detector](https://web.archive.org/web/20170517022242/http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf) (webarchive)
 * [Conflict-free Replicated Data Types](https://hal.inria.fr/inria-00609399v1/document)
-* [FLP - Impossibility of Distributed Consensus with One Faulty Process](http://macs.citadel.edu/rudolphg/csci604/ImpossibilityofConsensus.pdf)
+* [FLP - Impossibility of Distributed Consensus with One Faulty Process](https://web.archive.org/web/20210211213256/http://macs.citadel.edu/rudolphg/csci604/ImpossibilityofConsensus.pdf) (webarchive)
 * [SEDA: An Architecture for Well-Conditioned, Scalable Internet Services](http://nms.lcs.mit.edu/~kandula/projects/killbots/killbots_files/seda-sosp01.pdf)
 * [Pregel: A System for Large-Scale Graph Processing](https://kowshik.github.io/JPregel/pregel_paper.pdf)
 * [Hashed and Hierarchical Timing Wheels](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf)
 * [Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data](http://ceur-ws.org/Vol-1366/paper13.pdf)
 * [What Every Programmer Should Know About Memory](https://www.akkadia.org/drepper/cpumemory.pdf)
-* [Fallacies of Distributed Computing Explained](http://www.rgoarchitects.com/Files/fallacies.pdf)
+* [Fallacies of Distributed Computing Explained](https://web.archive.org/web/20201108163119/http://www.rgoarchitects.com/Files/fallacies.pdf) (webarchive)
 * [The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing](https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf)
 * [A Dataset of Dockerfiles](https://arxiv.org/pdf/2003.12912.pdf)
+
+<br>
 
 <!--
 ## Notes
