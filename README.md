@@ -15,6 +15,7 @@ A collection of notes, resources, documentation and POCs mainly related to distr
   * [Spark](https://niqdev.github.io/devops/hadoop/#spark)
   * [Zeppelin](https://niqdev.github.io/devops/hadoop/#zeppelin)
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
+* [Cloud](https://niqdev.github.io/devops/cloud)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [System Design](https://niqdev.github.io/devops/system-design)
 * [Operating System](https://niqdev.github.io/devops/operating-system)

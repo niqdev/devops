@@ -32,7 +32,6 @@
 * [OpenStax](https://openstax.org/subjects)
 * [Mark Watson: author of 20+ books](https://markwatson.com/#books)
 * [LibriVox](https://librivox.org) (audiobook)
-* [American Institute of Mathematics](https://aimath.org/textbooks)
 * [Textbooks](https://textbooks.cs.ksu.edu/)
 * [Global Grey](https://www.globalgreyebooks.com/index.html)
 * [Pirate Library Mirror](http://pilimi.org)
