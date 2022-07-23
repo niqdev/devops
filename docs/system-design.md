@@ -34,6 +34,7 @@
 * [Implementing Raft for Browsers with Rust and WebRTC](https://eevans.co/blog/wraft)
 * [HTTP Feeds](https://www.http-feeds.org)
 * [Autopilot Pattern Applications](http://autopilotpattern.io)
+* [REST Hooks](https://resthooks.org)
 
 ## Blogs
 

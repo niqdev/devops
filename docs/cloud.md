@@ -21,6 +21,7 @@
 * [Kubernetes Best Practices 101](https://github.com/diegolnasc/kubernetes-best-practices)
 * [Kubernetes Failure Stories](https://k8s.af)
 * [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
+* [Container Training](https://container.training)
 
 ### Tools
 

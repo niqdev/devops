@@ -23,6 +23,7 @@
 * [Learning operating system development using Linux kernel and Raspberry Pi](https://s-matyukevich.github.io/raspberry-pi-os) (incomplete)
 * [Writing a "bare metal" operating system for Raspberry Pi 4](https://www.rpi4os.com)
 * [Writing a simple 16 bit VM in less than 125 lines of C](https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c)
+* [os-tutorial: How to create an OS from scratch](https://github.com/cfenollosa/os-tutorial)
 
 ## Kernel
 
