@@ -22,6 +22,7 @@
 * [Kubernetes Failure Stories](https://k8s.af)
 * [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s)
 * [Container Training](https://container.training)
+* [15 Kubernetes Best Practices Every Developer Should Know](https://spacelift.io/blog/kubernetes-best-practices)
 
 ### Tools
 
