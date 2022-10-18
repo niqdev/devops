@@ -12,6 +12,8 @@ Resources
 
 * [Playbook example](https://gist.github.com/marktheunissen/2979474)
 
+* [Ansible Tutorial for Beginners: Ultimate Playbook & Examples](https://spacelift.io/blog/ansible-tutorial)
+
 The following guide explains how to provision Ansible locally and play with it. Checkout the [Vagrantfile](https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile) and the Vagrant [guide](toolbox/#vagrant) for more details.
 
 ### Setup
