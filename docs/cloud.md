@@ -37,6 +37,7 @@
 * [devtron](https://github.com/devtron-labs/devtron) - Tool integration platform for Kubernetes
 * [arkade](https://github.com/alexellis/arkade) - Open Source Marketplace For Kubernetes
 * [Kubernetes YAML Generator](https://k8syaml.com)
+* [kind](https://kind.sigs.k8s.io) - Local Kubernetes clusters using Docker
 
 ### Cli
 
