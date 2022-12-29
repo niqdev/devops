@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>System Design - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "System Design";
+    var mkdocs_page_input_path = "system-design.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">System Design</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#books">Books</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blogs">Blogs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cap">CAP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#papers">Papers</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>System Design</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/system-design.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="system-design">System Design</h1>
+<h2 id="books">Books</h2>
+<ul>
+<li><a href="https://amzn.to/2lKJMvU">Designing Data-Intensive Applications</a> (2017) by Martin Kleppmann</li>
+<li><a href="https://amzn.to/2VTvGYS">Domain-Driven Design: Tackling Complexity in the Heart of Software</a> (2003) by Eric Evans</li>
+<li><a href="https://www.manning.com/books/functional-and-reactive-domain-modeling">Functional and Reactive Domain Modeling</a> (2016) by Debasish Ghosh</li>
+<li><a href="https://leanpub.com/esversioning/read">Versioning in an Event Sourced System</a></li>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v%3dpandp.10)">Exploring CQRS and Event Sourcing</a></li>
+<li><a href="https://www.databass.dev">Database Internals - A Deep Dive into How Distributed Data Systems Work</a></li>
+<li><a href="http://aosabook.org/en/index.html">The Architecture of Open Source Applications</a> (free)</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB">6.824 Distributed Systems MIT</a> (course)</li>
+<li><a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB">Distributed Systems lecture series</a> by Martin Kleppmann (course)</li>
+<li><a href="https://www.youtube.com/playlist?list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar">Software Architecture Monday</a> (videos)</li>
+<li><a href="https://www.martinfowler.com/bliki/CQRS.html">CQRS</a> by Martin Fowler</li>
+<li><a href="http://udidahan.com/2009/12/09/clarified-cqrs">Clarified CQRS</a></li>
+<li><a href="https://hackernoon.com/1-year-of-event-sourcing-and-cqrs-fb9033ccd1c6">1 Year of Event Sourcing and CQRS</a></li>
+<li><a href="https://www.allthingsdistributed.com/2008/12/eventually_consistent.html">Eventually Consistent - Revisited</a></li>
+<li><a href="https://ably.com/blog/crdts-distributed-data-consistency-challenges">How do CRDTs solve distributed data consistency challenges?</a></li>
+<li><a href="https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing">Are CRDTs suitable for shared editing?</a></li>
+<li><a href="https://www.usenix.org/legacy/events/lisa07/tech/full_papers/hamilton/hamilton_html">On Designing and Deploying Internet-Scale Services</a></li>
+<li><a href="https://queue.acm.org/detail.cfm?id=2745385">There is No Now</a></li>
+<li><a href="https://queue.acm.org/detail.cfm?id=3321612">Online Event Processing</a></li>
+<li><a href="https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101">The world beyond batch: Streaming 101</a></li>
+<li><a href="https://www.oreilly.com/ideas/questioning-the-lambda-architecture">Questioning the Lambda Architecture</a></li>
+<li><a href="https://enqueuezero.com/the-difference-between-sli-slo-and-sla.html">The Difference between SLI, SLO, and SLA</a></li>
+<li><a href="https://thomasvilhena.com/2020/10/a-review-of-consensus-protocols">A review of consensus protocols</a></li>
+<li><a href="https://explain.yshui.dev/distributed%20system/2020/09/20/paxos.html">How you could have come up with Paxos yourself</a></li>
+<li><a href="https://blog.laurocaetano.com/programming/2021/01/23/raft-leader-election-rust">Implementing Raft's Leader Election in Rust</a></li>
+<li><a href="https://www.consul.io/docs/architecture/consensus">Consensus Protocol</a></li>
+<li><a href="https://eevans.co/blog/wraft">Implementing Raft for Browsers with Rust and WebRTC</a></li>
+<li><a href="https://www.http-feeds.org">HTTP Feeds</a></li>
+<li><a href="http://autopilotpattern.io">Autopilot Pattern Applications</a></li>
+<li><a href="https://resthooks.org">REST Hooks</a></li>
+</ul>
+<h2 id="blogs">Blogs</h2>
+<ul>
+<li><a href="https://aphyr.com/tags/Jepsen">Jepsen</a></li>
+<li><a href="https://www.the-paper-trail.org">The Paper Trail</a></li>
+<li><a href="http://highscalability.com">High Scalability</a></li>
+<li><a href="https://www.infoq.com/architecture-design/presentations">InfoQ: Architecture &amp; Design Content</a></li>
+</ul>
+<h2 id="cap">CAP</h2>
+<ul>
+<li><a href="http://www.julianbrowne.com/article/brewers-cap-theorem">Brewer's CAP Theorem</a></li>
+<li><a href="https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed">CAP Twelve Years Later: How the "Rules" Have Changed</a></li>
+<li><a href="https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html">Please stop calling databases CP or AP</a></li>
+<li><a href="https://www.the-paper-trail.org/page/cap-faq">The CAP FAQ</a></li>
+<li><a href="https://codahale.com/you-cant-sacrifice-partition-tolerance">You Can't Sacrifice Partition Tolerance</a></li>
+</ul>
+<h2 id="papers">Papers</h2>
+<ul>
+<li><a href="https://muratbuffalo.blogspot.com/2021/02/foundational-distributed-systems-papers.html">Foundational distributed systems papers</a> (collection)</li>
+<li><a href="https://dancres.github.io/Pages">Distributed Systems Reading List</a> (collection)</li>
+<li><a href="https://jeffhuang.com/best_paper_awards">Best Paper Awards in Computer Science</a> (collection)</li>
+<li><a href="https://news.ycombinator.com/item?id=25987664">Ask HN: Recommended books and papers on distributed systems?</a> (collection)</li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">The Google File System</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">MapReduce: Simplified Data Processing on Large Clusters</a></li>
+<li><a href="https://raft.github.io/raft.pdf">Raft: In Search of an Understandable Consensus Algorithm</a></li>
+<li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2016/12/paxos-simple-Copy.pdf">Paxos Made Simple</a></li>
+<li><a href="http://diyhpl.us/~bryan/papers2/distributed/distributed-systems/zab.totally-ordered-broadcast-protocol.2008.pdf">Zab: A simple totally ordered broadcast protocol</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf">The Chubby lock service for loosely-coupled distributed systems</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf">Spanner: Google's Globally-Distributed Database</a></li>
+<li><a href="https://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf">Dynamo: Amazon’s Highly Available Key-value Store</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf">HyperLogLog in Practice</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf">Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43438.pdf">Large-scale cluster management at Google with Borg</a></li>
+<li><a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">Linearizability: A Correctness Condition for Concurrent Objects</a></li>
+<li><a href="https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf">Harvest, Yield, and Scalable Tolerant Systems</a></li>
+<li><a href="https://web.archive.org/web/20210303104924/https://www-db.cs.wisc.edu/cidr/cidr2007/papers/cidr07p15.pdf">Life beyond Distributed Transactions</a> (webarchive)</li>
+<li><a href="https://web.archive.org/web/20170517022242/http://fubica.lsd.ufcg.edu.br/hp/cursos/cfsc/papers/hayashibara04theaccrual.pdf">The ϕ Accrual Failure Detector</a> (webarchive)</li>
+<li><a href="https://hal.inria.fr/inria-00609399v1/document">Conflict-free Replicated Data Types</a></li>
+<li><a href="https://web.archive.org/web/20210211213256/http://macs.citadel.edu/rudolphg/csci604/ImpossibilityofConsensus.pdf">FLP - Impossibility of Distributed Consensus with One Faulty Process</a> (webarchive)</li>
+<li><a href="http://nms.lcs.mit.edu/~kandula/projects/killbots/killbots_files/seda-sosp01.pdf">SEDA: An Architecture for Well-Conditioned, Scalable Internet Services</a></li>
+<li><a href="https://kowshik.github.io/JPregel/pregel_paper.pdf">Pregel: A System for Large-Scale Graph Processing</a></li>
+<li><a href="http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf">Hashed and Hierarchical Timing Wheels</a></li>
+<li><a href="http://ceur-ws.org/Vol-1366/paper13.pdf">Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data</a></li>
+<li><a href="https://www.akkadia.org/drepper/cpumemory.pdf">What Every Programmer Should Know About Memory</a></li>
+<li><a href="https://web.archive.org/web/20201108163119/http://www.rgoarchitects.com/Files/fallacies.pdf">Fallacies of Distributed Computing Explained</a> (webarchive)</li>
+<li><a href="https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing</a></li>
+<li><a href="https://arxiv.org/pdf/2003.12912.pdf">A Dataset of Dockerfiles</a></li>
+</ul>
+<p><br></p>
+<!--
+## Notes
+
+* [*Domain-driven design (DDD)*](http://dddcommunity.org/learning-ddd/what_is_ddd) is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts. Domain-driven design is not a technology or a methodology. DDD provides a structure of practices and terminology for making design decisions that focus and accelerate software projects dealing with complicated domains. Its premise is:
+    * Place the project's primary focus on the core domain and domain logic
+    * Base complex designs on a model
+    * Initiate a creative collaboration between technical and domain experts to iteratively cut ever closer to the conceptual heart of the problem
+
+* Any domain model of nontrivial complexity is a collection of smaller models, each with its own data and domain vocabulary. In the world of *domain-driven design*, the term **bounded context** denotes one such smaller model within the whole. So the complete domain model is really a collection of bounded contexts
+
+* Types of domain elements
+    * An **entity** it's uniquely identifiable, has an identity and might change attributes in the course of its entire life-time within the system - an entity has an identity that can't change
+    * A **value object** it's uniquely identifiable, is immutable and you can't change the contents without changing the object itself, after you create it - a value object has a value that can't change
+    * In a **service**, multiple domain entities interact according to specific business rules and deliver a specific functionality in the system
+
+* Lifecycle of a domain object
+    * **Creation**: how the object is created within the system
+    * **Participation in behaviors**: how the object is represented in memory when it interacts within the system
+    * **Persistence**: how the object is maintained in the persistent form
+
+* Patterns
+    * The **factory** lets you create different types of objects using the same API
+        * It keeps all creational code in one place
+        * It abstracts the process of creation of an entity from the caller
+    * An **aggregate** can consist of one or more entities, value objects and other primitive attributes. Besides ensuring the consistency of business rules, an aggregate within a bounded context is also often looked at as a *transaction boundary* in the model. *Aggregates are created by factories and represent the underlying entities in memory during the active phase of the objects' lifecycle*
+    * A **repository** gives the interface for parking an aggregate in a persistent form so that can be fetched back to an in-memory entity representation when needed. The persistent model of the aggregate may be entirely different from the in-memory aggregate representation and is mostly driven by the underlying storage data model
+
+* *The three types of elements participate in domain interactions and their lifecycles are controlled by the three patterns*. This interaction needs to reflect the underlying business semantics and must contain **vocabulary** from the problem domain modelled. Vocabulary it means the names of participating objects and the behaviors that are executed as part of the use cases. Having a consistent **ubiquitous language** has a lot to do with designing proper APIs of a model, which is known as *domain-specific language (DSL)*
+
+* *Latency* is defined as the time period that elapses between a request and a response. If is possible to bind the latency to an acceptable limit to users, you achieve *responsiveness*. And being responsive is the primary criterion of a model being *reactive*
+
+* Characteristics of a reactive model
+    * Responsive to user interaction
+    * Resilient i.e. responsive to failures
+    * Elastic i.e. responsive to varying load
+    * Message-driven i.e. to stay responsive and elastic, systems must be loosely coupled and minimize blocking by using asynchronous message passing
+
+* *Design for failure*. This is a core concept when developing large services that are comprised of many cooperating components. Those components will fail and they will fail frequently
+
+* One of the ways to make a system elastic is by reducing the coupling between the components of the model. Reactive models encourage loosely connected architectures that use asynchronous message boundaries as the means of nonblocking communications and components that interact using immutable messages without any sharing of mutable state to promote transparency of location, concurrency models and other paradigms which are cornerstone of functional programming
+
+* An event is a form of notification. *Domain events* are based on the action that they perform within the domain model and are immutable. Such domain models are called *self-tracing* models, because domain event logs make our models traceable at any point in time
+    * *Uniquely identifiable as a type* - for each event, you have a type in your model
+    * *Self-contained as a behavior* — Every domain event contains all information relevant to the change that just occurred in the system
+    * *Observable by consumers* - Events are meant to be consumed for further action by downstream components of your model
+    * *Time relevant* — A monotonicity of time is built into the stream of events
+
+---
+
+>
+
+<p>TODO acronyms</p>
+<ul>
+<li>commands vs events</li>
+<li>OLEP online event processing</li>
+<li>OLTP online transaction processing</li>
+<li>OLAP online analytical processing</li>
+<li>DDD</li>
+<li>CQRS</li>
+<li>Event Source</li>
+<li>Eventual Consistency</li>
+<li>CRDT</li>
+<li>CAP theorem</li>
+<li>two-phase commit</li>
+<li>circuit breaker pattern</li>
+<li>SAGA</li>
+<li>SLA service-level agreement</li>
+<li>ACID</li>
+<li>ACID 2.0<ul>
+<li><strong>Associative</strong> grouping doesn't matter <code>a+(b+c)=(a+b)+c</code></li>
+<li><strong>Commutative</strong> order doesn't matter <code>a+b=b+a</code></li>
+<li><strong>Idempotent</strong> duplication doesn't matter <code>a+a=a</code></li>
+</ul>
+</li>
+</ul>
+<p>--&gt;</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../operating-system/" class="btn btn-neutral float-right" title="Operating System">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../kubernetes/" class="btn btn-neutral" title="Kubernetes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../kubernetes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../operating-system/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Linux - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linux";
+    var mkdocs_page_input_path = "linux.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#useful-commands">Useful commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#diagnostic">Diagnostic</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#filesystem">Filesystem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#monitoring">Monitoring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#network">Network</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#applications">Applications</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shellterminal">Shell/Terminal</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blogs">Blogs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-resources">Other resources</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Linux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/linux.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="linux">Linux</h1>
+<p>Resources</p>
+<ul>
+<li><a href="https://amzn.to/2lHW1cB">How Linux Works</a> (2014)(2nd) by Brian Ward (Book)</li>
+<li><a href="https://nostarch.com/networkprotocols">Attacking Network Protocols</a> (2018) by James Forshaw (Book)</li>
+<li><a href="https://nostarch.com/packetanalysis3">Practical Packet Analysis</a> (2017)(3rd) by Chris Sanders (Book)</li>
+<li><a href="https://nostarch.com/tcpip.htm">The TCP/IP Guide</a> (2005) by Charles M. Kozierok</li>
+<li><a href="https://www.kernel.org/doc/Documentation">Kernel documentation</a></li>
+<li><a href="https://makelinux.github.io/kernel/map">Interactive map of Linux kernel</a></li>
+<li><a href="http://www.brendangregg.com/linuxperf.html">Linux Performance</a></li>
+</ul>
+<h3 id="useful-commands">Useful commands</h3>
+<pre><code class="bash"># create nested directories
+mkdir -p parent/child1/child2 &amp;&amp; cd $_
+
+# scroll file from bottom
+less +G /var/log/auth.log
+# follow also if doesn't exist
+tail -F /var/log/auth.log
+
+# find files
+find /etc -name '*shadow'
+
+# prints lines that match regexp
+# -i case insensitive
+# -v inverts the search
+# -c count lines
+grep -E '^root' /etc/passwd
+# password encryption
+grep password.*unix /etc/pam.d/*
+
+# sed = stream editor
+# example substitution
+echo -e &quot;a='1st' b='2nd' c='3rd'\na='4th' b='5th' c='6th'&quot; &gt; test.txt
+cat test.txt | sed -nE &quot;s/^.*a='([^']*).*c='([^']*).*$/\2\n\1/gp&quot; | sort -r | uniq
+# delete lines three through six
+sed 3,6d /etc/passwd
+
+# pick a single field out of an input stream
+ls -l | awk '{print $9}'
+# extract 2nd string
+echo &quot;aaa bbb ccc&quot; &gt; test.txt
+cat test.txt | awk '{printf(&quot;2nd: %s\n&quot;,$2)}'
+
+# pack archive
+tar cvf archive.tar file1 file2
+# table-of-content
+tar tvf archive.tar
+# unpack archive
+tar xvf archive.tar -C output
+# compress and pack archive
+tar zcvf archive.tar.gz /path/to/images/*.jpg
+# unpack compressed archive
+tar zxvf archive.tar.gz
+
+# pack archive
+zip -r backup.zip file-name directory-name
+# zip with password (prompt)
+zip -e backup.zip file-name
+# unpack jar
+unzip my-lib.jar -d /tmp/my-lib
+
+# count lines
+wc -l file
+
+# lowercase random uuid
+uuidgen | tr &quot;[:upper:]&quot; &quot;[:lower:]&quot;
+
+# number of bytes
+stat --printf=&quot;%s&quot; file
+
+# calculator
+echo 1+2 | bc
+# print number in binary base 2 format
+echo 'obase=2; 240' | bc
+# reverse-polish calculator
+echo '1 2 + p' | dc
+# evaluate expressions
+expr 1 + 2
+
+# unix timestamp
+date +%s
+# timestamp in microsecond
+date +%s%N
+
+# calendar
+cal -3
+
+# configure kernel parameters at runtime
+sysctl
+
+# test conditions ([)
+test a = a &amp;&amp; echo equal
+
+# create temporary file
+mktemp
+# X is a template
+mktemp /tmp/my-tmp.XXXXXX
+# signal handler to catch the signal that CTRL-C generates and remove the temporary files
+TMPFILE=$(mktemp /tmp/my-tmp.XXXXXX)
+trap &quot;rm -f $TMPFILE; exit 1&quot; INT
+
+# compare files
+diff FILE1 FILE2
+
+# here document
+DATE=$(date)
+cat &lt;&lt;EOF
+Date: $DATE
+line1
+line2
+EOF
+
+# strip full path and extension if specified e.g. mail
+basename /var/log/mail.log .log
+
+# image conversion
+giftopnm
+pnmtopng
+
+# when operating on huge number of files to avoid buffer issues
+# e.g. verify file's type
+# INSECURE find . -name '*.md' -print | xargs file
+# change the find output separator and the xargs argument delimiter from a newline to a NULL character
+# two dashes if there is a chance that any of the target files start with a single dash
+find . -name '*.md' -print0 | xargs -0 file --
+# supply a {} to substitute the filename and a literal ; to indicate the end of the command
+find . -name '*.md' -exec file {} \;
+
+# replaces current shell process with the program you name after exec system call
+# after you press CTRL-D or CTRL-C to terminate the cat program,
+# your window should disappear because its child process no longer exists
+exec cat
+
+# subshell example () e.g. path remains the same outside
+(PATH=/bad/invalid:$PATH; echo $PATH)
+# fast way to copy and preserve permissions
+tar cf - orig | (cd target; tar xvf -)
+
+# X Window System
+xwininfo
+xlsclients -l
+xev
+xinput --list
+dbus-monitor --system
+dbus-monitor --session
+
+# compile C program
+cc -o hello hello.c
+# list shared library (so)
+ldd /bin/bash
+
+# create hex dump
+xxd /usr/bin/bc
+
+# open binary
+vim /usr/bin/bc
+# (start) edit hex dump
+:%!xxd
+# (finish) edit hex dump
+:%!xxd -r
+
+# disassemble binary
+objdump -d /usr/bin/bc
+</code></pre>
+
+<p>Script templates</p>
+<pre><code class="bash"># shebang
+#!/bin/sh
+#!/bin/bash
+
+# unofficial bash strict mode
+set -euo pipefail
+IFS=$'\n\t'
+
+# run from any directory (no symlink allowed)
+CURRENT_PATH=$(cd &quot;$(dirname &quot;${BASH_SOURCE[0]}&quot;)&quot;; pwd -P)
+cd ${CURRENT_PATH}
+
+# import
+. imported_file.sh
+source imported_file.sh
+
+# read and store in a variable
+read MY_VAR
+echo $MY_VAR
+# read stdin
+read -p &quot;Are you sure? [y/n]&quot; -n 1 -r
+</code></pre>
+
+<h3 id="diagnostic">Diagnostic</h3>
+<pre><code class="bash"># sysfs info
+udevadm info --query=all --name=/dev/xvda
+# monitor kernel uevents
+udevadm monitor
+
+# view kernel's boot and runtime diagnostic messages
+dmesg | less
+
+# system logs paths configuration
+vim /etc/rsyslog.conf
+vim /etc/rsyslog.d/50-default.conf
+# test system logger
+logger -p mail.info mail-message
+tail -n 1 /var/log/syslog
+</code></pre>
+
+<h3 id="filesystem">Filesystem</h3>
+<pre><code class="bash"># copy data in blocks of a fixed size
+# /dev/zero is a continuous stream of zero bytes
+dd if=/dev/zero of=DUMP_FILE bs=1024 count=1
+
+# view partition table
+# use (g)parted only for partioning disk (supports MBR and GPT)
+sudo parted -l
+
+# create filesystem
+mkfs -t ext4 /dev/PARTITION_NAME
+ls -l /sbin/mkfs.*
+
+# list devices and corresponding filesystems UUID
+blkid
+# list attached filesystems
+mount
+# mount device on mount point
+mount -t ext4 /dev/PARTITION_NAME /MOUNT/POINT
+# mount filesystem by its UUID
+mount UUID=xxx-yyy-zzz /MOUNT/POINT
+# make changes permanent after reboot
+echo &quot;UUID=$(sudo blkid -s UUID -o value /dev/PARTITION_NAME)      /MOUNT/POINT   ext4    defaults,nofail        0       2&quot; | sudo tee -a /etc/fstab
+# mount all filesystems
+mount -a
+# unmount (detach) a filesystem
+umount /dev/PARTITION_NAME
+
+# view size and utilization of mounted filesystems
+df -h
+# disk usage
+du -sh /* | sort -g
+# disk size
+fdisk --list
+
+# check memory and swap size
+free -h
+
+# (1) create swap file (~1GB)
+dd if=/dev/zero of=/dev/SWAP_FILE bs=1024 count=1024000
+# (2) create swap file (2GB)
+fallocate -l 2G /dev/SWAP_FILE
+# change owner and permissions
+chown root:root /dev/SWAP_FILE
+chmod 0600 /dev/SWAP_FILE
+# put swap signature on partition
+mkswap /dev/SWAP_FILE
+# register space with the kernel
+swapon /dev/SWAP_FILE
+# make changes permanent after reboot
+echo &quot;/dev/SWAP_FILE    none    swap    sw    0   0&quot; | tee -a /etc/fstab
+# list swap partitions
+swapon --show
+
+# simple static server on port 8000
+python -m SimpleHTTPServer
+
+# copy directory to remote host
+scp -r directory remote_host:~/new-directory
+tar cBvf - directory | ssh remote_host tar xBvpf -
+rsync -az directory remote_host:~/new-
+# equivalent to /*
+# -nv dry run
+rsync -a directory/ remote_host:~/new-directory
+</code></pre>
+
+<h3 id="monitoring">Monitoring</h3>
+<pre><code class="bash"># list processes
+# m show threads
+ps aux
+
+# display current system status
+# Spacebar Updates the display immediately
+# M Sorts by current resident memory usage
+# T Sorts by total (cumulative) CPU usage
+# P Sorts by current CPU usage (the default)
+# u Displays only one user’s processes
+# f Selects different statistics to display
+# ? Displays a usage summary for all top commands
+top
+top -p PID1 PID2
+# alternatives
+htop
+atop
+
+# monitor system performance
+vmstat 2
+
+# list open files and the processes using them
+lsof | less
+lsof /dev
+
+# print all the system calls that a process makes
+strace cat /dev/null
+strace uptime
+strace -e trace=network,read,write bc
+# track shared library calls
+ltrace ls /
+
+# allows to set system-wide probes on special trace providers e.g. system calls
+dtrace
+
+# CPU usage
+/usr/bin/time ls
+
+# change process priority (-20 &lt; nice value &lt; +20)
+renice 20 PID
+
+# load average: for the past 1 minute, 5 minutes and 15 minutes
+uptime
+
+# check memory status
+free
+cat /proc/meminfo
+
+# check major/minor page faults
+/usr/bin/time cal &gt; /dev/null
+
+# show statistics for machine’s current uptime (install sysstat)
+iostat
+# show partition information
+iostat -p ALL
+
+# show I/O resources used by individual processes
+iotop
+
+# see the resource consumption of a process over time
+pidstat -p PID 1
+
+# reports CPU and IO stats
+iostat -mt 2
+
+# system resource statistics
+dstat
+</code></pre>
+
+<p>Resources</p>
+<ul>
+<li><a href="http://myaut.github.io/dtrace-stap-book">Dynamic Tracing with DTrace &amp; SystemTap</a></li>
+</ul>
+<h3 id="network">Network</h3>
+<pre><code class="bash"># active network interfaces
+ifconfig
+# enable/disable network interface
+ifconfig NETWORK_INTERFACE up
+ifconfig NETWORK_INTERFACE down
+
+# show routing table
+# Destination: network prefix e.g. 0.0.0.0/0 matches every address (default route)
+# flag U: up
+# flag G: gateway
+# convention: the router is usually at address 1 of the subnet
+route -n
+
+# ICMP echo request
+# icmp_req: verify order and no gap
+# time: round-trip time
+ping -c 3 8.8.8.8
+
+# show path packets take to a remote host
+traceroute 8.8.8.8
+
+# (DNS) find the IP address behind a domain name
+host www.github.com
+
+# network manager
+nmcli
+nmcli device show
+# returns zero as its exit code if network is up
+nm-online
+# network details e.g. ssid/password
+cat /etc/NetworkManager/system-connections/NETWORK_NAME
+
+# override hostname lookups
+vim /etc/hosts
+
+# traditional configuration file for DNS servers
+cat /etc/resolv.conf
+# DNS settings
+cat /etc/nsswitch.conf
+
+# static IP
+/etc/network/interfaces
+
+# list of assigned port numbers
+/etc/services
+
+# -t Prints TCP port information
+# -u Prints UDP port information
+# -l Prints listening ports
+# -a Prints every active port
+# -n Disables name lookups (speeds things up; also useful if DNS isn’t working)
+# list open TCP connections
+netstat -nt
+# print listening TCP ports
+netstat -ntl
+# list running services
+netstat -plunt
+
+# processes listening on open TCP ports
+lsof -i -n -P | grep TCP
+lsof -iTCP -sTCP:LISTEN
+# process running on specific port
+lsof -n -i:PORT_NUMBER
+# list unix domain socket
+lsof -U
+
+# well-known ports
+cat /etc/services
+
+# release IP with DHCP
+dhclient -r NETWORK_INTERFACE_NAME
+# renew IP
+dhclient -v NETWORK_INTERFACE_NAME
+
+# public IP via external services
+http ident.me
+http ipv4.ident.me
+http ipv6.ident.me
+http icanhazip.com
+http ipv4.icanhazip.com
+http ipv6.icanhazip.com
+
+# Linux kernel does not automatically move packets from one subnet to another
+# enable temporary IP forwarding in the router's kernel
+sysctl net.ipv4.conf.all.forwarding=1
+sysctl net.ipv6.conf.all.forwarding=1
+# on macOS
+sysctl -w net.ipv4.ip_forward
+# change permanent configs upon reboot
+vim /etc/sysctl.conf
+
+# example NAT (IP masquerading)
+sysctl -w net.ipv4.ip_forward
+iptables -P FORWARD DROP
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+
+# firewalling on individual machines is sometimes called IP filtering
+# firewall rules in series or chain make up a table
+# INPUT chain: protect individual machine
+# FORWARD chain: protect a network of machines
+# show iptable configuration
+iptables -L
+# block IP
+iptables -A INPUT -s BLOCKED_IP -j DROP
+# block IP/port
+iptables -A INPUT -s BLOCKED_IP/CIDR -p tcp --destination-port BLOCKED_PORT -j DROP
+# allow IP (insert at the bottom)
+iptables -A INPUT -s ALLOWED_IP -j ACCEPT
+# allow IP (insert at the top)
+iptables -I INPUT -s ALLOWED_IP -j ACCEPT
+# allow IP (specify order)
+iptables -I INPUT RULE_NUMBER -s ALLOWED_IP -j ACCEPT
+# delete rule #number in chain
+iptables -D INPUT RULE_NUMBER
+# flush any existing NAT rules
+iptables -t nat -F
+# source NAT (SNAT) or masquerading: changes the IP source address information
+iptables -t nat -A POSTROUTING -o INTNAME -j SNAT --to INTIP
+iptables -t nat -A POSTROUTING -o INTNAME -j MASQUERADE
+# destination NAT (DNAT): changes the destination address
+iptables -t nat -A PREROUTING -d ORIGIP -j DNAT --to-destination NEWIP
+iptables -t nat -A PREROUTING -p PROTO -d ORIGIP --dport ORIGPORT -j DNAT --to-destination NEWIP:NEWPORT
+
+# show ARP kernel cache
+arp -n
+
+# list wireless network
+iw dev NETWORK_INTERFACE scan
+# show details of connected network
+iw dev NETWORK_INTERFACE link
+
+# manage both authentication and encryption for a wireless network interface
+wpa_supplicant
+</code></pre>
+
+<p>Active network traffic capture</p>
+<ul>
+<li>Port-Forwarding proxy</li>
+<li>SOCKS proxy (preferred)</li>
+</ul>
+<pre><code class="bash"># specify a SOCKS proxy for any TCP connection
+java –DsocksProxyHost=localhost –DsocksProxyPort=1080 XXX
+</code></pre>
+
+<ul>
+<li>HTTP forwarding proxy (client side)</li>
+<li>HTTP reverse proxy (server side)</li>
+</ul>
+<p>Resources</p>
+<ul>
+<li><a href="https://gist.github.com/niqdev/1ab727c3c01de2993cad070c04ba8b47">Subnetting</a></li>
+<li><a href="https://www.monkey.org/~dugsong/dsniff">dsniff</a></li>
+<li><a href="https://netfilter.org/index.html">Netfilter</a></li>
+<li><a href="https://www.inet.no/dante">Dante - A free SOCKS server</a></li>
+<li><a href="https://securesocketfunneling.github.io/ssf">Secure Socket Funneling</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands">Iptables Essentials</a></li>
+<li><a href="https://unixia.wordpress.com/2015/12/16/iptables-vs-nftables">iptables vs nftables</a></li>
+</ul>
+<h3 id="applications">Applications</h3>
+<pre><code class="bash"># old insecure
+telnet www.wikipedia.org 80
+# press enter twice after
+GET / HTTP/1.0
+
+# details about communication
+curl --trace-ascii trace_file https://www.wikipedia.org &gt; /dev/null
+vim trace_file
+
+# sshd server configs
+vim /etc/ssh/sshd_config
+# generate key pair
+ssh-keygen -t rsa -b 4096 -C KEY_NAME -N &quot;PASSPHRASE&quot; -f KEY_PATH
+
+# list network interfaces
+tcpdump -D
+# sniff hex and ascii (-A) by interface/host/port
+tcpdump -XX -n -i INTERFACE_NAME tcp and host IP_ADDRESS and port PORT_NUMBER
+
+# Swiss Army knife
+# banner grabbing
+cat &lt;(echo HEAD / HTTP/1.0) - | netcat IP_ADDRESS PORT_NUMBER
+# install traditional (with -e option)
+apt-get install netcat -y
+# choose /bin/nc.traditional
+update-alternatives --config nc
+# listen on server
+netcat -l -p 6996 -e /bin/bash
+# run client
+cat &lt;(echo ls -la) - | netcat IP_ADDRESS 6996
+
+# simplest fuzz test
+cat /dev/urandom | nc IP_ADDRESS PORT_NUMBER
+
+# scan open ports
+nmap -Pn IP_ADDRESS
+
+# other
+# * ssh/scp/sftp/rsync
+# * curl/wget
+
+# system calls
+man recv
+man send
+
+# DHCP is designed to run on IP networks to distribute network configuration
+#   information to nodes automatically:
+#   IP address, default gateway, routing tables, default DNS servers, etc...
+# ARP finds the Ethernet address for a given IP address
+# * DHCP Spoofing
+# * ARP Poisoning
+ettercap -G
+
+# cli debuggers
+# CDB on Windows, GDB on Linux, and LLDB on macOS
+</code></pre>
+
+<p>Resources</p>
+<ul>
+<li><a href="https://www.wireshark.org">Wireshark</a></li>
+<li><a href="https://www.tcpdump.org">tcpdump</a></li>
+<li><a href="https://hackertarget.com/tshark-tutorial-and-filter-examples">tshark</a></li>
+<li><a href="https://nmap.org">Nmap</a></li>
+<li><a href="https://www.ettercap-project.org">Ettercap</a></li>
+<li><a href="http://www.iana.org/assignments/port-numbers">Service Name and Transport Protocol Port Number Registry</a></li>
+<li>TODO add more <a href="https://1modm.github.io/documentation/tcpdump.html">examples</a></li>
+</ul>
+<h3 id="shellterminal">Shell/Terminal</h3>
+<ul>
+<li><a href="https://fishshell.com">Fish</a></li>
+<li><a href="http://www.oilshell.org">Oil</a></li>
+<li><a href="https://zellij.dev">Zellij</a></li>
+</ul>
+<h3 id="blogs">Blogs</h3>
+<ul>
+<li><a href="https://www.dedoimedo.com/computers/linux_commands.html">Highly useful Linux commands &amp; configurations</a></li>
+</ul>
+<h3 id="other-resources">Other resources</h3>
+<ul>
+<li><a href="https://openwrt.org">OpenWrt</a></li>
+<li><a href="https://www.busybox.net">BusyBox</a></li>
+<li><a href="https://tools.ietf.org/html/rfc5280">X.509 RFC</a></li>
+<li><a href="https://www.madboa.com/geek/openssl">OpenSSL Command-Line HOWTO</a></li>
+<li><a href="https://www.dwheeler.com/program-library">Program Library HOWTO</a></li>
+<li><a href="http://www.shorewall.net">Shorewall</a></li>
+<li><a href="http://www.postfix.org">Postfix</a></li>
+<li><a href="https://httpie.org">HTTPie</a></li>
+<li><a href="https://stedolan.github.io/jq">jq</a></li>
+<li><a href="https://lynx.browser.org">Lynx</a></li>
+<li><a href="https://www.samba.org">Samba</a></li>
+</ul>
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docker/" class="btn btn-neutral float-right" title="Docker">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="../docker/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

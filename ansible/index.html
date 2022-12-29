@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Ansible - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ansible";
+    var mkdocs_page_input_path = "ansible.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Ansible</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ad-hoc-commands">Ad-Hoc Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#playbooks">Playbooks</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Ansible</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/ansible.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ansible">Ansible</h1>
+<blockquote>
+<p><strong>Ansible</strong> is an open source automation platform that can help with config management, deployment and task automation</p>
+</blockquote>
+<p>Resources</p>
+<ul>
+<li>
+<p><a href="http://docs.ansible.com/ansible/latest/index.html">Documentation</a></p>
+</li>
+<li>
+<p><a href="https://amzn.to/2IDtDSd">Ansible - Up and Running</a> (2017) by Lorin Hochstein and Rene Moser (Book)</p>
+</li>
+<li>
+<p><a href="https://serversforhackers.com/c/an-ansible2-tutorial">Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://gist.github.com/marktheunissen/2979474">Playbook example</a></p>
+</li>
+<li>
+<p><a href="https://spacelift.io/blog/ansible-tutorial">Ansible Tutorial for Beginners: Ultimate Playbook &amp; Examples</a></p>
+</li>
+</ul>
+<p>The following guide explains how to provision Ansible locally and play with it. Checkout the <a href="https://github.com/niqdev/devops/blob/master/ansible/Vagrantfile">Vagrantfile</a> and the Vagrant <a href="toolbox/#vagrant">guide</a> for more details.</p>
+<h3 id="setup">Setup</h3>
+<p>Requirements</p>
+<ul>
+<li><a href="https://www.vagrantup.com">Vagrant 2</a></li>
+<li><a href="https://www.virtualbox.org">VirtualBox 5</a></li>
+</ul>
+<p>Directory structure</p>
+<pre><code class="bash">tree -a ansible/
+ansible/
+├── .share
+│   ├── node-1
+│   ├── node-2
+│   ├── node-3
+│   └── ssh
+│       ├── ansible_rsa
+│       └── ansible_rsa.pub
+├── Vagrantfile
+├── data
+│   ├── group_vars
+│   ├── host_vars
+│   ├── hosts
+│   ├── roles
+│   │   ├── common
+│   │   │   ├── defaults
+│   │   │   ├── files
+│   │   │   ├── handlers
+│   │   │   ├── meta
+│   │   │   ├── tasks
+│   │   │   │   ├── main.yml
+│   │   │   │   ├── motd.yml
+│   │   │   │   ├── oracle-jdk.yml
+│   │   │   │   └── package.yml
+│   │   │   ├── templates
+│   │   │   │   └── motd
+│   │   │   └── vars
+│   │   │       └── main.yml
+│   │   └── docker
+│   │       ├── meta
+│   │       │   └── main.yml
+│   │       └── tasks
+│   │           └── main.yml
+│   └── site.yml
+├── destroy_ansible.sh
+├── setup_ansible.sh
+└── setup_share.sh
+</code></pre>
+
+<p>The first time <em>only</em>, you have to setup the shared folders and generate the ssh key needed by ansible to access all nodes executing</p>
+<pre><code class="bash">./setup_share.sh
+</code></pre>
+
+<p>Start the boxes with</p>
+<pre><code class="bash">vagrant up
+</code></pre>
+
+<p><em>The first time it could take a while</em></p>
+<p>Verify status of the boxes with</p>
+<pre><code class="bash">vagrant status
+</code></pre>
+
+<p>Verify access to the boxes with</p>
+<pre><code class="bash">vagrant ssh ansible
+vagrant ssh node-1
+</code></pre>
+
+<p>From inside the boxes you should be able to communicate with the others</p>
+<pre><code class="bash">ping ansible.local
+ping ip-192-168-100-11.local
+ping 192.168.100.12
+</code></pre>
+
+<p>The following paths are shared with the boxes</p>
+<ul>
+<li><code>/vagrant</code> provision-tool</li>
+<li><code>/local</code> host $HOME</li>
+<li><code>/ansible</code> data <em>(ansible only)</em></li>
+<li><code>/data</code> .share <em>(node only)</em></li>
+</ul>
+<p>Cleanup</p>
+<pre><code class="bash">./destroy_ansible.sh
+</code></pre>
+
+<h2 id="ad-hoc-commands">Ad-Hoc Commands</h2>
+<p>Access the ansible box with</p>
+<pre><code class="bash">vagrant ssh ansible
+</code></pre>
+
+<p>Below a list of examples</p>
+<pre><code class="bash">
+# ping all nodes (default inventory /etc/ansible/hosts)
+ansible all -m ping
+ansible ansible -m ping
+ansible cluster -m ping
+
+# ping all nodes (specify inventory)
+ansible all -i &quot;/vagrant/data/hosts&quot; -m ping
+
+# gathering facts
+ansible all -m setup
+ansible ansible -m setup
+
+# specify host and user
+ansible ip-192-168-100-11.local -m ping -u vagrant
+
+# execute command
+ansible all -a &quot;/bin/echo hello&quot;
+ansible all -a &quot;uptime&quot;
+ansible all -a &quot;/bin/date&quot;
+# do NOT reboot vagrant through ansible (use vagrant reload)
+ansible cluster -a &quot;/sbin/reboot&quot; --become
+
+# shell module
+ansible all -m shell -a &quot;pwd&quot;
+# be carefull to quotes
+ansible all -m shell -a 'echo $HOME'
+
+# update &amp;&amp; upgrade
+ansible all -m apt -a &quot;update_cache=yes upgrade=dist&quot; --become
+# restart after upgrade
+vagrant reload
+# install package
+ansible all -m apt -a &quot;name=tree state=present&quot; --become
+</code></pre>
+
+<h2 id="playbooks">Playbooks</h2>
+<p>Access the ansible box with</p>
+<pre><code class="bash">vagrant ssh ansible
+</code></pre>
+
+<p>Below a list of examples</p>
+<pre><code class="bash"># test uptime on all node
+ansible-playbook /ansible/site.yml --tags=test --verbose
+
+# update &amp; upgrade only on cluster nodes
+ansible-playbook /ansible/site.yml -t package --skip-tags=oracle-jdk --verbose
+
+# install oracle-jdk only on cluster nodes
+ansible-playbook /ansible/site.yml -t oracle-jdk
+
+# install all packages on cluster nodes
+ansible-playbook /ansible/site.yml -t package --verbose
+
+# run common task on cluster node
+ansible-playbook /ansible/site.yml -t common
+
+# setup docker
+ansible-playbook /ansible/site.yml -t docker
+# test docker
+vagrant ssh node-1
+sudo -i -u docker
+docker ps -a
+
+# custom banner
+ansible-playbook /ansible/site.yml -t motd
+
+# setup all infrastructure at once
+ansible-playbook /ansible/site.yml
+
+# dry run
+ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
+</code></pre>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cassandra/" class="btn btn-neutral float-right" title="Cassandra">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../docker/" class="btn btn-neutral" title="Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../docker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cassandra/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

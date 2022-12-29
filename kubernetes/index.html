@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Kubernetes - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Kubernetes";
+    var mkdocs_page_input_path = "kubernetes.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Kubernetes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#helm">Helm</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Kubernetes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/kubernetes.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="kubernetes">Kubernetes</h1>
+<blockquote>
+<p><strong>Kubernetes</strong> is a system for automating deployment, scaling, and management of containerized applications</p>
+</blockquote>
+<p>Resources</p>
+<ul>
+<li>
+<p><a href="https://kubernetes.io/docs/home">Documentation</a></p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/blog">Offical Blog</a></p>
+</li>
+<li>
+<p><a href="https://amzn.to/2yXEGWx">Kubernetes in Action</a> (2017) by Marko Lukša (Book)</p>
+</li>
+<li>
+<p>YouTube channels: <a href="https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg">Kubernetes</a> and <a href="https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA">Cloud Native Computing Foundation</a></p>
+</li>
+</ul>
+<p>Blogs</p>
+<ul>
+<li><a href="https://blog.softwaremill.com/running-akka-cluster-on-kubernetes-e4cd2913e951">Running akka-cluster on Kubernetes</a></li>
+<li><a href="http://www.doxsey.net/blog/kubernetes--the-surprisingly-affordable-platform-for-personal-projects">Kubernetes: The Surprisingly Affordable Platform for Personal Projects</a></li>
+<li><a href="https://opencredo.com/kubernetes-aws-terraform-ansible-1">Kubernetes from scratch to AWS with Terraform and Ansible</a></li>
+<li><a href="https://www.weave.works/blog/prometheus-kubernetes-perfect-match">Prometheus and Kubernetes: A Perfect Match</a></li>
+<li><a href="https://speakerdeck.com/govargo/inside-of-kubernetes-controller">Inside of Kubernetes Controller</a></li>
+<li><a href="https://iximiuz.com/en/posts/kubernetes-operator-pattern">Exploring Kubernetes Operator Pattern</a></li>
+<li><a href="https://erickhun.com/posts/kubernetes-faster-services-no-cpu-limits">Kubernetes: Make your services faster by removing CPU limits</a></li>
+<li><a href="https://www.slideshare.net/try_except_/optimizing-kubernetes-resource-requestslimits-for-costefficiency-and-latency-highload">Optimizing Kubernetes Resource Requests/Limits for Cost-Efficiency and Latency</a></li>
+<li><a href="https://medium.com/google-cloud/quality-of-service-class-qos-in-kubernetes-bb76a89eb2c6">What are Quality of Service (QoS) Classes in Kubernetes</a></li>
+<li><a href="https://medium.com/kubecost/detect-overspending-by-measuring-idle-kubernetes-resources-d5d97eb205e0">How to detect Kubernetes overspending by measuring idle costs</a></li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>At the hardware level, a Kubernetes cluster node can be</p>
+<ul>
+<li>a <em>master</em> node, which hosts the <strong>Kubernetes Control Plane</strong> that manages the state of the cluster<ul>
+<li>The <strong>Kubernetes API Server</strong> to communicate with the cluster and the only component that talks to etcd directly</li>
+<li>The <strong>Scheduler</strong>, which schedules apps (assigns a worker node to each deployable component)</li>
+<li>The <strong>Controller Manager</strong>, which performs cluster-level functions, such as replicating components, keeping track of worker nodes handling node failures, and so on</li>
+<li><strong>etcd</strong>, a fast, distributed, and consistent key-value store which is the only place where cluster state and metadata are stored</li>
+</ul>
+</li>
+<li>a <em>worker</em> nodes that run containerized applications<ul>
+<li>Docker, rkt, or another <strong>container runtime</strong>, which runs containers</li>
+<li>The <strong>Kubelet</strong>, which talks to the API server and manages containers on its node</li>
+<li>The <strong>Kubernetes Service Proxy (kube-proxy)</strong>, which load-balances network traffic between application components</li>
+</ul>
+</li>
+<li>some of the add-on components are<ul>
+<li>Kubernetes DNS server</li>
+<li>Dashboard</li>
+<li>Ingress controller</li>
+<li>Heapster</li>
+<li>Container Network Interface network plugin</li>
+</ul>
+</li>
+</ul>
+<p><img alt="kubernetes-architecture" src="../img/kubernetes-architecture.png" /></p>
+<p><img alt="kubernetes-cluster" src="../img/kubernetes-cluster.png" /></p>
+<ul>
+<li>To run an application in Kubernetes, it needs to be packaged into one or more container images, those images need to be pushed to an image registry, and then a description of the app posted to the Kubernetes API Server</li>
+<li>When the API server processes the app's description, the Scheduler schedules (pods are run immediately) the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment</li>
+<li>The Kubelet on those nodes then instructs the Container Runtime (Docker, for example) to pull the required container images and run the containers</li>
+<li>Once the application is running, Kubernetes continuously makes sure that the deployed state of the application always matches the description you provided</li>
+<li>To allow clients to easily find containers that provide a specific service, it's possible to tell Kubernetes which containers provide the same service and Kubernetes will expose all of them at a single static IP address and expose that address to all applications running in the cluster</li>
+<li>User interacts with the cluster through the <code>kubectl</code> command line client, which issues REST requests to the Kubernetes API server running on the master node</li>
+</ul>
+<p><img alt="kubernetes-run" src="../img/kubernetes-run.png" /></p>
+<ul>
+<li>
+<p>One of the most fundamental Kubernetes principles is that instead of telling Kubernetes exactly what actions it should perform, you're only <em>declaratively changing the desired state</em> of the system and letting Kubernetes examine the current actual state and <em>reconcile</em> it with the desired state</p>
+</li>
+<li>
+<p><em>Resource</em> definition example</p>
+</li>
+</ul>
+<pre><code>apiVersion: v1
+# type of resource
+kind: Pod
+# includes the name, namespace, labels, and other information about the pod
+metadata:
+  ...
+# contains the actual description of the pod's contents,
+# such as the pod's containers, volumes, and other data
+spec:
+  ...
+# contains the current information about the running pod,
+# such as what condition the pod is in, the description and status of each container,
+# and the pod's internal IP and other basic info
+status:
+  ...
+</code></pre>
+
+<ul>
+<li>A <strong>label</strong> is an arbitrary key-value pair you attach to a resource, which is then utilized when selecting resources using <em>label selectors</em> and a resource can have more than one label</li>
+<li><strong>Annotations</strong> are key-value pairs like labels, but they aren't meant to hold identifying information and can hold up to 256 KB</li>
+<li>Using multiple <strong>namespaces</strong> allows to split complex systems with numerous components into smaller distinct groups and resource names only need to be unique within a namespace</li>
+<li>A <strong>pod</strong> is a group of one or more tightly related containers that will always run together on the same worker node and in the same Linux namespace(s). Each pod is like a separate logical machine with its own IP, hostname, processes, and so on, running a single application</li>
+<li>A <strong>ReplicationController</strong> is a resource that ensures its pods are always kept running and an exact number of pods always matches its label selector, even if a node disappears. It's made by<ul>
+<li>a <em>label selector</em>, which determines what pods are in the ReplicationController's scope</li>
+<li>a <em>replica count</em>, which specifies the desired number of pods that should be running</li>
+<li>a <em>pod template</em>, which is used when creating new pod replicas</li>
+</ul>
+</li>
+<li>A <strong>ReplicaSet</strong> behaves exactly like a ReplicationController (old), but it has more expressive pod selectors</li>
+<li>A <strong>DaemonSet</strong> is mostly for specific case like infrastructure-related pods that perform system-level operations in which a pod must run on each and every node in the cluster and each node needs to run exactly one instance of the pod, for example log collector and resource monitor</li>
+<li>A <strong>Job</strong> resource allows to run a pod whose container isn't restarted when the process running inside finishes successfully. A cron job in Kubernetes is configured by creating a <strong>CronJob</strong> resource</li>
+<li>A <strong>Service</strong> represents a static location for a group of one or more pods that all provide the same service. Requests coming to the IP and port of the service will be forwarded/load-balanced to the IP and port of one of the pods belonging to the service at that moment<ul>
+<li><em>ExternalName</em> type, a service that serves as an alias for an external service</li>
+<li><em>NodePort</em> type, each cluster node opens a port on the node itself and redirects traffic received on that port to the underlying service</li>
+<li><em>LoadBalancer</em> type (extension of NodePort), makes the service accessible through a dedicated load balancer which usually is  supported and automatically provisioned by the cloud infrastructure</li>
+</ul>
+</li>
+<li>A <em>headless service</em> still provides load balancing across pods, but through the DNS round-robin mechanism instead of through the service proxy, because DNS returns the pods' IPs, clients connect directly to the pods, instead of through the service proxy. Setting the <em>clusterIP</em> field in a service spec to <em>None</em> makes the service headless</li>
+<li>An <strong>Endpoints</strong> resource is a list of IP addresses and ports exposing a service. The Endpoints object needs to have the same name as the service and contain the list of target IP addresses and ports for the service</li>
+<li>An <strong>Ingress</strong> operates at the application layer of the network stack (HTTP) and can provide features such as cookie-based session affinity. LoadBalancer service requires its own load balancer with its own public IP address, whereas an Ingress only requires one</li>
+<li>The Kubelet on the node hosting the pod can check if a container is still alive through <strong>liveness probes</strong> using <em>httpGet</em>, <em>tcpSocket</em> or <em>exec</em>. Exit code is a sum of <code>128 + N</code> e.g. <code>137 = 128 + 9</code> (SIGKILL) or <code>143 = 128 + 15</code> (SIGTERM). Always remember to set an initial delay <em>initialDelaySeconds</em></li>
+<li>The <strong>readiness probes</strong> is invoked periodically and determines whether the specific pod should receive client requests or not. Liveness probes keep pods healthy by killing off unhealthy containers and replacing them with new, healthy ones, whereas readiness probes make sure that only pods that are ready to serve requests receive them and this is mostly necessary during container start up</li>
+<li>A <strong>volume</strong> is a component of a pod and not a standalone object, it cannot be created or deleted on its own. A volume is available to all containers in the pod, but it must be mounted in each container that needs to access it<ul>
+<li><em>emptyDir</em>, a simple empty directory used for storing transient data</li>
+<li><em>hostPath</em>, used for mounting directories from the worker node's filesystem into the pod</li>
+<li><em>gitRepo</em>, a volume initialized by checking out the contents of a Git repository</li>
+<li><em>nfs</em>, an NFS share mounted into the pod</li>
+<li><em>gcePersistentDisk</em> (Google Compute Engine Persistent Disk), <em>awsElasticBlockStore</em> (Amazon Web Services Elastic Block Store Volume), <em>azureDisk</em> (Microsoft Azure Disk Volume), used for mounting cloud provider-specific storage</li>
+<li><em>cinder, cephfs, iscsi, flocker, glusterfs, quobyte, rbd, flexVolume, vsphereVolume, photonPersistentDisk, scaleIO</em>, used for mounting other types of network storage</li>
+<li><em>configMap, secret, downwardAPI</em>, a special types of volumes used to expose certain Kubernetes resources and cluster information to the pod</li>
+<li><em>persistentVolumeClaim</em>, a way to use a pre- or dynamically provisioned persistent storage</li>
+</ul>
+</li>
+</ul>
+<p><img alt="kubernetes-volume" src="../img/kubernetes-volume.png" /></p>
+<ul>
+<li>An app can be configured by<ul>
+<li>passing command-line arguments to containers with <code>command</code> and <code>args</code></li>
+<li>setting custom environment variables for each container of a pod</li>
+<li>mounting configuration files into containers through a special type of volume</li>
+</ul>
+</li>
+<li>The contents of a <strong>ConfigMap</strong> are passed to containers as either environment variables or as files in a volume while on the nodes</li>
+<li><strong>Secrets</strong> are always stored in memory and never written to physical storage (maximum size of a Secret is limited to 1MB)</li>
+<li>The <strong>Downward API</strong> enables you to expose the pod's own metadata to the processes running inside that pod (it isn't a REST endpoint)</li>
+</ul>
+<p><img alt="kubernetes-container-api" src="../img/kubernetes-container-api.png" /></p>
+<ul>
+<li>Rolling update means replace pods step by step slowly scaling down the previous version and scaling up the new one</li>
+<li>A <strong>Deployment</strong> is a higher-level resource meant for deploying applications and updating them declaratively, instead of doing it through a ReplicationController or a ReplicaSet, which are both considered lower-level concepts. A Deployment doesn't manage pods directly, instead it creates a new ReplicaSet which is scaled up slowly, while the previous ReplicaSet is scaled down to zero. See also <code>minReadySeconds</code>, <code>maxSurge</code> and <code>maxUnavailable</code> properties</li>
+<li>A <strong>StatefulSet</strong> makes sure pods are rescheduled in such a way that they retain their identity and state. StatefulSets were initially called PetSets, that name comes from the <a href="https://news.ycombinator.com/item?id=7311704">pets vs. cattle analogy</a>. Each pod created by a StatefulSet is assigned an ordinal index (zero-based), which is then used to derive the pod's name and hostname, and to attach stable storage to the pod.</li>
+<li>A StatefulSet requires to create a corresponding governing headless Service (<code>clusterIP=None</code>) that's used to provide the actual network identity to each pod, in this case each pod gets its own DNS entry. The new pod isn't necessarily scheduled to the same node. Scaling the StatefulSet creates a new pod instance with the next unused ordinal index. Scaling down a StatefulSet always removes the instances with the highest ordinal index first. StatefulSets don't delete PersistentVolumeClaims when scaling down and they reattach them when scaling back up</li>
+<li>Clients watch for changes by opening an HTTP connection to the API server. Through this connection, the client will then receive a stream of modifications to the watched objects</li>
+</ul>
+<p><img alt="kubernetes-client" src="../img/kubernetes-client.png" /></p>
+<ul>
+<li>The <strong>Scheduler</strong> waits for newly created pods through the API server's watch mechanism and assign a node to each new pod that doesn't already have the node set. The Scheduler doesn't instruct the selected node (or the Kubelet running on that node) to run the pod. All the Scheduler does is update the pod definition through the API server. The API server then notifies the Kubelet that the pod has been scheduled. As soon as the Kubelet on the target node sees the pod has been scheduled to its node, it creates and runs the pod's containers</li>
+<li>The single <strong>Controller Manager</strong> process currently combines a multitude of controllers performing various reconciliation tasks<ul>
+<li>Replication Manager (a controller for ReplicationController resources)</li>
+<li>ReplicaSet, DaemonSet, and Job controllers</li>
+<li>Deployment controller</li>
+<li>StatefulSet controller</li>
+<li>Node controller</li>
+<li>Service controller</li>
+<li>Endpoints controller</li>
+<li>Namespace controller</li>
+<li>PersistentVolume controller</li>
+<li>Others</li>
+</ul>
+</li>
+<li>Controllers do many different things, but they all watch the API server for changes to resources and perform operations for each change. In general, controllers run a reconciliation loop, which reconciles the actual state with the desired state (specified in the resource's <code>spec</code> section) and writes the new actual state to the resource's <code>status</code> section</li>
+<li>The <strong>Kubelet</strong> is the component responsible for everything running on a worker node. Its initial job is to register the node it's running on by creating a Node resource in the API server. Then it needs to continuously monitor the API server for Pods that have been scheduled to the node, and start the pod's containers. It does this by telling the configured container runtime (i.e. Docker) to run a container from a specific container image. The Kubelet then constantly monitors running containers and reports their status, events, and resource consumption to the API server. The Kubelet is also the component that runs the container liveness probes, restarting containers when the probes fail. Lastly, it terminates containers when their Pod is deleted from the API server and notifies the server that the pod has terminated</li>
+<li>Every worker node also runs the <strong>kube-proxy</strong> (Service Proxy), whose purpose is to make sure clients can connect to the services you define through the Kubernetes API and performs load balancing across those pods. The current, implementation only uses <em>iptables</em> rules to redirect packets to a randomly selected backend pod without passing them through an actual proxy server</li>
+</ul>
+<p><img alt="kubernetes-deployment" src="../img/kubernetes-deployment.png" /></p>
+<ul>
+<li>Every pod is associated with a <code>ServiceAccount</code>, which represents the identity of the app running in the pod. The token file <code>/var/run/secrets/kubernetes.io/serviceaccount/token</code>, which is mounted into each container's filesystem through a secret volume, holds the ServiceAccount's authentication token used to connect to the API server</li>
+<li>RBAC (role-based access control) plugin prevents unauthorized users from viewing or modifying the cluster state. Roles are managed by <code>Roles</code>, <code>ClusterRoles</code>, <code>RoleBindings</code> and <code>ClusterRoleBindings</code> resources. Cluster level resources are not namespaced. <em>Roles</em> define what can be done, while <em>bindings</em> define who can do it</li>
+</ul>
+<p><img alt="kubernetes-rbac" src="../img/kubernetes-rbac.png" /></p>
+<h2 id="setup">Setup</h2>
+<p>Requirements</p>
+<ul>
+<li><a href="https://github.com/kubernetes/minikube">Minikube</a></li>
+<li><a href="https://www.virtualbox.org">VirtualBox</a></li>
+</ul>
+<p>Local cluster</p>
+<pre><code class="bash"># verify installation
+minikube version
+
+# lifecycle
+minikube start --vm-driver=virtualbox
+minikube stop
+minikube delete
+
+# dashboard
+export NO_PROXY=localhost,127.0.0.1,$(minikube ip)
+minikube dashboard
+
+# access
+minikube ssh
+docker ps -a
+
+# reuse the minikube's built-in docker daemon
+eval $(minikube docker-env)
+
+# access NodePort services
+minikube service &lt;SERVICE_NAME&gt; [-n &lt;NAMESPACE&gt;]
+
+# list addons
+minikube addons list
+
+# enable addon
+minikube addons enable &lt;ADDON_NAME&gt;
+
+# (?) swagger
+minikube start --extra-config=apiserver.Features.EnableSwaggerUI=true
+kubectl proxy
+open http://localhost:8080/swagger-ui
+</code></pre>
+
+<p>Basic</p>
+<pre><code class="bash"># verify installation
+kubectl version
+
+# cluster info
+kubectl cluster-info
+kubectl get nodes
+kubectl describe nodes
+kubectl config view
+
+# health status of each control plane component
+kubectl get componentstatuses
+
+# namespace
+kubectl create namespace &lt;NAMESPACE_NAME&gt;
+kubectl get namespaces
+kubectl config view | grep namespace
+kubectl delete namespace &lt;NAMESPACE_NAME&gt;
+
+# current namespace
+kubectl config current-context
+
+# switch namespace
+kubectl config set-context $(kubectl config current-context) --namespace=&lt;NAMESPACE_NAME&gt;
+
+# create/update resources from file
+kubectl create -f &lt;FILE_NAME&gt;.yaml
+kubectl apply -f &lt;FILE_NAME&gt;.yaml
+
+# explain fields
+kubectl explain pod
+kubectl explain service.spec
+
+# edit resource (vim)
+kubectl edit pod &lt;POD_NAME&gt;
+
+# verbosity
+kubectl get pods --v 6
+
+# access etcd on minikube
+minikube ssh
+docker run \
+  --rm \
+  -p 12379:2379 \
+  -p 12380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-v3.3.10 \
+  gcr.io/etcd-development/etcd:v3.3.10 \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:12379 \
+  --advertise-client-urls http://0.0.0.0:12379 \
+  --listen-peer-urls http://0.0.0.0:12380 \
+  --initial-advertise-peer-urls http://0.0.0.0:12380 \
+  --initial-cluster s1=http://0.0.0.0:12380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new
+docker exec etcd-gcr-v3.3.10 /bin/sh -c &quot;ETCDCTL_API=3 /usr/local/bin/etcdctl version&quot;
+docker exec etcd-gcr-v3.3.10 /bin/sh -c &quot;ETCDCTL_API=3 /usr/local/bin/etcdctl get /registry --endpoints=127.0.0.1:12379&quot;
+
+# watch cluster events
+kubectl get events --watch
+</code></pre>
+
+<p>Simple deployment</p>
+<pre><code class="bash"># deploy demo app
+kubectl run kubernetes-bootcamp \
+  --image=gcr.io/google-samples/kubernetes-bootcamp:v1 \
+  --port=8080 \
+  --labels='app=kubernetes-bootcamp'
+
+# update app
+kubectl set image deployments/kubernetes-bootcamp \
+  kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+
+# verify update
+kubectl rollout status deployments/kubernetes-bootcamp
+kubectl rollout history deployments/kubernetes-bootcamp
+
+# undo latest deployment
+kubectl rollout undo deployments/kubernetes-bootcamp
+
+# undo deployment to revision N
+kubectl rollout undo deployment &lt;DEPLOYMENT_NAME&gt; --to-revision=N
+
+# pause/resume deployment
+kubectl rollout pause deployment &lt;DEPLOYMENT_NAME&gt;
+kubectl rollout resume deployment &lt;DEPLOYMENT_NAME&gt;
+
+# list deployments
+kubectl get deployments
+kubectl describe deployment
+
+# create deployment from file (records the command in the revision history)
+kubectl create -f &lt;FILE_NAME&gt;.yaml --record
+
+# manually slowdown a rolling update
+kubectl patch deployment &lt;DEPLOYMENT_NAME&gt; -p '{&quot;spec&quot;: {&quot;minReadySeconds&quot;: 10}}'
+</code></pre>
+
+<p>Pod and Container</p>
+<pre><code class="bash"># proxy cluster (open in 2nd terminal)
+kubectl proxy
+
+# pod name
+export POD_NAME=$(kubectl get pods -l app=kubernetes-bootcamp -o go-template --template '{{range .items}}{{.metadata.name}}{{&quot;\n&quot;}}{{end}}')
+echo POD_NAME=$POD_NAME
+
+# verify proxy
+http :8001/version
+http :8001/api/v1/proxy/namespaces/default/pods/$POD_NAME/
+
+# view logs
+kubectl logs $POD_NAME
+kubectl logs &lt;POD_NAME&gt; -c &lt;CONTAINER_NAME&gt;
+kubectl logs &lt;POD_NAME&gt; --previous
+
+# execute command on container
+kubectl exec $POD_NAME printenv
+kubectl exec $POD_NAME ls -- -la
+
+# access container
+kubectl exec -it $POD_NAME bash
+
+# verify label
+kubectl describe pods $POD_NAME
+
+# list containers inside pods
+kubectl describe pods
+
+# list pods
+kubectl get pods
+
+# list pods and nodes
+kubectl get pods -o wide
+
+# list pods with labels
+kubectl get po --show-labels
+kubectl get pods -L &lt;LABEL_KEY&gt;
+
+# filter with equality-based labels
+kubectl get pods -l app=kubernetes-bootcamp
+kubectl get pods -l app
+kubectl get pods -l '!app'
+
+# filter with set-based labels
+kubectl get pods -l 'app in (kubernetes-bootcamp)'
+
+# add/update labels manually
+kubectl label po &lt;POD_NAME&gt; &lt;LABEL_KEY&gt;=&lt;LABEL_VALUE&gt;
+kubectl label po &lt;POD_NAME&gt; &lt;LABEL_KEY&gt;=&lt;LABEL_VALUE&gt; --overwrite
+
+# annotate
+kubectl annotate pod &lt;POD_NAME&gt; &lt;LABEL_KEY&gt;=&lt;LABEL_VALUE&gt;
+
+# print definition
+kubectl get pod &lt;POD_NAME&gt; -o json
+kubectl get pod &lt;POD_NAME&gt; -o yaml
+# output json
+kubectl get pod &lt;POD_NAME&gt; -o json | jq '.metadata'
+# output json
+kubectl get pod &lt;POD_NAME&gt; -o yaml | yq '.metadata.annotations'
+# output yaml
+kubectl get pod &lt;POD_NAME&gt; -o yaml | yq -y '.metadata.annotations'
+
+# by namespace
+kubectl get ns
+kubectl get pod --namespace kube-system
+kubectl get po --all-namespaces
+
+# watch for changes
+kubectl get pods --watch
+kubectl get pods -o yaml --watch
+
+# (debug) forward a local network port to a port in the pod (without service)
+kubectl port-forward &lt;POD_NAME&gt; &lt;LOCAL_PORT&gt;:&lt;POD_PORT&gt;
+
+# delete (sends SIGTERM to containers and waits 30 seconds, otherwise sends SIGKILL)
+kubectl delete po &lt;POD_NAME&gt;
+kubectl delete pod -l &lt;LABEL_KEY&gt;=&lt;LABEL_VALUE&gt;
+kubectl delete po --all
+</code></pre>
+
+<p>Service</p>
+<pre><code class="bash"># list services
+kubectl get svc
+kubectl get services
+
+# create service
+kubectl expose deployment/kubernetes-bootcamp \
+  --type=&quot;NodePort&quot; \
+  --port 8080
+
+# service info
+kubectl describe services/kubernetes-bootcamp
+
+# expose service
+export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')
+echo NODE_PORT=$NODE_PORT
+
+# verify service
+curl $(minikube ip):$NODE_PORT
+
+# add 4 replicas
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
+
+# info
+kubectl get pod,deployment,service
+kubectl get pods -o wide
+kubectl describe deployments/kubernetes-bootcamp
+
+# cleanup
+kubectl delete deployment,service kubernetes-bootcamp
+# all (means all resource types)
+# --all (means all resource instances)
+kubectl delete all --all
+</code></pre>
+
+<p>Other</p>
+<pre><code class="bash"># replication controller
+kubectl get rc
+kubectl get replicationcontroller
+
+# replica set
+kubectl get rs
+kubectl get replicaset
+
+# jobs
+kubectl get jobs
+
+# ingress
+kubectl get ingress
+
+# persistent volume, claim and storage class
+kubectl get pv
+kubectl get pvc
+kubectl get sc
+
+# jsonpath example
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type==&quot;ExternalIP&quot;)].address}'
+
+# create config map
+kubectl create configmap my-config \
+  --from-literal=my-key-1=my-value-1 \
+  --from-literal=my-key-2=my-value-2
+
+# print config-map
+kubectl get configmap my-config -o yaml
+
+# secrets
+kubectl get secrets
+kubectl describe secrets
+kubectl exec &lt;POD_NAME&gt; ls /var/run/secrets/kubernetes.io/serviceaccount/
+
+# create secrets (generic|tls|docker-registry)
+echo bar &gt; foo.secure
+kubectl create secret generic my-secret --from-file=foo.secure
+
+# contents are shown as Base64-encoded strings
+kubectl get secret my-secret -o yaml
+# prints &quot;bar&quot;
+echo YmFyCg== | base64 -D
+
+# rbac
+kubectl get clusterroles
+kubectl get clusterrolebindings
+kubectl get roles
+kubectl get rolebindings
+
+# access api server from local machine
+kubectl proxy
+http :8001
+http :8001/api/v1/pods
+
+# access api server from a container
+# (create)
+kubectl run hello-curl \
+  --image=tutum/curl \
+  --command -- &quot;sleep&quot; &quot;9999999&quot;
+# (exec)
+kubectl exec -it hello-curl-XXX bash
+# (verify envs)
+printenv
+# (missing certificate)
+curl -k  https://kubernetes
+# (list secrets)
+ls -laht /var/run/secrets/kubernetes.io/serviceaccount/
+# (specify certificate)
+curl --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes
+# (specify token, namespace and default certificate) or &quot;https://kubernetes.default/api/v1&quot;
+export KUBE_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+export KUBE_NS=$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)
+export CURL_CA_BUNDLE=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+curl -v \
+  -H &quot;Authorization: Bearer $KUBE_TOKEN&quot; \
+  https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT/api/v1/namespaces/$KUBE_NS/pods
+# @see also ambassador container pattern based on kubectl-proxy
+
+# api server proxy to invoke endpoint on resource
+kubectl proxy
+curl localhost:8001/api/v1/namespaces/&lt;NAMESPACE_NAME&gt;/&lt;pods|services|...&gt;/&lt;RESOURCE_NAME&gt;/proxy/&lt;PATH&gt;
+
+# temporary command
+kubectl run \
+  -it srvlookup \
+  --image=tutum/dnsutils \
+  --rm \
+  --restart=Never \
+  -- dig &lt;SERVICE_NAME&gt; kubia.default.svc.cluster.local
+
+# temporary container
+kubectl run \
+  -it phusion \
+  --image=phusion/baseimage:latest \
+  --rm \
+  --restart=Never \
+  bash
+</code></pre>
+
+<p>Alternative ways of modify resources</p>
+<pre><code class="bash"># opens the object's manifest in default editor
+kubectl edit
+# modifies individual properties of an object
+kubectl patch
+# creates or modifies the object by applying property values from a full YAML or JSON file
+kubectl apply
+# same as apply but only if not exists
+kubectl create
+# same as apply but only if exists
+kubectl replace
+# changes the container image
+kubectl set image
+</code></pre>
+
+<p><br></p>
+<h2 id="helm">Helm</h2>
+<blockquote>
+<p><strong>Helm</strong> installs <em>charts</em> into Kubernetes, creating a new <em>release</em> for each installation. And to find new charts, you can search Helm chart <em>repositories</em></p>
+</blockquote>
+<ul>
+<li>A <strong>Chart</strong> is a Helm package. It contains all of the resource definitions necessary to run an application, tool, or service inside of a Kubernetes cluster. Think of it like the Kubernetes equivalent of a Homebrew formula, an Apt dpkg, or a Yum RPM file</li>
+<li>A <strong>Repository</strong> is the place where charts can be collected and shared</li>
+<li>A <strong>Release</strong> is an instance of a chart running in a Kubernetes cluster</li>
+</ul>
+<p>Resources</p>
+<ul>
+<li><a href="https://docs.helm.sh">Documentation</a></li>
+<li><a href="https://medium.com/@gajus/the-missing-ci-cd-kubernetes-component-helm-package-manager-1fe002aac680">The missing CI/CD Kubernetes component: Helm package manager</a></li>
+</ul>
+<p>Commands</p>
+<pre><code class="bash"># linux
+sudo snap install helm --classic
+# mac
+brew install kubernetes-helm
+
+# setup client only
+helm init --client-only
+
+# search
+helm search &lt;CHART&gt;
+helm search postgresql
+
+# info
+helm inspect &lt;CHART&gt;
+helm inspect stable/postgresql
+helm inspect values stable/postgresql
+helm get values &lt;KEY&gt;
+helm status &lt;CHART&gt;
+helm list
+helm list --all
+
+# install public chart [install|upgrade|rollback|delete]
+helm install &lt;CHART&gt;
+helm install -f &lt;CONFIG_OVERRIDE&gt;.yaml &lt;CHART&gt;
+helm delete &lt;CHART&gt;
+
+# repository
+helm repo list
+helm repo add &lt;NAME&gt; https://&lt;DOMAIN&gt;/&lt;PATH&gt;
+helm repo update
+
+# custom chart
+helm create my-chart
+helm lint my-chart
+helm package my-chart
+helm install ./my-chart
+helm install --dry-run --debug ./my-chart
+
+# plugin
+$(helm home)/plugins
+helm plugin install &lt;PATH|URL&gt;
+</code></pre>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../system-design/" class="btn btn-neutral float-right" title="System Design">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cloud/" class="btn btn-neutral" title="Cloud"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../cloud/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../system-design/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

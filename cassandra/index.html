@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Cassandra - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Cassandra";
+    var mkdocs_page_input_path = "cassandra.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cassandra</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cql">CQL</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nodetool">nodetool</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Cassandra</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/cassandra.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cassandra">Cassandra</h1>
+<blockquote>
+<p><strong>Cassandra</strong> is a distributed database for managing large amounts of structured data across many commodity servers, while providing highly available service and no single point of failure</p>
+</blockquote>
+<p>Resources</p>
+<ul>
+<li>
+<p><a href="https://cassandra.apache.org">Documentation</a></p>
+</li>
+<li>
+<p><a href="https://amzn.to/2KvnEjY">Cassandra: The Definitive Guide</a> (2016)(4th) by Eben Hewitt, Jeff Carpenter (Book)</p>
+</li>
+<li>
+<p><a href="https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf">A Decentralized Structured Storage System</a> (Paper)</p>
+</li>
+<li>
+<p><a href="http://www.cs.wayne.edu/andrey/papers/TR-BIGDATA-05-2015-CKL.pdf">A Big Data Modeling Methodology for Apache Cassandra</a> (Paper)</p>
+</li>
+<li>
+<p><a href="https://docs.datastax.com/en/articles/cassandra/cassandrathenandnow.html">Facebook’s Cassandra paper</a></p>
+</li>
+<li>
+<p><a href="https://www.ebayinc.com/stories/blogs/tech/cassandra-data-modeling-best-practices-part-1">Cassandra Data Modeling Best Practices</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra">Difference between partition key, composite key and clustering key</a></p>
+</li>
+<li>
+<p><a href="https://github.com/riptano/ccm">Cassandra Cluster Manager</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Netflix/Priam">Netflix Priam</a></p>
+</li>
+<li>
+<p><a href="https://www.datastax.com/dev/blog/cassandra-performance-testing-with-cstar_perf">cstar_perf</a></p>
+</li>
+<li>
+<p><a href="https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html">Amy's Cassandra 2.1 tuning guide</a></p>
+</li>
+<li>
+<p><a href="https://www.datastax.com/dev/blog/repair-in-cassandra">Repair in Cassandra</a></p>
+</li>
+</ul>
+<!-- * [Cassandra Modeling Kata](https://github.com/allegro/cassandra-modeling-kata) -->
+
+<p>Cassandra uses a tick-tock release model, even-numbered releases are feature releases, while odd-numbered releases are focused on bug fixes</p>
+<h2 id="architecture">Architecture</h2>
+<ul>
+<li>
+<p>A <strong>rack</strong> is a logical set of nodes in close proximity to each other</p>
+</li>
+<li>
+<p>A <strong>data center</strong> is a logical set of racks</p>
+</li>
+<li>
+<p>Cassandra uses a <strong>gossip protocol</strong> (called epidemic protocol) that allows each node to keep track of state information about the other nodes in the cluster implementing an algorithm called <em>Phi Accrual Failure Detection</em> instead of simple heartbeats</p>
+</li>
+<li>
+<p>The job of a <strong>snitch</strong> is to determine relative host proximity for each node in a cluster, which is used to determine which nodes to read and write from</p>
+</li>
+<li>
+<p>Cassandra represents the data managed by a cluster as a <strong>ring</strong>. Each node in the ring is assigned one or more ranges of data described by a <strong>token</strong>, which determines its position in the ring and is used to identify each partition</p>
+</li>
+</ul>
+<p><img alt="cassandra-token-ring" src="../img/cassandra-token-ring.png" /></p>
+<ul>
+<li>
+<p><strong>virtual nodes</strong> allow to break a token range and assign multiple tokens to a single physical node</p>
+</li>
+<li>
+<p>A <strong>partitioner</strong> is a hash function for computing the token of a partition key and determines how a (wide) row or partition of data is distributed within the ring</p>
+</li>
+<li>
+<p>The <strong>replication factor</strong> is the number of nodes in a cluster that will receive copies of the same row and the replication strategy is set independently for each keyspace</p>
+</li>
+<li>
+<p>Cassandra provides tuneable <strong>consistency</strong> levels and must be specified on each read or write</p>
+</li>
+<li>
+<p>A client may connect to any node in the cluster, named <strong>coordinator node</strong>, to initiate a read or write query. The coordinator identifies which nodes are replicas for the data and forwards the queries to them</p>
+</li>
+</ul>
+<p><img alt="cassandra-query" src="../img/cassandra-query.png" /></p>
+<ul>
+<li>
+<p>When a write operation is performed, it's immediately written to a <strong>commit log</strong> to ensure that data is not lost. It is a crash-recovery mechanism only, clients never read from it</p>
+</li>
+<li>
+<p>After it's written to the commit log, the value is written (already ordered) to a memory-resident data structure called the <strong>memtable</strong> divided by Column Family (table)</p>
+</li>
+<li>
+<p>When the number of objects stored in the memtable or in the commit log reaches a threshold, the contents of the memtable are flushed (non-blocking operation) to disk in a file called <strong>SSTable</strong> and a new memtable or commit log is then created/recycled</p>
+</li>
+<li>
+<p>No reads or seeks of any kind are required for writing a value to Cassandra because all writes are append operations to immutable SSTables. However, periodic <strong>compaction</strong> operations in Cassandra are performed in order to support fast read performance: the keys are merged, columns are combined, tombstones are discarded, and a new index is created</p>
+</li>
+<li>
+<p>The <strong>key cache</strong> stores a map of partition keys to row index entries, facilitating faster read access into SSTables stored on disk. The key cache is stored on the JVM heap</p>
+</li>
+<li>
+<p>The <strong>row cache</strong> caches entire rows and can greatly speed up read access for frequently accessed rows, at the cost of more memory usage. The row cache is stored in off-heap memory</p>
+</li>
+<li>
+<p>The <strong>counter cache</strong> is used to improve counter performance by reducing lock contention for the most frequently accessed counters</p>
+</li>
+<li>
+<p>In a scenario in which a write request is sent to Cassandra, but a replica node where the write properly belongs is not available due to network partition, hardware failure, or some other reason, to ensure general availability Cassandra implements a feature called <strong>hinted handoff</strong>. The coordinator node while store temporarily the data until it detects that the node is available again</p>
+</li>
+</ul>
+<p><em>Write Path</em>
+<img alt="cassandra-write-path" src="../img/cassandra-write-path.png" /></p>
+<p><em>Read Path</em>
+<img alt="cassandra-read-path" src="../img/cassandra-read-path.png" /></p>
+<ul>
+<li>
+<p>To provide <em>linearizable consistency</em> e.g. read-before-write, Cassandra supports a <strong>lightweight transaction</strong> or LWT. The implementation is based on <em>paxos</em> and is limited to a single partition</p>
+</li>
+<li>
+<p>A <strong>tombstone</strong> is a deletion marker that is required to suppress older data in SSTables until compaction or garbage collection run. Data is not immediately deleted but it's treated as an update operation</p>
+</li>
+<li>
+<p><strong>Bloom filters</strong> are very fast, non-deterministic algorithms for testing whether an element is a member of a set. It is possible to get a false-positive read, but not a false-negative. When a read is performed, the filter is checked first before accessing disk, if it indicates that the element does not exist in the set, it certainly doesn't, but if the filter thinks that the element is in the set, the disk is accessed to make sure</p>
+</li>
+<li>
+<p><em>Replica Synchronization (1)</em> Cassandra reads data from multiple replicas in order to achieve the requested consistency level and detects if any replicas have out of date values. If an insufficient number of nodes have the latest value, a <strong>read repair</strong> is performed immediately to update the out of date replicas</p>
+</li>
+<li>
+<p><em>Replica Synchronization (2)</em> <strong>Anti-entropy repair</strong> is a manually initiated operation performed on nodes as part of a regular maintenance process executed with <em>nodetool</em> causing a <em>major compaction</em> during which a node exchange <em>Merkle trees</em> with neighboring nodes</p>
+</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>Single Node Cluster</p>
+<pre><code class="bash"># change path
+cd devops/cassandra
+
+# start single node
+docker-compose up
+
+# paths
+/etc/cassandra
+/var/lib/cassandra
+/var/log/cassandra
+
+# remove container and volume
+docker rm -fv devops-cassandra
+</code></pre>
+
+<p>Multi Node Cluster</p>
+<pre><code class="bash"># change path
+cd devops/cassandra
+
+# start node
+docker-compose -f docker-compose-cluster.yml up
+
+# optional mounted volumes
+mkdir -p \
+  .cassandra/cassandra-seed/{data,log} \
+  .cassandra/cassandra-node-1/{data,log} \
+  .cassandra/cassandra-node-2/{data,log}
+tree .cassandra/
+
+# ISSUES releated to host permissions
+# &gt; Small commitlog volume detected at /var/lib/cassandra/commitlog
+# &gt; There is insufficient memory for the Java Runtime Environment to continue
+(cassandra) /var/lib/cassandra
+(root) /var/log/cassandra
+</code></pre>
+
+<p>Access container</p>
+<pre><code class="bash"># access container
+docker exec -it devops-cassandra bash
+docker exec -it devops-cassandra bash -c cqlsh
+docker exec -it devops-cassandra-seed bash
+docker exec -it devops-cassandra-node-1 bash
+
+# execute cql script from host
+(docker exec -i devops-cassandra bash \
+  -c &quot;cat &gt; example.cql; cqlsh -f example.cql&quot;) &lt; cql/example_create.cql
+</code></pre>
+
+<h2 id="cql">CQL</h2>
+<p><code>cqlsh</code> script <a href="https://github.com/niqdev/devops/tree/master/cassandra/cql">examples</a></p>
+<pre><code class="bash"># connect
+cqlsh localhost 9042
+cqlsh localhost 9042 -u cassandra -p cassandra
+
+# execute cql script
+cqlsh -f cql/example_create.cql
+
+# info
+SHOW VERSION;
+DESCRIBE CLUSTER;
+DESCRIBE KEYSPACES;
+DESCRIBE KEYSPACE example;
+DESCRIBE TABLE example.messages;
+
+# nice format
+EXPAND ON;
+# trace query
+TRACING ON;
+
+# bulk loading
+COPY example.users TO '/cql/users.csv' WITH HEADER=TRUE;
+COPY example.users FROM '/cql/all_users.csv' WITH DELIMITER = ';';
+COPY example.users (first_name,last_name,addresses,emails,enable) FROM '/cql/column_users.csv' WITH HEADER=TRUE;
+
+# automatic paging
+PAGING;
+PAGING ON;
+PAGING 100;
+# limit
+SELECT * FROM example.users LIMIT 1;
+</code></pre>
+
+<ul>
+<li><a href="https://docs.datastax.com/en/cql/3.3/cql/cql_using/useBatch.html">Batch</a></li>
+<li><a href="https://docs.datastax.com/en/dse/6.0/cql/cql/cql_using/useCreateUDT.html">User-Defined Type</a></li>
+<li><a href="https://docs.datastax.com/en/cql/3.3/cql/cql_using/useCreateUDF.html">User-Defined Function</a></li>
+<li><a href="https://docs.datastax.com/en/cql/3.3/cql/cql_using/useCreateUDA.html">User-Defined Aggregate Function</a></li>
+</ul>
+<p>Old <code>cassandra-cli</code> deprecated and removed in Cassandra 3.0</p>
+<pre><code>USE keyspace_name;
+LIST table_name;
+GET table_name[&quot;primary_key&quot;];
+SET table_name[&quot;primary_key&quot;][&quot;column_name&quot;];
+</code></pre>
+
+<h2 id="nodetool">nodetool</h2>
+<pre><code class="bash"># help
+nodetool
+
+# cluster informations
+nodetool describecluster
+nodetool status
+
+# node informations
+nodetool -h xxx.xxx.xxx.xxx info
+nodetool -h xxx.xxx.xxx.xxx statusgossip|statusthrift|statusbinary|statushandoff
+nodetool gossipinfo
+
+# ring informations
+nodetool ring
+nodetool describering KEYSPACE
+
+# monitor network
+nodetool netstats
+
+# threadpool statistics
+nodetool tpstats
+
+# keyspace statistics
+nodetool tablestats KEYSPACE
+
+# dynamic logging via JMX
+nodetool getlogginglevels
+
+# force to write data from memtables to SSTables
+nodetool flush
+
+# gracefully shutdown
+nodetool drain
+
+# discards any data that is no longer owned by the node
+# e.g. after changing replication factor or token range
+nodetool cleanup
+
+# anti-entropy repair or manual repair: reconcile data exchanging Merkle trees among nodes
+# maintenance: incremental parallel repair on the primary token range (run on each node)
+nodetool repair -pr
+
+# create snapshot
+nodetool snapshot
+nodetool listsnapshots
+
+# restore snapshot (create schema or truncate table before)
+# 1) same cluster and configuration
+# copy SSTable &quot;.db&quot; files into the data directory and on the running node execute refresh
+nodetool refresh
+# 2) different configuration (e.g. topology, token ranges, or replication)
+sstableloader
+
+# stress tool
+cassandra-stress write n=1000000
+cassandra-stress read n=200000
+</code></pre>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../zookeeper/" class="btn btn-neutral float-right" title="ZooKeeper">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ansible/" class="btn btn-neutral" title="Ansible"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ansible/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../zookeeper/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

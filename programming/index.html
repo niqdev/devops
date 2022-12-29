@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="niqdev">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Programming - DevOps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Programming";
+    var mkdocs_page_input_path = "programming.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-68888222-4', 'niqdev.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DevOps</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Programming</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#courses">Courses</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#books">Books</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interpreter-compiler">Interpreter / Compiler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#llvm">LLVM</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#random">Random</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DevOps</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Programming</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/niqdev/devops/edit/master/docs/programming.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="programming">Programming</h1>
+<h2 id="courses">Courses</h2>
+<ul>
+<li>6.001: Structure and Interpretation of Computer Programs MIT [ <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005">course</a> | <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">book</a> ]</li>
+<li><a href="https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided">CS 6120: Advanced Compilers</a></li>
+<li><a href="https://felleisen.org/matthias/7480-s21/index.html">History of Programming Languages</a></li>
+</ul>
+<h2 id="books">Books</h2>
+<ul>
+<li><a href="https://suif.stanford.edu/dragonbook">Compilers: Principles, Techniques, and Tools</a></li>
+<li><a href="https://gumroad.com/l/waiig_wacig_bundle">Writing an Interpreter and Compiler in Go</a></li>
+<li><a href="https://craftinginterpreters.com">Crafting Interpreters</a> (online)</li>
+<li><a href="https://cs.brown.edu/courses/cs173/2012/book">Programming Languages: Application and Interpretation</a> (online)</li>
+<li><a href="https://buildyourownlisp.com">Build Your Own Lisp</a> (online)</li>
+<li><a href="https://github.com/naver/lispe/wiki">LispE: Lisp Elémentaire</a> (online)</li>
+</ul>
+<h2 id="interpreter-compiler">Interpreter / Compiler</h2>
+<ul>
+<li><a href="https://github.com/aalhour/awesome-compilers">awesome-compilers</a></li>
+<li><a href="https://godbolt.org">Compiler Explorer</a></li>
+<li><a href="https://xmonader.github.io/letsbuildacompiler-pretty/about.html">Let's Build a Compiler</a></li>
+<li><a href="https://github.com/lotabout/Let-s-build-a-compiler">A C version of the "Let's Build a Compiler"</a></li>
+<li><a href="https://briancallahan.net/blog/20210814.html">Let's write a compiler</a></li>
+<li><a href="https://web.archive.org/web/20210111064441/https://nicoleorchard.com/blog/compilers">An Intro to Compilers</a> (archive)</li>
+<li><a href="https://bellard.org/tcc">Tiny C Compiler</a></li>
+<li><a href="https://github.com/rui314/chibicc">rui314/chibicc: A small C compiler</a></li>
+<li><a href="https://github.com/jamiebuilds/the-super-tiny-compiler">The Super Tiny Compiler!</a></li>
+<li><a href="https://bellard.org/otcc">Obfuscated Tiny C Compiler</a></li>
+<li><a href="https://github.com/Robert-van-Engelen/tinylisp">Tinylisp: Lisp in 99 lines of C and how to write one yourself</a></li>
+<li><a href="https://borretti.me/article/lessons-writing-compiler">Lessons from Writing a Compiler</a></li>
+</ul>
+<h2 id="parser">Parser</h2>
+<ul>
+<li><a href="https://blog.adamchalmers.com/nom-chars">Parsing Text with Nom</a></li>
+<li><a href="https://siraben.dev/2022/03/01/tree-sitter.html">How to write a tree-sitter grammar in an afternoon</a></li>
+<li><a href="https://adriann.github.io/rust_parser.html">Writing a Simple Parser in Rust</a></li>
+</ul>
+<h2 id="llvm">LLVM</h2>
+<ul>
+<li><a href="https://lowlevelbits.org/how-to-learn-compilers-llvm-edition">How to learn compilers: LLVM edition</a></li>
+<li><a href="https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial">A Complete Guide to LLVM for Programming Language Creators</a></li>
+</ul>
+<h2 id="random">Random</h2>
+<ul>
+<li><a href="https://esolangs.org">Esolang</a></li>
+<li><a href="https://www.siliconcompiler.com">Compile code into silicon</a></li>
+<li><a href="https://arzg.github.io/lang">Make A Language</a> (rust)</li>
+<li><a href="http://ducklang.org/designing-a-programming-language-i">Designing a programming language</a> </li>
+<li><a href="https://github.com/mirdaki/theforce">mirdaki/theforce: The Force - A Star Wars themed programming language</a></li>
+<li><a href="https://github.com/riicchhaarrd/ocean">riicchhaarrd/ocean: Programming language that compiles into a x86 ELF executable</a></li>
+<li><a href="http://github.com/adam-mcdaniel/oakc">adam-mcdaniel/oakc: An infinitely more portable alternative to the C programming language</a></li>
+<li><a href="https://healeycodes.com/creating-the-golfcart-programming-language">Creating the Golfcart Programming Language</a></li>
+<li><a href="https://briancallahan.net/blog/20210609.html">I wrote a linker everyone can understand!</a></li>
+<li><a href="https://github.com/spencertipping/jit-tutorial">spencertipping/jit-tutorial: How to write a JIT compiler</a></li>
+<li><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a></li>
+</ul>
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../other-resources/" class="btn btn-neutral float-right" title="Other Resources">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../operating-system/" class="btn btn-neutral" title="Operating System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/niqdev/devops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../operating-system/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../other-resources/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
