@@ -17,7 +17,11 @@ brew install kcl-lang/tap/kcl
 
 ```sh
 # execute program and output yaml
-kcl kcl/hello.k
-kcl kcl/server-1.k
-kcl kcl/server-2.k
+kcl kcl/examples/hello.k
+kcl kcl/examples/server-1.k
+kcl kcl/examples/server-2.k
+
+# labs
+kcl kcl/lab-1/my_config.k kcl/lab-1/my_config_test.k
+kcl kcl/lab-1/my_config.k -D priority=2
 ```
