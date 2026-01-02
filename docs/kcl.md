@@ -5,6 +5,7 @@
 Resources
 
 * [Documentation](https://www.kcl-lang.io)
+* [KCL Tour](https://www.kcl-lang.io/docs/reference/lang/tour)
 * [KCL extension](https://marketplace.visualstudio.com/items?itemName=kcl.kcl-vscode-extension) for Visual Studio Code
 
 ```sh
@@ -15,6 +16,8 @@ brew install kcl-lang/tap/kcl
 ## Examples
 
 ```sh
-# execute program
+# execute program and output yaml
 kcl kcl/hello.k
+kcl kcl/server-1.k
+kcl kcl/server-2.k
 ```
