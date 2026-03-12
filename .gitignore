@@ -26,3 +26,9 @@ target/
 *.log
 
 site
+
+.terraform/
+*.tfstate
+*.tfplan
+plan.out
+*.tfvars
