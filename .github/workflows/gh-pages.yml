@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-
-      # TODO updated fork https://github.com/andi34/mkdocs-deploy-gh-pages/tree/nomaterial
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: mkdocs gh-deploy --force

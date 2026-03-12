@@ -33,11 +33,13 @@ Ubuntu
 # install pip3
 sudo apt install -y python3-pip
 
-# install virtualenv globally 
+# OLD install virtualenv globally 
 sudo pip3 install virtualenv
+# OLD create virtualenv
+virtualenv -p $(which python3) venv
 
 # create virtualenv
-virtualenv -p $(which python3) venv
+python3 -m venv venv
 
 # how-to activate virtualenv
 source venv/bin/activate
