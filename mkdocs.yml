@@ -14,6 +14,7 @@ nav:
     - Hadoop: hadoop.md
     - Cloud: cloud.md
     - Kubernetes: kubernetes.md
+    - Terraform: terraform.md
     - KCL: kcl.md
     - System Design: system-design.md
     - Operating System: operating-system.md

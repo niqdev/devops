@@ -17,6 +17,8 @@ A collection of notes, resources, documentation and POCs mainly related to distr
   * [Oozie](https://niqdev.github.io/devops/hadoop/#oozie)
 * [Cloud](https://niqdev.github.io/devops/cloud)
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
+* [Terraform](https://niqdev.github.io/devops/terraform)
+* [KCL](https://niqdev.github.io/devops/kcl)
 * [System Design](https://niqdev.github.io/devops/system-design)
 * [Operating System](https://niqdev.github.io/devops/operating-system)
 * [Programming](https://niqdev.github.io/devops/programming)
