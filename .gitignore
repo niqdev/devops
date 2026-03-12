@@ -29,6 +29,7 @@ site
 
 .terraform/
 *.tfstate
+*.tfstate.*
 *.tfplan
 plan.out
 *.tfvars

@@ -27,7 +27,7 @@ Terraform's core building blocks:
 * `output` values Terraform prints after apply (and exposes to parent modules)
 * `module` reusable Terraform package/folder you call from another config
 
-Examples
+Docker example
 ```sh
 # formatting/linting
 terraform fmt -check 
@@ -45,6 +45,8 @@ terraform plan
 terraform plan -var="docker_host=unix:///${HOME}/.rd/docker.sock"
 # apply with "TF_VAR_<name>" convention
 TF_VAR_docker_host="unix:///${HOME}/.rd/docker.sock" terraform apply -auto-approve
+# cleanup
+terraform destroy -var="docker_host=unix:///${HOME}/.rd/docker.sock"
 
 # verify state
 terraform show
