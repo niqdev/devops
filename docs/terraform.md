@@ -30,7 +30,8 @@ Terraform's core building blocks:
 Docker example
 ```sh
 # formatting/linting
-terraform fmt -check 
+terraform fmt
+terraform fmt -check
 
 # initializing a configuration directory downloads and installs the providers defined in the configuration
 cd terraform/docker-example
