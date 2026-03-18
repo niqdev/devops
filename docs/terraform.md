@@ -61,3 +61,9 @@ terraform plan -out=plan.out
 terraform show -json plan.out
 terraform apply plan.out
 ```
+
+Mad Libs example
+```sh
+terraform init && terraform apply -auto-approve
+terraform destroy
+```
