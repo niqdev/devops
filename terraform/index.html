@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="niqdev" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Terraform - DevOps</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Terraform";
+        var mkdocs_page_input_path = "terraform.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', "UA-68888222-4", "niqdev.github.io");
+        ga('send', 'pageview');
+      </script>
+    
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> DevOps
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../cassandra/">Cassandra</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../zookeeper/">ZooKeeper</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hadoop/">Hadoop</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../cloud/">Cloud</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kubernetes/">Kubernetes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Terraform</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kcl/">KCL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../operating-system/">Operating System</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../programming/">Programming</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../other-resources/">Other Resources</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../toolbox/">Toolbox</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../jvm/">JVM (OLD)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../scala/">Scala (OLD)</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">DevOps</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Terraform</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/niqdev/devops/edit/master/docs/terraform.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="terraform">Terraform</h1>
+<blockquote>
+<p><strong>Terraform</strong> is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently</p>
+</blockquote>
+<p>Resources</p>
+<ul>
+<li><a href="https://developer.hashicorp.com/terraform">Documentation</a></li>
+<li><a href="https://www.manning.com/books/terraform-in-action">Terraform in Action</a> (2021) by Scott Winkler (Book)</li>
+<li><a href="https://registry.terraform.io">Terraform Registry</a></li>
+</ul>
+<p>Terraform's core building blocks:</p>
+<ul>
+<li><code>terraform</code> Terraform's own settings (required version, providers, backend/state config)</li>
+<li><code>provider</code> tells Terraform which cloud/API to talk to and how to authenticate</li>
+<li><code>resource</code> something Terraform creates/updates/deletes e.g. VM, subnet, bucket</li>
+<li><code>data</code> something Terraform reads only (already exists)</li>
+<li><code>variable</code> input values for your config (like function arguments)</li>
+<li><code>locals</code> internal named values/calculations to avoid repeating logic</li>
+<li><code>output</code> values Terraform prints after apply (and exposes to parent modules)</li>
+<li><code>module</code> reusable Terraform package/folder you call from another config</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<pre><code class="language-sh">brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+terraform version
+</code></pre>
+<h2 id="examples">Examples</h2>
+<p>Docker example</p>
+<pre><code class="language-sh"># formatting/linting
+terraform fmt
+terraform fmt -check
+
+# initializing a configuration directory downloads and installs the providers defined in the configuration
+cd terraform/docker-example
+terraform init
+
+# validatiom
+terraform validate
+# dry run
+terraform plan
+
+# with rancher desktop
+terraform plan -var=&quot;docker_host=unix:///${HOME}/.rd/docker.sock&quot;
+# apply with &quot;TF_VAR_&lt;name&gt;&quot; convention
+TF_VAR_docker_host=&quot;unix:///${HOME}/.rd/docker.sock&quot; terraform apply -auto-approve
+# cleanup
+terraform destroy -var=&quot;docker_host=unix:///${HOME}/.rd/docker.sock&quot;
+
+# verify state
+terraform show
+terraform state list
+
+# http://localhost:8080
+terraform output -json
+
+# controlled/appoved deployments (binary format)
+terraform plan -out=plan.out
+terraform show -json plan.out
+terraform apply plan.out
+</code></pre>
+<p>Mad Libs example</p>
+<pre><code class="language-sh">terraform init &amp;&amp; terraform apply -auto-approve
+terraform destroy
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../kubernetes/" class="btn btn-neutral float-left" title="Kubernetes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../kcl/" class="btn btn-neutral float-right" title="KCL">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/niqdev/devops" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../kubernetes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../kcl/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
