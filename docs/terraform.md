@@ -8,14 +8,6 @@ Resources
 * [Terraform in Action](https://www.manning.com/books/terraform-in-action) (2021) by Scott Winkler (Book)
 * [Terraform Registry](https://registry.terraform.io)
 
-Setup
-```sh
-brew tap hashicorp/tap
-brew install hashicorp/tap/terraform
-
-terraform version
-```
-
 Terraform's core building blocks:
 
 * `terraform` Terraform's own settings (required version, providers, backend/state config)
@@ -26,6 +18,17 @@ Terraform's core building blocks:
 * `locals` internal named values/calculations to avoid repeating logic
 * `output` values Terraform prints after apply (and exposes to parent modules)
 * `module` reusable Terraform package/folder you call from another config
+
+## Setup
+
+```sh
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+terraform version
+```
+
+## Examples
 
 Docker example
 ```sh
