@@ -4,8 +4,8 @@
 
 Resources
 
-* [Terraform in Action](https://www.manning.com/books/terraform-in-action)
 * [Documentation](https://developer.hashicorp.com/terraform)
+* [Terraform in Action](https://www.manning.com/books/terraform-in-action) (2021) by Scott Winkler (Book)
 * [Terraform Registry](https://registry.terraform.io)
 
 Setup
