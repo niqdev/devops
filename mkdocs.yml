@@ -16,6 +16,7 @@ nav:
     - Kubernetes: kubernetes.md
     - Terraform: terraform.md
     - KCL: kcl.md
+    - Nix: nix.md
     - System Design: system-design.md
     - Operating System: operating-system.md
     - Programming: programming.md

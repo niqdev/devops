@@ -19,6 +19,7 @@ A collection of notes, resources, documentation and POCs mainly related to distr
 * [Kubernetes](https://niqdev.github.io/devops/kubernetes)
 * [Terraform](https://niqdev.github.io/devops/terraform)
 * [KCL](https://niqdev.github.io/devops/kcl)
+* [Nix](https://niqdev.github.io/devops/nix)
 * [System Design](https://niqdev.github.io/devops/system-design)
 * [Operating System](https://niqdev.github.io/devops/operating-system)
 * [Programming](https://niqdev.github.io/devops/programming)
