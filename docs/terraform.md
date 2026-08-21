@@ -70,3 +70,5 @@ Mad Libs example
 terraform init && terraform apply -auto-approve
 terraform destroy
 ```
+
+<br>
