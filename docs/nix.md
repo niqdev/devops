@@ -19,4 +19,19 @@ wget --https-only -qO- https://nixos.org/nix/install | sh -s -- --daemon
 curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
 ```
 
+## Examples
+
+```bash
+# hello world
+nix-shell -p cowsay lolcat
+nix-shell -p git --run "git --version" --pure
+
+# cleanup
+nix-collect-garbage
+
+# reproducible interpreted scripts i.e. shebang scripts
+chmod +x nix/nixpkgs-releases.sh
+./nix/nixpkgs-releases.sh
+```
+
 <br>
