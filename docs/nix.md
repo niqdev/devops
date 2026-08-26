@@ -32,6 +32,23 @@ nix-collect-garbage
 # reproducible interpreted scripts i.e. shebang scripts
 chmod +x nix/nixpkgs-releases.sh
 ./nix/nixpkgs-releases.sh
+
+# evaluate expression from file, default is "default.nix"
+echo "{ a.b.c = 1; }" > nix/file.nix
+nix-instantiate --eval --strict nix/file.nix
+
+# uses lazy evaluation
+nix repl
+# force evaluation with ":p"
+:p { a.b.b = 1; }
+let x=1; y=2; in x+y
+let name = "nix"; in "hello ${name}"
+# calling functions
+let f = x: y: x+y; in f 1 2
+let pkgs = import <nixpkgs> {}; in pkgs.lib.strings.toUpper "foo bar"
+let pkgs = import <nixpkgs> {}; in "${pkgs.git}"
+# function libraries
+builtins.getEnv("HOME")
 ```
 
 <br>
