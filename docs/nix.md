@@ -9,6 +9,10 @@ Resources
 * Nix [manual](https://nixos.org/manual/nix/stable)
 * Home Manager [manual](https://nix-community.github.io/home-manager)
 * Package [ [search](https://search.nixos.org/packages) | [source](https://github.com/NixOS/nixpkgs/tree/master/pkgs) ]
+* Flakes
+  - https://nix.dev/concepts/flakes.html
+  - https://wiki.nixos.org/wiki/Flakes
+  - https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake.html
 
 Setup
 ```bash
