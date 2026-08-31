@@ -49,6 +49,9 @@ let pkgs = import <nixpkgs> {}; in pkgs.lib.strings.toUpper "foo bar"
 let pkgs = import <nixpkgs> {}; in "${pkgs.git}"
 # function libraries
 builtins.getEnv("HOME")
+
+# declerative shell environments
+nix-shell nix/shell.nix
 ```
 
 <br>
