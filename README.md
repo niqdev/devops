@@ -54,11 +54,13 @@ deactivate
 
 # install new package
 pip install mkdocs
+# update dependency
+pip install -U --upgrade-strategy eager mkdocs
 
 # update requirements
 pip freeze > requirements.txt
 
 # run locally
 # http://localhost:8000
-mkdocs serve
+mkdocs serve --livereload
 ```
