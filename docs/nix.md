@@ -67,6 +67,13 @@ nix-shell nix/shell.nix
 # flake example
 nix build github:NixOS/nixpkgs#hello -o nix/result
 ./nix/result/bin/hello
+
+# local flake needs to be tracked by git first or it won't run i.e. git add
+nix run ./nix#hello
+# list what a flake provide
+nix flake show ./nix
+# update every input in the lock
+nix flake update --flake ./nix
 ```
 
 <br>

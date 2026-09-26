@@ -12,10 +12,10 @@ hadoop/.data/
 .gradle/
 build/
 
+venv/
 __pycache__
 *.pyc
 .pytest_cache/
-venv/
 .eggs/
 *.egg-info
 
@@ -33,3 +33,5 @@ site
 *.tfplan
 plan.out
 *.tfvars
+
+nix/result/
