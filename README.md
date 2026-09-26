@@ -54,7 +54,7 @@ deactivate
 
 # install new package
 pip install mkdocs
-# update dependency
+# update dependencies
 pip install -U --upgrade-strategy eager mkdocs
 
 # update requirements
