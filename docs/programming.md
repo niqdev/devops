@@ -54,5 +54,3 @@
 * [I wrote a linker everyone can understand!](https://briancallahan.net/blog/20210609.html)
 * [spencertipping/jit-tutorial: How to write a JIT compiler](https://github.com/spencertipping/jit-tutorial)
 * [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
-
-<br>

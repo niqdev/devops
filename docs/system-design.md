@@ -83,8 +83,6 @@
 * [The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing](https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf)
 * [A Dataset of Dockerfiles](https://arxiv.org/pdf/2003.12912.pdf)
 
-<br>
-
 <!--
 ## Notes
 

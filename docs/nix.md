@@ -75,5 +75,3 @@ nix flake show ./nix
 # update every input in the lock
 nix flake update --flake ./nix
 ```
-
-<br>

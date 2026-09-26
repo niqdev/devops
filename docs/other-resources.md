@@ -47,5 +47,3 @@
 * [Ask HN: Great Blogs by Programmers](https://news.ycombinator.com/item?id=30245247)
 * [Ask HN: Can I see your cheatsheet?](https://news.ycombinator.com/item?id=31928736)
 * [Ask HN: What are the major open source alternatives to Auth0?](https://news.ycombinator.com/item?id=29392517)
-
-<br>

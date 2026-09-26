@@ -255,5 +255,3 @@ sstableloader
 cassandra-stress write n=1000000
 cassandra-stress read n=200000
 ```
-
-<br>

@@ -596,5 +596,3 @@ helm install --dry-run --debug ./my-chart
 $(helm home)/plugins
 helm plugin install <PATH|URL>
 ```
-
-<br>

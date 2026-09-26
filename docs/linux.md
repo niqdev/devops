@@ -609,5 +609,3 @@ Resources
 * [jq](https://stedolan.github.io/jq)
 * [Lynx](https://lynx.browser.org)
 * [Samba](https://www.samba.org)
-
-<br>

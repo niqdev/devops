@@ -193,5 +193,3 @@ ansible-playbook /ansible/site.yml
 # dry run
 ansible-playbook -i /ansible/hosts /ansible/site.yml --check --diff
 ```
-
-<br>

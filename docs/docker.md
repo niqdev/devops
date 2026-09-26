@@ -175,5 +175,3 @@ docker push niqdev/kafka:latest
 
 docker-compose -f kafka/docker-compose-hub.yml up
 ```
-
-<br>

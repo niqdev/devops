@@ -627,5 +627,3 @@ oozie job \
   XXX-W \
   -Doozie.wf.rerun.failnodes=false
 ```
-
-<br>

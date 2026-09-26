@@ -286,5 +286,3 @@ http -v :8081/subjects/ExampleSchema/versions/1 \
 # ui [mac|linux]
 [open|xdg-open] http://localhost:8082
 ```
-
-<br>

@@ -398,5 +398,3 @@ hg ls
 # pretty log
 hg history --graph --limit 10
 ```
-
-<br>

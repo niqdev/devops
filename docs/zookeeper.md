@@ -86,5 +86,3 @@ delete /zk_test
 | | **wchc** | Lists all the server's watches by connection, may impact server performance for a large number of watches |
 | | **wchp** | Lists all the server’s watches by znode path, may impact server performance for a large number of watches |
 | Monitoring | **mntr** | Lists server statistics in Java properties format, suitable as a source for monitoring systems such as Ganglia and Nagios |
-
-<br>
