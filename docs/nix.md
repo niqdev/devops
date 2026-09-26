@@ -8,19 +8,26 @@ Resources
 * [nix.dev](https://nix.dev)
 * Nix [manual](https://nixos.org/manual/nix/stable)
 * Home Manager [manual](https://nix-community.github.io/home-manager)
-* Package [ [search](https://search.nixos.org/packages) | [source](https://github.com/NixOS/nixpkgs/tree/master/pkgs) ]
+* Packages [ [search](https://search.nixos.org/packages) | [source](https://github.com/NixOS/nixpkgs/tree/master/pkgs) ]
+* VS Code [plugin](https://github.com/nix-community/vscode-nix-ide)
 * Flakes
     - [documentation](https://nix.dev/concepts/flakes.html)
     - [Wiki](https://wiki.nixos.org/wiki/Flakes)
     - [manual](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake.html)
 
-Setup
+Install (multi-user)
 ```bash
 # ubuntu
 wget --https-only -qO- https://nixos.org/nix/install | sh -s -- --daemon
 
 # macos
 curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
+```
+
+Enable flakes (experimental)
+```bash
+mkdir -p ~/.config/nix
+echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
 ```
 
 ## Examples
@@ -56,6 +63,10 @@ builtins.getEnv("HOME")
 
 # declerative shell environments
 nix-shell nix/shell.nix
+
+# flake example
+nix build github:NixOS/nixpkgs#hello -o nix/result
+./nix/result/bin/hello
 ```
 
 <br>
