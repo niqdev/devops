@@ -1,12 +1,14 @@
-# Terraform
+# Terraform / OpenTofu
 
 > **Terraform** is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently
 
 Resources
 
-* [Documentation](https://developer.hashicorp.com/terraform)
 * [Terraform in Action](https://www.manning.com/books/terraform-in-action) (2021) by Scott Winkler (Book)
+* [Terraform Documentation](https://developer.hashicorp.com/terraform)
 * [Terraform Registry](https://registry.terraform.io)
+* [OpenTofu Documentation](https://opentofu.org/docs)
+* [OpenTofu Registry](https://search.opentofu.org)
 
 Terraform's core building blocks:
 
@@ -21,12 +23,24 @@ Terraform's core building blocks:
 
 ## Setup
 
+Terraform
 ```sh
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 
 terraform version
 ```
+
+OpenTofu
+```sh
+# MacOS
+brew install opentofu
+# Linux
+snap install --classic opentofu
+
+tofu -version
+```
+
 
 ## Examples
 
